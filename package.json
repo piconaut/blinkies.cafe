@@ -1,0 +1,23 @@
+{
+  "name": "blinkies.cafe",
+  "version": "1.0.0",
+  "description": "blinkies generator web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piconaut/blinkies.cafe.git"
+  },
+  "author": "amy fare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piconaut/blinkies.cafe/issues"
+  },
+  "homepage": "https://github.com/piconaut/blinkies.cafe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  }
+}

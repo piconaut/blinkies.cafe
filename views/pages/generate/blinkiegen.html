@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<style>
+h1,h2,.footer,.blinkieLinkHolder,label,select,option,input,body,button {
+  font-family: Consolas,monospace;
+}
+h2 {
+  font-size: 16pt;
+  margin-bottom: 0px;
+}
+.footer,.blinkieLinkHolder{
+  font-size: 8pt;
+}
+option,input {
+  font-size: 10pt;
+}
+body {
+  background-color:#c9b3e6;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+</style>
+<html lang="en">
+<head>
+  <title>blinkies.cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='description' content='customize and generate blinkie graphics!'>
+</head>
+<body>
+<h2>blinkies.cafe<br>=============</h2>
+customize and generate blinkie graphics!<br><br>
+<form id='blinkieForm'>
+text: <textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 cols=20 wrap='off' style='overflow:hidden;resize:none;margin-bottom: -6px;'></textarea><br>
+<div style='margin-top: 5px;'>style: <select name="blinkieStyle" id="blinkieStyle">
+</select>
+</div>
+<button type='submit' id='submitbtn' style='margin-top: 4px;'>generate!!</button>
+</form><br>
+<img id='blinkieGIF' src='/b/display/0001-saucer.gif' alt='generated blinkie'><br>
+<p id='blinkieLinkHolder' style='font-size:8pt;'></p>
+<p class='footer'>
+    <br>(c) blinkies.cafe<br>blinkies are CC0.<br><a href='/sources.txt' target=”_blank”>gif & font sources</a>
+<p class='footer'></p>
+</body>
+</html>
+<script src='/blinkiegen.js' type='module'></script>

@@ -8,10 +8,10 @@ var express = require("express");
 var app = express();
 const helmet = require("helmet");
 const fs = require("fs");
-const options = {
+const options = prod ? {
   key: fs.readFileSync('certs/privkey2.pem'),
   cert: fs.readFileSync('certs/fullchain2.pem')
-};
+} : {};
 const https = prod ? require("https").createServer(options, app)
                   : require("http").createServer(app);
 
@@ -67,8 +67,7 @@ async function genBlinkie(instyle, intext, time) {
     try {
         const styleNumber = parseInt(instyle);
         if (styleNumber in styleProps) {
-            if (time) { console.log('genBlinkie running'); }
-            timeStart('  assigning parms', time);
+            timeStart('  generating blinkie', time);
             const style = styleProps[styleNumber].style
             const colour1 = styleProps[styleNumber].colour1;
             const colour2 = styleProps[styleNumber].colour2;
@@ -76,20 +75,14 @@ async function genBlinkie(instyle, intext, time) {
             const fontsize = styleProps[styleNumber].fontsize;
             const x = styleProps[styleNumber].x;
             const y = styleProps[styleNumber].y;
-            timeEnd('  assigning parms', time);
 
-            timeStart('  cleaning intext', time);
             let cleantext = addSlashes(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
                 cleantext = addSlashes(styleProps[styleNumber].name);
             }
-            timeEnd('  cleaning intext', time);
 
-            timeStart('  making blinkieID', time);
             const blinkieID = makeid(2);
-            timeEnd('  making blinkieID', time);
-
-            timeStart('  generating blinkie', time);
+            blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
             const args1 =
                 ['-pointsize',fontsize,
@@ -121,16 +114,21 @@ async function genBlinkie(instyle, intext, time) {
                 './assets/blinkies-output/blinkiesCafe-' + blinkieID + '.gif'
             ]
 
-            const { stdout1, stderr1 } = await execFile('convert', args1);
-            const { stdout2, stderr2 } = await execFile('convert', args2);
-            const { stdout3, stderr3 } = await execFile('convert', args3);
-            fs.unlinkSync('./assets/blinkies-frames/' + blinkieID + '-1.png');
-            fs.unlinkSync('./assets/blinkies-frames/' + blinkieID + '-2.png');
+            const stdout1 = execFile('convert', args1);
+            const stdout2 = execFile('convert', args2);
 
-            if (stderr3) { console.error(stderr3); }
-            timeEnd('  generating blinkie', time);
-
-            blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
+            await Promise.all([stdout1, stdout2]).then(async function() {
+                const { stdout3, stderr3 } = await execFile('convert', args3);
+                if (stderr3) { console.error(stderr3); }
+                timeEnd('  generating blinkie', time);
+            });
+            fs.unlink('./assets/blinkies-frames/' + blinkieID + '-1.png', function(err) {
+                if (err) { return console.error(err); }
+            });
+            fs.unlink('./assets/blinkies-frames/' + blinkieID + '-2.png', function(err) {
+                if (err) { return console.error(err); }
+            });
+            return blinkieLink;
         }  // end if
 
         else {
@@ -144,8 +142,6 @@ async function genBlinkie(instyle, intext, time) {
         console.error(err);
         blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
     }
-
-    return blinkieLink;
 };
 
 app.use(express.json());
@@ -194,15 +190,15 @@ app.get('/favicon.ico', function (req, res) {
 app.post("/api/blinkiegen", async function (req, res) {
     const style = req.body.blinkieStyle;
     const intext = req.body.blinkieText;
-    const path = "/assets/blinkies-output/";
     console.log(req.body);
 
-    const blinkieID = await genBlinkie(style, intext, timeGenBlinkie);
-    console.log(blinkieID);
-    console.log();
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
-    res.end(blinkieID);
+    genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieID) {
+        console.log(blinkieID);
+        console.log();
+        res.end(blinkieID);
+    });
 });
 
 app.options("/blinkieList.json", function(req, res, next){

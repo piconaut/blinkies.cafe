@@ -1,5 +1,4 @@
-#FROM node:16 AS BUILD_IMAGE
-FROM node
+FROM node:16-alpine AS BUILD_IMAGE
 
 ENV NODE_ENV=production
 
@@ -20,13 +19,13 @@ COPY . .
 
 EXPOSE 8080
 
-#FROM node:10-alpine
-#RUN apk add --update imagemagick
+FROM node:16-alpine
+RUN apk add --update imagemagick
 
-#WORKDIR /app
+WORKDIR /app
 
 # copy from build image
-#COPY --from=BUILD_IMAGE /app .
+COPY --from=BUILD_IMAGE /app .
 #COPY --from=BUILD_IMAGE /app/node_modules ./app/node_modules
 
 COPY ./.fonts /usr/share/fonts

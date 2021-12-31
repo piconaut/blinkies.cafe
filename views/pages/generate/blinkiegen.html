@@ -34,16 +34,39 @@ body {
 }
 #title, #navbar {
     width:200px;
+    text-align: center;
 }
 #navbar {
     margin-top:6px;
 }
-
+#submitbtn {
+    font-size:10pt;
+    margin-top: 4px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
 #blinkieGenHolder, #footer {
     margin-top:18px;
     text-align:left;
     width:95%;
     max-width:325px;
+}
+#blinkieText {
+    width:200px;
+    overflow:hidden;
+    resize:none;
+    margin-bottom: -6px;
+    padding-left:4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-right:4px;
+}
+#blinkieStyle {
+    width:210px;
+}
+hr {
+    width:325px;
 }
 </style>
 <html lang="en">
@@ -52,7 +75,7 @@ body {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='description' content='customize and generate blinkie graphics!'>
 </head>
-<body style='text-align:center;'>
+<body>
 <div id='title' class='content'>
 <h2>blinkies.cafe</h2>
 </div>
@@ -60,15 +83,15 @@ body {
     <h3>
         home | <a href='/about'>about</a><br>
     </h3>
-</div><hr style='width:325px'>
+</div><hr>
 <div id='blinkieGenHolder' class='content'>
 customize and generate blinkie graphics!<br><br>
 <form id='blinkieForm'>
-text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off' style='width:200px;font-size:10pt;overflow:hidden;resize:none;margin-bottom: -6px;padding-left:4px;padding-top:1px;padding-bottom:1px;padding-right:4px'></textarea><br>
-<div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle" style='width:210px;'>
+text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
+<div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle">
 </select>
 </div>
-<button type='submit' id='submitbtn' style='font-size:10pt;margin-top: 4px;height:22px;padding-top:0px;padding-bottom:0px;'>generate!!</button>
+<button type='submit' id='submitbtn'>generate!!</button>
 </form><br>
 <img id='blinkieGIF' src='/b/display/0001-saucer.gif' alt='generated blinkie'><br>
 <p id='blinkieLinkHolder' style='font-size:8pt;'><br><br></p>

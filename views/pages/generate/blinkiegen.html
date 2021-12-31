@@ -15,13 +15,15 @@ h3 {
   font-size: 8pt;
 }
 option,input {
-  font-size: 10pt;
+  font-size: 8pt;
 }
 body {
   background-color:#b28ce6;
   line-height: 1.15;
-  font-size: 10pt;
+  font-size: 12pt;
+    font-family: Consolas,monospace;
 }
+
 #blinkieLinkHolder {
     margin:0px;
 }
@@ -40,14 +42,14 @@ body {
 #blinkieGenHolder, #footer {
     margin-top:18px;
     text-align:left;
-    width:325px;
+    width:400px;
 }
 </style>
 <html lang="en">
 <head>
-  <title>blinkies.cafe</title>
+  <title>blinkies.cafe - about</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='customize and generate blinkie graphics!'>
+  <meta name='description' content='what are blinkies?'>
 </head>
 <body style='text-align:center;'>
 <div id='title' class='content'>
@@ -55,17 +57,17 @@ body {
 </div>
 <div id='navbar' class='content'>
     <h3>
-        <a href='/'>home</a> | blinkieBrew<br>
+        home | <a href='/about'>about</a><br>
     </h3>
 </div><hr style='width:325px'>
 <div id='blinkieGenHolder' class='content'>
 customize and generate blinkie graphics!<br><br>
 <form id='blinkieForm'>
-text: <br><textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 cols=20 wrap='off' style='overflow:hidden;resize:none;margin-bottom: -6px;width:170px;padding-left:4px;padding-top:1px;padding-bottom:1px;padding-right:4px'></textarea><br>
-<div style='margin-top: 5px;'>style: <br><select name="blinkieStyle" id="blinkieStyle" style='width:180px;'>
+text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off' style='width:321px;font-size:10pt;overflow:hidden;resize:none;margin-bottom: -6px;padding-left:4px;padding-top:1px;padding-bottom:1px;padding-right:4px'></textarea><br>
+<div style='margin-top: 7px;'>style: <select name="blinkieStyle" id="blinkieStyle" style='width:331px;'>
 </select>
 </div>
-<button type='submit' id='submitbtn' style='margin-top: 4px;height:22px;padding-top:0px;padding-bottom:0px;padding-left:3px;padding-right:4px;'>generate!!</button>
+<button type='submit' id='submitbtn' style='font-size:10pt;margin-top: 4px;height:22px;padding-top:0px;padding-bottom:0px;'>generate!!</button>
 </form><br>
 <img id='blinkieGIF' src='/b/display/0001-saucer.gif' alt='generated blinkie'><br>
 <p id='blinkieLinkHolder' style='font-size:8pt;'></p>

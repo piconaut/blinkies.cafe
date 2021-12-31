@@ -152,8 +152,16 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/views/pages/generate/blinkiegen.html");
 });
 
+app.get("/about", function (req, res) {
+    res.sendFile(__dirname + "/views/pages/about.html");
+});
+
 app.get("/blinkiegen", function (req, res) {
     res.sendFile(__dirname + "/views/pages/generate/blinkiegen.html");
+});
+
+app.get("/sitemap.txt", function (req, res) {
+    res.sendFile(__dirname + "/views/pages/sitemap.txt");
 });
 
 app.get("/sources.txt", function (req, res) {

@@ -21,21 +21,30 @@ const execFile = util.promisify(require('child_process').execFile);
 const siteURL = prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
 
 const styleProps = {
-    5:  {style:"0005-citystars", name:"city stars", colour1:"#ffffff", colour2:"#ffffff", font: "04b03", fontsize:"8", x:"6", y:"-1", source:"https://y2k.neocities.org"},
-    4:  {style:"0004-peachy", name:"just peachy", colour1:"black", colour2:"black", font:"monaco", fontsize:"16", x:"7", y:"0", source:"https://y2k.neocities.org"},
-    1:  {style:"0001-saucer", name:"crash-landed", colour1:"#ff0000", colour2:"#ff4e4e", font: "Perfect DOS VGA 437", fontsize:"16", x:"-14", y:"-1", source:"me :)"},
-    3:  {style:"0003-ghost", name:"Spooky vibes only!!", colour1:"#e79400", colour2:"#e77400", font: "infernalda", fontsize:"16", x:"-13", y:"-1", source:"https://y2k.neocities.org"},
-    6:  {style:"0006-purple", name:"simple purple", colour1:"#800080", colour2:"#800080", font: "monaco", fontsize:"16", x:"0", y:"0", source:"me :)"},
-    7:  {style:"0007-chocolate", name:"chocolate", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", source:"https://web.archive.org/web/20091027005417/http://www.geocities.com/toloveanangel0/graphics/blinkies/"},
-    8:  {style:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", source:"me :)"},
-    9:  {style:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", source:"me :)"},
-    10: {style:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", source:"me :)"}
+    5:  {style:"0005-citystars", name:"city stars", colour1:"#ffffff", colour2:"#ffffff", font: "04b03", fontsize:"8", x:"6", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    4:  {style:"0004-peachy", name:"just peachy", colour1:"black", colour2:"black", font:"monaco", fontsize:"16", x:"7", y:"0", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    1:  {style:"0001-saucer", name:"crash-landed", colour1:"#ff0000", colour2:"#ff4e4e", font: "Perfect DOS VGA 437", fontsize:"16", x:"-14", y:"-1", sourceName:"me :)"},
+    3:  {style:"0003-ghost", name:"Spooky vibes only!!", colour1:"#e79400", colour2:"#e77400", font: "infernalda", fontsize:"16", x:"-13", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    6:  {style:"0006-purple", name:"simple purple", colour1:"#800080", colour2:"#800080", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    7:  {style:"0007-chocolate", name:"chocolate", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"GifCities", sourceURL:"https://web.archive.org/web/20091027005417/http://www.geocities.com/toloveanangel0/graphics/blinkies/"},
+    8:  {style:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    9:  {style:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    10: {style:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
 };
-
 let styleList = {};
+let sourceList = {};
 for (const [key, value] of Object.entries(styleProps)) {
-  styleList[key] = { style: value.style, name: value.name };
+  styleList[key] = { name: value.name };
+  sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
 }
+
+const fontData = {
+    1: {name:"Monaco", creator:"FontBlast Design", link:"mailto:jamie@creativeimagesphotography.co.uk"},
+    2: {name:"Pixellari", creator:"Zacchary Dempsey-Plante", link:"https://ztdp.ca"},
+    3: {name:"Perfect DOS VGA 437", creator:"Zeh Fernando", link:"http://portfolio.zehfernando.com"},
+    4: {name:"04b03", creator:"押本祐二", link:"http://www.04.jp.org/"},
+    5: {name:"Infernalda", creator:"MrtheNoronha", link:"http://www.juspifon.com/"}
+};
 
 function addSlashes(str) {
     return (str + '').replace(/[^a-zA-Z0-9-_'!.? ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
@@ -165,7 +174,11 @@ app.get("/sitemap.txt", function (req, res) {
     res.sendFile(__dirname + "/views/pages/sitemap.txt");
 });
 
-app.get("/sources.txt", function (req, res) {
+app.get("/sources", function (req, res) {
+    res.sendFile(__dirname + "/views/pages/sources.html");
+});
+
+app.get("/sources.html", function (req, res) {
     res.sendFile(__dirname + "/views/pages/sources.txt");
 });
 
@@ -179,8 +192,24 @@ app.get("/blinkieList.json", function (req, res) {
     res.send(JSON.stringify(styleList));
 });
 
+app.get("/sourceData.json", function (req, res) {
+    res.contentType("application/json");
+    res.set('Access-Control-Allow-Origin','*')
+    res.send(JSON.stringify(sourceList));
+});
+
+app.get("/fontData.json", function (req, res) {
+    res.contentType("application/json");
+    res.set('Access-Control-Allow-Origin','*')
+    res.send(JSON.stringify(fontData));
+});
+
 app.get("/blinkiegen.js", function (req, res) {
     res.sendFile(__dirname + "/src/client/blinkiegen.js");
+});
+
+app.get("/blinkieSources.js", function (req, res) {
+    res.sendFile(__dirname + "/src/client/blinkieSources.js");
 });
 
 app.get('/b/display/:blinkieName', function (req, res) {

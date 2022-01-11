@@ -3,13 +3,12 @@
 h1,h2,.blinkieLinkHolder,label,select,option,body,button {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
-h2 {
+#title {
   font-size: 16pt;
-  margin: 0px;
 }
-h3 {
+#navbar {
     font-size:12pt;
-    margin:0px;
+    margin-top:6px;
 }
 #footer,#blinkieLinkHolder{
   font-size: 8pt;
@@ -32,9 +31,7 @@ body {
 #title, #navbar {
     width:200px;
     text-align: center;
-}
-#navbar {
-    margin-top:6px;
+    font-weight: bold;
 }
 #submitbtn {
     font-size:10pt;
@@ -70,16 +67,16 @@ hr {
 <head>
   <title>blinkies.cafe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='customize and generate blinkie graphics!'>
+  <meta name='description' content='generate custom blinkie gifs!'>
+  <link rel="canonical" href="https://blinkies.cafe/">
 </head>
 <body>
+<h1 style="display:none">generate custom blinkie gifs</h1>
 <div id='title' class='content'>
-<h2>blinkies.cafe</h2>
+blinkies.cafe
 </div>
 <div id='navbar' class='content'>
-    <h3>
         home | <a href='/about'>about</a><br>
-    </h3>
 </div><hr>
 <div id='blinkieGenHolder' class='content'>
 generate custom blinkie graphics!<br><br>

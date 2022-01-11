@@ -3,3 +3,5 @@ Disallow: /nogooglebot/
 
 User-agent: *
 Allow: /
+
+Sitemap: https://blinkies.cafe/sitemap.txt

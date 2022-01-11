@@ -72,16 +72,41 @@ here are my sources. often the original author is unknown, so i link where i fou
 <br><br>
 blinkie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source<br>
 -------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------
+<%
+for (const [key, value] of Object.entries(sourceList)) {
+    var blank = 22 - value.name.length;
+    var sourceLine = value.name + "&nbsp;".repeat(blank);
+    %><p><%-sourceLine %><%
+    if (value.sourceURL) {
+        %><a href="<%=value.sourceURL%>" target="_blank"><%=value.sourceName%></a><%
+    }
+    else {
+        %><%=value.sourceName%><%
+    }
+}
+%>
 </div>
 <div id='fontList' class='textBox'>
 font sources<br>
 ============<br><br>
 font&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creator<br>
 ----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------
+<%
+for (const [key, value] of Object.entries(fontList)) {
+    var blank = 22 - value.name.length;
+    var sourceLine = value.name + "&nbsp;".repeat(blank);
+    %><p><%-sourceLine %><%
+    if (value.sourceURL) {
+        %><a href="<%=value.sourceURL%>" target="_blank"><%=value.sourceName%></a><%
+    }
+    else {
+        %><%=value.sourceName%><%
+    }
+}
+%>
 </div>
 <div id='footer' class='content'>
     <a href='/sources'>gif & font sources</a><br>(c) blinkies.cafe<br>blinkies are CC0<br>by amy fare &#60;3
 </div>
 </body>
 </html>
-<script src='/blinkieSources.js' type='module'></script>

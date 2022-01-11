@@ -34,7 +34,9 @@ if [[ $* == *--push* ]]; then
   sudo docker push piconaut/blinkies-cafe:latest
 fi
 
-
+if [[ $* == *--prod* ]]; then
+  ssh blinkies.cafe ./blt.sh --pull --run
+fi
 
 
 sudo echo ''

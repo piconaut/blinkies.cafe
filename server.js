@@ -36,7 +36,7 @@ const styleProps = {
 let styleList = {};
 let sourceList = {};
 for (const [key, value] of Object.entries(styleProps)) {
-  styleList[key] = { name: value.name };
+  styleList[key] = { id: value.id, name: value.name };
   sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
 }
 
@@ -161,12 +161,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.get("/", function (req, res) {
-    let defaultStyleIndex = parseInt(req.query.s) in styleProps ? parseInt(req.query.s) : 1;
-    res.render('pages/blinkiegen.ejs', {
-        defaultStyleIndex: defaultStyleIndex,
-        defaultStyleID:    styleProps[defaultStyleIndex].id,
-        defaultStyleName:  styleProps[defaultStyleIndex].name
-    });
+    res.sendFile(__dirname + "/views/pages/gallery.html");
 });
 
 app.get("/pour", function (req, res) {
@@ -211,6 +206,10 @@ app.get("/styleList.json", function (req, res) {
 
 app.get("/blinkiegen.js", function (req, res) {
     res.sendFile(__dirname + "/src/client/blinkiegen.js");
+});
+
+app.get("/gallery.js", function (req, res) {
+    res.sendFile(__dirname + "/src/client/gallery.js");
 });
 
 app.get("/blinkieSources.js", function (req, res) {

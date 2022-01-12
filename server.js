@@ -23,15 +23,15 @@ const execFile = util.promisify(require('child_process').execFile);
 const siteURL = prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
 
 const styleProps = {
-    5:  {style:"0005-citystars", name:"city stars", colour1:"#ffffff", colour2:"#ffffff", font: "04b03", fontsize:"8", x:"6", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
-    4:  {style:"0004-peachy", name:"just peachy", colour1:"black", colour2:"black", font:"monaco", fontsize:"16", x:"7", y:"0", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
-    7:  {style:"0001-saucer", name:"crash-landed", colour1:"#ff0000", colour2:"#ff4e4e", font: "Perfect DOS VGA 437", fontsize:"16", x:"-14", y:"-1", sourceName:"me :)"},
-    3:  {style:"0003-ghost", name:"Spooky vibes only!!", colour1:"#e79400", colour2:"#e77400", font: "infernalda", fontsize:"16", x:"-13", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
-    6:  {style:"0006-purple", name:"simple purple", colour1:"#800080", colour2:"#800080", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
-    1:  {style:"0007-chocolate", name:"chocolate dreams", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"GifCities", sourceURL:"https://web.archive.org/web/20091027005417/http://www.geocities.com/toloveanangel0/graphics/blinkies/"},
-    8:  {style:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
-    9:  {style:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
-    10: {style:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
+    5:  {id:"0005-citystars", name:"city stars", colour1:"#ffffff", colour2:"#ffffff", font: "04b03", fontsize:"8", x:"6", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    4:  {id:"0004-peachy", name:"just peachy", colour1:"black", colour2:"black", font:"monaco", fontsize:"16", x:"7", y:"0", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    7:  {id:"0001-saucer", name:"crash-landed", colour1:"#ff0000", colour2:"#ff4e4e", font: "Perfect DOS VGA 437", fontsize:"16", x:"-14", y:"-1", sourceName:"me :)"},
+    3:  {id:"0003-ghost", name:"Spooky vibes only!!", colour1:"#e79400", colour2:"#e77400", font: "infernalda", fontsize:"16", x:"-13", y:"-1", sourceName:"THE NEXUS", sourceURL:"https://y2k.neocities.org"},
+    6:  {id:"0006-purple", name:"simple purple", colour1:"#800080", colour2:"#800080", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    1:  {id:"0007-chocolate", name:"chocolate dreams", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"toloveanangel0", sourceURL:"https://web.archive.org/web/20091027005417/http://www.geocities.com/toloveanangel0/graphics/blinkies/"},
+    8:  {id:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    9:  {id:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    10: {id:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
 };
 let styleList = {};
 let sourceList = {};
@@ -81,7 +81,7 @@ async function genBlinkie(instyle, intext, time) {
         const styleNumber = parseInt(instyle);
         if (styleNumber in styleProps) {
             timeStart('  generating blinkie', time);
-            const style = styleProps[styleNumber].style
+            const id = styleProps[styleNumber].id
             const colour1 = styleProps[styleNumber].colour1;
             const colour2 = styleProps[styleNumber].colour2;
             const font = styleProps[styleNumber].font;
@@ -105,7 +105,7 @@ async function genBlinkie(instyle, intext, time) {
                  '-family',font,
                  '-fill',colour1,
                  '-draw',"text 0,0 '" + cleantext + "'",
-                 './assets/blinkies-bg/png/' + style + '-1.png',
+                 './assets/blinkies-bg/png/' + id + '-1.png',
                  './assets/blinkies-frames/' + blinkieID + '-1.png'
                 ]
             const args2 =[
@@ -116,7 +116,7 @@ async function genBlinkie(instyle, intext, time) {
                 '-family',font,
                 '-fill',colour2,
                 '-draw',"text 0,0 '" + cleantext + "'",
-                './assets/blinkies-bg/png/' + style + '-2.png',
+                './assets/blinkies-bg/png/' + id + '-2.png',
                 './assets/blinkies-frames/' + blinkieID + '-2.png'
             ]
             const args3 = [
@@ -161,7 +161,22 @@ app.use(express.json());
 app.use(helmet());
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/views/pages/blinkiegen.html");
+    let defaultStyleIndex = parseInt(req.query.s) in styleProps ? parseInt(req.query.s) : 1;
+    res.render('pages/blinkiegen.ejs', {
+        defaultStyleIndex: defaultStyleIndex,
+        defaultStyleID:    styleProps[defaultStyleIndex].id,
+        defaultStyleName:  styleProps[defaultStyleIndex].name
+    });
+});
+
+app.get("/pour", function (req, res) {
+    let defaultStyleIndex = parseInt(req.query.s) in styleProps ? parseInt(req.query.s) : 1;
+    res.render('pages/blinkiegen.ejs', {
+        defaultStyleIndex: defaultStyleIndex,
+        defaultStyleID:    styleProps[defaultStyleIndex].id,
+        defaultStyleName:  styleProps[defaultStyleIndex].name
+    });
+
 });
 
 app.get("/about", function (req, res) {
@@ -178,7 +193,6 @@ app.get("/sources", function (req, res) {
         sourceList: sourceList,
         fontList: fontList
     });
-    //res.sendFile(__dirname + "/views/pages/sources.html");
 });
 
 app.get("/sources.txt", function (req, res) {
@@ -189,7 +203,7 @@ app.get("/privacy.txt", function (req, res) {
     res.sendFile(__dirname + "/views/pages/privacy.txt");
 });
 
-app.get("/blinkieList.json", function (req, res) {
+app.get("/styleList.json", function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
     res.send(JSON.stringify(styleList));

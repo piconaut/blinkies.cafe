@@ -1,7 +1,7 @@
 /*jslint browser */
 
-function getBlinkieList() {
-    return fetch('/blinkieList.json')
+function getStyleList() {
+    return fetch('/styleList.json')
         .then((response)=>response.json())
         .then((responseJson)=>{return responseJson});
 }
@@ -42,8 +42,8 @@ let submit = function (event) {
 };
 
 let styleSelect = document.getElementById('blinkieStyle');
-const blinkieList = getBlinkieList().then(function(blinkieList){
-    for (const [key, value] of Object.entries(blinkieList)) {
+getStyleList().then(function(styleList){
+    for (const [key, value] of Object.entries(styleList)) {
         let opt = document.createElement('option');
         opt.value = key;
         opt.innerHTML = value.name;

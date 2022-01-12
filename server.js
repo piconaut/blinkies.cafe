@@ -204,6 +204,12 @@ app.get("/styleList.json", function (req, res) {
     res.send(JSON.stringify(styleList));
 });
 
+app.get("/blinkieList.json", function (req, res) {
+    res.contentType("application/json");
+    res.set('Access-Control-Allow-Origin','*')
+    res.send(JSON.stringify(styleList));
+});
+
 app.get("/blinkiegen.js", function (req, res) {
     res.sendFile(__dirname + "/src/client/blinkiegen.js");
 });

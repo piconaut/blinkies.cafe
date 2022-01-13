@@ -31,10 +31,13 @@ body {
 #blinkieLinkHolder {
     margin:0px;
 }
-.content,.textBox {
+.content {
     background-color:#c9b3e6;
-    margin: 0px auto 0px auto;
+    margin: 18px auto 0px auto;
     padding: 4px;
+    text-align:left;
+    width:95%;
+    max-width: 640px;
 }
 #title, #navbar {
     width:240px;
@@ -43,12 +46,6 @@ body {
 }
 hr {
     width:325px;
-}
-.textBox, .content, #footer {
-    margin-top:18px;
-    text-align:left;
-    width:95%;
-    max-width: 640px;
 }
 </style>
 <html lang="en">
@@ -67,7 +64,7 @@ blinkies.cafe
 </div><hr>
 <div class='content'><h1>blinkie sources</h1>
 </div>
-<div id='sourceList' class='textBox'>
+<div id='sourceList' class='content'>
 gif sources<br>
 ===========<br><br>
 in some cases, i've taken an existing blinkie gif and programmed customizability for it. in some cases, i made them from scratch.
@@ -90,7 +87,7 @@ for (const [key, value] of Object.entries(sourceList)) {
 }
 %>
 </div>
-<div id='fontList' class='textBox'>
+<div id='fontList' class='content'>
 font sources<br>
 ============<br><br>
 font&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creator<br>

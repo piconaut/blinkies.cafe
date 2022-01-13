@@ -3,6 +3,11 @@
 h1,h2,.blinkieLinkHolder,label,select,option,body,button {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
+h1 {
+    text-align: center;
+    margin: 0px;
+    font-size: 12pt;
+}
 #title {
   margin-top:18px;
   font-size: 16pt;
@@ -41,11 +46,11 @@ body {
     padding-top:0px;
     padding-bottom:0px;
 }
-#blinkieGenHolder, #footer {
+.content, #footer {
     margin-top:18px;
     text-align:left;
     width:95%;
-    max-width:325px;
+    max-width: 500px;
 }
 #blinkieText {
     width:200px;
@@ -72,15 +77,16 @@ hr {
   <link rel="canonical" href="https://blinkies.cafe/pour">
 </head>
 <body>
-<h1 style="display:none">generate custom blinkie gifs</h1>
 <div id='title' class='content'>
 blinkies.cafe
 </div>
 <div id='navbar' class='content'>
         <a href='/'>home</a> | generate | <a href='/about'>about</a><br>
 </div><hr>
+<div class='content'>
+<h1>generate custom blinkies!</h1>
+</div>
 <div id='blinkieGenHolder' class='content'>
-generate custom blinkie graphics!<br><br>
 <form id='blinkieForm'>
 text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
 <div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle">

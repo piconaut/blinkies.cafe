@@ -82,7 +82,7 @@ for (const [key, value] of Object.entries(sourceList)) {
     var sourceLine = value.name + "&nbsp;".repeat(blank);
     %><p><%-sourceLine %><%
     if (value.sourceURL) {
-        %><a href="<%=value.sourceURL%>" target="_blank"><%=value.sourceName%></a><%
+        %><a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%=value.sourceName%></a><%
     }
     else {
         %><%=value.sourceName%><%
@@ -101,7 +101,7 @@ for (const [key, value] of Object.entries(fontList)) {
     var sourceLine = value.name + "&nbsp;".repeat(blank);
     %><p><%-sourceLine %><%
     if (value.sourceURL) {
-        %><a href="<%=value.sourceURL%>" target="_blank"><%=value.sourceName%></a><%
+        %><a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%=value.sourceName%></a><%
     }
     else {
         %><%=value.sourceName%><%

@@ -141,13 +141,12 @@ async function genBlinkie(instyle, intext, time) {
             fs.unlink('./assets/blinkies-frames/' + blinkieID + '-2.png', function(err) {
                 if (err) { return console.error(err); }
             });
-            return blinkieLink;
-        }  // end if
+        }  // end if (styleNumber in styleProps)
 
         else {
             console.error('error: style not cataloged')
-            blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
-        }  // end else
+            blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
+        }  // end else (styleNumber not in styleProps)
 
     }  // end try
 
@@ -155,6 +154,8 @@ async function genBlinkie(instyle, intext, time) {
         console.error(err);
         blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
     }
+
+    return blinkieLink;
 };
 
 app.use(express.json());
@@ -171,7 +172,6 @@ app.get("/pour", function (req, res) {
         defaultStyleID:    styleProps[defaultStyleIndex].id,
         defaultStyleName:  styleProps[defaultStyleIndex].name
     });
-
 });
 
 app.get("/about", function (req, res) {
@@ -251,10 +251,10 @@ app.post("/api/blinkiegen", async function (req, res) {
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
-    genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieID) {
-        console.log(blinkieID);
+    genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieLink) {
+        console.log(blinkieLink);
         console.log();
-        res.end(blinkieID);
+        res.end(blinkieLink);
     });
 });
 

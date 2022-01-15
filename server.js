@@ -17,6 +17,9 @@ const options = prod ? {
 const https = prod ? require("https").createServer(options, app)
                   : require("http").createServer(app);
 
+app.use(express.json());
+app.use(helmet());
+
 const util = require('util');
 const execFile = util.promisify(require('child_process').execFile);
 
@@ -158,8 +161,7 @@ async function genBlinkie(instyle, intext, time) {
     return blinkieLink;
 };
 
-app.use(express.json());
-app.use(helmet());
+
 
 app.get("/", function (req, res) {
     res.render('pages/gallery.ejs', { styleList: styleList });
@@ -207,10 +209,6 @@ app.get("/blinkieList.json", function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
     res.send(JSON.stringify(styleList));
-});
-
-app.get("/blinkiegen.js", function (req, res) {
-    res.sendFile(__dirname + "/src/client/blinkiegen.js");
 });
 
 app.get("/pour.js", function (req, res) {

@@ -86,15 +86,19 @@ blinkies.cafe
 <form id='blinkieForm'>
 text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
 <div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle">
+    <option value="<%=defaultStyleKey%>"><%=styleList[defaultStyleKey].name%></option>
     <%
-    if (defaultStyleIndex) {
-        %><option value="<%=defaultStyleIndex%>"><%=defaultStyleName%></option><%
-    }%>
+    for (const [key, value] of Object.entries(styleList)) {
+        if (key != defaultStyleKey) {
+            %><option value="<%=key%>"><%=value.name%></option><%
+        }
+    }
+    %>
 </select>
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>
-<img id='blinkieGIF' src='/b/display/<%=defaultStyleID%>.gif' alt='generated blinkie'><br>
+<img id='blinkieGIF' src='/b/display/<%=styleList[defaultStyleKey].id%>.gif' alt='generated blinkie'><br>
 <p id='blinkieLinkHolder'><br><br></p>
 </div>
 <div id='footer' class='content'>
@@ -102,4 +106,4 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
 </div>
 </body>
 </html>
-<script src='/blinkiegen.js' type='module'></script>
+<script src='/blinkieSubmit.js' type='module'></script>

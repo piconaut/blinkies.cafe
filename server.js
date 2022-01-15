@@ -162,7 +162,7 @@ app.use(express.json());
 app.use(helmet());
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/views/pages/gallery.html");
+    res.render('pages/gallery.ejs', { styleList: styleList });
 });
 
 app.get("/pour", function (req, res) {
@@ -212,10 +212,6 @@ app.get("/blinkieList.json", function (req, res) {
 
 app.get("/blinkiegen.js", function (req, res) {
     res.sendFile(__dirname + "/src/client/blinkiegen.js");
-});
-
-app.get("/gallery.js", function (req, res) {
-    res.sendFile(__dirname + "/src/client/gallery.js");
 });
 
 app.get("/blinkieSources.js", function (req, res) {

@@ -68,6 +68,13 @@ blinkies.cafe
 </div>
 <div id='gallery' class='content'>
     click a blinkie to add custom text!<br><br>
+
+    <%
+    for (const [key, value] of Object.entries(styleList)) {
+        %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=value.id%>.gif" alt="<%=value.name%>" class="blinkie"></a><%
+    }
+    %>
+
 </div>
 <div class='content' style='text-align:center'>
     new blinkies added weekly!
@@ -77,4 +84,3 @@ blinkies.cafe
 </div>
 </body>
 </html>
-<script src='/gallery.js' type='module'></script>

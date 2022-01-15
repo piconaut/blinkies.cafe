@@ -228,8 +228,16 @@ app.get('/b/display/:blinkieName', function (req, res) {
 });
 
 app.get('/b/:blinkieName', function (req, res) {
-    blinkieID = cleanBlinkieID(req.params['blinkieName']);
-    res.sendFile(__dirname + "/assets/blinkies-output/" + blinkieID);
+    let path = __dirname + "/assets/blinkies-display/blinkiesCafe.gif";
+    try {
+        const blinkieID = cleanBlinkieID(req.params['blinkieName']);
+        const reqPath = __dirname + "/assets/blinkies-output/" + blinkieID;
+        if (fs.existsSync(reqPath)) { path = reqPath; }
+    }
+    catch {
+        console.error('error: blinkie not found')
+    }
+    res.sendFile(path);
 });
 
 app.get('/favicon.ico', function (req, res) {

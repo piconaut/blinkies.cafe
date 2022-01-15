@@ -167,7 +167,7 @@ app.get("/", function (req, res) {
 
 app.get("/pour", function (req, res) {
     let defaultStyleIndex = parseInt(req.query.s) in styleProps ? parseInt(req.query.s) : 1;
-    res.render('pages/blinkiegen.ejs', {
+    res.render('pages/pour.ejs', {
         defaultStyleKey: defaultStyleIndex,
         styleList: styleList
     });
@@ -213,8 +213,8 @@ app.get("/blinkiegen.js", function (req, res) {
     res.sendFile(__dirname + "/src/client/blinkiegen.js");
 });
 
-app.get("/blinkieSubmit.js", function (req, res) {
-    res.sendFile(__dirname + "/src/client/blinkieSubmit.js");
+app.get("/pour.js", function (req, res) {
+    res.sendFile(__dirname + "/src/client/pour.js");
 });
 
 app.get("/blinkieSources.js", function (req, res) {

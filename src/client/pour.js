@@ -1,7 +1,7 @@
 /*jslint browser */
 
 function postBlinkie(blinkieText, blinkieStyle) {
-    return fetch("/api/blinkiegen", {
+    return fetch("/api/pour", {
         body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle}),
         headers: {"Content-Type": "application/json"},
         method: "POST"

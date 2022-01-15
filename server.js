@@ -255,6 +255,20 @@ app.post("/api/blinkiegen", async function (req, res) {
     });
 });
 
+app.post("/api/pour", async function (req, res) {
+    const style = req.body.blinkieStyle;
+    const intext = req.body.blinkieText;
+    console.log(req.body);
+
+    res.set('Content-Type', 'application/json');
+    res.set('Access-Control-Allow-Origin','*')
+    genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieLink) {
+        console.log(blinkieLink);
+        console.log();
+        res.end(blinkieLink);
+    });
+});
+
 app.options("/blinkieList.json", function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
@@ -262,7 +276,21 @@ app.options("/blinkieList.json", function(req, res, next){
   res.sendStatus(200);
 });
 
+app.options("/styleList.json", function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.sendStatus(200);
+});
+
 app.options("/api/blinkiegen", function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.sendStatus(200);
+});
+
+app.options("/api/pour", function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');

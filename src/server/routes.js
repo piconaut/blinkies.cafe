@@ -32,8 +32,6 @@ router.get("/blinkieSources.js", function (req, res) {
     res.sendFile(global.appRoot + "/src/client/blinkieSources.js");
 });
 
-router.get('/b/display/:blinkieID', controller.serveDisplayBlinkie);
-
 router.get('/b/:blinkieID', controller.serveBlinkie);
 
 router.get('/favicon.ico', function (req, res) {
@@ -59,6 +57,8 @@ router.options("/api/pour", function(req, res){
 router.get("/robots.txt", function (req, res) {
     res.sendFile(global.appRoot + "/robots.txt");
 });
+
+router.use('/b/display/', express.static("assets/blinkies-public/display/"))
 
 router.use(function(req,res){
     res.status(404).sendFile(global.appRoot + "/views/pages/e404.html");

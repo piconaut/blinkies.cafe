@@ -9,17 +9,16 @@ function cleanBlinkieID(str) {
 }
 
 const serveBlinkie = function (req, res) {
-    let defaultPath = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
+    let defaultPath = global.appRoot + "/assets/blinkies-public/display/blinkiesCafe.gif";
     try {
         const blinkieID = cleanBlinkieID(req.params['blinkieID']);
-        var reqPath = global.appRoot + "/assets/blinkies-output/" + blinkieID;
+        var reqPath = global.appRoot + "/assets/blinkies-public/" + blinkieID;
         fs.access(reqPath, fs.constants.F_OK, (err) => {
             if (!err) { res.sendFile(reqPath); }
             else { res.sendFile(defaultPath);}
         });
     }
     catch {
-        console.error('error: blinkie not found')
         res.sendFile(defaultPath);
     }
 }
@@ -34,32 +33,13 @@ const serveStyleList = function (req, res) {
     res.send(JSON.stringify(data.styleList));
 }
 
-const serveDisplayBlinkie = function (req, res) {
-    let defaultPath = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
-    try {
-        const blinkieID = cleanBlinkieID(req.params['blinkieID']);
-        var reqPath = global.appRoot + "/assets/blinkies-display/" + blinkieID;
-        fs.access(reqPath, fs.constants.F_OK, (err) => {
-            if (!err) { res.sendFile(reqPath); }
-            else { res.sendFile(defaultPath);}
-        });
-    }
-    catch {
-        console.error('error: blinkie not found')
-        res.sendFile(defaultPath);
-    }
-}
-
 const pourBlinkie = async function (req, res) {
     const style = req.body.blinkieStyle;
     const intext = req.body.blinkieText;
-    console.log(req.body);
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
     pour.genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieLink) {
-        console.log(blinkieLink);
-        console.log();
         res.end(blinkieLink);
     });
 }
@@ -84,7 +64,6 @@ module.exports = {
     serveBlinkie,
     serveGallery,
     serveStyleList,
-    serveDisplayBlinkie,
     serveSources,
     pourBlinkie,
     servePour

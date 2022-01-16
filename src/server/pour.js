@@ -78,7 +78,7 @@ async function genBlinkie(instyle, intext, time) {
                 '-delay','10',
                 '-loop','0',
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
-                global.appRoot + '/assets/blinkies-output/blinkiesCafe-' + blinkieID + '.gif'
+                global.appRoot + '/assets/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
             ]
 
             const stdout1 = execFile('convert', args1);
@@ -86,27 +86,25 @@ async function genBlinkie(instyle, intext, time) {
 
             await Promise.all([stdout1, stdout2]).then(async function() {
                 const { stdout3, stderr3 } = await execFile('convert', args3);
-                if (stderr3) { console.error(stderr3); }
+                if (stderr3) { return }
                 timeEnd('  generating blinkie', time);
             });
             fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-1.png', function(err) {
-                if (err) { return console.error(err); }
+                if (err) { return }
             });
             fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-2.png', function(err) {
-                if (err) { return console.error(err); }
+                if (err) { return }
             });
         }  // end if (styleNumber in styleProps)
 
         else {
-            console.error('error: style not cataloged')
             blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
         }  // end else (styleNumber not in styleProps)
 
     }  // end try
 
     catch (err) {
-        console.error(err);
-        blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
+        blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
     }
 
     return blinkieLink;

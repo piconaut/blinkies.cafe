@@ -4,9 +4,13 @@
 global.prod = (process.env.NODE_ENV === "production") ? true : false;
 
 require('ejs');
+var compression = require('compression');
+var minify = require('express-minify');
 var express = require("express");
 var app = express();
 app.set('view engine', 'ejs');
+app.use(compression());
+app.use(minify());
 const helmet = require("helmet");
 const fs = require("fs");
 const options = global.prod ? {

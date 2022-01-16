@@ -32,9 +32,9 @@ router.get("/blinkieSources.js", function (req, res) {
     res.sendFile(global.appRoot + "/src/client/blinkieSources.js");
 });
 
-router.get('/b/display/:blinkieName', controller.serveDisplayBlinkie);
+router.get('/b/display/:blinkieID', controller.serveDisplayBlinkie);
 
-router.get('/b/:blinkieName', controller.serveBlinkie);
+router.get('/b/:blinkieID', controller.serveBlinkie);
 
 router.get('/favicon.ico', function (req, res) {
     res.sendFile(global.appRoot + "/assets/favicon.ico");

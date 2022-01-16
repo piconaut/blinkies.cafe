@@ -9,16 +9,19 @@ function cleanBlinkieID(str) {
 }
 
 const serveBlinkie = function (req, res) {
-    let path = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
+    let defaultPath = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
     try {
-        const blinkieID = cleanBlinkieID(req.params['blinkieName']);
-        const reqPath = global.appRoot + "/assets/blinkies-output/" + blinkieID;
-        if (fs.existsSync(reqPath)) { path = reqPath; }
+        const blinkieID = cleanBlinkieID(req.params['blinkieID']);
+        var reqPath = global.appRoot + "/assets/blinkies-output/" + blinkieID;
+        fs.access(reqPath, fs.constants.F_OK, (err) => {
+            if (!err) { res.sendFile(reqPath); }
+            else { res.sendFile(defaultPath);}
+        });
     }
     catch {
-        console.error('error: blinkie not found');
+        console.error('error: blinkie not found')
+        res.sendFile(defaultPath);
     }
-    res.sendFile(path);
 }
 
 const serveGallery = function (req, res) {
@@ -32,16 +35,19 @@ const serveStyleList = function (req, res) {
 }
 
 const serveDisplayBlinkie = function (req, res) {
-    let path = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
+    let defaultPath = global.appRoot + "/assets/blinkies-display/blinkiesCafe.gif";
     try {
-        const blinkieID = cleanBlinkieID(req.params['blinkieName']);
-        const reqPath = global.appRoot + "/assets/blinkies-display/" + blinkieID;
-        if (fs.existsSync(reqPath)) { path = reqPath; }
+        const blinkieID = cleanBlinkieID(req.params['blinkieID']);
+        var reqPath = global.appRoot + "/assets/blinkies-display/" + blinkieID;
+        fs.access(reqPath, fs.constants.F_OK, (err) => {
+            if (!err) { res.sendFile(reqPath); }
+            else { res.sendFile(defaultPath);}
+        });
     }
     catch {
         console.error('error: blinkie not found')
+        res.sendFile(defaultPath);
     }
-    res.sendFile(path);
 }
 
 const pourBlinkie = async function (req, res) {

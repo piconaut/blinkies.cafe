@@ -1,10 +1,10 @@
-/*jslint node */
+/* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 
 // Runtime parameters
 const prod = (process.env.NODE_ENV === "production") ? true : false;
 const timeGenBlinkie = false;
 
-let ejs = require('ejs');
+require('ejs');
 var express = require("express");
 var app = express();
 app.set('view engine', 'ejs');
@@ -159,7 +159,7 @@ async function genBlinkie(instyle, intext, time) {
     }
 
     return blinkieLink;
-};
+}
 
 
 
@@ -253,14 +253,14 @@ app.post("/api/pour", async function (req, res) {
     });
 });
 
-app.options("/styleList.json", function(req, res, next){
+app.options("/styleList.json", function(req, res){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   res.sendStatus(200);
 });
 
-app.options("/api/pour", function(req, res, next){
+app.options("/api/pour", function(req, res){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'POST,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');

@@ -191,21 +191,11 @@ app.get("/sources", function (req, res) {
     });
 });
 
-app.get("/sources.txt", function (req, res) {
-    res.sendFile(__dirname + "/views/pages/sources.txt");
-});
-
 app.get("/privacy.txt", function (req, res) {
     res.sendFile(__dirname + "/views/pages/privacy.txt");
 });
 
 app.get("/styleList.json", function (req, res) {
-    res.contentType("application/json");
-    res.set('Access-Control-Allow-Origin','*')
-    res.send(JSON.stringify(styleList));
-});
-
-app.get("/blinkieList.json", function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
     res.send(JSON.stringify(styleList));
@@ -241,20 +231,6 @@ app.get('/favicon.ico', function (req, res) {
     res.sendFile(__dirname + "/assets/favicon.ico");
 });
 
-app.post("/api/blinkiegen", async function (req, res) {
-    const style = req.body.blinkieStyle;
-    const intext = req.body.blinkieText;
-    console.log(req.body);
-
-    res.set('Content-Type', 'application/json');
-    res.set('Access-Control-Allow-Origin','*')
-    genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieLink) {
-        console.log(blinkieLink);
-        console.log();
-        res.end(blinkieLink);
-    });
-});
-
 app.post("/api/pour", async function (req, res) {
     const style = req.body.blinkieStyle;
     const intext = req.body.blinkieText;
@@ -269,23 +245,9 @@ app.post("/api/pour", async function (req, res) {
     });
 });
 
-app.options("/blinkieList.json", function(req, res, next){
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  res.sendStatus(200);
-});
-
 app.options("/styleList.json", function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-  res.sendStatus(200);
-});
-
-app.options("/api/blinkiegen", function(req, res, next){
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   res.sendStatus(200);
 });

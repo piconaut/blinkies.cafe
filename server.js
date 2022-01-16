@@ -1,7 +1,7 @@
 /*jslint node */
 
 // Runtime parameters
-const prod = true;
+const prod = (process.env.NODE_ENV === "production") ? true : false;
 const timeGenBlinkie = false;
 
 let ejs = require('ejs');
@@ -15,7 +15,7 @@ const options = prod ? {
   cert: fs.readFileSync('certs/fullchain2.pem')
 } : {};
 const https = prod ? require("https").createServer(options, app)
-                  : require("http").createServer(app);
+                   : require("http").createServer(app);
 
 app.use(express.json());
 app.use(helmet());

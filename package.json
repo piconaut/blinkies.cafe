@@ -4,7 +4,8 @@
   "description": "blinkies generator web app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node ./server.js"
   },
   "repository": {
     "type": "git",

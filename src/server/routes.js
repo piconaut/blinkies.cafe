@@ -11,7 +11,6 @@ router.get("/about", function (req, res) {
     res.sendFile(global.appRoot + "/views/pages/about.html");
 });
 
-
 router.get("/sitemap.txt", function (req, res) {
     res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
 });
@@ -23,14 +22,6 @@ router.get("/privacy.txt", function (req, res) {
 });
 
 router.get("/styleList.json", controller.serveStyleList);
-
-router.get("/pour.js", function (req, res) {
-    res.sendFile(global.appRoot + "/src/client/pour.js");
-});
-
-router.get("/blinkieSources.js", function (req, res) {
-    res.sendFile(global.appRoot + "/src/client/blinkieSources.js");
-});
 
 router.get('/b/:blinkieID', controller.serveBlinkie);
 
@@ -59,6 +50,7 @@ router.get("/robots.txt", function (req, res) {
 });
 
 router.use('/b/display/', express.static("assets/blinkies-public/display/"))
+router.use(express.static("src/client/"))
 
 router.use(function(req,res){
     res.status(404).sendFile(global.appRoot + "/views/pages/e404.html");

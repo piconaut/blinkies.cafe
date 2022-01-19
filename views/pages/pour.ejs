@@ -32,10 +32,10 @@ h1 {
     margin:0px;
 }
 #blinkieStyle {
-    width:210px;
+    width:160px;
 }
 #blinkieText {
-    width:200px;
+    width:150px;
     overflow:hidden;
     resize:none;
     margin-bottom: -6px;
@@ -69,7 +69,7 @@ h1 {
 <head>
   <title>blinkies maker | generate <%=styleList[defaultStyleKey].name%> blinkies!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='blinkies maker - generate custom <%=styleList[defaultStyleKey].name%> blinkie gifs!'>
+  <meta name='description' content='blinkies maker - generate <%=styleList[defaultStyleKey].name%> blinkies with any text you want!'>
   <link rel="canonical" href="https://blinkies.cafe/pour?s=<%=defaultStyleKey%>">
 </head>
 <body>
@@ -77,7 +77,7 @@ h1 {
 blinkies.cafe
 </div>
 <div id='navbar' class='content'>
-        <a href='/'>gallery</a> | <a href='/about'>about</a><br>
+        <a href='/'>gallery</a> | <a href='/sources'>sources</a><br>
 </div><hr>
 <div class='content'>
 <h1><%=styleList[defaultStyleKey].name%> blinkies generator</h1>
@@ -94,7 +94,7 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
         }
     }
     %>
-</select>
+</select>&nbsp;(<a href='/'>gallery</a>)
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>
@@ -102,7 +102,7 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
 <p id='blinkieLinkHolder'><br><br></p>
 </div>
 <div id='footer' class='content'>
-    <a href='/sources'>gif & font sources</a>.<br>(c) blinkies.cafe.<br>blinkies are CC0.<br>by amy fare &#60;3
+    (c) blinkies.cafe.<br>original blinkies CC0.<br>by amy fare &#60;3
 </div>
 </body>
 </html>

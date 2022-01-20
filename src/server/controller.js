@@ -1,8 +1,10 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const fs = require("fs");
 const pour = require('./pour.js')
-const data = require('./data.js')
+const blinkieData = require('./blinkieData.js')
 const timeGenBlinkie = false;
+
+const pourBaseURL = 'https://blinkies.cafe/pour?s=';
 
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
@@ -24,13 +26,13 @@ const serveBlinkie = function (req, res) {
 }
 
 const serveGallery = function (req, res) {
-    res.render('pages/gallery.ejs', { styleList: data.styleList });
+    res.render('pages/gallery.ejs', { styleList: blinkieData.styleList });
 }
 
 const serveStyleList = function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
-    res.send(JSON.stringify(data.styleList));
+    res.send(JSON.stringify(blinkieData.styleList));
 }
 
 const pourBlinkie = async function (req, res) {
@@ -45,17 +47,36 @@ const pourBlinkie = async function (req, res) {
 }
 
 const servePour = function (req, res) {
-    let defaultStyleIndex = parseInt(req.query.s) in data.styleList ? parseInt(req.query.s) : 1;
+    let defaultStyleIndex = parseInt(req.query.s) in blinkieData.styleList ? parseInt(req.query.s) : 1;
     res.render('pages/pour.ejs', {
         defaultStyleKey: defaultStyleIndex,
-        styleList: data.styleList
+        styleList: blinkieData.styleList
     });
+}
+
+const serveSitemap = function (req, res) {
+    res.contentType("text/plain");
+    try {
+        fs.readFile(global.appRoot + '/views/pages/sitemap.txt', 'utf8' , (err, sitemap) => {
+            if (err) {
+                res.send(sitemap);
+                return
+            }
+            Object.keys(blinkieData.styleList).forEach(function(key) {
+                sitemap += pourBaseURL + key.toString() + '\n';
+            });
+            res.send(sitemap);
+        })
+    }
+    catch {
+        res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
+    }
 }
 
 const serveSources = function (req, res) {
     res.render('pages/sources.ejs', {
-        sourceList: data.sourceList,
-        fontList: data.fontList
+        sourceList: blinkieData.sourceList,
+        fontList: blinkieData.fontList
     });
 }
 
@@ -63,6 +84,7 @@ const serveSources = function (req, res) {
 module.exports = {
     serveBlinkie,
     serveGallery,
+    serveSitemap,
     serveStyleList,
     serveSources,
     pourBlinkie,

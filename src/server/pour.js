@@ -1,7 +1,7 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const fs = require("fs");
 const util = require('util');
-const data = require('./data.js')
+const blinkieData = require('./blinkieData.js')
 const execFile = util.promisify(require('child_process').execFile);
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
@@ -33,19 +33,19 @@ async function genBlinkie(instyle, intext, time) {
 
     try {
         const styleNumber = parseInt(instyle);
-        if (styleNumber in data.styleProps) {
+        if (styleNumber in blinkieData.styleProps) {
             timeStart('  generating blinkie', time);
-            const id = data.styleProps[styleNumber].id
-            const colour1 = data.styleProps[styleNumber].colour1;
-            const colour2 = data.styleProps[styleNumber].colour2;
-            const font = data.styleProps[styleNumber].font;
-            const fontsize = data.styleProps[styleNumber].fontsize;
-            const x = data.styleProps[styleNumber].x;
-            const y = data.styleProps[styleNumber].y;
+            const id = blinkieData.styleProps[styleNumber].id
+            const colour1 = blinkieData.styleProps[styleNumber].colour1;
+            const colour2 = blinkieData.styleProps[styleNumber].colour2;
+            const font = blinkieData.styleProps[styleNumber].font;
+            const fontsize = blinkieData.styleProps[styleNumber].fontsize;
+            const x = blinkieData.styleProps[styleNumber].x;
+            const y = blinkieData.styleProps[styleNumber].y;
 
             let cleantext = addSlashes(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
-                cleantext = addSlashes(data.styleProps[styleNumber].name);
+                cleantext = addSlashes(blinkieData.styleProps[styleNumber].name);
             }
 
             const blinkieID = makeid(2);

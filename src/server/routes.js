@@ -37,11 +37,9 @@ router.get('/favicon.ico', function (req, res) {
 });
 
 // raw text
+router.use('/sitemap.txt', controller.serveSitemap);
 router.get("/privacy.txt", function (req, res) {
     res.sendFile(global.appRoot + "/views/pages/privacy.txt");
-});
-router.get("/sitemap.txt", function (req, res) {
-    res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
 });
 router.get("/robots.txt", function (req, res) {
     res.sendFile(global.appRoot + "/robots.txt");

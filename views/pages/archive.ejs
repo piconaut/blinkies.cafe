@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<style>
+body {
+    font-family: "Consolas", "Hack", "Liberation Mono", monospace;
+    background-color:#b28ce6;
+    line-height: 1.15;
+    font-size: 10pt;
+    overflow-y: scroll;                          /* show vertical scrollbar */
+}
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4b197c;
+  border-radius: 20px;
+}
+p,ul {
+    margin:0px;
+}
+hr {
+    width:325px;
+}
+h1 {
+    text-align: center;
+    margin: 0px;
+    font-size: 12pt;
+}
+table, tbody, td, th {
+  border: 0px;
+  border-spacing: 0px;
+  padding: 0px;
+  line-height: 1.0
+}
+td {
+    height: 22.5px;
+}
+tr {
+    width: 500px;
+}
+.content {
+    background-color:#c9b3e6;
+    margin: 18px auto 0px auto;
+    padding: 4px;
+    text-align:left;
+    width:95%;
+    max-width: 640px;
+}
+.blinkieTableBlock {
+    line-height: 22.5px;
+}
+.tableWrapper {
+    overflow-x: scroll;                       /* show horizontal scrollbar */
+}
+#banner, #navbar {
+    width:240px;
+    text-align:center;
+    font-weight:bold
+}
+#banner {
+  margin-top:18px;
+  font-size: 16pt;
+}
+#blinkieTable {
+      width: 500px;
+}
+#fontTable {
+      width: 400px;
+}
+#footer {
+  font-size: 8pt;
+}
+#navbar {
+    font-size:12pt;
+    margin-top:6px;
+}
+</style>
+<html lang="en">
+<head>
+  <title>blinkies maker | archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='description' content='blinkies maker archive - original blinkie gifs and links to sources'>
+  <link rel="canonical" href="https://blinkies.cafe/archive">
+</head>
+<body>
+<div id='banner' class='content'>
+blinkies.cafe
+</div>
+<div id='navbar' class='content'>
+        <a href='/'>gallery</a> | archive<br>
+</div><hr>
+<div class='content'><h1>blinkies archive</h1>
+</div>
+<div id='sourceList' class='content blinkieTableBlock'>
+an archive of the original blinkies used by the <a href='/'>blinkies maker</a>, with links to their sources.<br><br>
+
+<b>gif sources<br>
+===========<br></b>
+some blinkies are original (i made them from scratch). some are existing gifs that i've programmed customizability for. in that case usually the original author is unknown, so i link where i found the gif.
+<br><br>
+<div class='tableWrapper'>
+<table id='blinkieTable'>
+    <tr>
+        <th>blinkie</th>
+        <th>source</th>
+        <th>original</th>
+    <tr>
+        <td>-------</td>
+        <td>------</td>
+        <td>--------</td>
+    <%
+        for (const [key, value] of Object.entries(sourceList)) {
+            %><tr>
+                <td><%-value.name + '&nbsp;&nbsp;'%></td>
+                <td><%
+                    if (value.sourceURL) {
+                        %><a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-value.sourceName%></a>&nbsp;&nbsp;</td>
+                        <td><img src="/b/display/archive/<%=value.id%>.gif" alt="<%=value.name%>" class="blinkie"></td><%
+
+                    }
+                    else {
+                        %><%=value.sourceName%><%
+                    }
+            %></tr><%
+        }
+    %>
+<tr>
+</table>
+</div>
+</div>
+<div id='fontList' class='content blinkieTableBlock'>
+<b>font sources<br>
+============<br><br></b>
+<div class='tableWrapper'>
+<table id='fontTable'>
+    <tr>
+        <th>font</th>
+        <th>creator</th>
+    <tr>
+        <td>----</td>
+        <td>-------</td>
+        <%
+            for (const [key, value] of Object.entries(fontList)) {
+                %><tr>
+                    <td><%-value.name%></td>
+                    <td>
+                        <%
+                        if (value.sourceURL) {
+                            %><a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%=value.sourceName%></a></td><%
+                        }
+                        else {
+                            %><%=value.sourceName%><%
+                        }
+                %></tr><%
+            }
+        %>
+<tr>
+</table>
+</div>
+</div>
+<div id='footer' class='content'>
+    (c) blinkies.cafe.<br>original blinkies CC0.<br>by amy fare &#60;3
+</div>
+</body>
+</html>

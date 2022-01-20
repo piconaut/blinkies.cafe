@@ -73,8 +73,8 @@ const serveSitemap = function (req, res) {
     }
 }
 
-const serveSources = function (req, res) {
-    res.render('pages/sources.ejs', {
+const serveArchive = function (req, res) {
+    res.render('pages/archive.ejs', {
         sourceList: blinkieData.sourceList,
         fontList: blinkieData.fontList
     });
@@ -86,7 +86,7 @@ module.exports = {
     serveGallery,
     serveSitemap,
     serveStyleList,
-    serveSources,
+    serveArchive,
     pourBlinkie,
     servePour
 }

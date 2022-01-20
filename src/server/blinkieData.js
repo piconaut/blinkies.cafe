@@ -8,14 +8,14 @@ const styleProps = {
     8:  {id:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     9:  {id:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     10: {id:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
-    2: {id:"0002-mushroom", name:"mushroom boy", colour1:"#762700", colour2:"#762700", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
+    2:  {id:"0002-mushroom", name:"mushroom boy", colour1:"#762700", colour2:"#762700", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
 };
 
 let styleList = {};
 let sourceList = {};
 for (const [key, value] of Object.entries(styleProps)) {
   styleList[key] = { id: value.id, name: value.name };
-  sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+  sourceList[key] = { id: value.id, name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
 }
 
 const fontList = {

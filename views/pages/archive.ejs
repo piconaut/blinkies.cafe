@@ -123,7 +123,7 @@ the archived copies live here, with links to their sources and generator pages. 
             %><tr>
                 <td><img src="/b/display/archive/<%=value.id%>.gif" alt="<%=value.name%>" class="blinkie"></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-value.sourceName%></a></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://blinkies.cafe/pour?s=<%-%key.toString()%>" target="_blank" rel="noopener"><%-value.name%></a></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'https://blinkies.cafe/pour?s=' + key.toString()%>" target="_blank" rel="noopener"><%-value.name%></a></td>
             %></tr><%
         }
     %>

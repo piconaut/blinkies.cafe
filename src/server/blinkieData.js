@@ -15,7 +15,9 @@ let styleList = {};
 let sourceList = {};
 for (const [key, value] of Object.entries(styleProps)) {
   styleList[key] = { id: value.id, name: value.name };
-  sourceList[key] = { id: value.id, name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+  if (value.sourceURL) {
+    sourceList[key] = { id: value.id, name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+  }
 }
 
 const fontList = {

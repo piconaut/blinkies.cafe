@@ -8,7 +8,7 @@ const styleProps = {
     8:  {id:"0008-pink", name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     9:  {id:"0009-gradient-pink", name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     10: {id:"0010-blue", name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
-    2:  {id:"0002-mushroom", name:"mushroom boy", colour1:"#cc3300", colour2:"#cc3300", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
+    2:  {id:"0002-mushroom", name:"mushroom boy", colour1:"#8c2000", colour2:"#8c2000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}
 };
 
 let styleList = {};

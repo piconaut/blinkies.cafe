@@ -26,6 +26,10 @@ h1 {
     margin: 0px;
     font-size: 12pt;
 }
+.blinkie {
+    width:  150px;
+    height: 20px;
+}
 .content {
     background-color:#c9b3e6;
     margin: 18px auto 0px auto;
@@ -107,7 +111,7 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>
-<img id='blinkieGIF' src='/b/display/<%=styleList[defaultStyleKey].id%>.gif' alt='generated blinkie'><br>
+<img class='blinkie' src='/b/display/<%=styleList[defaultStyleKey].id%>.gif' alt='generated blinkie'><br>
 <p id='blinkieLinkHolder'><br><br></p>
 </div>
 <div id='footer' class='content'>

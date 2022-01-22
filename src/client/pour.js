@@ -25,7 +25,6 @@ let submit = function (event) {
     let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
 
     postBlinkie(blinkieText, blinkieStyle).then( function(blinkieURL) {
-        console.log(blinkieURL)
         blinkie.src = blinkieURL;
         blinkieLinkHolder.innerHTML = 'blinkie link: <br>';
         let blinkieLink = document.createElement('a');

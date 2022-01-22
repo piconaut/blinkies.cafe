@@ -3,6 +3,7 @@
 // Runtime parameters
 global.prod = (process.env.NODE_ENV === "production") ? true : false;
 
+// Requires
 require('ejs');
 var compression = require('compression');
 var minify = require('express-minify');

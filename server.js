@@ -23,7 +23,7 @@ const https = global.prod ? require("https").createServer(options, app)
 
 app.set('view engine', 'ejs');
 app.use(compression());
-app.use(minify());
+if (global.prod) { app.use(minify()); }
 app.use(express.json());
 app.use(helmet());
 app.use('/', router);

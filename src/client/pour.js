@@ -19,13 +19,14 @@ function enterSubmit(event){
 
 let submit = function (event) {
     event.preventDefault();
-    let blinkieGIF = document.getElementById("blinkieGIF");
+    let blinkie = document.getElementById("freshBlinkie");
     let blinkieText = document.getElementById("blinkieText").value;
     let blinkieStyle = document.getElementById("blinkieStyle").value;
     let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
 
     postBlinkie(blinkieText, blinkieStyle).then( function(blinkieURL) {
-        blinkieGIF.src = blinkieURL;
+        console.log(blinkieURL)
+        blinkie.src = blinkieURL;
         blinkieLinkHolder.innerHTML = 'blinkie link: <br>';
         let blinkieLink = document.createElement('a');
         blinkieLink.innerHTML = blinkieURL.split('//')[1];

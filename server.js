@@ -5,15 +5,15 @@ global.prod = (process.env.NODE_ENV === "production") ? true : false;
 
 // Requires
 require('ejs');
+var express = require("express");
+var app = express(); 
 var compression = require('compression');
 var minify = require('express-minify');
-var express = require("express");
-var app = express();
-app.set('view engine', 'ejs');
-app.use(compression());
-app.use(minify());
+var path = require('path');
 const helmet = require("helmet");
 const fs = require("fs");
+const router = require('./src/server/routes.js');
+
 const options = global.prod ? {
   key: fs.readFileSync('certs/privkey2.pem'),
   cert: fs.readFileSync('certs/fullchain2.pem')
@@ -21,13 +21,13 @@ const options = global.prod ? {
 const https = global.prod ? require("https").createServer(options, app)
                    : require("http").createServer(app);
 
-const router = require('./src/server/routes.js')
-
+app.set('view engine', 'ejs');
+app.use(compression());
+app.use(minify());
 app.use(express.json());
 app.use(helmet());
 app.use('/', router);
 
-var path = require('path');
 global.appRoot = path.resolve(__dirname);
 
 https.listen(8080, function () {
@@ -36,7 +36,7 @@ https.listen(8080, function () {
 
 if (global.prod) {
     // Redirect from http port 80 to https
-    var http  = require("http")
+    var http  = require("http");
     http.createServer(function (req, res) {
         res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
         res.end();

@@ -91,7 +91,7 @@ blinkies.cafe
 
     <%
     for (const [key, value] of Object.entries(styleList)) {
-        %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=value.id%>.gif" alt="<%=value.name%>" class="blinkie"></a><%
+        %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=key%>.gif" alt="<%=value.name%>" class="blinkie"></a><%
     }
     %>
 

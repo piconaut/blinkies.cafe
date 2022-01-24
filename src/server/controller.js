@@ -47,7 +47,7 @@ const pourBlinkie = async function (req, res) {
 }
 
 const servePour = function (req, res) {
-    let defaultStyleIndex = parseInt(req.query.s) in blinkieData.styleList ? parseInt(req.query.s) : 1;
+    let defaultStyleIndex = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '0007-chocolate';
     res.render('pages/pour.ejs', {
         defaultStyleKey: defaultStyleIndex,
         styleList: blinkieData.styleList

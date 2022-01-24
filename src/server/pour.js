@@ -32,20 +32,20 @@ async function genBlinkie(instyle, intext, time) {
     let blinkieLink = ''
 
     try {
-        const styleNumber = parseInt(instyle);
-        if (styleNumber in blinkieData.styleProps) {
+        const styleID = String(instyle);
+        if (styleID in blinkieData.styleProps) {
             timeStart('  generating blinkie', time);
-            const id = blinkieData.styleProps[styleNumber].id
-            const colour1 = blinkieData.styleProps[styleNumber].colour1;
-            const colour2 = blinkieData.styleProps[styleNumber].colour2;
-            const font = blinkieData.styleProps[styleNumber].font;
-            const fontsize = blinkieData.styleProps[styleNumber].fontsize;
-            const x = blinkieData.styleProps[styleNumber].x;
-            const y = blinkieData.styleProps[styleNumber].y;
+            const id = styleID
+            const colour1 = blinkieData.styleProps[styleID].colour1;
+            const colour2 = blinkieData.styleProps[styleID].colour2;
+            const font = blinkieData.styleProps[styleID].font;
+            const fontsize = blinkieData.styleProps[styleID].fontsize;
+            const x = blinkieData.styleProps[styleID].x;
+            const y = blinkieData.styleProps[styleID].y;
 
             let cleantext = addSlashes(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
-                cleantext = addSlashes(blinkieData.styleProps[styleNumber].name);
+                cleantext = addSlashes(blinkieData.styleProps[styleID].name);
             }
 
             const blinkieID = makeid(2);
@@ -95,11 +95,11 @@ async function genBlinkie(instyle, intext, time) {
             fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-2.png', function(err) {
                 if (err) { return }
             });
-        }  // end if (styleNumber in styleProps)
+        }  // end if (styleID in styleProps)
 
         else {
             blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
-        }  // end else (styleNumber not in styleProps)
+        }  // end else (styleID not in styleProps)
 
     }  // end try
 

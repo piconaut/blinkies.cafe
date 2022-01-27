@@ -12,19 +12,19 @@ fi
 
 if [[ $* == *-b* ]]; then
     rm assets/blinkies-public/blinkiesCafe-*gif
-    sudo docker build . -t piconaut/blinkies-cafe
+    sudo docker build . -t piconaut/blinkies.cafe
 fi
 
 if [[ $* == *--test* ]]; then
     sudo docker kill $(sudo docker ps -q)
-    sudo docker run -p 8080:8080 -d piconaut/blinkies-cafe:latest
+    sudo docker run -p 8080:8080 -d piconaut/blinkies.cafe:latest
 fi
 
 # mount certs:
 # -v /host/path/to/certs:container/path/to/certs:ro
 if [[ $* == *--run* ]]; then
     sudo docker kill $(sudo docker ps -q)
-    sudo docker run -p 443:8080 -p 80:3000 -d piconaut/blinkies-cafe:latest
+    sudo docker run -p 443:8080 -p 80:3000 -d piconaut/blinkies.cafe:latest
 fi
 
 if [[ $* == *--pull* ]]; then
@@ -32,7 +32,7 @@ if [[ $* == *--pull* ]]; then
 fi
 
 if [[ $* == *--push* ]]; then
-  sudo docker push piconaut/blinkies-cafe:latest
+  sudo docker push piconaut/blinkies.cafe:latest
 fi
 
 if [[ $* == *--prod* ]]; then

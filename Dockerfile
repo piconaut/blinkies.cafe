@@ -1,4 +1,4 @@
-FROM node:17-alpine3.15 AS BUILD_IMAGE
+FROM node:17.4.0-alpine3.15 AS BUILD_IMAGE
 
 ENV NODE_ENV=production
 
@@ -19,7 +19,7 @@ COPY . .
 
 EXPOSE 8080
 
-FROM node:17-alpine3.15
+FROM node:17.4.0-alpine3.15
 RUN apk add --update imagemagick=7.1.0.16-r0
 
 WORKDIR /app

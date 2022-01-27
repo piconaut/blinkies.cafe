@@ -7,7 +7,7 @@ const styleProps = {
     '0011-frog':   {name:"frog friend", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     '0001-saucer':   {name:"crash-landed", colour1:"#ff0000", colour2:"#ff4e4e", font: "Perfect DOS VGA 437", fontsize:"16", x:"-14", y:"-1", sourceName:"me :)"},
     '0012-kiss': {name:"good kisser", colour1:"#feaaaa", colour2:"#feaaaa", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
-    '0006-purple': {name:"simple purple", colour1:"#800080", colour2:"#800080", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
+    '0006-purple': {name:"simple purple", colour1:"#000000", colour2:"#000000", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     '0008-pink': {name:"simple pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     '0009-gradient-pink': {name:"gradient pink", colour1:"#ff40ff", colour2:"#ff40ff", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"},
     '0010-blue': {name:"simple blue", colour1:"#3f3fbf", colour2:"#3f3fbf", font: "monaco", fontsize:"16", x:"0", y:"0", sourceName:"me :)"}

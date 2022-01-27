@@ -6,7 +6,7 @@ global.prod = (process.env.NODE_ENV === "production") ? true : false;
 // Requires
 require('ejs');
 var express = require("express");
-var app = express(); 
+var app = express();
 var compression = require('compression');
 var minify = require('express-minify');
 var path = require('path');
@@ -15,8 +15,8 @@ const fs = require("fs");
 const router = require('./src/server/routes.js');
 
 const options = global.prod ? {
-  key: fs.readFileSync('certs/privkey2.pem'),
-  cert: fs.readFileSync('certs/fullchain2.pem')
+  key: fs.readFileSync('certs/privkey3.pem'),
+  cert: fs.readFileSync('certs/fullchain3.pem')
 } : {};
 const https = global.prod ? require("https").createServer(options, app)
                    : require("http").createServer(app);

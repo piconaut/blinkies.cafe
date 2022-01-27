@@ -28,7 +28,7 @@ if [[ $* == *--run* ]]; then
 fi
 
 if [[ $* == *--pull* ]]; then
-  sudo docker pull piconaut/blinkies-cafe
+  sudo docker pull piconaut/blinkies.cafe
 fi
 
 if [[ $* == *--push* ]]; then

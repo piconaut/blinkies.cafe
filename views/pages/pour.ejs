@@ -20,6 +20,7 @@ button, option, select {
 }
 hr {
     width:325px;
+    margin-top:18px;
 }
 h1 {
     text-align: center;
@@ -97,6 +98,7 @@ blinkies.cafe
 </div>
 <div id='blinkieGenHolder' class='content'>
 <form id='blinkieForm'>
+<a href='/'>&#60; back to gallery</a><br><br>
 text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
 <div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle">
     <option value="<%=defaultStyleKey%>"><%=styleList[defaultStyleKey].name%></option>
@@ -107,7 +109,7 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
         }
     }
     %>
-</select>&nbsp;(<a href='/'>gallery</a>)
+</select>
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>

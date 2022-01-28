@@ -7,7 +7,6 @@ const controller = require('./controller.js')
 router.get("/", controller.serveGallery);
 router.get("/pour", controller.servePour);
 router.get("/archive", controller.serveArchive);
-router.get("/sources", controller.serveArchive);
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);

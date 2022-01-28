@@ -54,25 +54,6 @@ const servePour = function (req, res) {
     });
 }
 
-const serveSitemap = function (req, res) {
-    res.contentType("text/plain");
-    try {
-        fs.readFile(global.appRoot + '/views/pages/sitemap.txt', 'utf8' , (err, sitemap) => {
-            if (err) {
-                res.send(sitemap);
-                return
-            }
-            Object.keys(blinkieData.styleList).forEach(function(key) {
-                sitemap += pourBaseURL + key.toString() + '\n';
-            });
-            res.send(sitemap);
-        })
-    }
-    catch {
-        res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
-    }
-}
-
 const serveArchive = function (req, res) {
     res.render('pages/archive.ejs', {
         sourceList: blinkieData.sourceList,
@@ -84,7 +65,6 @@ const serveArchive = function (req, res) {
 module.exports = {
     serveBlinkie,
     serveGallery,
-    serveSitemap,
     serveStyleList,
     serveArchive,
     pourBlinkie,

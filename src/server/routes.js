@@ -7,6 +7,9 @@ const controller = require('./controller.js')
 router.get("/", controller.serveGallery);
 router.get("/pour", controller.servePour);
 router.get("/archive", controller.serveArchive);
+router.get("/sources", function(req,res){
+    res.redirect(301, '/archive');
+});
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);
@@ -37,7 +40,9 @@ router.get('/favicon.ico', function (req, res) {
 });
 
 // raw text
-router.use('/sitemap.txt', controller.serveSitemap);
+router.use('/sitemap.txt', function (req, res) {
+    res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
+});
 router.get("/privacy.txt", function (req, res) {
     res.sendFile(global.appRoot + "/views/pages/privacy.txt");
 });

@@ -26,12 +26,14 @@ let submit = function (event) {
 
     postBlinkie(blinkieText, blinkieStyle).then( function(blinkieURL) {
         blinkie.src = blinkieURL;
-        blinkieLinkHolder.innerHTML = 'blinkie link: <br>';
+        blinkieLinkHolder.innerHTML = '';
         let blinkieLink = document.createElement('a');
-        blinkieLink.innerHTML = blinkieURL.split('//')[1];
+        blinkieLink.innerHTML = 'download blinkie';
         blinkieLink.href = blinkieURL;
+        blinkieLink.download = blinkieURL.split('/')[4];
         blinkieLink.target = "_blank";
         blinkieLinkHolder.appendChild(blinkieLink);
+        blinkieLinkHolder.innerHTML += '<br>or drag &#38; drop';
     });
 };
 

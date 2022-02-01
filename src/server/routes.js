@@ -10,6 +10,9 @@ router.get("/archive", controller.serveArchive);
 router.get("/sources", function(req,res){
     res.redirect(301, '/archive');
 });
+router.get("/about", function(req,res){
+    res.redirect(301, '/');
+});
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);

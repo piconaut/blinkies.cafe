@@ -1,10 +1,8 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const fs = require("fs");
-const pour = require('./pour.js')
+const blinkiegen = require('./blinkiegen.js')
 const blinkieData = require('./blinkieData.js')
 const timeGenBlinkie = false;
-
-const pourBaseURL = 'https://blinkies.cafe/pour?s=';
 
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
@@ -41,7 +39,7 @@ const pourBlinkie = async function (req, res) {
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
-    pour.genBlinkie(style, intext, timeGenBlinkie).then(function(blinkieLink) {
+    blinkiegen.pour(style, intext, timeGenBlinkie).then(function(blinkieLink) {
         res.end(blinkieLink);
     });
 }

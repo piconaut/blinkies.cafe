@@ -13,17 +13,29 @@ body {
   background-color: #822ed6;
   border-radius: 20px;
 }
+button, option, select {
+  font-family: "Consolas", "Hack", "Liberation Mono", monospace;
+}
 p,ul {
+    font-family:"Segoe UI","Liberation Sans",sans-serif;
+    font-size:12pt;
+    line-height: 1.15;
     margin:0px;
 }
 hr {
     width:325px;
     margin-top:18px;
 }
-h1 {
+h1, h2 {
     text-align: center;
     margin: 0px;
     font-size: 12pt;
+}
+h2 {
+    font-weight:bold;
+}
+li {
+    margin-top: 5px;
 }
 table, tbody, td, th {
   border: 0px;
@@ -42,12 +54,12 @@ tr {
     background-color:#c9b3e6;
     margin: 18px auto 0px auto;
     padding: 4px;
-    text-align:left;
     width:95%;
 }
 .archiveContent {
     line-height: 22.5px;
     max-width: 640px;
+    text-align:left;
 }
 .blinkie {
     width:  150px;
@@ -69,16 +81,43 @@ tr {
   margin-top:18px;
   font-size: 16pt;
 }
+#blinkieLinkHolder, #footer{
+  font-size: 8pt;
+}
+#blinkieLinkHolder {
+    margin:0px;
+}
+#blinkieStyle {
+    width:160px;
+}
+#blinkieText {
+    width:150px;
+    overflow:hidden;
+    resize:none;
+    margin-bottom: -6px;
+    padding-left:4px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-right:4px;
+}
+#freshBlinkie {
+    width:  150px;
+    height: 20px;
+}
 #blinkieTable {
       width: 2px;
 }
 #fontTable {
       width: 2px;
 }
-#footer {
-  font-size: 8pt;
-}
 #navbar {
     font-size:12pt;
     margin-top:6px;
+}
+#submitbtn {
+    font-size:10pt;
+    margin-top: 4px;
+    height:22px;
+    padding-top:0px;
+    padding-bottom:0px;
 }

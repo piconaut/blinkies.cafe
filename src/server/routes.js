@@ -28,8 +28,8 @@ router.options("/api/pour", function(req, res){
 router.post("/api/pour", controller.pourBlinkie);
 
 // static files
-router.use(express.static("static/css/", { maxAge: '365d' }));
-router.use(express.static("static/js/", { maxAge: '7d' }));
+router.use(express.static("static/css/", { maxAge: '1d' }));
+router.use(express.static("static/js/", { maxAge: '1d' }));
 router.use(express.static("static/img/", { maxAge: '365d' }));
 
 // json data

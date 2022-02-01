@@ -1,90 +1,11 @@
 <!DOCTYPE html>
-<style>
-body {
-    background-color:#b28ce6;
-    line-height: 1.15;
-    font-size: 10pt;
-    font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-    overflow-y: scroll;                          /* show vertical scrollbar */
-}
-*::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #822ed6;
-  border-radius: 20px;
-}
-button, option, select {
-  font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-}
-hr {
-    width:325px;
-    margin-top:18px;
-}
-h1 {
-    text-align: center;
-    margin: 0px;
-    font-size: 12pt;
-}
-.content {
-    background-color:#c9b3e6;
-    margin: 18px auto 0px auto;
-    padding: 4px;
-    text-align:left;
-    width:95%;
-    max-width: 500px;
-}
-#banner, #navbar {
-    width:240px;
-    text-align:center;
-    font-weight:bold
-}
-#banner {
-  margin-top:18px;
-  font-size: 16pt;
-}
-#blinkieLinkHolder, #footer{
-  font-size: 8pt;
-}
-#blinkieLinkHolder {
-    margin:0px;
-}
-#blinkieStyle {
-    width:160px;
-}
-#blinkieText {
-    width:150px;
-    overflow:hidden;
-    resize:none;
-    margin-bottom: -6px;
-    padding-left:4px;
-    padding-top:1px;
-    padding-bottom:1px;
-    padding-right:4px;
-}
-#freshBlinkie {
-    width:  150px;
-    height: 20px;
-}
-#navbar {
-    font-size:12pt;
-    margin-top:6px;
-}
-#submitbtn {
-    font-size:10pt;
-    margin-top: 4px;
-    height:22px;
-    padding-top:0px;
-    padding-bottom:0px;
-}
-</style>
 <html lang="en">
 <head>
   <title>blinkies maker | generate <%=styleList[defaultStyleKey].name%> blinkies!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='description' content='blinkies maker - generate <%=styleList[defaultStyleKey].name%> blinkies with any text you want!'>
   <link rel="canonical" href="https://blinkies.cafe/pour">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <div id='banner' class='content'>

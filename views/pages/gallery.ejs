@@ -1,80 +1,11 @@
 <!DOCTYPE html>
-<style>
-body {
-    font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-    background-color:#b28ce6;
-    line-height: 1.15;
-    font-size: 10pt;
-    overflow-y: scroll;                          /* show vertical scrollbar */
-}
-*::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-*::-webkit-scrollbar-thumb {
-  background-color: #822ed6;
-  border-radius: 20px;
-}
-hr {
-    width:325px;
-    margin-top:18px;
-}
-h1, h2 {
-    text-align: center;
-    margin: 0px;
-    font-size: 12pt;
-}
-h2 {
-    font-weight:normal;
-    text-decoration: underline;
-}
-p,ul {
-    font-family:"Segoe UI","Liberation Sans",sans-serif;
-    font-size:12pt;
-    line-height: 1.15;
-    margin:0px;
-}
-li {
-    margin-top: 5px;
-}
-.blinkie {
-    width:  150px;
-    height: 20px;
-    margin: 2px 6px 2px 6px;
-}
-.content {
-    background-color:#c9b3e6;
-    margin:     18px auto 0px auto;
-    padding:    4px;
-    text-align: left;
-    width:      95%;
-    max-width:  500px;
-}
-#banner, #navbar {
-    width:240px;
-    text-align:center;
-    font-weight:bold
-}
-#banner {
-  font-size: 16pt;
-}
-#footer {
-  font-size: 8pt;
-}
-#gallery {
-  text-align:center;
-}
-#navbar {
-    font-size:12pt;
-    margin-top:6px;
-}
-</style>
 <html lang="en">
 <head>
   <title>blinkies maker | generate blinkie gifs with custom text!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='description' content="make your own blinkies! browse blinkie styles and add any text you want. blinkies are tiny gifs; they're great badges for your site, stream, blog, or messages. blinkies were popular decorations in early-2000s Geocities-era personal websites.">
   <link rel="canonical" href="https://blinkies.cafe/">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <div id='banner' class='content'>
@@ -139,16 +70,19 @@ enjoy~
 <div class='content'>
 <h2>planned features</h2><br>
 <ul>
-    <li>add a "scale" option to the blinkie generator, to output 2x, 4x, and 8x scale gifs.</li>
+    <li>sort &#x26; search blinkies in gallery.</li>
+    <li>add a "scale" option to the blinkie generator, to output 2x, 4x, and 8x scale gifs.
         <ul>
             <li>this will solve resolution-related problems including antialiasing and minimum pixel requirements in chat apps. <strike><i>(Big Tech doesn't understand the joy of 150x20px)</i></strike></li>
         </ul>
-    <li>add an "advanced mode" blinkie generator with more customizability:</li>
+    </li>
+    <li>add an "advanced mode" blinkie generator with more customizability:
         <ul>
             <li>choose any text colour.</li>
             <li>generate simple blinkies with any colours.</li>
             <li>choose dimensions: generate shorter and/or wider gifs.</li>
         </ul>
+    </li>
     <li>develop a blinkies twitter bot that posts blinkies hourly. the blinkies could have random styles &#x26; text, and/or use style-based wordlists.</li>
     <li>generate blinkies with 3-frame (&#x26; longer) animations.</li>
     <li>publish blinkie generator bash scripts.</li>

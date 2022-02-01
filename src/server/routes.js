@@ -16,7 +16,7 @@ router.get("/about", function(req,res){
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);
-router.use('/b/display/', express.static("assets/blinkies-public/display/"))
+router.use('/b/display/', express.static("assets/blinkies-public/display/", { maxAge: '365d' }));
 
 // api
 router.options("/api/pour", function(req, res){
@@ -27,8 +27,12 @@ router.options("/api/pour", function(req, res){
 });
 router.post("/api/pour", controller.pourBlinkie);
 
-// client scripts & data
-router.use(express.static("src/client/"))
+// static files
+router.use(express.static("static/css/", { maxAge: '365d' }));
+router.use(express.static("static/js/", { maxAge: '7d' }));
+router.use(express.static("static/img/", { maxAge: '365d' }));
+
+// json data
 router.options("/styleList.json", function(req, res){
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
@@ -36,11 +40,6 @@ router.options("/styleList.json", function(req, res){
   res.sendStatus(200);
 });
 router.get("/styleList.json", controller.serveStyleList);
-
-// favicon
-router.get('/favicon.ico', function (req, res) {
-    res.sendFile(global.appRoot + "/assets/favicon.ico");
-});
 
 // raw text
 router.use('/sitemap.txt', function (req, res) {

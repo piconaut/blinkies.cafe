@@ -69,18 +69,13 @@ tr {
 .content {
     max-width: 500px;
 }
-
-small {
-    font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-    font-size:8pt;
-}
 action {
     color:blue;
     text-decoration: underline;
     cursor:pointer;
 }
 #tiles {
-    margin-top:2px;    
+    margin-top:2px;
 }
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */

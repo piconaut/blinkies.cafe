@@ -19,9 +19,9 @@ blinkies.cafe
 </div>
 <div id='gallery' class='content'>
     click to add custom text to any of these blinkie styles!<br><br>
-    <small>
+    <galleryUI>
         sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action>
-    </small>
+    </galleryUI>
     <center id='tiles'>
         <%
         for (const [key, value] of Object.entries(styleList)) {
@@ -30,11 +30,11 @@ blinkies.cafe
         %>
     </center>
     <center>
-        <small id='pagenav'>
+        <galleryUI id='pagenav'>
             <action id='prevPage' style='visibility:hidden'>&lt;</action>
             <actionLabel id='currPage'> 1 </actionLabel>
             <action id='nextPage' style='visibility:hidden'>&gt;</action>
-        </small>
+        </galleryUI>
     </center>
     <br>
     new blinkies added weekly!

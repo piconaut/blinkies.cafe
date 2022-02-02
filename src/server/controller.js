@@ -24,7 +24,7 @@ const serveBlinkie = function (req, res) {
 }
 
 const serveGallery = function (req, res) {
-    res.render('pages/gallery.ejs', { styleList: blinkieData.styleList });
+    res.render('pages/gallery.ejs', { styleList: blinkieData.stylePage });
 }
 
 const serveStyleList = function (req, res) {

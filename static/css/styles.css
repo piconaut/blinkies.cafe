@@ -69,6 +69,19 @@ tr {
 .content {
     max-width: 500px;
 }
+
+small {
+    font-family: "Consolas", "Hack", "Liberation Mono", monospace;
+    font-size:8pt;
+}
+action {
+    color:blue;
+    text-decoration: underline;
+    cursor:pointer;
+}
+#tiles {
+    margin-top:2px;    
+}
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */
 }
@@ -81,14 +94,11 @@ tr {
   margin-top:18px;
   font-size: 16pt;
 }
-#blinkieLinkHolder, #footer{
-  font-size: 8pt;
-}
-#blinkieLinkHolder {
-    margin:0px;
-}
 #blinkieStyle {
     width:160px;
+}
+#blinkieTable {
+      width: 2px;
 }
 #blinkieText {
     width:150px;
@@ -104,11 +114,11 @@ tr {
     width:  150px;
     height: 20px;
 }
-#blinkieTable {
-      width: 2px;
-}
 #fontTable {
       width: 2px;
+}
+#gallery {
+    text-align:left;
 }
 #navbar {
     font-size:12pt;

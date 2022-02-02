@@ -19,15 +19,25 @@ blinkies.cafe
 </div>
 <div id='gallery' class='content'>
     click to add custom text to any of these blinkie styles!<br><br>
-
-    <%
-    for (const [key, value] of Object.entries(styleList)) {
-        %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></a><%
-    }
-    %>
-
-<br><br>
-new blinkies added weekly!
+    <small>
+        sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action>
+    </small>
+    <center id='tiles'>
+        <%
+        for (const [key, value] of Object.entries(styleList)) {
+            %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></a><%
+        }
+        %>
+    </center>
+    <center>
+        <small id='pagenav'>
+            <action id='prevPage' style='visibility:hidden'>&lt;</action>
+            <actionLabel id='currPage'> 1 </actionLabel>
+            <action id='nextPage' style='visibility:hidden'>&gt;</action>
+        </small>
+    </center>
+    <br>
+    new blinkies added weekly!
 </div>
 <hr>
 <br>
@@ -57,20 +67,21 @@ enjoy~
 <div class='content'>
 <h2>what's new</h2><br>
 <ul>
-    <li><b>2022-02-01:</b> added "Starry Eyes!" blinkie!</li>
-    <li><b>2022-01-29:</b> added "download blinkie" button</li>
-    <li><b>2022-01-28:</b> added gallery view to chrome extension</li>
-    <li><b>2022-01-24:</b> added "good kisser" blinkie!</li>
-    <li><b>2022-01-24:</b> added "frog friend" blinkie!</li>
-    <li><b>2022-01-22:</b> created archive page with archived copies of gifs from the web, and links to their original sources.</li>
-    <li><b>2022-01-18:</b> added "mushroom boy" blinkie!</li>
-    <li><b>2022-01-12:</b> changed homepage to a gallery view of all the blinkie styles.</li>
+    <li>added pages to gallery</li>
+    <li>added "Starry Eyes!" blinkie!</li>
+    <li>added "download blinkie" button</li>
+    <li>added gallery view to chrome extension</li>
+    <li>added "good kisser" blinkie!</li>
+    <li>added "frog friend" blinkie!</li>
+    <li>created archive page with archived copies of gifs from the web, and links to their original sources.</li>
+    <li>added "mushroom boy" blinkie!</li>
+    <li>changed homepage to a gallery view of all the blinkie styles.</li>
 </ul>
 </div>
 <div class='content'>
 <h2>planned features</h2><br>
 <ul>
-    <li>sort &#x26; search blinkies in gallery.</li>
+    <li>search blinkies in gallery.</li>
     <li>add a "scale" option to the blinkie generator, to output 2x, 4x, and 8x scale gifs.
         <ul>
             <li>this will solve resolution-related problems including antialiasing and minimum pixel requirements in chat apps. <strike><i>(Big Tech doesn't understand the joy of 150x20px)</i></strike></li>
@@ -90,13 +101,16 @@ enjoy~
 </div>
 <div class='content'>
 <h2>technical details</h2><br>
-<p>we are proud to pour fresh blinkies <a href='https://xkcd.com/2347/' target="_blank" rel="noopener">using</a> <a href='https://imagemagick.org' target="_blank" rel="noopener">imagemagick</a>. our api &#38; web app is built using <a href='https://nodejs.org/en/' target="_blank" rel="noopener">node.js</a> and <a href='https://expressjs.com/' target="_blank" rel="noopener">express</a>, with <a href='https://ejs.co/' target="_blank" rel="noopener">ejs</a> template engine.
-    it's built as a <a href='https://www.docker.com/' target="_blank" rel="noopener">docker image</a> using <a href='https://alpinelinux.org/' target="_blank" rel="noopener">Alpine Linux</a><br><br>
-blinkies.cafe started development circa 2021. it is not expected to break in y2k. time will tell?
+<p>we pour fresh blinkies <a href='https://xkcd.com/2347/' target="_blank" rel="noopener">using</a> <a href='https://imagemagick.org' target="_blank" rel="noopener">imagemagick</a>. our api &#38; web app is built using <a href='https://nodejs.org/en/' target="_blank" rel="noopener">node.js</a> and <a href='https://expressjs.com/' target="_blank" rel="noopener">express</a>, with <a href='https://ejs.co/' target="_blank" rel="noopener">ejs</a> template engine.
+    it's built as a <a href='https://www.docker.com/' target="_blank" rel="noopener">docker image</a> using <a href='https://alpinelinux.org/' target="_blank" rel="noopener">alpine linux</a>.<br><br>
+    blinkies.cafe started development circa 2021. we are proudly<br>
+    <img src="/b/display/y2k-compliant.gif" alt="Y2K-compliant blinkie" class="blinkie">
 </p>
+
 </div>
-<div id='footer' class='content'>
+<div id='footer' class='content smalltext'>
     (c) blinkies.cafe.<br>original blinkies CC0.<br>by amy fare &#60;3
 </div>
 </body>
 </html>
+<script src='/gallery.js' type='module'></script>

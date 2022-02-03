@@ -54,7 +54,7 @@ router.get("/robots.txt", function (req, res) {
 
 // error codes
 router.use(function(req,res){
-    res.status(404).sendFile(global.appRoot + "/views/pages/e404.html");
+    res.status(404).render('pages/e404.ejs');
 });
 
 module.exports = router;

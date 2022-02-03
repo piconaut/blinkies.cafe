@@ -37,6 +37,9 @@ h2 {
 li {
     margin-top: 5px;
 }
+small {
+    font-size: 8pt;
+}
 table, tbody, td, th {
   border: 0px;
   border-spacing: 0px;
@@ -49,6 +52,11 @@ td {
 }
 tr {
     width: 500px;
+}
+action {
+    color:blue;
+    text-decoration: underline;
+    cursor:pointer;
 }
 .archiveContent, .content {
     background-color:#c9b3e6;
@@ -68,14 +76,6 @@ tr {
 }
 .content {
     max-width: 500px;
-}
-action {
-    color:blue;
-    text-decoration: underline;
-    cursor:pointer;
-}
-#tiles {
-    margin-top:2px;
 }
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */
@@ -105,12 +105,12 @@ action {
     padding-bottom:1px;
     padding-right:4px;
 }
+#fontTable {
+      width: 2px;
+}
 #freshBlinkie {
     width:  150px;
     height: 20px;
-}
-#fontTable {
-      width: 2px;
 }
 #gallery {
     text-align:left;
@@ -125,4 +125,7 @@ action {
     height:22px;
     padding-top:0px;
     padding-bottom:0px;
+}
+#tiles {
+    margin-top:2px;
 }

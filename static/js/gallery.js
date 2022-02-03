@@ -3,7 +3,6 @@
 /*---------------------*/
 /* declares            */
 /*---------------------*/
-let tiles = document.getElementById('tiles');
 const sortNew = document.getElementById("sortNew");
 const sortRandom = document.getElementById("sortRandom");
 const nextPage = document.getElementById("nextPage");

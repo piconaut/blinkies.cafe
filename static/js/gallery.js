@@ -59,18 +59,16 @@ function loadStyles (styleList, styleOrder, page) {
         }
     }
 
-    tiles.innerHTML = '';
+    let i = 0;
     for (let style in stylePage) {
-        const styleID = stylePage[style][0]
-        let blinkieLink = document.createElement('a');
+        const styleID = stylePage[style][0];
+        let blinkieLink = document.getElementById('blinkieLink'+i)
+        let blinkie = document.getElementById('blinkie'+i)
+
         blinkieLink.href = '/pour?s=' + styleID;
-
-        let blinkie = document.createElement('img');
         blinkie.src = '/b/display/' + styleID + '.gif';
-        blinkie.className = 'blinkie';
-
-        blinkieLink.appendChild(blinkie);
-        tiles.appendChild(blinkieLink);
+        blinkie.alt = styleList[styleID].name + ' blinkie';
+	i ++;
     }
 
     updatePageNumber();

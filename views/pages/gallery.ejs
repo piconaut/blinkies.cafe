@@ -15,7 +15,7 @@ blinkies.cafe
         gallery | <a href='/archive'>archive</a><br>
 </div><hr>
 <div class='content'>
-    <h1>blinkie maker | build a blinkie!</h1>
+    <h1>blinkie maker: build a blinkie!</h1>
 </div>
 <div id='gallery' class='content'>
     click to add custom text to any of these blinkie styles!<br><br>
@@ -24,8 +24,10 @@ blinkies.cafe
     </galleryUI>
     <center id='tiles'>
         <%
+        let i=0;
         for (const [key, value] of Object.entries(styleList)) {
-            %><a href="/pour?s=<%=key%>"><img src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></a><%
+            %><a id='blinkieLink<%=i%>' href="/pour?s=<%=key%>"><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></a><%
+	    i++;
         }
         %>
     </center>
@@ -47,7 +49,7 @@ blinkies.cafe
 pretend it's 1999! customize retro blinkie graphics!<br><br>
 blinkies are tiny, 150x20-pixel animated gifs used as badges to share interests and tell jokes! they were popular decorations in early-2000s Geocities-era personal websites.
 <br><br>
-<b>blinkies.cafe</b> is a <b>blinkie maker</b> that generates custom blinkies, choosing from a variety of styles and adding whatever text you like!
+<b>blinkies.cafe</b> is a blinkie generator you can use to make your own blinkie gifs, choosing from a variety of styles and adding whatever text you like!
 <br><br>
 blinkies are great for:
 </p>

@@ -10,6 +10,7 @@ const prevPage = document.getElementById("prevPage");
 const pageNum = document.getElementById("currPage")
 let styleOrder = [];
 let currentPage = 1;
+let currentSort = 'new';
 const pageSize = 20;
 
 /*---------------------*/
@@ -22,6 +23,7 @@ function getStyleList() {
 }
 
 function sortStyles(styleList, sortval) {
+    currentSort = 'new';
     let styleArray = []
     for (var style in styleList){
         styleArray.push([style,styleList[style][sortval]])
@@ -34,6 +36,7 @@ function sortStyles(styleList, sortval) {
 }
 
 function shuffleStyles(styleList) {
+    currentSort = 'random';
     let styleArray = []
     for (var style in styleList){
         styleArray.push([style])
@@ -51,6 +54,7 @@ function shuffleStyles(styleList) {
 function loadStyles (styleList, styleOrder, page) {
     const indexStart = pageSize*(page-1);
     const indexEnd   = indexStart + pageSize;
+
     let stylePage = [];
     for (let i=indexStart; i<indexEnd; i++) {
         if (styleOrder[i]) {
@@ -58,16 +62,20 @@ function loadStyles (styleList, styleOrder, page) {
         }
     }
 
-    let i = 0;
-    for (let style in stylePage) {
-        const styleID = stylePage[style][0];
+    const numBlinkies = stylePage.length;
+    for (let i=0; i<pageSize; i++) {
         let blinkieLink = document.getElementById('blinkieLink'+i)
         let blinkie = document.getElementById('blinkie'+i)
-
-        blinkieLink.href = '/pour?s=' + styleID;
-        blinkie.src = '/b/display/' + styleID + '.gif';
-        blinkie.alt = styleList[styleID].name + ' blinkie';
-	i ++;
+        if (i < numBlinkies) {
+            const styleID = stylePage[i][0];
+            blinkieLink.href = '/pour?s=' + styleID;
+            blinkie.src = '/b/display/' + styleID + '.gif';
+            blinkie.alt = styleList[styleID].name + ' blinkie';
+            blinkieLink.style.display = 'inline';
+        }
+        else {
+            blinkieLink.style.display = 'none';
+        }
     }
 
     updatePageNumber();
@@ -85,8 +93,10 @@ getStyleList().then(function(styleList){
     styleOrder = sortStyles(styleList,'bday');
     updatePageNumber();
     sortNew.onclick = function() {
-        styleOrder = sortStyles(styleList,'bday');
-        loadStyles(styleList, styleOrder, 1);
+        if (currentSort != 'new') {
+            styleOrder = sortStyles(styleList,'bday');
+            loadStyles(styleList, styleOrder, 1);
+        }
     }
     sortRandom.onclick = function() {
         styleOrder = shuffleStyles(styleList);

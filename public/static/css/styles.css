@@ -16,6 +16,9 @@ body {
 button, option, select {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
+select,button {
+    margin-top:4px;
+}
 p,ul {
     font-family:"Segoe UI","Liberation Sans",sans-serif;
     font-size:12pt;
@@ -45,9 +48,6 @@ img {
 }
 li {
     margin-top: 5px;
-}
-select, button {
-    margin-top:4px;
 }
 select {
     width:175px;

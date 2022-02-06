@@ -8,10 +8,12 @@ const sortRandom = document.getElementById("sortRandom");
 const nextPage = document.getElementById("nextPage");
 const prevPage = document.getElementById("prevPage");
 const pageNum = document.getElementById("currPage")
+let blinkieTiles = document.querySelectorAll(".blinkieTile");
+let blinkieLinkTiles = document.querySelectorAll(".blinkieLinkTile");
+const pageSize = blinkieLinkTiles.length;
 let styleOrder = [];
 let currentPage = 1;
 let currentSort = 'new';
-const pageSize = 20;
 
 /*---------------------*/
 /* GET & POST requests */
@@ -23,7 +25,7 @@ function getStyleList() {
 }
 
 function sortStyles(styleList, sortval) {
-    currentSort = 'new';
+    currentSort = sortval;
     let styleArray = []
     for (var style in styleList){
         styleArray.push([style,styleList[style][sortval]])
@@ -62,19 +64,16 @@ function loadStyles (styleList, styleOrder, page) {
         }
     }
 
-    const numBlinkies = stylePage.length;
     for (let i=0; i<pageSize; i++) {
-        let blinkieLink = document.getElementById('blinkieLink'+i)
-        let blinkie = document.getElementById('blinkie'+i)
-        if (i < numBlinkies) {
+        if (i < stylePage.length) {
             const styleID = stylePage[i][0];
-            blinkieLink.href = '/pour?s=' + styleID;
-            blinkie.src = '/b/display/' + styleID + '.gif';
-            blinkie.alt = styleList[styleID].name + ' blinkie';
-            blinkieLink.style.display = 'inline';
+            blinkieLinkTiles[i].href = '/pour?s=' + styleID;
+            blinkieTiles[i].src = '/b/display/' + styleID + '.gif';
+            blinkieTiles[i].alt = styleList[styleID].name + ' blinkie';
+            blinkieLinkTiles[i].style.display = 'inline';
         }
         else {
-            blinkieLink.style.display = 'none';
+            blinkieLinkTiles[i].style.display = 'none';
         }
     }
 
@@ -86,14 +85,14 @@ function updatePageNumber() {
     const indexEnd   = indexStart + pageSize;
     pageNum.innerText = currentPage;
     prevPage.style.visibility = currentPage < 2 ? 'hidden' : 'visible';
-    nextPage.style.visibility = indexEnd > styleOrder.length ? 'hidden' : 'visible';
+    nextPage.style.visibility = indexEnd >= styleOrder.length ? 'hidden' : 'visible';
 }
 
 getStyleList().then(function(styleList){
     styleOrder = sortStyles(styleList,'bday');
     updatePageNumber();
     sortNew.onclick = function() {
-        if (currentSort != 'new') {
+        if (currentSort != 'bday') {
             styleOrder = sortStyles(styleList,'bday');
             loadStyles(styleList, styleOrder, 1);
         }

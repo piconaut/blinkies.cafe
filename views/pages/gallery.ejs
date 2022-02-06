@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>blinkies maker | generate blinkie gifs with custom text!</title>
+  <title>blinkie maker | generate blinkie gifs with custom text!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='description' content="make your own blinkies! browse blinkie styles and add any text you want. blinkies are tiny gifs; they're great badges for your site, stream, blog, or messages. blinkies were popular decorations in early-2000s Geocities-era personal websites.">
   <link rel="canonical" href="https://blinkies.cafe/">
@@ -26,7 +26,7 @@ blinkies.cafe
         <%
         let i=0;
         for (const [key, value] of Object.entries(styleList)) {
-            %><a id='blinkieLink<%=i%>' href="/pour?s=<%=key%>"><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></a><%
+            %><a id='blinkieLink<%=i%>' href="/pour?s=<%=key%>" class='blinkieLinkTile'><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"></a><%
 	    i++;
         }
         %>

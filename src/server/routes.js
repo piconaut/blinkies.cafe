@@ -16,7 +16,7 @@ router.get("/about", function(req,res){
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);
-router.use('/b/display/', express.static("assets/blinkies-public/display/", { maxAge: '365d' }));
+router.use('/b/display/', express.static("public/blinkies-public/display/", { maxAge: '365d' }));
 
 // api
 router.options("/api/pour", function(req, res){
@@ -28,9 +28,9 @@ router.options("/api/pour", function(req, res){
 router.post("/api/pour", controller.pourBlinkie);
 
 // static files
-router.use(express.static("static/css/", { maxAge: '1d' }));
-router.use(express.static("static/js/", { maxAge: '1d' }));
-router.use(express.static("static/img/", { maxAge: '365d' }));
+router.use(express.static("public/static/css/", { maxAge: '1d' }));
+router.use(express.static("public/static/js/", { maxAge: '1d' }));
+router.use(express.static("public/static/img/", { maxAge: '365d' }));
 
 // json data
 router.options("/styleList.json", function(req, res){

@@ -11,7 +11,8 @@ if [[ $* == *--rmi* ]]; then
 fi
 
 if [[ $* == *-b* ]]; then
-    rm assets/blinkies-public/blinkiesCafe-*gif
+    rm public/blinkies-public/blinkiesCafe-*gif
+    rm assets/blinkies-frames/*gif
     sudo docker build . -t piconaut/blinkies.cafe
 fi
 

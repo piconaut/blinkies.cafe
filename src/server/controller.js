@@ -9,10 +9,10 @@ function cleanBlinkieID(str) {
 }
 
 const serveBlinkie = function (req, res) {
-    let defaultPath = global.appRoot + "/assets/blinkies-public/display/blinkiesCafe.gif";
+    let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {
         const blinkieID = cleanBlinkieID(req.params['blinkieID']);
-        var reqPath = global.appRoot + "/assets/blinkies-public/" + blinkieID;
+        var reqPath = global.appRoot + "/public/blinkies-public/" + blinkieID;
         fs.access(reqPath, fs.constants.F_OK, (err) => {
             if (!err) { res.sendFile(reqPath); }
             else { res.sendFile(defaultPath);}

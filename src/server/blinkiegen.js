@@ -20,25 +20,15 @@ function makeid(length) {
     return result;
 }
 
-function timeStart (label, timeflag) {
-    if (timeflag) { console.time(label); }
-}
-
-function timeEnd (label, timeflag) {
-    if (timeflag) { console.timeEnd(label); }
-}
-
-async function pour(instyle, intext, time) {
+async function pour(instyle, intext) {
     let blinkieLink = ''
 
     try {
         const styleID = String(instyle);
         if (styleID in blinkieData.styleProps) {
-            timeStart('  generating blinkie', time);
-            const id = styleID;
             const frames = blinkieData.styleProps[styleID].frames;
-            const colour1 = blinkieData.styleProps[styleID].colour1;
-            const colour2 = blinkieData.styleProps[styleID].colour2;
+            const colour = blinkieData.styleProps[styleID].colour;
+            const shadow = blinkieData.styleProps[styleID].shadow;
             const font = blinkieData.styleProps[styleID].font;
             const fontsize = blinkieData.styleProps[styleID].fontsize;
             const x = blinkieData.styleProps[styleID].x;
@@ -52,69 +42,52 @@ async function pour(instyle, intext, time) {
             const blinkieID = makeid(2);
             blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
-            const args1 =
-                ['-pointsize',fontsize,
-                 '+antialias',
-                 '-page','+'+x+'+'+y,
-                 '-gravity','Center',
-                 '-family',font,
-                 '-fill',colour1,
-                 '-draw',"text 0,0 '" + cleantext + "'",
-                 global.appRoot + '/assets/blinkies-bg/png/' + id + '-1.png',
-                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-1.png'
-                ]
-            const stdout1 = execFile('convert', args1);
-
-            const args2 =[
-                '-pointsize',fontsize,
-                '+antialias',
-                '-page','+'+x+'+'+y,
-                '-gravity','Center',
-                '-family',font,
-                '-fill',colour2,
-                '-draw',"text 0,0 '" + cleantext + "'",
-                global.appRoot + '/assets/blinkies-bg/png/' + id + '-2.png',
-                global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-2.png'
-            ]
-            const stdout2 = execFile('convert', args2);
-
-            if (frames > 2) {
-                const colour3 = blinkieData.styleProps[styleID].colour3;
-
-                const args3 =[
+            let stdout = [];
+            let argsArray = [];
+            for (let i=0; i<frames; i++) {
+                argsArray[i] = [
                     '-pointsize',fontsize,
                     '+antialias',
-                    '-page','+'+x+'+'+y,
                     '-gravity','Center',
                     '-family',font,
-                    '-fill',colour3,
-                    '-draw',"text 0,0 '" + cleantext + "'",
-                    global.appRoot + '/assets/blinkies-bg/png/' + id + '-3.png',
-                    global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-3.png'
                 ]
-                const stdout3 = execFile('convert', args3);
+                if (shadow) {
+                    argsArray[i].push('-page')
+                    argsArray[i].push('+'+(x-1)+'+'+y,)
+                    argsArray[i].push('-fill');
+                    argsArray[i].push(shadow[i]);
+                    argsArray[i].push('-draw',"text 0,0 '" + cleantext + "'")
+                }
+                argsArray[i].push('-page')
+                argsArray[i].push('+'+x+'+'+y,)
+                argsArray[i].push('-fill');
+                argsArray[i].push(colour[i]);
+                argsArray[i].push('-draw',"text 0,0 '" + cleantext + "'")
+                argsArray[i].push(global.appRoot + '/assets/blinkies-bg/png/' + styleID + '-' + i + '.png');
+                argsArray[i].push(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png')
+                stdout[i] = execFile('convert', argsArray[i]);
             }
 
-            const args_gifconv = [
+            let args_gif = [
                 '-page','+0+0',
                 '-delay','10',
                 '-loop','0',
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
-                global.appRoot + '/assets/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
+                global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
             ]
 
 
-            await Promise.all([stdout1, stdout2]).then(async function() {
-                const { stdout3, stderr3 } = await execFile('convert', args_gifconv);
-                if (stderr3) { return }
-                timeEnd('  generating blinkie', time);
-            });
-            fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-1.png', function(err) {
-                if (err) { return }
-            });
-            fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-2.png', function(err) {
-                if (err) { return }
-            });
+            await Promise.all(stdout);
+            const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
+
+            if (stderr_gif) { return }
+
+            for (let i=0; i<frames; i++) {
+                fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png', function(err) {
+                    if (err) { return }
+                });
+            }
+
         }  // end if (styleID in styleProps)
 
         else {

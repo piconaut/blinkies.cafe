@@ -1,10 +1,11 @@
 const styleProps = {
+    '0014-pride':         {name:"kinda gay tbh...", bday:20220206, frames:4, colour:["#ffffff","#ffffff","#ffffff", "#ffffff"], shadow:["#666666","#666666","#666666", "#666666"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"me :)"},
     '0013-starryeyes':    {name:"Starry Eyes!", bday:20220201, frames:3, colour:["#002984","#002984","#002984"], font: "rainyhearts", fontsize:16, x:-4, y:0, sourceName:"Crazifleebs05", sourceURL:"https://web.archive.org/web/20091027021040/http://geocities.com/crazifleebs05/"},
     '0012-kiss':          {name:"good kisser", bday:20220124, frames:2, colour:["#feaaaa","#feaaaa"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
     '0011-frog':          {name:"frog friend", bday:20220124, frames:2, colour:["#000000","#000000"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"me :)"},
     '0007-chocolate':     {name:"chocolate dreams", bday:20220120, frames:2, colour:["#000000","#000000"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"toloveanangel0", sourceURL:"https://web.archive.org/web/20091027005417/http://www.geocities.com/toloveanangel0/graphics/blinkies/"},
     '0002-mushroom':      {name:"mushroom boy", bday:20220118, frames:2, colour:["#8c2000","#8c2000"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"me :)"},
-    '0003-ghost':         {name:"spooky vibes only", bday:20211215, frames:2, colour:["#e79400","#e77400"], font: "infernalda", fontsize:16, x:-13, y:-1, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
+    '0003-ghost':         {name:"Spooky vibes only!!", bday:20211215, frames:2, colour:["#e79400","#e77400"], font: "infernalda", fontsize:16, x:-13, y:-1, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
     '0004-peachy':        {name:"just peachy", bday:20211214, frames:2, colour:["black","black"], font:"monaco", fontsize:16, x:7, y:0, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
     '0005-citystars':     {name:"city stars", bday:20211214, frames:2, colour:["#ffffff","#ffffff"], font: "04b03", fontsize:8, x:6, y:-1, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
     '0001-saucer':        {name:"crash-landed", bday:20211203, frames:2, colour:["#ff0000","#ff4e4e"], font: "Perfect DOS VGA 437", fontsize:16, x:"-14", y:-1, sourceName:"me :)"},

@@ -21,7 +21,7 @@ blinkies.cafe
 <form id='blinkieForm'>
 <a href='/'>&#60; back to gallery</a><br><br>
 text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
-<div style='margin-top: 6px;'>style: <select name="blinkieStyle" id="blinkieStyle">
+<div style='margin-top: 2px;'>style: <select class='blinkieOptions' name="blinkieStyle" id="blinkieStyle">
     <option value="<%=defaultStyleKey%>"><%=styleList[defaultStyleKey].name%></option>
     <%
     for (const [key, value] of Object.entries(styleList)) {
@@ -31,6 +31,13 @@ text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blin
     }
     %>
 </select>
+</div>
+<div>scale:
+    <select class='blinkieOptions' name="blinkieScale" id="blinkieScale">
+        <option value=1>1x (150x20 px)</option>
+        <option value=2>2x (300x40 px)</option>
+        <option value=4>4x (600x80 px)</option>
+    </select>
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>

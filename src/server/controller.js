@@ -2,7 +2,6 @@
 const fs = require("fs");
 const blinkiegen = require('./blinkiegen.js')
 const blinkieData = require('./blinkieData.js')
-const timeGenBlinkie = false;
 
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
@@ -36,10 +35,11 @@ const serveStyleList = function (req, res) {
 const pourBlinkie = async function (req, res) {
     const style = req.body.blinkieStyle;
     const intext = req.body.blinkieText;
+    const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
-    blinkiegen.pour(style, intext, timeGenBlinkie).then(function(blinkieLink) {
+    blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
         res.end(blinkieLink);
     });
 }

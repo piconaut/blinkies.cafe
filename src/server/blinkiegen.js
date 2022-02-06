@@ -20,7 +20,7 @@ function makeid(length) {
     return result;
 }
 
-async function pour(instyle, intext) {
+async function pour(instyle, intext, inscale) {
     let blinkieLink = ''
 
     try {
@@ -38,6 +38,9 @@ async function pour(instyle, intext) {
             if (cleantext.replace(/\s/g, '').length == 0) {
                 cleantext = addSlashes(blinkieData.styleProps[styleID].name);
             }
+
+            const scaleOptions = {1: '100%', 2: '200%', 4:'400%'};
+            const scale = scaleOptions[inscale] ? scaleOptions[inscale] : '100%';
 
             const blinkieID = makeid(2);
             blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
@@ -72,10 +75,10 @@ async function pour(instyle, intext) {
                 '-page','+0+0',
                 '-delay','10',
                 '-loop','0',
+                '-scale',scale,
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
                 global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
             ]
-
 
             await Promise.all(stdout);
             const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);

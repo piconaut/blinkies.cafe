@@ -35,17 +35,19 @@ h2 {
     font-weight:bold;
 }
 img {
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated; /* Chrome */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;                   /* firefox         */
+    image-rendering: -o-crisp-edges;                     /* opera           */
+    image-rendering: -webkit-optimize-contrast;          /* chrome & safari */
+    image-rendering: pixelated;                          /* chrome          */
+    image-rendering: optimize-contrast;                  /* CSS3 proposed   */
+    -ms-interpolation-mode: nearest-neighbor;            /* IE8+            */
 }
 li {
     margin-top: 5px;
+}
+select, button {
+    margin-top:4px;
 }
 small {
     font-size: 8pt;
@@ -98,9 +100,6 @@ action {
 #banner {
   margin-top:18px;
   font-size: 16pt;
-}
-#blinkieStyle {
-    width:160px;
 }
 #blinkieTable {
       width: 2px;

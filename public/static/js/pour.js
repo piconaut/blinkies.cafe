@@ -1,8 +1,8 @@
 /*jslint browser */
 
-function postBlinkie(blinkieText, blinkieStyle) {
+function postBlinkie(blinkieText, blinkieStyle, blinkieScale) {
     return fetch("/api/pour", {
-        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle}),
+        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle, blinkieScale: blinkieScale}),
         headers: {"Content-Type": "application/json"},
         method: "POST"
     })
@@ -22,9 +22,10 @@ let submit = function (event) {
     let blinkie = document.getElementById("freshBlinkie");
     let blinkieText = document.getElementById("blinkieText").value;
     let blinkieStyle = document.getElementById("blinkieStyle").value;
+    let blinkieScale = document.getElementById("blinkieScale").value;
     let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
 
-    postBlinkie(blinkieText, blinkieStyle).then( function(blinkieURL) {
+    postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
         blinkie.src = blinkieURL;
         blinkieLinkHolder.innerHTML = '';
         let blinkieLink = document.createElement('a');

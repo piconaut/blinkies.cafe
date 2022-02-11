@@ -1,5 +1,6 @@
 const styleProps = {
-    '0015-exit-button':   {name:"too many tabs!!", bday:20220211, frames:2, colour:["#ffffff","#ffffff"], font: "monaco", fontsize:16, x:12, y:0, sourceName:"me :)"},
+    '0016-valentine':   {name:"be my valentine?", bday:20220211, frames:2, colour:["#ad2121","#ad2121"], font: "monaco", fontsize:16, x:-12, y:0, sourceName:"davysgirl1994", sourceURL:"https://web.archive.org/web/20091027060547/http://www.geocities.com/davysgirl1994/vday2.html"},
+    '0015-exit-button':   {name:"too many tabs!!", bday:20220211, frames:2, colour:["#ffffff","#ffffff"], font: "monaco", fontsize:16, x:12, y:0, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
     '0014-pride':         {name:"kinda gay tbh...", bday:20220206, frames:4, colour:["#ffffff","#ffffff","#ffffff", "#ffffff"], shadow:["#666666","#666666","#666666", "#666666"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"me :)"},
     '0013-starryeyes':    {name:"Starry Eyes!", bday:20220201, frames:3, colour:["#002984","#002984","#002984"], font: "rainyhearts", fontsize:16, x:-4, y:0, sourceName:"Crazifleebs05", sourceURL:"https://web.archive.org/web/20091027021040/http://geocities.com/crazifleebs05/"},
     '0012-kiss':          {name:"good kisser", bday:20220124, frames:2, colour:["#feaaaa","#feaaaa"], font: "monaco", fontsize:16, x:0, y:0, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},

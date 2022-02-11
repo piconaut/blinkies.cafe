@@ -41,3 +41,4 @@ let submit = function (event) {
 document.getElementById("blinkieForm").addEventListener("submit", submit);
 document.getElementById("blinkieText").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieStyle").addEventListener("keypress", enterSubmit);
+document.getElementById("blinkieScale").addEventListener("keypress", enterSubmit);

@@ -1,7 +1,20 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const fs = require("fs");
+const winston = require('winston');
+
 const blinkiegen = require('./blinkiegen.js')
 const blinkieData = require('./blinkieData.js')
+
+
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    defaultMeta: { service: 'user-service' },
+    transports: [
+        new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'logs/combined.log' }),
+    ],
+});
 
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
@@ -36,6 +49,8 @@ const pourBlinkie = async function (req, res) {
     const style = req.body.blinkieStyle;
     const intext = req.body.blinkieText;
     const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+
+    logger.info({clientIp: req.ip, blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')

@@ -13,6 +13,7 @@ fi
 if [[ $* == *-b* ]]; then
     rm public/blinkies-public/blinkiesCafe-*gif
     rm assets/blinkies-frames/*png
+    rm -rf logs/
     sudo docker build . -t piconaut/blinkies.cafe
 fi
 

@@ -50,7 +50,7 @@ const pourBlinkie = async function (req, res) {
     const intext = req.body.blinkieText;
     const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
 
-    logger.info({blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
+    logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
 
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')

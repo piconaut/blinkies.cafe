@@ -23,7 +23,7 @@ let sourceList = {};
 let i = 0;
 for (const [key, value] of Object.entries(styleProps)) {
     styleList[key] = { name: value.name, bday:value.bday };
-    if (i < 20) {
+    if (i < 24) {
         stylePage[key] = { name: value.name, bday:value.bday };
         i ++;
     }

@@ -95,6 +95,27 @@ action {
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  font-size: 8pt;
+  width: 120px;
+  top: 125%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 #banner, #navbar {
     width:240px;
     text-align:center;

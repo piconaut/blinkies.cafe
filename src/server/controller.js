@@ -50,13 +50,15 @@ const pourBlinkie = async function (req, res) {
     const intext = req.body.blinkieText;
     const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
 
-    logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
-
     res.set('Content-Type', 'application/json');
     res.set('Access-Control-Allow-Origin','*')
     blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
         res.end(blinkieLink);
     });
+
+    if (intext.substring(0,5) != 'nolog') {
+        logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
+    }
 }
 
 const servePour = function (req, res) {

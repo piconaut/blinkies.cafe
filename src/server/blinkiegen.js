@@ -6,8 +6,8 @@ const execFile = util.promisify(require('child_process').execFile);
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
 
-function addSlashes(str) {
-    return (str + '').replace(/[^a-zA-Z0-9-_'!.? ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+function sanitizeText(str) {
+    return (str.substring(0,64) + '').replace(/[^a-zA-Z0-9-_'!.?<>(){} ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
 function makeid(length) {
@@ -34,9 +34,9 @@ async function pour(instyle, intext, inscale) {
             const x = blinkieData.styleProps[styleID].x;
             const y = blinkieData.styleProps[styleID].y;
 
-            let cleantext = addSlashes(intext);
+            let cleantext = sanitizeText(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
-                cleantext = addSlashes(blinkieData.styleProps[styleID].name);
+                cleantext = sanitizeText(blinkieData.styleProps[styleID].name);
             }
 
             const scaleOptions = {1: '100%', 2: '200%', 4:'400%'};

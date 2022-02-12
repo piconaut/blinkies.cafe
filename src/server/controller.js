@@ -20,6 +20,29 @@ function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
 }
 
+const pourBlinkie = async function (req, res) {
+    const style = req.body.blinkieStyle;
+    const intext = req.body.blinkieText;
+    const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+
+    res.set('Content-Type', 'application/json');
+    res.set('Access-Control-Allow-Origin','*')
+    blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+        res.end(blinkieLink);
+    });
+
+    if (intext.substring(0,5) != 'nolog') {
+        logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
+    }
+}
+
+const serveArchive = function (req, res) {
+    res.render('pages/archive.ejs', {
+        sourceList: blinkieData.sourceList,
+        fontList: blinkieData.fontList
+    });
+}
+
 const serveBlinkie = function (req, res) {
     let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {
@@ -39,28 +62,6 @@ const serveGallery = function (req, res) {
     res.render('pages/gallery.ejs', { styleList: blinkieData.stylePage });
 }
 
-const serveStyleList = function (req, res) {
-    res.contentType("application/json");
-    res.set('Access-Control-Allow-Origin','*')
-    res.send(JSON.stringify(blinkieData.styleList));
-}
-
-const pourBlinkie = async function (req, res) {
-    const style = req.body.blinkieStyle;
-    const intext = req.body.blinkieText;
-    const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
-
-    res.set('Content-Type', 'application/json');
-    res.set('Access-Control-Allow-Origin','*')
-    blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
-        res.end(blinkieLink);
-    });
-
-    if (intext.substring(0,5) != 'nolog') {
-        logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
-    }
-}
-
 const servePour = function (req, res) {
     let defaultStyleIndex = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '0007-chocolate';
     res.render('pages/pour.ejs', {
@@ -69,13 +70,11 @@ const servePour = function (req, res) {
     });
 }
 
-const serveArchive = function (req, res) {
-    res.render('pages/archive.ejs', {
-        sourceList: blinkieData.sourceList,
-        fontList: blinkieData.fontList
-    });
+const serveStyleList = function (req, res) {
+    res.contentType("application/json");
+    res.set('Access-Control-Allow-Origin','*')
+    res.send(JSON.stringify(blinkieData.styleList));
 }
-
 
 module.exports = {
     serveBlinkie,

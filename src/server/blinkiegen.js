@@ -6,10 +6,6 @@ const execFile = util.promisify(require('child_process').execFile);
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
 
-function sanitizeText(str) {
-    return (str.substring(0,64) + '').replace(/[^a-zA-Z0-9-_'!.?<>(){} ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
-}
-
 function makeid(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -20,31 +16,39 @@ function makeid(length) {
     return result;
 }
 
+
+function sanitizeText(str) {
+    return (str.substring(0,64) + '').replace(/[^a-zA-Z0-9-_'!.?<>(){} ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+}
+
 async function pour(instyle, intext, inscale) {
     let blinkieLink = ''
 
     try {
         const styleID = String(instyle);
         if (styleID in blinkieData.styleProps) {
-            const frames = blinkieData.styleProps[styleID].frames;
-            const colour = blinkieData.styleProps[styleID].colour;
-            const shadow = blinkieData.styleProps[styleID].shadow;
-            const font = blinkieData.styleProps[styleID].font;
-            const fontsize = blinkieData.styleProps[styleID].fontsize;
-            const x = blinkieData.styleProps[styleID].x;
-            const y = blinkieData.styleProps[styleID].y;
+            // assign blinkie parms.
+            const frames    = blinkieData.styleProps[styleID].frames;
+            const colour    = blinkieData.styleProps[styleID].colour;
+            const shadow    = blinkieData.styleProps[styleID].shadow;
+            const font      = blinkieData.styleProps[styleID].font;
+            const fontsize  = blinkieData.styleProps[styleID].fontsize;
+            const x         = blinkieData.styleProps[styleID].x;
+            const y         = blinkieData.styleProps[styleID].y;
+            const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
+            const scale     = scaleVals[inscale] ? scaleVals[inscale] : '100%';
 
+            // sanitize input text, use default text if empty.
             let cleantext = sanitizeText(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
                 cleantext = sanitizeText(blinkieData.styleProps[styleID].name);
             }
 
-            const scaleOptions = {1: '100%', 2: '200%', 4:'400%'};
-            const scale = scaleOptions[inscale] ? scaleOptions[inscale] : '100%';
-
+            // generate unique blinkie ID & URL.
             const blinkieID = makeid(2);
             blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
+            // generate frames with text.
             let stdout = [];
             let argsArray = [];
             for (let i=0; i<frames; i++) {
@@ -71,6 +75,7 @@ async function pour(instyle, intext, inscale) {
                 stdout[i] = execFile('convert', argsArray[i]);
             }
 
+            // await frame generation, then await gif generation from frames.
             let args_gif = [
                 '-page','+0+0',
                 '-delay','10',
@@ -79,12 +84,12 @@ async function pour(instyle, intext, inscale) {
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
                 global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
             ]
-
             await Promise.all(stdout);
             const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
 
             if (stderr_gif) { return }
 
+            // delete frames.
             for (let i=0; i<frames; i++) {
                 fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png', function(err) {
                     if (err) { return }
@@ -95,7 +100,7 @@ async function pour(instyle, intext, inscale) {
 
         else {
             blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
-        }  // end else (styleID not in styleProps)
+        }
 
     }  // end try
 

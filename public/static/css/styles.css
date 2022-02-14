@@ -89,6 +89,11 @@ action {
     height: 20px;
     margin: 2px 6px 2px 6px;
 }
+.blinkieBanner {
+    width:  258px;
+    height: 60px;
+    margin: 2px 6px 2px 6px;
+}
 .content {
     max-width: 500px;
 }

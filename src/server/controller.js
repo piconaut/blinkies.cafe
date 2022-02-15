@@ -32,7 +32,16 @@ const pourBlinkie = async function (req, res) {
     });
 
     if (intext.substring(0,5) != 'nolog') {
-        logger.info({time: Date.now(), blinkieStyle: style, blinkieText: intext, blinkieScale: scale});
+        logger.info({
+            mtype: 'pour',
+            parms: {
+                origin: req.get('origin'),
+                scale:  scale,
+                style:  style,
+                text:   intext,
+                time:   Date.now()
+            }
+        });
     }
 }
 

@@ -24,6 +24,9 @@ let submit = function (event) {
     let blinkieStyle = document.getElementById("blinkieStyle").value;
     let blinkieScale = document.getElementById("blinkieScale").value;
     let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
+    let submitbtn = document.getElementById('submitbtn');
+
+    submitbtn.innerText = 'generating';
 
     postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
         blinkie.src = blinkieURL;
@@ -35,6 +38,7 @@ let submit = function (event) {
         blinkieLink.target = "_blank";
         blinkieLinkHolder.appendChild(blinkieLink);
         blinkieLinkHolder.innerHTML += '<br>or drag &#38; drop';
+        submitbtn.innerText = 'generate!!';
     });
 };
 

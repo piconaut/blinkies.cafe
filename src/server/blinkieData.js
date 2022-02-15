@@ -22,12 +22,19 @@ let styleList = {};
 let stylePage = {};
 let sourceList = {};
 let i = 0;
+
+// prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
+    // add short blinkie data to list for clients.
     styleList[key] = { name: value.name, bday:value.bday };
-    if (i < 24) {
+
+    // add first 18 blinkies to page 1 for web app client.
+    if (i < 18) {
         stylePage[key] = { name: value.name, bday:value.bday };
         i ++;
     }
+
+    // add non-original blinkies to source list for archive.
     if (value.sourceURL) {
         sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
     }

@@ -1,8 +1,9 @@
-/* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
+/* eslint no-control-regex: "off", no-unused-vars: ["error", { "args":"none", "varsIgnorePattern": "std*" }] */
 const fs = require("fs");
 const util = require('util');
 const blinkieData = require('./blinkieData.js')
 const execFile = util.promisify(require('child_process').execFile);
+const exec = util.promisify(require('child_process').exec);
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
 
@@ -15,7 +16,6 @@ function makeid(length) {
     }
     return result;
 }
-
 
 function sanitizeText(str) {
     return (str.substring(0,64) + '').replace(/[\\`$]/g, '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0');
@@ -31,10 +31,10 @@ async function pour(instyle, intext, inscale) {
             const frames    = blinkieData.styleProps[styleID].frames;
             const colour    = blinkieData.styleProps[styleID].colour;
             const shadow    = blinkieData.styleProps[styleID].shadow;
-            const font      = blinkieData.styleProps[styleID].font;
-            const fontsize  = blinkieData.styleProps[styleID].fontsize;
+            let font        = blinkieData.styleProps[styleID].font;
+            let fontsize    = blinkieData.styleProps[styleID].fontsize;
             const x         = blinkieData.styleProps[styleID].x;
-            const y         = blinkieData.styleProps[styleID].y;
+            let y           = blinkieData.styleProps[styleID].y;
             const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
             const scale     = scaleVals[inscale] ? scaleVals[inscale] : '100%';
 
@@ -47,6 +47,23 @@ async function pour(instyle, intext, inscale) {
             // generate unique blinkie ID & URL.
             const blinkieID = makeid(2);
             blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
+
+            // get all unicode char codes from string.
+            let unicodeCharCodes = '';
+            for (var i = 0; i < cleantext.length; i++) {
+                unicodeCharCodes += cleantext.charCodeAt(i).toString(16) + ' ';
+            }
+
+            // if any char code is not in the style font, use monogramextended.
+            const fontSearch = "fc-list ':charset=" + unicodeCharCodes + "'"
+                             + "| grep " + font
+                             + "| wc -l";
+            const foundFont = await exec(fontSearch);
+            if (parseInt(foundFont.stdout) == 0) {
+                font     = 'monogramextended';
+                fontsize = 16;
+                y        = 1;
+            }
 
             // generate frames with text.
             let stdout = [];

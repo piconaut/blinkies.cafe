@@ -46,7 +46,8 @@ const fontList = {
     3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
     4: {name:"04b03", sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
     5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
-    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"}
+    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
+    7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"}
 };
 
 module.exports = {

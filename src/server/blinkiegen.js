@@ -54,12 +54,10 @@ async function pour(instyle, intext, inscale) {
                 unicodeCharCodes += cleantext.charCodeAt(i).toString(16) + ' ';
             }
 
-            // if any char code is not in the style font, use monogramextended.
-            const fontSearch = "fc-list ':charset=" + unicodeCharCodes + "'"
-                             + "| grep " + font
-                             + "| wc -l";
+            // if any char code is not in style font, use monogramextended.
+            const fontSearch = "fc-list '" + font + ":charset=" + unicodeCharCodes + "'";
             const foundFont = await exec(fontSearch);
-            if (parseInt(foundFont.stdout) == 0) {
+            if (foundFont.stdout.length == 0) {
                 font     = 'monogramextended';
                 fontsize = 16;
                 y        = 1;

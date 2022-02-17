@@ -18,7 +18,7 @@ function makeid(length) {
 
 
 function sanitizeText(str) {
-    return (str.substring(0,64) + '').replace(/[^a-zA-Z0-9-_'!.?<>(){} ]/g, '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+    return (str.substring(0,64) + '').replace(/[\\`$]/g, '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0');
 }
 
 async function pour(instyle, intext, inscale) {

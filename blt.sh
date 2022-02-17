@@ -28,7 +28,7 @@ fi
 # -v /host/path/to/logs:/app/logs
 if [[ $* == *--run* ]]; then
     sudo docker kill $(sudo docker ps -q)
-    sudo docker run -p 443:8080 -p 80:3000 -d piconaut/blinkies.cafe:latest
+    sudo docker run -p 443:8080 -p 80:3000 -d --restart always piconaut/blinkies.cafe:latest
 fi
 
 if [[ $* == *--pull* ]]; then

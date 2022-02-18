@@ -46,7 +46,7 @@ the archived copies live here, with links to their sources and generator pages. 
             %><tr>
                 <td><img src="/b/display/archive/<%=key%>.gif" alt="<%=value.name%> blinkie"></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-value.sourceName%></a></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'/pour?s=' + key.toString()%>"><%-value.name%></a></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'/pour?s=' + key.toString()%>"><%-value.name.replaceAll('<','&lt;')%></a></td>
             %></tr><%
         }
     %>

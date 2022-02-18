@@ -28,6 +28,8 @@ async function pour(instyle, intext, inscale) {
         const styleID = String(instyle);
         if (styleID in blinkieData.styleProps) {
             // assign blinkie parms.
+            let antialias   = '+antialias';
+            let fontstyle   = 'normal';
             const frames    = blinkieData.styleProps[styleID].frames;
             const colour    = blinkieData.styleProps[styleID].colour;
             const shadow    = blinkieData.styleProps[styleID].shadow;
@@ -54,13 +56,24 @@ async function pour(instyle, intext, inscale) {
                 unicodeCharCodes += cleantext.charCodeAt(i).toString(16) + ' ';
             }
 
-            // if any char code is not in style font, use monogramextended.
-            const fontSearch = "fc-list '" + font + ":charset=" + unicodeCharCodes + "'";
-            const foundFont = await exec(fontSearch);
+            // if any char code is not in style font, try monogramextended,
+            // fall back to hack.
+            let fontSearch = "fc-list '" + font + ":charset=" + unicodeCharCodes + "'";
+            let foundFont = await exec(fontSearch);
             if (foundFont.stdout.length == 0) {
-                font     = 'monogramextended';
-                fontsize = 16;
-                y        = 1;
+                fontSearch = "fc-list 'monogramextended:charset=" + unicodeCharCodes + "'";
+                foundFont  = await exec(fontSearch);
+                if (foundFont.stdout.length > 0) {
+                    font     = 'monogramextended';
+                    fontsize = 16;
+                    y        = 1;
+                }
+                else {
+                    antialias = '-antialias';
+                    font      = 'hack';
+                    fontsize  = 10;
+                    y         = 0;
+                }
             }
 
             // generate frames with text.
@@ -69,7 +82,7 @@ async function pour(instyle, intext, inscale) {
             for (let i=0; i<frames; i++) {
                 argsArray[i] = [
                     '-pointsize',fontsize,
-                    '+antialias',
+                    antialias,'-style',fontstyle,
                     '-gravity','Center',
                     '-family',font,
                 ]

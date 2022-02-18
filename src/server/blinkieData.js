@@ -41,13 +41,14 @@ for (const [key, value] of Object.entries(styleProps)) {
 }
 
 const fontList = {
-    1: {name:"Monaco", sourceName:"FontBlast Design", sourceURL:"mailto:jamie@creativeimagesphotography.co.uk"},
-    2: {name:"Pixellari", sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://ztdp.ca"},
-    3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
-    4: {name:"04b03", sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
-    5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
-    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
-    7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"}
+    1: {name:"Monaco", fontSize:16, y:0, sourceName:"FontBlast Design", sourceURL:"mailto:jamie@creativeimagesphotography.co.uk"},
+    2: {name:"Pixellari", fontSize:16, y:0, sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://ztdp.ca"},
+    3: {name:"Perfect DOS VGA 437", fontSize:16, y:-1, sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
+    4: {name:"04b03", fontsize:8, y:-1, sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
+    5: {name:"Infernalda", fontSize:16, y:-1, sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
+    6: {name:"Rainy Hearts", fontSize:16, y:0, sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
+    7: {name:"Monogram", fontSize:16, y:1, sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
+    8: {name:"Hack", fontSize:10, y:0, sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"}
 };
 
 module.exports = {

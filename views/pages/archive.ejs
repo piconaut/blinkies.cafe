@@ -44,7 +44,7 @@ the archived copies live here, with links to their sources and generator pages. 
     </tr>
     <%for (const [key, value] of Object.entries(sourceList)) {
             %><tr>
-                <td><img src="/b/display/archive/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie"></td>
+                <td><img src="/b/display/archive/<%=key%>.gif" alt="<%=value.name%> blinkie"></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-value.sourceName%></a></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'/pour?s=' + key.toString()%>"><%-value.name%></a></td>
             %></tr><%

@@ -1,5 +1,5 @@
 const styleProps = {
-    '0018-glitter':       {name:"I <3 GLITTER", bday:20220201, frames:3, colour:["#000000","#000000","#000000"], shadow:["#000000","#000000","#000000"], font: "dogica pixel", fontsize:16, x:0, y:1, sourceName:"Astronomy With Tru", sourceURL:"https://web.archive.org/web/20091027085422/http://www.geocities.com/astronomy_with_tru200343/letmeloveyou_2.html"},
+    '0018-glitter':       {name:"I <3 GLITTER", bday:20220218, frames:3, colour:["#000000","#000000","#000000"], font: "Dogica", fontweight:"bold", fontsize:12, x:0, y:1, sourceName:"Astronomy With Tru", sourceURL:"https://web.archive.org/web/20091027085422/http://www.geocities.com/astronomy_with_tru200343/letmeloveyou_2.html"},
     '0017-love':          {name:"love u 4ever <3", bday:20220214, frames:8, colour:["#d61a49","#e33a8e","#ea4aad","#e33a8e","#d61a49","#cf0c1f", "#c80000","#cf0c1f"], shadow:["#d61a49","#e33a8e","#ea4aad","#e33a8e","#d61a49","#cf0c1f", "#c80000","#cf0c1f"], font: "rainyhearts", fontsize:16, x:0, y:0, sourceName:"me :)"},
     '0016-valentine':     {name:"be my valentine?", bday:20220211, frames:2, colour:["#ad2121","#ad2121"], font: "monaco", fontsize:16, x:-12, y:0, sourceName:"davysgirl1994", sourceURL:"https://web.archive.org/web/20091027060547/http://www.geocities.com/davysgirl1994/vday2.html"},
     '0015-exit-button':   {name:"too many tabs!!", bday:20220211, frames:2, colour:["#ffffff","#ffffff"], font: "monaco", fontsize:16, x:12, y:0, sourceName:"y2k.neocities.org", sourceURL:"https://y2k.neocities.org"},
@@ -42,14 +42,16 @@ for (const [key, value] of Object.entries(styleProps)) {
 }
 
 const fontList = {
-    1: {name:"Monaco", fontSize:16, y:0, sourceName:"FontBlast Design", sourceURL:"mailto:jamie@creativeimagesphotography.co.uk"},
-    2: {name:"Pixellari", fontSize:16, y:0, sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://ztdp.ca"},
-    3: {name:"Perfect DOS VGA 437", fontSize:16, y:-1, sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
-    4: {name:"04b03", fontsize:8, y:-1, sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
-    5: {name:"Infernalda", fontSize:16, y:-1, sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
-    6: {name:"Rainy Hearts", fontSize:16, y:0, sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
-    7: {name:"Monogram", fontSize:16, y:1, sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
-    8: {name:"Hack", fontSize:10, y:0, sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"}
+    1: {name:"Monaco", sourceName:"FontBlast Design", sourceURL:"mailto:jamie@creativeimagesphotography.co.uk"},
+    2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://ztdp.ca"},
+    3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
+    4: {name:"04b03", sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
+    5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
+    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
+    7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
+    8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
+    9: {name:"Dogica", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
+
 };
 
 module.exports = {

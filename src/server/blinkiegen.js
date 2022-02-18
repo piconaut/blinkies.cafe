@@ -29,7 +29,7 @@ async function pour(instyle, intext, inscale) {
         if (styleID in blinkieData.styleProps) {
             // assign blinkie parms.
             let antialias   = '+antialias';
-            let fontstyle   = 'normal';
+            let fontweight   = blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal';
             const frames    = blinkieData.styleProps[styleID].frames;
             const colour    = blinkieData.styleProps[styleID].colour;
             const shadow    = blinkieData.styleProps[styleID].shadow;
@@ -81,10 +81,11 @@ async function pour(instyle, intext, inscale) {
             let argsArray = [];
             for (let i=0; i<frames; i++) {
                 argsArray[i] = [
-                    '-pointsize',fontsize,
-                    antialias,'-style',fontstyle,
+                    antialias,
                     '-gravity','Center',
                     '-family',font,
+                    '-pointsize',fontsize,
+                    '-weight',fontweight
                 ]
                 if (shadow) {
                     argsArray[i].push('-page')

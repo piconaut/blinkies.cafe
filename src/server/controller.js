@@ -46,6 +46,20 @@ function cooldown(ip) {
     return allowed;
 }
 
+const msg = async function (req, res) {
+    if (cooldown(req.ip)) {
+        logger.info({
+            mtype: 'msg',
+            parms: {
+                origin: req.get('origin'),
+                msg: req.body.msg
+            }
+        });
+        res.end("ty");
+    }
+
+}
+
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip)) {
         const style  = req.body.blinkieStyle;
@@ -115,6 +129,7 @@ const serveStyleList = function (req, res) {
 }
 
 module.exports = {
+    msg,
     serveBlinkie,
     serveGallery,
     serveStyleList,

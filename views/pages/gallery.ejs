@@ -45,9 +45,12 @@ blinkies.cafe
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
         <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br></div>
+        <form id='msgForm'>
+            <br><textarea placeholder='leave an anonymous message?' name='msg' id='msgText' rows=1 wrap='off'></textarea><button type='submit' id='msgSubmit'>send</button><br><br>
+        </form>
     </div>
     <center>
-    <div id='gallery' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
+    <div id='gallery' type='text' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
         click to add custom text to any of these blinkie styles!<br><br>
         <galleryUI>
             sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action>

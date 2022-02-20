@@ -17,29 +17,33 @@ function enterSubmit(event){
     }
 }
 
+let lastRequestTime = 0;
 let submit = function (event) {
     event.preventDefault();
-    let blinkie = document.getElementById("freshBlinkie");
-    let blinkieText = document.getElementById("blinkieText").value;
-    let blinkieStyle = document.getElementById("blinkieStyle").value;
-    let blinkieScale = document.getElementById("blinkieScale").value;
-    let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
-    let submitbtn = document.getElementById('submitbtn');
+    if (lastRequestTime < Date.now() - 1000) {
+        lastRequestTime = Date.now();
+        let blinkie = document.getElementById("freshBlinkie");
+        let blinkieText = document.getElementById("blinkieText").value;
+        let blinkieStyle = document.getElementById("blinkieStyle").value;
+        let blinkieScale = document.getElementById("blinkieScale").value;
+        let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
+        let submitbtn = document.getElementById('submitbtn');
 
-    submitbtn.innerText = 'generating';
+        submitbtn.innerText = 'generating';
 
-    postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
-        blinkie.src = blinkieURL;
-        blinkieLinkHolder.innerHTML = '';
-        let blinkieLink = document.createElement('a');
-        blinkieLink.innerHTML = 'download blinkie';
-        blinkieLink.href = blinkieURL;
-        blinkieLink.download = blinkieURL.split('/')[4];
-        blinkieLink.target = "_blank";
-        blinkieLinkHolder.appendChild(blinkieLink);
-        blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
-        submitbtn.innerText = 'generate!!';
-    });
+        postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
+            blinkie.src = blinkieURL;
+            blinkieLinkHolder.innerHTML = '';
+            let blinkieLink = document.createElement('a');
+            blinkieLink.innerHTML = 'download blinkie';
+            blinkieLink.href = blinkieURL;
+            blinkieLink.download = blinkieURL.split('/')[4];
+            blinkieLink.target = "_blank";
+            blinkieLinkHolder.appendChild(blinkieLink);
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
+            submitbtn.innerText = 'generate!!';
+        });
+    }
 };
 
 document.getElementById("blinkieForm").addEventListener("submit", submit);

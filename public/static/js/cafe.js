@@ -25,6 +25,13 @@ function postBlinkie(blinkieText, blinkieStyle, blinkieScale) {
         .then((res) => res.text())
         .then(blinkieURL => { return blinkieURL; })
 }
+function postMsg(msgText) {
+    return fetch(urlRoot + "/api/msg", {
+        body: JSON.stringify({msg: msgText}),
+        headers: {"Content-Type": "application/json"},
+        method: "POST"
+    })
+}
 
 /*------------------*/
 /* gallery browsing */
@@ -121,6 +128,15 @@ function enterSubmit(event){
     }
 }
 
+function submitMsg (event) {
+    event.preventDefault();
+    if (lastRequestTime < Date.now() - 1000) {
+        lastRequestTime = Date.now();
+        postMsg(document.getElementById("msgText").value);
+        document.getElementById("msgSubmit").innerText = 'ty!!';
+    }
+}
+
 let lastRequestTime = 0;
 function submit (event) {
     event.preventDefault();
@@ -191,6 +207,8 @@ document.getElementById("blinkieForm").addEventListener("submit", submit);
 document.getElementById("blinkieText").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieStyle").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieScale").addEventListener("keypress", enterSubmit);
+document.getElementById("msgForm").addEventListener("submit", submitMsg);
+document.getElementById("msgText").addEventListener("keypress", enterSubmit);
 
 document.getElementById("backToGalleryBtn").onclick = function() {
     let gallery = document.getElementById("gallery");

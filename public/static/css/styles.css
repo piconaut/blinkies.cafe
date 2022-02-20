@@ -136,7 +136,7 @@ action {
 #blinkieTable {
       width: 2px;
 }
-#blinkieText {
+#blinkieText, #msgText {
     width:165px;
     overflow:hidden;
     resize:none;
@@ -146,8 +146,13 @@ action {
     padding-bottom:1px;
     padding-right:4px;
 }
+#msgText {
+    resize:none;
+    width: 230px;
+    height:18px;
+}
 #fontTable {
-      width: 2px;
+    width: 2px;
 }
 #freshBlinkie {
     width:  150px;

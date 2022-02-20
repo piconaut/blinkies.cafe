@@ -5,7 +5,6 @@ const winston = require('winston');
 const blinkiegen = require('./blinkiegen.js')
 const blinkieData = require('./blinkieData.js')
 
-
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -20,29 +19,53 @@ function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
 }
 
-const pourBlinkie = async function (req, res) {
-    const style = req.body.blinkieStyle;
-    const intext = req.body.blinkieText;
-    const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
-
-    res.set('Content-Type', 'application/json');
-    res.set('Access-Control-Allow-Origin','*')
-    blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
-        res.end(blinkieLink);
-    });
-
-    if (intext.substring(0,5) != 'nolog') {
-        logger.info({
-            mtype: 'pour',
-            parms: {
-                origin: req.get('origin'),
-                scale:  scale,
-                style:  style,
-                text:   intext,
-                time:   Date.now()
-            }
-        });
+let recentRequests = [];
+function cooldown(ip) {
+    let allowed = false;
+    const currentTime = Date.now()
+    let ipsOnCooldown = [];
+    for (let i=recentRequests.length-1; i>=0; i--) {
+        if (recentRequests[i][1] < currentTime - 1000) {
+            recentRequests.shift();
+        }
+        else {
+            ipsOnCooldown.push(recentRequests[i][0]);
+        }
     }
+
+    if (!ipsOnCooldown.includes(ip)) {
+        recentRequests.push([ip, Date.now()]);
+        allowed = true;
+    }
+
+    return allowed;
+}
+
+const pourBlinkie = async function (req, res) {
+    if (cooldown(req.ip)) {
+        const style = req.body.blinkieStyle;
+        const intext = req.body.blinkieText;
+        const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+
+        res.set('Content-Type', 'application/json');
+        res.set('Access-Control-Allow-Origin','*')
+        blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+            res.end(blinkieLink);
+        });
+
+        if (intext.substring(0,5) != 'nolog') {
+            logger.info({
+                mtype: 'pour',
+                parms: {
+                    origin: req.get('origin'),
+                    scale:  scale,
+                    style:  style,
+                    text:   intext,
+                    time:   Date.now()
+                }
+            });     // logger.info
+        }           // nolog
+    }               // cooldown
 }
 
 const serveArchive = function (req, res) {

@@ -41,6 +41,7 @@ router.options("/styleList.json", function(req, res){
   res.sendStatus(200);
 });
 router.get("/styleList.json", controller.serveStyleList);
+router.get("/sourceList.json", controller.serveSourceList);
 
 // raw text
 router.use('/sitemap.txt', function (req, res) {

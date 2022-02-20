@@ -89,7 +89,7 @@ const pourBlinkie = async function (req, res) {
 
 const serveArchive = function (req, res) {
     res.render('pages/archive.ejs', {
-        sourceList: blinkieData.sourceList,
+        sourceList: blinkieData.sourcePage,
         fontList: blinkieData.fontList
     });
 }
@@ -122,6 +122,12 @@ const servePour = function (req, res) {
     });
 }
 
+const serveSourceList = function (req, res) {
+    res.contentType("application/json");
+    res.set('Access-Control-Allow-Origin','*')
+    res.send(JSON.stringify(blinkieData.sourceList));
+}
+
 const serveStyleList = function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
@@ -132,6 +138,7 @@ module.exports = {
     msg,
     serveBlinkie,
     serveGallery,
+    serveSourceList,
     serveStyleList,
     serveArchive,
     pourBlinkie,

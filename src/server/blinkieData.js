@@ -23,7 +23,9 @@ const styleProps = {
 let styleList = {};
 let stylePage = {};
 let sourceList = {};
+let sourcePage = {};
 let i = 0;
+let j = 0;
 
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
@@ -39,6 +41,10 @@ for (const [key, value] of Object.entries(styleProps)) {
     // add non-original blinkies to source list for archive.
     if (value.sourceURL) {
         sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+        if (j < 6) {
+            sourcePage[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+            j++
+        }
     }
 }
 
@@ -60,5 +66,6 @@ module.exports = {
     styleList,
     stylePage,
     sourceList,
+    sourcePage,
     fontList
 }

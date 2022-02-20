@@ -94,6 +94,9 @@ action {
     height: 60px;
     margin: 2px 6px 2px 6px;
 }
+.blinkieTile {
+    cursor:pointer;
+}
 .content {
     max-width: 500px;
 }

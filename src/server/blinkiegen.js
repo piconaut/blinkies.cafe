@@ -29,6 +29,7 @@ async function pour(instyle, intext, inscale) {
         if (styleID in blinkieData.styleProps) {
             // assign blinkie parms.
             let antialias   = '+antialias';
+            let delay       = blinkieData.styleProps[styleID].delay ? blinkieData.styleProps[styleID].delay : 10;
             let fontweight   = blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal';
             const frames    = blinkieData.styleProps[styleID].frames;
             const colour    = blinkieData.styleProps[styleID].colour;
@@ -107,7 +108,7 @@ async function pour(instyle, intext, inscale) {
             // await frame generation, then await gif generation from frames.
             let args_gif = [
                 '-page','+0+0',
-                '-delay','10',
+                '-delay',delay,
                 '-loop','0',
                 '-scale',scale,
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',

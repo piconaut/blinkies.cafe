@@ -161,11 +161,13 @@ getStyleList().then(function(styleList){
         if (currentSort != 'bday') {
             styleOrder = sortStyles(styleList,'bday');
             loadStyles(styleList, styleOrder, 1);
+            currentPage = 1;
         }
     }
     sortRandom.onclick = function() {
         styleOrder = shuffleStyles(styleList);
         loadStyles(styleList, styleOrder, 1);
+        currentPage = 1;
     }
     nextPage.onclick = function() {
         currentPage ++;

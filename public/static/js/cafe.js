@@ -1,8 +1,17 @@
 /*jslint browser */
 
+/*----------*/
+/* declares */
+/*----------*/
+let blinkieTiles     = document.querySelectorAll(".blinkieTile");
+const pageSize       = blinkieTiles.length;
+const urlRoot        = '';
+let currentSort      = 'bday';
+
 /*---------------------*/
 /* GET & POST requests */
 /*---------------------*/
+
 function getStyleList() {
     return fetch('/styleList.json').then((response)=>response.json())
                                    .then((responseJson)=>{return responseJson});
@@ -71,11 +80,8 @@ function selectStyle(styleList, targetKey) {
     firstopt.innerHTML = styleList[targetKey].name;
     freshBlinkie.src = urlRoot + '/b/display/' + targetKey + '.gif';
 
-    gallery.style['z-index'] = 0;
     gallery.style.visibility = 'hidden';
-    pour.style['z-index'] = 1;
     pour.style.visibility = '';
-
 }
 
 function shuffleStyles(styleList) {
@@ -115,39 +121,41 @@ function enterSubmit(event){
     }
 }
 
+let lastRequestTime = 0;
 function submit (event) {
     event.preventDefault();
-    let freshBlinkie = document.getElementById("freshBlinkie");
-    let blinkieText = document.getElementById("blinkieText").value;
-    let blinkieStyle = document.getElementById("blinkieStyle").value;
-    let blinkieScale = document.getElementById("blinkieScale").value;
-    let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
-    let submitbtn = document.getElementById('submitbtn');
 
-    submitbtn.innerText = 'generating';
+    // if last submitted request was more than 1s ago, submit parms from form,
+    // then after receiving reply, display the newly generated blinkie.
+    if (lastRequestTime < Date.now() - 1000) {
+        lastRequestTime = Date.now();
+        let freshBlinkie = document.getElementById("freshBlinkie");
+        let blinkieText = document.getElementById("blinkieText").value;
+        let blinkieStyle = document.getElementById("blinkieStyle").value;
+        let blinkieScale = document.getElementById("blinkieScale").value;
+        let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
+        let submitbtn = document.getElementById('submitbtn');
 
-    postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
-        freshBlinkie.src = blinkieURL;
-        blinkieLinkHolder.innerHTML = '';
-        let blinkieLink = document.createElement('a');
-        blinkieLink.innerHTML = 'download blinkie';
-        blinkieLink.href = blinkieURL;
-        blinkieLink.download = blinkieURL.split('/')[4];
-        blinkieLink.target = "_blank";
-        blinkieLinkHolder.appendChild(blinkieLink);
-        blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
-        submitbtn.innerText = 'generate!!';
-    });
+        submitbtn.innerText = 'generating';
+
+        postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
+            freshBlinkie.src = blinkieURL;
+            blinkieLinkHolder.innerHTML = '';
+            let blinkieLink = document.createElement('a');
+            blinkieLink.innerHTML = 'download blinkie';
+            blinkieLink.href = blinkieURL;
+            blinkieLink.download = blinkieURL.split('/')[4];
+            blinkieLink.target = "_blank";
+            blinkieLinkHolder.appendChild(blinkieLink);
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
+            submitbtn.innerText = 'generate!!';
+        });
+    }
 }
 
 /*---------------------*/
 /* initial load        */
 /*---------------------*/
-let blinkieTiles     = document.querySelectorAll(".blinkieTile");
-const pageSize       = blinkieTiles.length;
-const urlRoot        = '';
-let currentSort      = 'bday';
-
 getStyleList().then(function(styleList){
     let currentPage      = 1;
     const nextPage       = document.getElementById("nextPage");
@@ -187,8 +195,6 @@ document.getElementById("blinkieScale").addEventListener("keypress", enterSubmit
 document.getElementById("backToGalleryBtn").onclick = function() {
     let gallery = document.getElementById("gallery");
     let pour = document.getElementById("pour");
-    gallery.style['z-index'] = 1;
     gallery.style.visibility = '';
-    pour.style['z-index'] = 0;
     pour.style.visibility = 'hidden';
 }

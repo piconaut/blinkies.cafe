@@ -21,9 +21,12 @@ function cleanBlinkieID(str) {
 
 let recentRequests = [];
 function cooldown(ip) {
-    let allowed = false;
-    const currentTime = Date.now()
+    const currentTime = Date.now();
+    let allowed       = false;
     let ipsOnCooldown = [];
+
+    // remove requests older than 1 sec from recentRequests,
+    // add newer requests to IPs on cooldown.
     for (let i=recentRequests.length-1; i>=0; i--) {
         if (recentRequests[i][1] < currentTime - 1000) {
             recentRequests.shift();
@@ -33,6 +36,8 @@ function cooldown(ip) {
         }
     }
 
+    // if current requester ip is not on cooldown, add to recentRequests,
+    // and allow the current request.
     if (!ipsOnCooldown.includes(ip)) {
         recentRequests.push([ip, Date.now()]);
         allowed = true;
@@ -43,9 +48,9 @@ function cooldown(ip) {
 
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip)) {
-        const style = req.body.blinkieStyle;
+        const style  = req.body.blinkieStyle;
         const intext = req.body.blinkieText;
-        const scale = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+        const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')

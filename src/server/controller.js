@@ -68,7 +68,8 @@ const serveBlinkie = function (req, res) {
 }
 
 const serveGallery = function (req, res) {
-    res.render('pages/gallery.ejs', { styleList: blinkieData.stylePage });
+    let pourStyle = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '';
+    res.render('pages/gallery.ejs', { pourStyle: pourStyle, styleList: blinkieData.stylePage });
 }
 
 const servePour = function (req, res) {

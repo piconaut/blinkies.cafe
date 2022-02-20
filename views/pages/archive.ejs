@@ -46,7 +46,7 @@ the archived copies live here, with links to their sources and generator pages. 
             %><tr>
                 <td><img src="/b/display/archive/<%=key%>.gif" alt="<%=value.name%> blinkie"></td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-value.sourceName%></a></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'/pour?s=' + key.toString()%>"><%-value.name.replaceAll('<','&lt;')%></a></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%-'/?s=' + key.toString()%>"><%-value.name.replaceAll('<','&lt;')%></a></td>
             %></tr><%
         }
     %>
@@ -100,6 +100,10 @@ blinkies.cafe prefers bitmap fonts where possible, but falls back to truetype fo
    =====================</b><br>
 blinkies.cafe was started circa November 2021. it was first discovered by google on 2021-11-05.
 <br><br>
+
+the original blinkie generator endpoint is available at <a href='/pour'>blinkies.cafe/pour</a>.
+<br><br>
+
 <div class='tableWrapper'>
 <table>
     <tr>

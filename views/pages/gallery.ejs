@@ -17,29 +17,61 @@ blinkies.cafe
 <div class='content'>
     <h1>blinkie maker: build a blinkie!</h1>
 </div>
-<div id='gallery' class='content'>
-    click to add custom text to any of these blinkie styles!<br><br>
-    <galleryUI>
-        sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action>
-    </galleryUI>
-    <center id='tiles'>
-        <%
-        let i=0;
-        for (const [key, value] of Object.entries(styleList)) {
-            %><a id='blinkieLink<%=i%>' href="/pour?s=<%=key%>" class='blinkieLinkTile'><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"></a><%
-	    i++;
-        }
-        %>
-    </center>
+<div class='content'>
+    <div id='pour' style='position:absolute; visibility:<%if (pourStyle == '') {%>hidden<%} else {%>visible<%}%>'>
+        <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
+        <form id='blinkieForm'>
+        text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
+        <div style='margin-top: 3px'>
+            style: <select name="blinkieStyle" id="blinkieStyle">
+                <option id='firstopt' value="<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>"><%if (pourStyle == '') {%>chocolate dreams<%} else {%><%=styleList[pourStyle].name%><%}%></option>
+                <%
+                for (const [key, value] of Object.entries(styleList)) {
+                    %><option value="<%=key%>"><%=value.name%></option><%
+                }
+                %>
+            </select>
+        </div>
+        <div>scale:
+            <select name="blinkieScale" id="blinkieScale">
+                <option value=1>1x - for websites</option>
+                <option value=4>4x - chat/stories</option>
+            </select>
+            (<div class="tooltip">?
+                <span class="tooltiptext">4x res improves rendering in chat &#38; social media</span>
+            </div>)
+        </div>
+        <button type='submit' id='submitbtn'>generate!!</button>
+        </form><br>
+        <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
+        <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br></div>
+    </div>
     <center>
-        <galleryUI id='pagenav'>
-            <action id='prevPage' style='visibility:hidden'>&lt;</action>
-            <actionLabel id='currPage'> 1 </actionLabel>
-            <action id='nextPage' style='visibility:hidden'>&gt;</action>
+    <div id='gallery' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
+        click to add custom text to any of these blinkie styles!<br><br>
+        <galleryUI>
+            sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action>
         </galleryUI>
+        <center id='tiles'>
+            <%
+            let i=0;
+            for (const [key, value] of Object.entries(styleList)) {
+                %><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
+    	    i++;
+            }
+            %>
+        </center>
+        <center>
+            <galleryUI id='pagenav'>
+                <action id='prevPage' style='visibility:hidden'>&lt;</action>
+                <actionLabel id='currPage'> 1 </actionLabel>
+                <action id='nextPage' style='visibility:hidden'>&gt;</action>
+            </galleryUI>
+        </center>
+        <br>
+        new blinkies added weekly!
+    </div>
     </center>
-    <br>
-    new blinkies added weekly!
 </div>
 <hr>
 <br>
@@ -119,4 +151,4 @@ enjoy~
 <%- include('components/footer.html') %>
 </body>
 </html>
-<script src='/gallery.js' type='module'></script>
+<script src='/cafe.js' type='module'></script>

@@ -1,4 +1,5 @@
 const styleProps = {
+    '0021-vampirefangs':  {name:"BLOOD-SUCKER", bday:20220223, frames:8, colour:["#d00000","#d00000","#ff0000","#d00000","#d00000","#ff0000", "#ff0000","#ff0000"], font: "alagard", fontsize:16, x:10, y:-2, sourceName:"me :)"},
     '0020-blinkiesCafe':  {name:"blinkies.cafe", bday:20220222, frames:2, delay:10, colour:["#000000","#000000"], shadow:["#666666","#666666"], font: "monaco", fontweight:"bold", fontsize:16, x:0, y:0, sourceName:"me :)"},
     '0019-candy':         {name:"Sweet Tooth", bday:20220218, frames:2, delay:25, colour:["#ffcee7","#ffcee7"], font: "monaco", fontweight:"normal", fontsize:16, x:0, y:0, sourceName:"Blinktastic Blinkies", sourceURL:"https://web.archive.org/web/20090806124621/http://geocities.com/blinktasticblinkie/food"},
     '0018-glitter':       {name:"I <3 GLITTER", bday:20220218, frames:3, colour:["#000000","#000000","#000000"], font: "Dogica", fontweight:"bold", fontsize:12, x:0, y:1, sourceName:"Astronomy With Tru", sourceURL:"https://web.archive.org/web/20091027085422/http://www.geocities.com/astronomy_with_tru200343/letmeloveyou_2.html"},
@@ -58,7 +59,8 @@ const fontList = {
     6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
     7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
     8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
-    9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"}
+    9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
+    10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
 };
 
 module.exports = {

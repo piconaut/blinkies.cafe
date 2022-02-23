@@ -35,7 +35,7 @@ blinkies.cafe
         <div>scale:
             <select name="blinkieScale" id="blinkieScale">
                 <option value=1>1x - for websites</option>
-                <option value=4>4x - chat/stories</option>
+                <option value=4>4x - chat/socials</option>
             </select>
             (<div class="tooltip">?
                 <span class="tooltiptext">4x res improves rendering in chat &#38; social media</span>
@@ -45,8 +45,9 @@ blinkies.cafe
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
         <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br></div>
+        <br>links appreciated! copy HTML: <textarea readonly wrap='off' class='singleLineText' style='width:160px'>&lt;a href='https://blinkies.cafe'&gt;&lt;img src='https://blinkies.cafe/b/display/blinkiesCafe.gif'&gt;&lt;/a&gt;</textarea>
         <form id='msgForm'>
-            <br><textarea placeholder='leave an anonymous message?' name='msg' id='msgText' rows=1 wrap='off'></textarea><button type='submit' id='msgSubmit'>send</button><br><br>
+            <br><textarea placeholder='leave me a message?' name='msg' id='msgText' class='singleLineText' rows=1 wrap='off'></textarea><button type='submit' id='msgSubmit'>send</button><br><br>
         </form>
     </div>
     <center>
@@ -75,6 +76,7 @@ blinkies.cafe
         new blinkies added weekly!
     </div>
     </center>
+    <br>
 </div>
 <hr>
 <br>

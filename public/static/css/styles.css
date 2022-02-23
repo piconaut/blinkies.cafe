@@ -100,6 +100,12 @@ action {
 .content {
     max-width: 500px;
 }
+.singleLineText {
+    resize:none;
+    margin-bottom: -6px;
+    height:18px;
+    overflow: overlay;
+}
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */
 }

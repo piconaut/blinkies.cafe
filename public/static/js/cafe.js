@@ -81,11 +81,17 @@ function selectStyle(styleList, targetKey) {
     let freshBlinkie = document.getElementById('freshBlinkie');
     let gallery = document.getElementById('gallery');
     let pour = document.getElementById('pour');
-    let firstopt = document.getElementById('firstopt');
+    let blinkieStyle = document.getElementById('blinkieStyle');
 
-    firstopt.value = targetKey;
-    firstopt.innerHTML = styleList[targetKey].name;
     freshBlinkie.src = urlRoot + '/b/display/' + targetKey + '.gif';
+
+    // show selected style first in dropdown.
+    for(let i = 0; i < blinkieStyle.options.length; i++) {
+        if(blinkieStyle.options[i].value == targetKey) {
+            blinkieStyle.selectedIndex = i;
+            break;
+        }
+    }
 
     gallery.style.visibility = 'hidden';
     pour.style.visibility = '';

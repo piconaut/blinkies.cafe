@@ -1,4 +1,5 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
+const crypto = require('crypto');
 const fs = require("fs");
 const winston = require('winston');
 
@@ -75,12 +76,13 @@ const pourBlinkie = async function (req, res) {
         if (intext.substring(0,5) != 'nolog') {
             logger.info({
                 mtype: 'pour',
+                iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
+                time:   Date.now(),
                 parms: {
                     origin: req.get('origin'),
                     scale:  scale,
                     style:  style,
-                    text:   intext,
-                    time:   Date.now()
+                    text:   intext
                 }
             });     // logger.info
         }           // nolog

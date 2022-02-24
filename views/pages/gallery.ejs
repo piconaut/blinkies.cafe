@@ -24,10 +24,15 @@ blinkies.cafe
         text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
         <div style='margin-top: 3px'>
             style: <select name="blinkieStyle" id="blinkieStyle">
-                <option id='firstopt' value="<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>"><%if (pourStyle == '') {%>chocolate dreams<%} else {%><%=styleList[pourStyle].name%><%}%></option>
                 <%
+                if (pourStyle != '') {
+                    %><option value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
+                }
+
                 for (const [key, value] of Object.entries(styleList)) {
-                    %><option value="<%=key%>"><%=value.name%></option><%
+                    if (key != pourStyle) {
+                        %><option value="<%=key%>"><%=value.name%></option><%
+                    }
                 }
                 %>
             </select>

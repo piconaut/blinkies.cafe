@@ -51,10 +51,9 @@ const msg = async function (req, res) {
     if (cooldown(req.ip)) {
         logger.info({
             mtype: 'msg',
-            parms: {
-                origin: req.get('origin'),
-                msg: req.body.msg
-            }
+            origin: req.get('origin'),
+            time:  Date.now(),
+            msg: req.body.msg
         });
         res.end("ty");
     }
@@ -75,11 +74,11 @@ const pourBlinkie = async function (req, res) {
 
         if (intext.substring(0,5) != 'nolog') {
             logger.info({
-                mtype: 'pour',
+                mtype:  'pour',
                 iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
+                origin: req.get('origin'),
                 time:   Date.now(),
                 parms: {
-                    origin: req.get('origin'),
                     scale:  scale,
                     style:  style,
                     text:   intext

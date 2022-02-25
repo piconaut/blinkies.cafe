@@ -5,7 +5,7 @@ const blinkieData = require('./blinkieData.js')
 const execFile = util.promisify(require('child_process').execFile);
 const exec = util.promisify(require('child_process').exec);
 
-const siteURL = global.prod ? 'https://blinkies.cafe' : 'http://localhost:8080';
+const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
 function makeid(length) {
     var result           = '';
@@ -135,7 +135,7 @@ async function pour(instyle, intext, inscale) {
     }  // end try
 
     catch (err) {
-        blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
+        blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
     }
 
     return blinkieLink;

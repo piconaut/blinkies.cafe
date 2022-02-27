@@ -50,14 +50,16 @@ function cooldown(ip) {
 const msg = async function (req, res) {
     if (cooldown(req.ip)) {
         logger.info({
-            mtype: 'msg',
-            origin: req.get('origin'),
             time:  Date.now(),
-            msg: req.body.msg
+            mtype: 'msg',
+            details: {
+                iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
+                origin: req.get('origin'),
+                msg: req.body.msg
+            }
         });
         res.end("ty");
     }
-
 }
 
 const pourBlinkie = async function (req, res) {
@@ -74,18 +76,20 @@ const pourBlinkie = async function (req, res) {
 
         if (intext.substring(0,5) != 'nolog') {
             logger.info({
-                mtype:  'pour',
-                iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
-                origin: req.get('origin'),
                 time:   Date.now(),
-                parms: {
-                    scale:  scale,
-                    style:  style,
-                    text:   intext
-                }
-            });     // logger.info
-        }           // nolog
-    }               // cooldown
+                mtype:  'pour',
+                details: {
+                    iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
+                    origin: req.get('origin'),
+                    parms: {
+                        scale:  scale,
+                        style:  style,
+                        text:   intext
+                    }   // parms
+                }       // details
+            });         // logger.info
+        }               // nolog
+    }                   // cooldown
 }
 
 const serveArchive = function (req, res) {

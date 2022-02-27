@@ -222,3 +222,8 @@ document.getElementById("backToGalleryBtn").onclick = function() {
     gallery.style.visibility = '';
     pour.style.visibility = 'hidden';
 }
+
+document.getElementById("badgetxt").onclick = function() {
+    this.focus();
+    this.select();
+}

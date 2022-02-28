@@ -1,11 +1,19 @@
 body {
     font-family: "Consolas", "Hack", "Liberation Mono", monospace;
     background-image: url("/purple-stars-bg.gif");
-    background-color:#9686ac;
+    background-attachment: fixed;
+    background-color:#000000;
     background-repeat: repeat;
     line-height: 1.15;
     font-size: 10pt;
     overflow-y: scroll;                          /* show vertical scrollbar */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;                   /* firefox         */
+    image-rendering: -o-crisp-edges;                     /* opera           */
+    image-rendering: -webkit-optimize-contrast;          /* chrome & safari */
+    image-rendering: pixelated;                          /* chrome          */
+    image-rendering: optimize-contrast;                  /* CSS3 proposed   */
+    -ms-interpolation-mode: nearest-neighbor;            /* IE8+            */
 }
 *::-webkit-scrollbar {
   width: 5px;
@@ -41,15 +49,6 @@ h1, h2 {
 }
 h2 {
     font-weight:bold;
-}
-img {
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;                   /* firefox         */
-    image-rendering: -o-crisp-edges;                     /* opera           */
-    image-rendering: -webkit-optimize-contrast;          /* chrome & safari */
-    image-rendering: pixelated;                          /* chrome          */
-    image-rendering: optimize-contrast;                  /* CSS3 proposed   */
-    -ms-interpolation-mode: nearest-neighbor;            /* IE8+            */
 }
 li {
     margin-top: 5px;

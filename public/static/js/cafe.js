@@ -207,6 +207,14 @@ getStyleList().then(function(styleList){
         currentPage --;
         loadStyles(styleList, styleOrder, currentPage);
     }
+    // populate style dropdown
+    let selectStyle = document.getElementById("blinkieStyle")
+    for (const [key, value] of Object.entries(styleList)) {
+        let opt = document.createElement('option');
+        opt.value = key;
+        opt.innerHTML = value.name;
+        selectStyle.appendChild(opt);
+    }
 });
 
 document.getElementById("blinkieForm").addEventListener("submit", submit);

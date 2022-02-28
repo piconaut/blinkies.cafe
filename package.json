@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/piconaut/blinkies.cafe/issues"
   },
+  "engines:": {
+    "node": "17.4.0"
+  },
   "homepage": "https://github.com/piconaut/blinkies.cafe#readme",
   "dependencies": {
     "compression": "^1.7.4",

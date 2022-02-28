@@ -1,6 +1,7 @@
 body {
     font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-    background-color:#b28ce6;
+    background-image: url("/purple-stars-bg.gif");
+    background-repeat: repeat;
     line-height: 1.15;
     font-size: 10pt;
     overflow-y: scroll;                          /* show vertical scrollbar */
@@ -8,6 +9,9 @@ body {
 *::-webkit-scrollbar {
   width: 5px;
   height: 5px;
+}
+*::-webkit-scrollbar:vertical {
+  background-color: #000000;
 }
 *::-webkit-scrollbar-thumb {
   background-color: #822ed6;
@@ -74,7 +78,7 @@ action {
     cursor:pointer;
 }
 .archiveContent, .content {
-    background-color:#c9b3e6;
+    background-color:rgba(201,179,230,0.75);
     margin: 18px auto 0px auto;
     padding: 4px;
     width:95%;
@@ -98,7 +102,7 @@ action {
     cursor:pointer;
 }
 .content {
-    max-width: 500px;
+    max-width: 540px;
 }
 .singleLineText {
     resize:none;
@@ -133,7 +137,8 @@ action {
 #banner, #navbar {
     width:240px;
     text-align:center;
-    font-weight:bold
+    font-weight:bold;
+    padding:4px;
 }
 #banner {
   margin-top:18px;

@@ -1,4 +1,14 @@
 const styleProps = {
+    '0024-red': {
+        name:"simple red",
+        bday:20220301,
+        frames:2,
+        colour:["#800000","#800000"],
+        font: "monaco",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
     '0023-trans-pride': {
         name:"this user is trains",
         bday:20220301,

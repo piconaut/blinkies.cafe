@@ -1,4 +1,15 @@
 const styleProps = {
+    '0023-trans-pride': {
+        name:"this user is trains",
+        bday:20220301,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        shadow:["#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa"],
+        font: "monaco",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
     '0022-iheart': {
         name:"blinkies so much !!!",
         bday:20220227,

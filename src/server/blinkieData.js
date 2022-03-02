@@ -8,7 +8,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)"
+        sourceName:"duLLwhite8",
+        sourceURL:"https://web.archive.org/web/20091026235518/http://us.geocities.com/badass_5775/calendar.htm"
     },
     '0024-red': {
         name:"simple red",

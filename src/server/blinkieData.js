@@ -1,4 +1,15 @@
 const styleProps = {
+    '0025-birthdaycake': {
+        name:"hbd ur old lmao",
+        bday:20220302,
+        frames:4,
+        delay:10,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "monaco",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
     '0024-red': {
         name:"simple red",
         bday:20220301,

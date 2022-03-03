@@ -1,4 +1,16 @@
 const styleProps = {
+    '0026-iheart2': {
+        name:"my bf",
+        bday:20220303,
+        frames:4,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadow:["#888888","#888888","#888888","#888888"],
+        font: "monaco",
+        fontsize:16,
+        x:-30, y:-1,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0025-birthdaycake': {
         name:"hbd ur old lmao",
         bday:20220302,

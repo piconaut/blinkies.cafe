@@ -8,8 +8,7 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:-30, y:-1,
-        sourceName:"y2k.neocities.org",
-        sourceURL:"https://y2k.neocities.org"
+        sourceName:"me :)"
     },
     '0025-birthdaycake': {
         name:"hbd ur old lmao",
@@ -325,6 +324,7 @@ const fontList = {
     8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
     9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
     10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
+    11: {name:"Liberation Sans", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"}
 };
 
 module.exports = {

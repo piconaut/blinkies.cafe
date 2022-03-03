@@ -18,7 +18,7 @@ function makeid(length) {
 }
 
 function sanitizeText(str) {
-    return (str.substring(0,64) + '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0');
+    return (str.substring(0,64) + '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/[♡]/g,'\u2665').replace('❤️','\u2665').replace('💜','\u2665');
 }
 
 async function pour(instyle, intext, inscale) {
@@ -71,7 +71,7 @@ async function pour(instyle, intext, inscale) {
                 }
                 else {
                     antialias = '-antialias';
-                    font      = 'hack';
+                    font      = 'Liberation Mono';
                     fontsize  = 10;
                     y         = 0;
                 }

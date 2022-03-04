@@ -1,4 +1,14 @@
 const styleProps = {
+    '0027-sakura': {
+        name:"サ ク  ラ",
+        bday:20220304,
+        frames:4,
+        colour:["#cc557f","#cc557f","#cc557f","#cc557f"],
+        font: "lanapixel",
+        fontsize:10,
+        x:0, y:-1,
+        sourceName:"me :)"
+    },
     '0026-iheart2': {
         name:"my bf",
         bday:20220303,

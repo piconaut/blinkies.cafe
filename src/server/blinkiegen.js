@@ -70,10 +70,19 @@ async function pour(instyle, intext, inscale) {
                     y        = 1;
                 }
                 else {
-                    antialias = '-antialias';
-                    font      = 'Liberation Mono';
-                    fontsize  = 10;
-                    y         = 0;
+                    fontSearch = "fc-list 'lanapixel:charset=" + unicodeCharCodes + "'";
+                    foundFont  = await exec(fontSearch);
+                    if (foundFont.stdout.length > 0) {
+                        font     = 'lanapixel';
+                        fontsize = 11;
+                        y        = -1;
+                    }
+                    else {
+                        antialias = '-antialias';
+                        font      = 'Liberation Mono';
+                        fontsize  = 10;
+                        y         = 0;
+                    }
                 }
             }
 

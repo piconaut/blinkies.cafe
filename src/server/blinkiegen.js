@@ -30,14 +30,16 @@ async function pour(instyle, intext, inscale) {
             // assign blinkie parms.
             let antialias   = '+antialias';
             let delay       = blinkieData.styleProps[styleID].delay ? blinkieData.styleProps[styleID].delay : 10;
-            let fontweight   = blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal';
+            let fontweight  = blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal';
             const frames    = blinkieData.styleProps[styleID].frames;
             const colour    = blinkieData.styleProps[styleID].colour;
-            const shadow    = blinkieData.styleProps[styleID].shadow;
+            let shadow      = blinkieData.styleProps[styleID].shadow;
             let font        = blinkieData.styleProps[styleID].font;
             let fontsize    = blinkieData.styleProps[styleID].fontsize;
-            const x         = blinkieData.styleProps[styleID].x;
+            let x           = blinkieData.styleProps[styleID].x;
             let y           = blinkieData.styleProps[styleID].y;
+            let x2          = x;
+            let y2          = 0;
             const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
             const scale     = scaleVals[inscale] ? scaleVals[inscale] : '100%';
 
@@ -58,9 +60,9 @@ async function pour(instyle, intext, inscale) {
             }
 
             // if any char code is not in style font, try monogramextended,
-            // fall back to hack.
-            let fontSearch = "fc-list '" + font + ":charset=" + unicodeCharCodes + "'";
-            let foundFont = await exec(fontSearch);
+            // fall back to Liberation Mono.
+            let fontSearch   = "fc-list '" + font + ":charset=" + unicodeCharCodes + "'";
+            let foundFont    = await exec(fontSearch);
             if (foundFont.stdout.length == 0) {
                 fontSearch = "fc-list 'monogramextended:charset=" + unicodeCharCodes + "'";
                 foundFont  = await exec(fontSearch);
@@ -86,6 +88,35 @@ async function pour(instyle, intext, inscale) {
                 }
             }
 
+            // if long input text has chars in 04b03, split into two lines.
+            const double = (cleantext.length > 26) ? true : false;
+            let cleantext1 = cleantext;
+            let cleantext2 = '';
+            let linelen = 0;
+            if (double) {
+                fontSearch = "fc-list '04b03:charset=" + unicodeCharCodes + "'";
+                foundFont  = await exec(fontSearch);
+                if (foundFont.stdout.length > 0) {
+                    antialias = '+antialias';
+                    font = '04b03';
+                    fontsize = 8;
+                    shadow = undefined;
+                    y = 4;
+                    y2 = -4;
+
+                    const words = cleantext.split(' ');
+                    let index = 0;
+                    for (let i=0; i<words.length; i++) {
+                        linelen += words[i].length;
+                        if (index==0 && linelen + i >= cleantext.length/2) {
+                            index = i;
+                        }
+                    }
+                    cleantext1 = words.slice(0,index+1).join(' ');
+                    cleantext2 = words.slice(index+1,words.length+1).join(' ');
+                }
+            }
+
             // generate frames with text.
             let stdout = [];
             let argsArray = [];
@@ -102,13 +133,20 @@ async function pour(instyle, intext, inscale) {
                     argsArray[i].push('+'+(x-1)+'+'+y,)
                     argsArray[i].push('-fill');
                     argsArray[i].push(shadow[i]);
-                    argsArray[i].push('-draw',"text 0,0 '" + cleantext + "'")
+                    argsArray[i].push('-draw',"text 0,0 '" + cleantext1 + "'")
                 }
-                argsArray[i].push('-page')
-                argsArray[i].push('+'+x+'+'+y,)
+                if (double) {
+                    argsArray[i].push('-page')
+                    argsArray[i].push('+'+(x2-1)+'+'+y2,)
+                    argsArray[i].push('-fill');
+                    argsArray[i].push(colour[i]);
+                    argsArray[i].push('-draw',"text 0,0 '" + cleantext2 + "'")
+                }
+                argsArray[i].push('-page');
+                argsArray[i].push('+'+x+'+'+y,);
                 argsArray[i].push('-fill');
                 argsArray[i].push(colour[i]);
-                argsArray[i].push('-draw',"text 0,0 '" + cleantext + "'")
+                argsArray[i].push('-draw',"text 0,0 '" + cleantext1 + "'");
                 argsArray[i].push(global.appRoot + '/assets/blinkies-bg/png/' + styleID + '-' + i + '.png');
                 argsArray[i].push(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png')
                 stdout[i] = execFile('convert', argsArray[i]);

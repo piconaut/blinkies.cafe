@@ -1,4 +1,16 @@
 const styleProps = {
+    '0028-computer': {
+        name:"a computer can never be held accountable",
+        bday:20220306,
+        frames:2,
+        delay: 25,
+        colour:["#ffffff","#ffffff"],
+        font: "monaco",
+        fontsize:16,
+        x:7, y:0,
+        sourceName:"網頁 素 材",
+        sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
+    },
     '0027-sakura': {
         name:"サ ク  ラ",
         bday:20220304,

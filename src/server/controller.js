@@ -1,20 +1,10 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const crypto = require('crypto');
 const fs = require("fs");
-const winston = require('winston');
 
-const blinkiegen = require('./blinkiegen.js')
-const blinkieData = require('./blinkieData.js')
-
-const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.json(),
-    defaultMeta: { service: 'user-service' },
-    transports: [
-        new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-        new winston.transports.File({ filename: 'logs/combined.log' }),
-    ],
-});
+const blinkiegen  = require('./blinkiegen.js');
+const blinkieData = require('./blinkieData.js');
+const logger      = require('./logger.js').logger;
 
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');

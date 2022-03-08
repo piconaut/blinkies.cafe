@@ -43,7 +43,6 @@ const msg = async function (req, res) {
             time:  Date.now(),
             mtype: 'msg',
             details: {
-                iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
                 origin: req.get('origin'),
                 msg: req.body.msg
             }
@@ -69,7 +68,6 @@ const pourBlinkie = async function (req, res) {
                 time:   Date.now(),
                 mtype:  'pour',
                 details: {
-                    iphash: crypto.createHash('md5').update(req.ip).digest("hex"),
                     origin: req.get('origin'),
                     parms: {
                         scale:  scale,

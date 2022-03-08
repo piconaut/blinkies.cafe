@@ -1,5 +1,4 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
-const crypto = require('crypto');
 const fs = require("fs");
 
 const blinkiegen  = require('./blinkiegen.js');

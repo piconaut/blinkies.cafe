@@ -53,8 +53,13 @@ const msg = async function (req, res) {
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip)) {
         const style  = req.body.blinkieStyle;
-        const intext = req.body.blinkieText;
+        const origintext = req.body.blinkieText;
+        let intext   = req.body.blinkieText;
         const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+
+        if (origintext.substring(0,7) == '\\nolog ') {
+            intext = origintext.replace('\\nolog ', '');
+        }
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
@@ -62,7 +67,7 @@ const pourBlinkie = async function (req, res) {
             res.end(blinkieLink);
         });
 
-        if (intext.substring(0,5) != 'nolog') {
+        if (origintext.substring(0,7) != '\\nolog ') {
             logger.info({
                 time:   Date.now(),
                 mtype:  'pour',

@@ -1,4 +1,16 @@
 const styleProps = {
+    '0029-pinksparkle': {
+        name:"!!! Bad Bitch !!!",
+        bday:20220310,
+        frames:2,
+        colour:["#ffb3ed","#ffb3ed"],
+        shadow:["#563c46","#563c46"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"poetshowit2000",
+        sourceURL:"https://web.archive.org/web/20091022120840/http://geocities.com/poetshowit2000/LUVDRAMACATS.html"
+    },
     '0028-computer': {
         name:"a computer can never be held accountable",
         bday:20220306,

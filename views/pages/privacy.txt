@@ -5,6 +5,6 @@ to maintain the basic functionality of this site, we log blinkie inputs:
   - blinkie style
   - blinkie scale
 
-you can opt out of logging: if you add "\nolog " (without quotes) at the start of your custom text, your blinkie inputs from not be logged.
+you can opt out of logging: if you add "\nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.
 
 we do *not* collect any data that identifies individual users in any way.

@@ -108,6 +108,10 @@ const serveBlinkie = function (req, res) {
 
 const serveGallery = function (req, res) {
     let pourStyle = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '';
+    res.setHeader(
+        'Content-Security-Policy',
+        "script-src 'self' https://yesterweb.org"
+    )
     res.render('pages/gallery.ejs', { pourStyle: pourStyle, styleList: blinkieData.stylePage });
 }
 

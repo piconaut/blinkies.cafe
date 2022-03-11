@@ -29,7 +29,7 @@ const styleProps = {
         frames:4,
         colour:["#cc557f","#cc557f","#cc557f","#cc557f"],
         font: "lanapixel",
-        fontsize:10,
+        fontsize:11,
         x:0, y:-1,
         sourceName:"me :)"
     },

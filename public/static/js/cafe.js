@@ -209,6 +209,7 @@ getStyleList().then(function(styleList){
     }
     // populate style dropdown
     let selectStyle = document.getElementById("blinkieStyle")
+    selectStyle.innerHTML = '';
     for (const [key, value] of Object.entries(styleList)) {
         let opt = document.createElement('option');
         opt.value = key;

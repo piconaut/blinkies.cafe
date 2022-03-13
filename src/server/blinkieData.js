@@ -1,4 +1,15 @@
 const styleProps = {
+    '0030-catpaw': {
+        name:"catboy  rights !!  :3",
+        bday:20220313,
+        frames:2,
+        colour:["#000000","#000000"],
+        shadow:["#888888","#888888"],
+        font:"monaco",
+        fontsize:16,
+        x:-8, y:0,
+        sourceName:"me :)"
+    },
     '0029-pinksparkle': {
         name:"!!! Bad Bitch !!!",
         bday:20220310,

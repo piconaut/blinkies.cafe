@@ -94,7 +94,6 @@ async function pour(instyle, intext, inscale) {
             const double = (cleantext.length > 26) ? true : false;
             let cleantext1 = cleantext;
             let cleantext2 = '';
-            let linelen = 0;
             if (double) {
                 fontSearch = "fc-list '04b03:charset=" + unicodeCharCodes + "'";
                 foundFont  = await exec(fontSearch);
@@ -107,15 +106,18 @@ async function pour(instyle, intext, inscale) {
                     y2 = -4;
 
                     const words = cleantext.split(' ');
-                    let index = 0;
+                    let diff = 99;
+                    let line1 = '';
+                    let line2 = '';
                     for (let i=0; i<words.length; i++) {
-                        linelen += words[i].length;
-                        if (index==0 && linelen + i >= cleantext.length/2) {
-                            index = i;
+                        line1 = words.slice(0,i+1).join(' ');
+                        line2 = words.slice(i+1,words.length+1).join(' ');
+                        if ( Math.abs(line1.length - line2.length) < diff ) {
+                            diff = Math.abs(line1.length - line2.length);
+                            cleantext1 = line1;
+                            cleantext2 = line2;
                         }
                     }
-                    cleantext1 = words.slice(0,index+1).join(' ');
-                    cleantext2 = words.slice(index+1,words.length+1).join(' ');
                 }
             }
 

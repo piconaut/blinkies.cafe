@@ -1,9 +1,15 @@
 blinkies.cafe does not collect personally identifiable data.
 
-to maintain the basic functionality of this site, we log blinkie inputs:
+to maintain & improve the quality of our blinkies, we log blinkie inputs:
   - blinkie text
   - blinkie style
   - blinkie scale
+
+we use these data to:
+  - estimate & forecast server load
+  - detect & fix bugs
+  - identify what character sets we should add next
+  - determine the maximum text length we should support
 
 you can opt out of logging: if you add "\nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.
 

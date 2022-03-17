@@ -1,4 +1,15 @@
 const styleProps = {
+    '0032-coffeecup': {
+        name:"caffiend",
+        bday:20220317,
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        font:"monaco",
+        fontsize:16,
+        x:-11, y:0,
+        sourceName:"Blinktastic Blinkies",
+        sourceURL:"https://web.archive.org/web/20090806124621/http://geocities.com/blinktasticblinkie/food"
+    },
     '0031-dogpaw': {
         name:"doggirl  rights !!  :3",
         bday:20220313,

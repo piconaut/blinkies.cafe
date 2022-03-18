@@ -1,6 +1,6 @@
 const styleProps = {
     '0032-coffeecup': {
-        name:"caffiend",
+        name:"need moar coffee XD",
         bday:20220317,
         frames:2,
         colour:["#ffffff","#ffffff"],

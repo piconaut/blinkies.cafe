@@ -123,6 +123,26 @@ const servePour = function (req, res) {
     });
 }
 
+const serveSitemap = function (req, res) {
+    const displayBaseUrl = 'https://blinkies.cafe/b/display/';
+    res.contentType("text/plain");
+    try {
+        fs.readFile(global.appRoot + '/views/pages/sitemap.txt', 'utf8' , (err, sitemap) => {
+            if (err) {
+                res.send(sitemap);
+                return
+            }
+            Object.keys(blinkieData.styleList).forEach(function(key) {
+                sitemap += displayBaseUrl + key.toString() + '.gif\n';
+            });
+            res.send(sitemap);
+        })
+    }
+    catch {
+        res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
+    }
+}
+
 const serveSourceList = function (req, res) {
     res.contentType("application/json");
     res.set('Access-Control-Allow-Origin','*')
@@ -139,6 +159,7 @@ module.exports = {
     msg,
     serveBlinkie,
     serveGallery,
+    serveSitemap,
     serveSourceList,
     serveStyleList,
     serveArchive,

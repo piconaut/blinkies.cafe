@@ -1,4 +1,16 @@
 const styleProps = {
+    '0033-confused': {
+        name:"head empty",
+        bday:20220321,
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "pixelpoiiz",
+        fontsize:10,
+        x:0, y:0,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0032-coffeecup': {
         name:"need moar coffee XD",
         bday:20220317,
@@ -391,7 +403,8 @@ const fontList = {
     8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
     9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
     10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
-    11: {name:"Liberation Sans", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"}
+    11: {name:"Liberation Sans", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
+    12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"}
 };
 
 module.exports = {

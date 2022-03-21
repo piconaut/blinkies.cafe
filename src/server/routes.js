@@ -44,7 +44,9 @@ router.get("/styleList.json", controller.serveStyleList);
 router.get("/sourceList.json", controller.serveSourceList);
 
 // raw text
-router.use('/sitemap.txt', controller.serveSitemap);
+router.use('/sitemap.txt', function (req, res) {
+    res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
+});
 router.get("/privacy.txt", function (req, res) {
     res.sendFile(global.appRoot + "/views/pages/privacy.txt");
 });

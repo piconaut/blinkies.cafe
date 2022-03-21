@@ -186,7 +186,6 @@ getStyleList().then(function(styleList){
     const sortRandom     = document.getElementById("sortRandom");
 
     let styleOrder = sortStyles(styleList,'bday');
-    loadStyles(styleList, styleOrder, 1);
     sortNew.onclick = function() {
         if (currentSort != 'bday') {
             styleOrder = sortStyles(styleList,'bday');

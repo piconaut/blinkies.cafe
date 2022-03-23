@@ -30,7 +30,7 @@ app.use('/', router);
 
 global.appRoot = path.resolve(__dirname);
 
-https.listen(8080, function () {
+https.listen(80, function () {
     console.log("https listening on *:8080\n");
 });
 

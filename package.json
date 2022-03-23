@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
     "helmet": "^4.6.0",
+    "promise-queue": "^2.2.5",
     "winston": "^3.5.1"
   }
 }

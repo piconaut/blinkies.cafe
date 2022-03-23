@@ -33,6 +33,10 @@ function cooldown(ip) {
         allowed = true;
     }
 
+    if (!global.prod) {
+        allowed = true;
+    }
+
     return allowed;
 }
 
@@ -50,6 +54,25 @@ const msg = async function (req, res) {
     }
 }
 
+const Queue = require('promise-queue')
+const { spawn,execFile } = require('child_process');
+var maxConcurrent = 1;
+var maxQueue = Infinity;
+var que = new Queue(maxConcurrent, maxQueue);
+
+var testFunct = function(res, style, intext, scale)
+{
+    var promise = new Promise((resolve) => {
+
+        blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+            res.end(blinkieLink);
+            resolve(blinkieLink);
+        });
+
+    })
+    return promise;
+}
+
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip)) {
         const style  = req.body.blinkieStyle;
@@ -64,9 +87,8 @@ const pourBlinkie = async function (req, res) {
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
         if (intext.length > 0) {
-            blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
-                res.end(blinkieLink);
-            });
+            que.add(testFunct.bind(null, res, style, intext, scale));
+            testFunct(res, style, intext, scale);
         }
         else {
             const siteURL = global.prod ? 'https://blinkies.cafe' : '';

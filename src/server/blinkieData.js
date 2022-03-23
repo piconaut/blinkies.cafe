@@ -1,4 +1,16 @@
 const styleProps = {
+    '0034-skull': {
+        name:"cyberbully",
+        bday:20220322,
+        frames:2,
+        delay:10,
+        colour:["#ff00ff","#ff0080"],
+        font: "Fipps",
+        fontsize:8,
+        x:0, y:0,
+        sourceName:"macawoni-1.tumblr.com",
+        sourceURL:"https://macawoni-1.tumblr.com/post/178029755030/sir-blinkies"
+    },
     '0033-confused': {
         name:"head empty",
         bday:20220321,

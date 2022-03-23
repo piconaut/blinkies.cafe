@@ -1,4 +1,15 @@
 const styleProps = {
+    '0035-edgyred': {
+        name:"I literally don't care.",
+        bday:20220322,
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "infernalda",
+        fontsize:16,
+        x:0, y:-1,
+        sourceName:"me :)"
+    },
     '0034-skull': {
         name:"cyberbully",
         bday:20220322,
@@ -416,7 +427,8 @@ const fontList = {
     9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
     10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
     11: {name:"Liberation Sans", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
-    12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"}
+    12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
+    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"}
 };
 
 module.exports = {

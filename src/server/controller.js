@@ -63,9 +63,16 @@ const pourBlinkie = async function (req, res) {
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
-        blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
-            res.end(blinkieLink);
-        });
+        if (intext.length > 0) {
+            blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+                res.end(blinkieLink);
+            });
+        }
+        else {
+            const siteURL = global.prod ? 'https://blinkies.cafe' : '';
+            res.end(siteURL + '/b/display/' + style + '.gif')
+        }
+
 
         if (origintext.substring(0,7) != '\\nolog ') {
             logger.info({

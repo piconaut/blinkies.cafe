@@ -45,15 +45,15 @@ async function pour(instyle, intext, inscale) {
             const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
             const scale     = scaleVals[inscale] ? scaleVals[inscale] : '100%';
 
+            // generate unique blinkie ID & URL.
+            const blinkieID = makeid(2);
+            blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
+
             // sanitize input text, use default text if empty.
             let cleantext = sanitizeText(intext);
             if (cleantext.replace(/\s/g, '').length == 0) {
                 cleantext = sanitizeText(blinkieData.styleProps[styleID].name);
             }
-
-            // generate unique blinkie ID & URL.
-            const blinkieID = makeid(2);
-            blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
             // get all unicode char codes from string.
             let unicodeCharCodes = '';
@@ -133,26 +133,19 @@ async function pour(instyle, intext, inscale) {
                     '-weight',fontweight
                 ]
                 if (shadow) {
-                    argsArray[i].push('-page')
-                    argsArray[i].push('+'+(x-1)+'+'+y,)
-                    argsArray[i].push('-fill');
-                    argsArray[i].push(shadow[i]);
-                    argsArray[i].push('-draw',"text 0,0 '" + cleantext1 + "'")
+                    argsArray[i].push('-page', '+'+(x-1)+'+'+y, '-fill', shadow[i],
+                                      '-draw', "text 0,0 '" + cleantext1 + "'");
                 }
                 if (double) {
-                    argsArray[i].push('-page')
-                    argsArray[i].push('+'+(x2-1)+'+'+y2,)
-                    argsArray[i].push('-fill');
-                    argsArray[i].push(colour[i]);
-                    argsArray[i].push('-draw',"text 0,0 '" + cleantext2 + "'")
+                    argsArray[i].push('-page', '+'+(x2-1)+'+'+y2, '-fill', colour[i],
+                                      '-draw', "text 0,0 '" + cleantext2 + "'");
                 }
-                argsArray[i].push('-page');
-                argsArray[i].push('+'+x+'+'+y,);
-                argsArray[i].push('-fill');
-                argsArray[i].push(colour[i]);
-                argsArray[i].push('-draw',"text 0,0 '" + cleantext1 + "'");
-                argsArray[i].push(global.appRoot + '/assets/blinkies-bg/png/' + styleID + '-' + i + '.png');
-                argsArray[i].push(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png')
+                argsArray[i].push(
+                    '-page', '+'+x+'+'+y, '-fill', colour[i],
+                    '-draw', "text 0,0 '" + cleantext1 + "'",
+                    global.appRoot + '/assets/blinkies-bg/png/' + styleID + '-' + i + '.png',
+                    global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
+                );
                 stdout[i] = execFile('convert', argsArray[i]);
             }
 
@@ -168,19 +161,34 @@ async function pour(instyle, intext, inscale) {
             await Promise.all(stdout);
             const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
 
-            if (stderr_gif) { return }
+            if (stderr_gif) {
+                blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
+                logger.error({
+                    time:  Date.now(),
+                    mtype: 'pour',
+                    details: stderr_gif
+                });
+            }
 
             // delete frames.
+            let frameFname = '';
             for (let i=0; i<frames; i++) {
-                fs.unlink(global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png', function(err) {
-                    if (err) { return }
+                frameFname = global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png';
+                fs.unlink(frameFname, function(err) {
+                    if (err) {
+                        logger.error({
+                            time:  Date.now(),
+                            mtype: 'pour',
+                            details: err
+                        });
+                    }
                 });
             }
 
         }  // end if (styleID in styleProps)
 
         else {
-            blinkieLink = siteURL + '/b/display/blinkiesCafe.gif';
+            blinkieLink = siteURL + '/b/display/0020-blinkiesCafe.gif';
         }
 
     }  // end try

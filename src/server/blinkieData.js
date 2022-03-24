@@ -14,7 +14,7 @@ const styleProps = {
         name:"cyberbully",
         bday:20220322,
         frames:2,
-        delay:10,
+        delay:15,
         colour:["#ff00ff","#ff0080"],
         font: "Fipps",
         fontsize:8,

@@ -137,7 +137,7 @@ const serveGallery = function (req, res) {
         'Content-Security-Policy',
         "script-src 'self' https://yesterweb.org"
     )
-    res.render('pages/gallery.ejs', { pourStyle: pourStyle, styleList: blinkieData.stylePage });
+    res.render('pages/gallery.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage });
 }
 
 const servePour = function (req, res) {

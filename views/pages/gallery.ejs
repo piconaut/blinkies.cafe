@@ -65,7 +65,7 @@ blinkies.cafe
         <center id='tiles'>
             <%
             let i=0;
-            for (const [key, value] of Object.entries(styleList)) {
+            for (const [key, value] of Object.entries(stylePage)) {
                 %><img id='blinkie<%=i%>' src="/b/display/<%=key%>.gif" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
     	    i++;
             }

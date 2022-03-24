@@ -33,6 +33,10 @@ function cooldown(ip) {
         allowed = true;
     }
 
+    if (!global.prod) {
+        allowed = true;
+    }
+
     return allowed;
 }
 
@@ -50,6 +54,22 @@ const msg = async function (req, res) {
     }
 }
 
+const queue = require('promise-queue')
+var brueue = new queue(1, Infinity);
+
+var orderBlinkie = function(res, style, intext, scale)
+{
+    var promise = new Promise((resolve) => {
+
+        blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+            res.end(blinkieLink);
+            resolve(blinkieLink);
+        });
+
+    })
+    return promise;
+}
+
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip)) {
         const style  = req.body.blinkieStyle;
@@ -64,9 +84,7 @@ const pourBlinkie = async function (req, res) {
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
         if (intext.length > 0) {
-            blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
-                res.end(blinkieLink);
-            });
+            brueue.add(orderBlinkie.bind(null, res, style, intext, scale));
         }
         else {
             const siteURL = global.prod ? 'https://blinkies.cafe' : '';

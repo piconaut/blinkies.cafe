@@ -54,13 +54,10 @@ const msg = async function (req, res) {
     }
 }
 
-const Queue = require('promise-queue')
-const { spawn,execFile } = require('child_process');
-var maxConcurrent = 1;
-var maxQueue = Infinity;
-var que = new Queue(maxConcurrent, maxQueue);
+const queue = require('promise-queue')
+var brueue = new queue(1, Infinity);
 
-var testFunct = function(res, style, intext, scale)
+var orderBlinkie = function(res, style, intext, scale)
 {
     var promise = new Promise((resolve) => {
 
@@ -87,8 +84,7 @@ const pourBlinkie = async function (req, res) {
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
         if (intext.length > 0) {
-            que.add(testFunct.bind(null, res, style, intext, scale));
-            testFunct(res, style, intext, scale);
+            brueue.add(orderBlinkie.bind(null, res, style, intext, scale));
         }
         else {
             const siteURL = global.prod ? 'https://blinkies.cafe' : '';

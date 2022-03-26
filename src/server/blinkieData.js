@@ -1,4 +1,16 @@
 const styleProps = {
+    '0036-fire': {
+        name:"BURN IT ALL DOWN",
+        bday:20220326,
+        frames:4,
+        delay:10,
+        colour:["#f39b29","#fed439","#f39b29","#e84d00"],
+        font: "doublehomicide",
+        fontsize:16,
+        x:14, y:0,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0035-edgyred': {
         name:"I literally don't care.",
         bday:20220322,
@@ -426,9 +438,10 @@ const fontList = {
     8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
     9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
     10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
-    11: {name:"Liberation Sans", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
+    11: {name:"Liberation Mono", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
     12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
-    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"}
+    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"},
+    14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"}
 };
 
 const fallbackFonts = {

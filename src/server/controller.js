@@ -77,8 +77,8 @@ const pourBlinkie = async function (req, res) {
         let intext   = req.body.blinkieText;
         const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
 
-        if (origintext.substring(0,7) == '\\nolog ') {
-            intext = origintext.replace('\\nolog ', '');
+        if (origintext.substring(0,7) == '/nolog ') {
+            intext = origintext.replace('/nolog ', '');
         }
 
         res.set('Content-Type', 'application/json');
@@ -92,7 +92,7 @@ const pourBlinkie = async function (req, res) {
         }
 
 
-        if (origintext.substring(0,7) != '\\nolog ') {
+        if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
                 time:   Date.now(),
                 mtype:  'pour',

@@ -431,11 +431,33 @@ const fontList = {
     13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"}
 };
 
+const fallbackFonts = {
+    0: {
+        family:    'monogramextended',
+        antialias: '+antialias',
+        fontsize:  16,
+        y:         1
+    },
+    1: {
+        family:    'lanapixel',
+        antialias: '+antialias',
+        fontsize:  11,
+        y:         -1,
+    },
+    2: {
+        family:    'Liberation Mono',
+        antialias: '-antialias',
+        fontsize:  10,
+        y:         0
+    }
+}
+
 module.exports = {
     styleProps,
     styleList,
     stylePage,
     sourceList,
     sourcePage,
-    fontList
+    fontList,
+    fallbackFonts
 }

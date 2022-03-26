@@ -11,6 +11,6 @@ we use these data to:
   - prioritize character sets to add next
   - decide maximum text length to support
 
-you can opt out of logging: if you add "\nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.
+you can opt out of logging: if you add "/nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.
 
 we do *not* collect any data that identifies individual users in any way.

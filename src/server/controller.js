@@ -83,13 +83,13 @@ const pourBlinkie = async function (req, res) {
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
-        if (intext.length > 0) {
+//        if (intext.length > 0) {
             brueue.add(orderBlinkie.bind(null, res, style, intext, scale));
-        }
-        else {
-            const siteURL = global.prod ? 'https://blinkies.cafe' : '';
-            res.end(siteURL + '/b/display/' + style + '.gif')
-        }
+//        }
+//        else {
+//            const siteURL = global.prod ? 'https://blinkies.cafe' : '';
+//            res.end(siteURL + '/b/display/' + style + '.gif')
+//        }
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({

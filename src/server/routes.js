@@ -29,8 +29,8 @@ router.post("/api/pour", controller.pourBlinkie);
 router.post("/api/msg", controller.msg);
 
 // static files
-router.use(express.static("public/static/css/", { maxAge: '1d' }));
-router.use(express.static("public/static/js/", { maxAge: '1d' }));
+router.use(express.static("public/static/css/"));
+router.use(express.static("public/static/js/"));
 router.use(express.static("public/static/img/", { maxAge: '365d' }));
 
 // json data

@@ -1,4 +1,25 @@
 const styleProps = {
+    '0037-aprilfools': {
+        name:"APRIL FOOLS!",
+        bday:20220401,
+        frames:8,
+        colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
+        font: "pixel icons compilation",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
+    '0038-exitbutton2': {
+        name:"don't like, don't read",
+        bday:20220329,
+        frames:3,
+        colour:["#ffffff","#ffffff","#ffffff"],
+        font: "monaco",
+        fontsize:16,
+        x:19, y:0,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0036-fire': {
         name:"BURN IT ALL DOWN",
         bday:20220326,
@@ -83,6 +104,7 @@ const styleProps = {
         name:"!!! Bad Bitch !!!",
         bday:20220310,
         frames:2,
+        delay:15,
         colour:["#ffb3ed","#ffb3ed"],
         shadow:["#563c46","#563c46"],
         font: "rainyhearts",
@@ -170,13 +192,13 @@ const styleProps = {
         sourceURL:"https://y2k.neocities.org"
     },
     '0021-vampirefangs': {
-        name:"BLOOD-SUCKER",
+        name:"Blood-Sucker",
         bday:20220223,
         frames:8,
         colour:["#d00000","#d00000","#ff0000","#d00000","#d00000","#ff0000","#ff0000","#ff0000"],
         font: "alagard",
         fontsize:16,
-        x:10, y:-2,
+        x:10, y:-1,
         sourceName:"me :)"
     },
     '0020-blinkiesCafe': {
@@ -441,7 +463,8 @@ const fontList = {
     11: {name:"Liberation Mono", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
     12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
     13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"},
-    14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"}
+    14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
+    15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"}
 };
 
 const fallbackFonts = {

@@ -91,7 +91,6 @@ const pourBlinkie = async function (req, res) {
             res.end(siteURL + '/b/display/' + style + '.gif')
         }
 
-
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
                 time:   Date.now(),

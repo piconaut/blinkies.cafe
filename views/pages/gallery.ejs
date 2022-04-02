@@ -21,9 +21,11 @@ blinkies.cafe
     <div id='pour' style='position:absolute; visibility:<%if (pourStyle == '') {%>hidden<%} else {%>visible<%}%>'>
         <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
         <form id='blinkieForm'>
-        text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
-        <div style='margin-top: 3px'>
-            style: <select name="blinkieStyle" id="blinkieStyle">
+        text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 cols=16 wrap='off'></textarea>&nbsp;<input type="checkbox" id="toggleSplit" name="toggleSplit"><label for="toggleSplit">split</label>(<div class="tooltip">?
+            <span class="tooltiptext">fit more text by splitting into two lines</span>
+        </div>)
+        <div style='margin-top: 2px'>
+            style: <select name="blinkieStyle" id="blinkieStyle" cols=20>
                 <%
                 if (pourStyle != '') {
                     %><option value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
@@ -43,14 +45,14 @@ blinkies.cafe
                 <option value=4>4x: chat/socials/stories</option>
             </select>
             (<div class="tooltip">?
-                <span class="tooltiptext">4x res looks better in chat &#38; social media</span>
+                <span class="tooltiptext">4x res looks better in some chat &#38; social media</span>
             </div>)
         </div>
-        <button type='submit' id='submitbtn'>generate!!</button>
+        <button type='submit' id='submitbtn'>generate!!</button><br>
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
-        <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br></div>
-        <br>share our button?<br><textarea readonly id='badgetxt' wrap='off' class='singleLineText' style='margin-bottom:2px'>&lt;a href='https://blinkies.cafe' target='_blank'&gt;&lt;img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='button for blinkies.cafe, a custom text blinkie maker tool'&gt;&lt;/a&gt;</textarea><br>
+        <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br><br></div>
+        share our button?<br><textarea readonly id='badgetxt' wrap='off' class='singleLineText' style='margin-bottom:2px'>&lt;a href='https://blinkies.cafe' target='_blank'&gt;&lt;img src='https://blinkies.cafe/b/display/blinkiesCafe-badge.gif' alt='button for blinkies.cafe, a custom text blinkie maker tool'&gt;&lt;/a&gt;</textarea><br>
         <img src='/b/display/blinkiesCafe-badge.gif' alt='blinkies.cafe shareable badge'>
         <form id='msgForm' style='display:none'>
         <br><textarea placeholder='leave me a message?' name='msg' id='msgText' class='singleLineText' rows=1 wrap='off'></textarea><button type='submit' id='msgSubmit'>send</button><br><br>
@@ -82,7 +84,7 @@ blinkies.cafe
         new blinkies added weekly!
     </div>
     </center>
-    <br><br>
+    <br><br><br>
 </div>
 <hr>
 <br>
@@ -121,7 +123,8 @@ enjoy~
 <div class='content'>
 <h2>what's new</h2><br>
 <ul>
-    <li>improved multi-line splitting algorithm</li>
+    <li>added option to toggle multi-line splitting.</li>
+    <li>improved multi-line splitting algorithm.</li>
     <li>joined yesterweb ring!! &lt;3</li>
     <li>allow longer input text by splitting into two lines.</li>
     <li>added support for 日本語, 中文, and 한국어 characters!</li>
@@ -132,7 +135,6 @@ enjoy~
     <li>added "blinkies so much !!!" blinkie!</li>
     <li>style select dropdown bugfix</li>
     <li>added copy-pasteable HTML to link us :)</li>
-    <li>added "BLOOD-SUCKER" binkie!</li>
 </ul>
 </div>
 <div class='content'>

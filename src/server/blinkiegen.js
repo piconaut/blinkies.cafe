@@ -20,7 +20,7 @@ function makeid(length) {
 }
 
 function sanitizeText(str) {
-    return (str.substring(0,64) + '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/[♡]/g,'\u2665').replace(/❤️/g,'\u2665').replace(/💜/g,'\u2665');
+    return (str.substring(0,64) + '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/[♡❤]/g,'\u2665').replace(/❤️/g,'\u2665').replace(/💜/g,'\u2665');
 }
 
 async function processText(blinkieParms) {
@@ -51,33 +51,29 @@ async function processText(blinkieParms) {
             }
         }
 
-        // if long input text has chars in 04b03, split into two lines.
-        blinkieParms.double = (blinkieParms.cleantext.length > 26) ? true : false;
         blinkieParms.cleantext1 = blinkieParms.cleantext;
         blinkieParms.cleantext2 = '';
-        if (blinkieParms.double) {
-            fontSearch = "fc-list '04b03:charset=" + blinkieParms.unicodeCharCodes + "'";
-            foundFont  = await exec(fontSearch);
-            if (foundFont.stdout.length > 0) {
-                blinkieParms.antialias = '+antialias';
-                blinkieParms.font = '04b03';
-                blinkieParms.fontsize = 8;
-                blinkieParms.shadow = undefined;
-                blinkieParms.y = 4;
-                blinkieParms.y2 = -4;
 
-                const words = blinkieParms.cleantext.split(' ');
-                let diff = 99;
-                let line1 = '';
-                let line2 = '';
-                for (let i=0; i<words.length; i++) {
-                    line1 = words.slice(0,i+1).join(' ');
-                    line2 = words.slice(i+1,words.length+1).join(' ');
-                    if ( Math.abs(line1.length - line2.length) < diff ) {
-                        diff = Math.abs(line1.length - line2.length);
-                        blinkieParms.cleantext1 = line1;
-                        blinkieParms.cleantext2 = line2;
-                    }
+        // if split flag is set, split text into two lines.
+        if (blinkieParms.split) {
+            blinkieParms.antialias = '+antialias';
+            blinkieParms.font = '04b03';
+            blinkieParms.fontsize = 8;
+            blinkieParms.shadow = undefined;
+            blinkieParms.y = 4;
+            blinkieParms.y2 = -4;
+
+            const words = blinkieParms.cleantext.split(' ');
+            let diff = 99;
+            let line1 = '';
+            let line2 = '';
+            for (let i=0; i<words.length; i++) {
+                line1 = words.slice(0,i+1).join(' ');
+                line2 = words.slice(i+1,words.length+1).join(' ');
+                if ( Math.abs(line1.length - line2.length) < diff ) {
+                    diff = Math.abs(line1.length - line2.length);
+                    blinkieParms.cleantext1 = line1;
+                    blinkieParms.cleantext2 = line2;
                 }
             }
         }
@@ -107,7 +103,7 @@ async function renderFrames(blinkieID, blinkieParms) {
                 argsArray[i].push('-page', '+'+(blinkieParms.x-1)+'+'+blinkieParms.y, '-fill', blinkieParms.shadow[i],
                                   '-draw', "text 0,0 '" + blinkieParms.cleantext1 + "'");
             }
-            if (blinkieParms.double) {
+            if (blinkieParms.split) {
                 argsArray[i].push('-page', '+'+(blinkieParms.x2)+'+'+blinkieParms.y2, '-fill', blinkieParms.colour[i],
                                   '-draw', "text 0,0 '" + blinkieParms.cleantext2 + "'");
             }
@@ -146,7 +142,7 @@ async function renderBlinkie(blinkieID, blinkieParms) {
     return blinkieParms;
 }
 
-async function pour(instyle, intext, inscale) {
+async function pour(instyle, intext, inscale, split) {
     let blinkieLink = ''
 
     try {
@@ -174,7 +170,7 @@ async function pour(instyle, intext, inscale) {
             'x2':         blinkieData.styleProps[styleID].x,
             'y2':         0,
             'unicodeCharCodes': '',
-            'double':     false
+            'split':      split
         };
 
         // generate unique blinkie ID & URL.

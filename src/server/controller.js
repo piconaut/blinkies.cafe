@@ -57,11 +57,11 @@ const msg = async function (req, res) {
 const queue = require('promise-queue')
 var brueue = new queue(1, Infinity);
 
-var orderBlinkie = function(res, style, intext, scale)
+var orderBlinkie = function(res, style, intext, scale, split)
 {
     var promise = new Promise((resolve) => {
 
-        blinkiegen.pour(style, intext, scale).then(function(blinkieLink) {
+        blinkiegen.pour(style, intext, scale, split).then(function(blinkieLink) {
             res.end(blinkieLink);
             resolve(blinkieLink);
         });
@@ -76,6 +76,7 @@ const pourBlinkie = async function (req, res) {
         const origintext = req.body.blinkieText;
         let intext   = req.body.blinkieText;
         const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
+        const split = Boolean(req.body.splitText);
 
         if (origintext.substring(0,7) == '/nolog ') {
             intext = origintext.replace('/nolog ', '');
@@ -83,13 +84,8 @@ const pourBlinkie = async function (req, res) {
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
-//        if (intext.length > 0) {
-            brueue.add(orderBlinkie.bind(null, res, style, intext, scale));
-//        }
-//        else {
-//            const siteURL = global.prod ? 'https://blinkies.cafe' : '';
-//            res.end(siteURL + '/b/display/' + style + '.gif')
-//        }
+        
+        brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split));
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
@@ -100,7 +96,8 @@ const pourBlinkie = async function (req, res) {
                     parms: {
                         scale:  scale,
                         style:  style,
-                        text:   intext
+                        text:   intext,
+                        split:  split
                     }   // parms
                 }       // details
             });         // logger.info

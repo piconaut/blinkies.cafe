@@ -16,9 +16,9 @@ function getStyleList() {
     return fetch('/styleList.json').then((response)=>response.json())
                                    .then((responseJson)=>{return responseJson});
 }
-function postBlinkie(blinkieText, blinkieStyle, blinkieScale) {
+function postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText) {
     return fetch(urlRoot + "/api/pour", {
-        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle, blinkieScale: blinkieScale}),
+        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle, blinkieScale: blinkieScale, splitText: splitText}),
         headers: {"Content-Type": "application/json"},
         method: "POST"
     })
@@ -153,14 +153,15 @@ function submit (event) {
         lastRequestTime = Date.now();
         let freshBlinkie = document.getElementById("freshBlinkie");
         let blinkieText = document.getElementById("blinkieText").value;
+        let splitText = document.getElementById("toggleSplit").checked;
         let blinkieStyle = document.getElementById("blinkieStyle").value;
         let blinkieScale = document.getElementById("blinkieScale").value;
         let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
         let submitbtn = document.getElementById('submitbtn');
 
-        submitbtn.innerText = 'generating';
+        submitbtn.innerText = 'brewing!!!';
 
-        postBlinkie(blinkieText, blinkieStyle, blinkieScale).then( function(blinkieURL) {
+        postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
             blinkieLinkHolder.innerHTML = '';
             let blinkieLink = document.createElement('a');
@@ -169,7 +170,7 @@ function submit (event) {
             blinkieLink.download = blinkieURL.split('/')[4];
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"<br><br>';
             submitbtn.innerText = 'generate!!';
         });
     }

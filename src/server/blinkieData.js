@@ -1,4 +1,15 @@
 const styleProps = {
+    '0039-staticrainbow': {
+        name:"MAYDAY   MAYDAY   MAYDAY  ",
+        bgID:"0037-aprilfools",
+        bday:20220401,
+        frames:8,
+        colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
+        font: "fipps",
+        fontsize:8,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
     '0037-aprilfools': {
         name:"APRIL FOOLS!",
         bday:20220401,

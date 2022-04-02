@@ -54,7 +54,7 @@ li {
     margin-top: 5px;
 }
 select {
-    width:175px;
+    width:210px;
 }
 small {
     font-size: 8pt;
@@ -148,7 +148,7 @@ action {
       width: 2px;
 }
 #blinkieText, #msgText {
-    width:165px;
+    width:200px;
     overflow:hidden;
     resize:none;
     margin-bottom: -6px;

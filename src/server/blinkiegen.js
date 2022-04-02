@@ -114,7 +114,7 @@ async function renderFrames(blinkieID, blinkieParms) {
             argsArray[i].push(
                 '-page', '+'+blinkieParms.x+'+'+blinkieParms.y, '-fill', blinkieParms.colour[i],
                 '-draw', "text 0,0 '" + blinkieParms.cleantext1 + "'",
-                global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.styleID + '-' + i + '.png',
+                global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.bgID + '-' + i + '.png',
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
             );
             stdout[i] = execFile('convert', argsArray[i]);
@@ -155,6 +155,7 @@ async function pour(instyle, intext, inscale) {
         let styleID = String(instyle) in blinkieData.styleProps ? String(instyle) : '0020-blinkiesCafe';
         let blinkieParms = {
             'styleID':    styleID,
+            'bgID':       blinkieData.styleProps[styleID].bgID ? blinkieData.styleProps[styleID].bgID : styleID,
             'intext':     intext,
             'cleantext':  '',
             'cleantext1': '',

@@ -29,6 +29,12 @@ body {
 button, option, select {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
+input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    margin: 0px;
+}
 select,button {
     margin-top:4px;
 }
@@ -54,7 +60,7 @@ li {
     margin-top: 5px;
 }
 select {
-    width:220px;
+    width:224.72px;
 }
 small {
     font-size: 8pt;

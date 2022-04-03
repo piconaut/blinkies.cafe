@@ -54,6 +54,13 @@ async function processText(blinkieParms) {
         blinkieParms.cleantext1 = blinkieParms.cleantext;
         blinkieParms.cleantext2 = '';
 
+        // if input text is long & supported by small font, set split flag.
+        if (!blinkieParms.split && blinkieParms.cleantext.length > 28) {
+            fontSearch = "fc-list '04b03:charset=" + blinkieParms.unicodeCharCodes + "'";
+            foundFont  = await exec(fontSearch);
+            if (foundFont.stdout.length > 0) blinkieParms.split = true;
+        }
+
         // if split flag is set, split text into two lines.
         if (blinkieParms.split) {
             blinkieParms.antialias = '+antialias';

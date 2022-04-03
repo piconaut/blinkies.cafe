@@ -70,18 +70,28 @@ async function processText(blinkieParms) {
             blinkieParms.y = 4;
             blinkieParms.y2 = -4;
 
-            const words = blinkieParms.cleantext.split(' ');
-            let diff = 99;
-            let line1 = '';
-            let line2 = '';
-            for (let i=0; i<words.length; i++) {
-                line1 = words.slice(0,i+1).join(' ');
-                line2 = words.slice(i+1,words.length+1).join(' ');
-                if ( Math.abs(line1.length - line2.length) < diff ) {
-                    diff = Math.abs(line1.length - line2.length);
-                    blinkieParms.cleantext1 = line1;
-                    blinkieParms.cleantext2 = line2;
+            // if text has spaces, split on space closest to middle.
+            if (blinkieParms.cleantext.includes(' ')) {
+                const words = blinkieParms.cleantext.split(' ');
+                let diff = 99;
+                let line1 = '';
+                let line2 = '';
+                for (let i=0; i<words.length; i++) {
+                    line1 = words.slice(0,i+1).join(' ');
+                    line2 = words.slice(i+1,words.length+1).join(' ');
+                    if ( Math.abs(line1.length - line2.length) < diff ) {
+                        diff = Math.abs(line1.length - line2.length);
+                        blinkieParms.cleantext1 = line1;
+                        blinkieParms.cleantext2 = line2;
+                    }
                 }
+            }
+            // else (no spaces), split at middle char.
+            else {
+                const chars = blinkieParms.cleantext.split('');
+                const half = Math.ceil(chars.length / 2);
+                blinkieParms.cleantext1 = chars.splice(0, half).join('');
+                blinkieParms.cleantext2 = chars.splice(-half).join('');
             }
         }
     }

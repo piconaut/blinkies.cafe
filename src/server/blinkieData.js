@@ -1,4 +1,14 @@
 const styleProps = {
+    '0040-gemini': {
+        name:"psiioniic",
+        bday:20220405,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)"
+    },
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
         bgID:"0037-aprilfools",

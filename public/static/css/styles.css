@@ -29,14 +29,14 @@ body {
 button, option, select {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
+select,button {
+    margin-top:4px;
+}
 input[type=checkbox] {
     vertical-align: middle;
     position: relative;
     bottom: 1px;
     margin: 0px;
-}
-select,button {
-    margin-top:4px;
 }
 p,ul {
     font-family:"Segoe UI","Liberation Sans",sans-serif;
@@ -60,7 +60,7 @@ li {
     margin-top: 5px;
 }
 select {
-    width:224.72px;
+    width:210px;
 }
 small {
     font-size: 8pt;
@@ -135,7 +135,7 @@ action {
   width: 120px;
   top: 125%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -70px;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -154,6 +154,7 @@ action {
       width: 2px;
 }
 #blinkieText, #msgText {
+    width:145px;
     overflow:hidden;
     resize:none;
     margin-bottom: -6px;
@@ -164,7 +165,7 @@ action {
 }
 #msgText {
     resize:none;
-    width: 230px;
+    width: 145px;
     height:18px;
 }
 #fontTable {

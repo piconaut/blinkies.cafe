@@ -159,7 +159,7 @@ function submit (event) {
         let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
         let submitbtn = document.getElementById('submitbtn');
 
-        submitbtn.innerText = 'brewing!!!';
+        submitbtn.innerText = 'brewing...';
 
         postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
@@ -170,7 +170,7 @@ function submit (event) {
             blinkieLink.download = blinkieURL.split('/')[4];
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"<br><br>';
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br><br>';
             submitbtn.innerText = 'generate!!';
         });
     }

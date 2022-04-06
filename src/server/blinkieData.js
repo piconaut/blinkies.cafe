@@ -1,6 +1,6 @@
 const styleProps = {
     '0040-gemini': {
-        name:"psiioniic",
+        name:"p2iioniic",
         bday:20220405,
         frames:2,
         colour:["#000000","#000000"],

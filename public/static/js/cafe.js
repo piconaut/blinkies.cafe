@@ -6,7 +6,7 @@
 let blinkieTiles     = document.querySelectorAll(".blinkieTile");
 const pageSize       = blinkieTiles.length;
 const urlRoot        = '';
-let currentSort      = 'bday';
+let currentSort      = 'bdaydesc';
 
 /*---------------------*/
 /* GET & POST requests */
@@ -111,14 +111,15 @@ function shuffleStyles(styleList) {
     return(styleOrder);
 }
 
-function sortStyles(styleList, sortval) {
-    currentSort = sortval;
+function sortStyles(styleList, sortval, direction) {
+    currentSort = sortval + direction;
     let styleArray = []
     for (var style in styleList){
         styleArray.push([style,styleList[style][sortval]])
     }
     let styleOrder = styleArray.sort(function(a, b) {
-        return b[1] - a[1];
+        if (direction == 'desc') return b[1] - a[1];
+        else if (direction == 'asc') return a[1] - b[1];
     });
 
     return styleOrder
@@ -184,13 +185,21 @@ getStyleList().then(function(styleList){
     const nextPage       = document.getElementById("nextPage");
     const prevPage       = document.getElementById("prevPage");
     const sortNew        = document.getElementById("sortNew");
+    const sortOld        = document.getElementById("sortOld");
     const sortRandom     = document.getElementById("sortRandom");
 
-    let styleOrder = sortStyles(styleList,'bday');
+    let styleOrder = sortStyles(styleList,'bdayasc');
     loadStyles(styleList, styleOrder, 1);
     sortNew.onclick = function() {
-        if (currentSort != 'bday') {
-            styleOrder = sortStyles(styleList,'bday');
+        if (currentSort != 'bdaydesc') {
+            styleOrder = sortStyles(styleList,'bday', 'desc');
+            loadStyles(styleList, styleOrder, 1);
+            currentPage = 1;
+        }
+    }
+    sortOld.onclick = function() {
+        if (currentSort != 'bdayasc') {
+            styleOrder = sortStyles(styleList,'bday', 'asc');
             loadStyles(styleList, styleOrder, 1);
             currentPage = 1;
         }

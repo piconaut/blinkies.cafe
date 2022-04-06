@@ -60,12 +60,10 @@ var brueue = new queue(1, Infinity);
 var orderBlinkie = function(res, style, intext, scale, split)
 {
     var promise = new Promise((resolve) => {
-
         blinkiegen.pour(style, intext, scale, split).then(function(blinkieLink) {
             res.end(blinkieLink);
             resolve(blinkieLink);
         });
-
     })
     return promise;
 }
@@ -77,6 +75,7 @@ const pourBlinkie = async function (req, res) {
         let intext   = req.body.blinkieText;
         const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
         const split = Boolean(req.body.splitText);
+        const starttime = Date.now();
 
         if (origintext.substring(0,7) == '/nolog ') {
             intext = origintext.replace('/nolog ', '');
@@ -84,22 +83,21 @@ const pourBlinkie = async function (req, res) {
 
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
-        
-        brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split));
+
+        await brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split));
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
-                time:   Date.now(),
+                time:   starttime,
+                brewMs: Date.now() - starttime,
                 mtype:  'pour',
-                details: {
-                    origin: req.get('origin'),
-                    parms: {
-                        scale:  scale,
-                        style:  style,
-                        text:   intext,
-                        split:  split
-                    }   // parms
-                }       // details
+                origin: req.get('origin'),
+                parms: {
+                    scale:  scale,
+                    style:  style,
+                    text:   intext,
+                    split:  split
+                }       // parms
             });         // logger.info
         }               // nolog
     }                   // cooldown
@@ -127,13 +125,13 @@ const serveBlinkie = function (req, res) {
     }
 }
 
-const serveGallery = function (req, res) {
+const serveCafe = function (req, res) {
     let pourStyle = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '';
     res.setHeader(
         'Content-Security-Policy',
         "script-src 'self' https://yesterweb.org"
     )
-    res.render('pages/gallery.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage });
+    res.render('pages/cafe.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage });
 }
 
 const servePour = function (req, res) {
@@ -179,7 +177,7 @@ const serveStyleList = function (req, res) {
 module.exports = {
     msg,
     serveBlinkie,
-    serveGallery,
+    serveCafe,
     serveSitemap,
     serveSourceList,
     serveStyleList,

@@ -1,9 +1,10 @@
 blinkies.cafe does not collect personally identifiable data.
 
-to maintain & improve the quality of our blinkies, we log blinkie inputs:
-  - blinkie text
+to maintain & improve the quality of our blinkies, we log blinkie inputs & diagnostics:
+  - blinkie text (& split)
   - blinkie style
   - blinkie scale
+  - server processing time
 
 we use these data to:
   - estimate & forecast server load

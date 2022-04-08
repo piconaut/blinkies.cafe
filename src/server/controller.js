@@ -88,10 +88,10 @@ const pourBlinkie = async function (req, res) {
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
-                time:   starttime,
-                brewMs: Date.now() - starttime,
-                mtype:  'pour',
-                origin: req.get('origin'),
+                time:    starttime,
+                orderMs: Date.now() - starttime,
+                mtype:   'pour',
+                origin:  req.get('origin'),
                 parms: {
                     scale:  scale,
                     style:  style,

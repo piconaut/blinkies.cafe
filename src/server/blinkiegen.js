@@ -20,7 +20,19 @@ function makeid(length) {
 }
 
 function sanitizeText(str) {
-    return (str.substring(0,64) + '').replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/[♡❤]/g,'\u2665').replace(/❤️/g,'\u2665').replace(/💜/g,'\u2665');
+    return (str.substring(0,64) + '')
+    .replace(/[\\']/g, '\\$&')
+    .replace(/\u0000/g, '\\0')
+    .replace(/\ufe0f/g, '')
+    .replace(/\u2764/g,'\u2665')
+    .replace(/\ud83d\udc9a/gu,'\u2665')
+    .replace(/\ud83d\udc9b/gu,'\u2665')
+    .replace(/\ud83d\udc9c/gu,'\u2665')
+    .replace(/\ud83d\udc9d/gu,'\u2665')
+    .replace(/\ud83d\udc9e/gu,'\u2665')
+    .replace(/\ud83d\udc9f/gu,'\u2665')
+    .replace(/\ud83d\udd84/gu,'\u2665')
+    .replace(/\ud83d\udc99/gu,'\u2665');
 }
 
 async function processText(blinkieParms) {

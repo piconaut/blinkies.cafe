@@ -32,6 +32,17 @@ const styleProps = {
         x:0, y:0,
         sourceName:"me :)"
     },
+    '0045-scorpio': {
+        name:"Impenitent 8itch!!",
+        bday:20220401,
+        frames:2,
+        colour:["#d0d0d0","#d0d0d0"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-1, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
     '0037-aprilfools': {
         name:"APRIL FOOLS!",
         bday:20220401,

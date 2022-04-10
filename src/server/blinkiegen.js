@@ -25,6 +25,7 @@ function sanitizeText(str) {
     .replace(/\u0000/g, '\\0')
     .replace(/\ufe0f/g, '')
     .replace(/\u2764/g,'\u2665')
+    .replace(/\/heart/g,'\u2665')
     .replace(/\ud83d\udc9a/gu,'\u2665')
     .replace(/\ud83d\udc9b/gu,'\u2665')
     .replace(/\ud83d\udc9c/gu,'\u2665')
@@ -32,7 +33,8 @@ function sanitizeText(str) {
     .replace(/\ud83d\udc9e/gu,'\u2665')
     .replace(/\ud83d\udc9f/gu,'\u2665')
     .replace(/\ud83d\udd84/gu,'\u2665')
-    .replace(/\ud83d\udc99/gu,'\u2665');
+    .replace(/\ud83d\udc99/gu,'\u2665')
+    .replace(/\ud83e\udde1/gu,'\u2665');
 }
 
 async function processText(blinkieParms) {

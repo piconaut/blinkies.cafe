@@ -1,4 +1,15 @@
 const styleProps = {
+    '0044-hearts': {
+        name:"Your Sweetness~!",
+        bday:20220410,
+        frames:3,
+        colour:["#ba5190","#ba5190","#ba5190"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0040-gemini': {
         name:"p2iioniic",
         bday:20220405,
@@ -7,7 +18,8 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)"
+        sourceName:"me :)",
+        tags:["zodiac"]
     },
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
@@ -76,6 +88,39 @@ const styleProps = {
         sourceName:"macawoni-1.tumblr.com",
         sourceURL:"https://macawoni-1.tumblr.com/post/178029755030/sir-blinkies"
     },
+    '0043-taurus': {
+        name:"(thiS is noT cOOl,)",
+        bday:20220321,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0042-aries': {
+        name:"n0thing inside",
+        bday:20220321,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0041-aquarius': {
+        name:"vvici vvidi vveni",
+        bday:20220321,
+        frames:2,
+        colour:["#e6e6e6","#e6e6e6"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
     '0033-confused': {
         name:"head empty",
         bday:20220321,
@@ -140,9 +185,9 @@ const styleProps = {
         frames:2,
         delay: 25,
         colour:["#ffffff","#ffffff"],
-        font: "monaco",
+        font: "monogramextended",
         fontsize:16,
-        x:7, y:0,
+        x:7, y:1,
         sourceName:"網頁 素 材",
         sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
     },
@@ -452,11 +497,11 @@ let j = 0;
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
     // add short blinkie data to list for clients.
-    styleList[key] = { name: value.name, bday:value.bday };
+    styleList[key] = { name: value.name, bday:value.bday, tags:value.tags };
 
     // add first 18 blinkies to page 1 for web app client.
     if (i < 18) {
-        stylePage[key] = { name: value.name, bday:value.bday };
+        stylePage[key] = { name: value.name, bday:value.bday, tags:value.tags };
         i ++;
     }
 

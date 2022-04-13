@@ -32,17 +32,6 @@ const styleProps = {
         x:0, y:0,
         sourceName:"me :)"
     },
-    '0045-scorpio': {
-        name:"Impenitent 8itch!!",
-        bday:20220401,
-        frames:2,
-        colour:["#d0d0d0","#d0d0d0"],
-        font: "monogramextended",
-        fontsize:16,
-        x:-1, y:1,
-        sourceName:"me :)",
-        tags:["zodiac"]
-    },
     '0037-aprilfools': {
         name:"APRIL FOOLS!",
         bday:20220401,
@@ -99,6 +88,39 @@ const styleProps = {
         sourceName:"macawoni-1.tumblr.com",
         sourceURL:"https://macawoni-1.tumblr.com/post/178029755030/sir-blinkies"
     },
+    '0051-pisces': {
+        name:")(ang in t)(ere",
+        bday:20220322,
+        frames:2,
+        colour:["#d0d0d0","#d0d0d0"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-1, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0052-cancer': {
+        name:"YOU ARE DEAD TO ME",
+        bday:20220322,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0047-virgo': {
+        name:"If Not Me Then Who",
+        bday:20220322,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
     '0043-taurus': {
         name:"(thiS is noT cOOl,)",
         bday:20220321,
@@ -115,17 +137,6 @@ const styleProps = {
         bday:20220321,
         frames:2,
         colour:["#000000","#000000"],
-        font: "monogramextended",
-        fontsize:16,
-        x:0, y:1,
-        sourceName:"me :)",
-        tags:["zodiac"]
-    },
-    '0041-aquarius': {
-        name:"vvici vvidi vveni",
-        bday:20220321,
-        frames:2,
-        colour:["#e6e6e6","#e6e6e6"],
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
@@ -201,6 +212,72 @@ const styleProps = {
         x:7, y:1,
         sourceName:"網頁 素 材",
         sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
+    },
+    '0050-capricorn': {
+        name:":o) hOnK hOnK hOnK",
+        bday:20220304,
+        frames:2,
+        colour:["#d0d0d0","#d0d0d0"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-1, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0049-sagittarius': {
+        name:"D --> Disgusting",
+        bday:20220304,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0048-libra': {
+        name:"H4H4H4H4H3H3H3H3",
+        bday:20220304,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0046-leo': {
+        name:":33 < rawwrrrrr",
+        bday:20220304,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0045-scorpio': {
+        name:"Impenitent 8itch!!",
+        bday:20220304,
+        frames:2,
+        colour:["#d0d0d0","#d0d0d0"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-1, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
+    '0041-aquarius': {
+        name:"vvici vvidi vveni",
+        bday:20220304,
+        frames:2,
+        colour:["#e6e6e6","#e6e6e6"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
     },
     '0027-sakura': {
         name:"サ ク  ラ",

@@ -1,4 +1,26 @@
 const styleProps = {
+    '0054-caution': {
+        name:"CAUTION",
+        bday:20220414,
+        frames:2,
+        delay:15,
+        colour:["#000000","#000000"],
+        font: "hud",
+        fontsize:5,
+        x:0, y:0,
+        sourceName:"me :)",
+    },
+    '0053-pinkchecker': {
+        name:"pastel luvr!",
+        bday:20220414,
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)",
+    },
     '0044-hearts': {
         name:"Your Sweetness~!",
         bday:20220410,

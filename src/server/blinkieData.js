@@ -1,4 +1,16 @@
 const styleProps = {
+    '0055-rainbowswirl': {
+        name:"technicolor dreams",
+        bday:20220415,
+        frames:10,
+        bgType:"png",
+        colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
+        font: "fipps",
+        fontsize:8,
+        x:0, y:0,
+        sourceName:"roqofages",
+        sourceURL:"https://web.archive.org/web/20091028062545/http://www.geocities.com/roqofages/Future.html"
+    },
     '0054-caution': {
         name:"CAUTION",
         bday:20220414,

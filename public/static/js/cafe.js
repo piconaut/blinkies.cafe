@@ -3,10 +3,11 @@
 /*----------*/
 /* declares */
 /*----------*/
-let blinkieTiles     = document.querySelectorAll(".blinkieTile");
-const pageSize       = blinkieTiles.length;
-const urlRoot        = '';
-let currentSort      = 'bdaydesc';
+let blinkieTiles    = document.querySelectorAll(".blinkieTile");
+const pageSize      = blinkieTiles.length;
+const urlRoot       = '';
+let currentSort     = 'bdaydesc';
+let firstPour       = true;
 
 /*---------------------*/
 /* GET & POST requests */
@@ -24,13 +25,6 @@ function postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText) {
     })
         .then((res) => res.text())
         .then(blinkieURL => { return blinkieURL; })
-}
-function postMsg(msgText) {
-    return fetch(urlRoot + "/api/msg", {
-        body: JSON.stringify({msg: msgText}),
-        headers: {"Content-Type": "application/json"},
-        method: "POST"
-    })
 }
 
 /*------------------*/
@@ -78,14 +72,16 @@ function loadStyles (styleList, styleOrder, currentPage) {
 
 // select a blinkie to customize.
 function selectStyle(styleList, targetKey) {
+    // preview style if first pour in session.
     let freshBlinkie = document.getElementById('freshBlinkie');
-    let gallery = document.getElementById('gallery');
-    let pour = document.getElementById('pour');
-    let blinkieStyle = document.getElementById('blinkieStyle');
+    if (firstPour) freshBlinkie.src = urlRoot + '/b/display/' + targetKey + '.gif';
 
-    freshBlinkie.src = urlRoot + '/b/display/' + targetKey + '.gif';
+    let blinkieText = document.getElementById('blinkieText');
+    const tips = ['your text here!', 'type /heart for ❤️', 'make smth cool :D'];
+    blinkieText.placeholder = tips[Math.floor(Math.random()*tips.length)];
 
     // show selected style first in dropdown.
+    let blinkieStyle = document.getElementById('blinkieStyle');
     for(let i = 0; i < blinkieStyle.options.length; i++) {
         if(blinkieStyle.options[i].value == targetKey) {
             blinkieStyle.selectedIndex = i;
@@ -93,6 +89,8 @@ function selectStyle(styleList, targetKey) {
         }
     }
 
+    let gallery = document.getElementById('gallery');
+    let pour = document.getElementById('pour');
     gallery.style.visibility = 'hidden';
     pour.style.visibility = '';
 }
@@ -135,18 +133,10 @@ function enterSubmit(event){
     }
 }
 
-function submitMsg (event) {
-    event.preventDefault();
-    if (lastRequestTime < Date.now() - 1000) {
-        lastRequestTime = Date.now();
-        postMsg(document.getElementById("msgText").value);
-        document.getElementById("msgSubmit").innerText = 'ty!!';
-    }
-}
-
 let lastRequestTime = 0;
 function submit (event) {
     event.preventDefault();
+    firstPour = false;
 
     // if last submitted request was more than 1s ago, submit parms from form,
     // then after receiving reply, display the newly generated blinkie.
@@ -188,7 +178,7 @@ getStyleList().then(function(styleList){
     const sortOld        = document.getElementById("sortOld");
     const sortRandom     = document.getElementById("sortRandom");
 
-    let styleOrder = sortStyles(styleList,'bdayasc');
+    let styleOrder = sortStyles(styleList,'bday','desc');
     loadStyles(styleList, styleOrder, 1);
     sortNew.onclick = function() {
         if (currentSort != 'bdaydesc') {
@@ -223,8 +213,6 @@ document.getElementById("blinkieForm").addEventListener("submit", submit);
 document.getElementById("blinkieText").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieStyle").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieScale").addEventListener("keypress", enterSubmit);
-document.getElementById("msgForm").addEventListener("submit", submitMsg);
-document.getElementById("msgText").addEventListener("keypress", enterSubmit);
 
 document.getElementById("backToGalleryBtn").onclick = function() {
     let gallery = document.getElementById("gallery");

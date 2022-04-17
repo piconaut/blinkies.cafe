@@ -241,9 +241,9 @@ const styleProps = {
         frames:2,
         delay: 25,
         colour:["#ffffff","#ffffff"],
-        font: "monogramextended",
+        font: "monaco",
         fontsize:16,
-        x:7, y:1,
+        x:7, y:0,
         sourceName:"網頁 素 材",
         sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
     },

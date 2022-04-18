@@ -1,4 +1,17 @@
 const styleProps = {
+    '0056-pirate': {
+        name:"You came back.",
+        bday:20220418,
+        frames:5,
+        delay:10,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        shadow:["#6f6f6f","#6f6f6f","#6f6f6f","#6f6f6f","#6f6f6f"],
+        font: "doublehomicide",
+        fontsize:16,
+        x:-13, y:1,
+        sourceName:"wimaso2003",
+        sourceURL:"https://web.archive.org/web/20090902212315/http://geocities.com/wimaso2003/Leccion1.htm"
+    },
     '0055-rainbowswirl': {
         name:"technicolor dreams",
         bday:20220415,

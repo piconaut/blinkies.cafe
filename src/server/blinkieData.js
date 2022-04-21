@@ -1,4 +1,15 @@
 const styleProps = {
+    '0057-ophiuchus': {
+        name:"let's play a GAME",
+        bday:20220420,
+        frames:2,
+        colour:["#929292","#2ed73a"],
+        font: "monogramextended",
+        fontsize:16,
+        x:1, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
     '0056-pirate': {
         name:"You came back.",
         bday:20220418,

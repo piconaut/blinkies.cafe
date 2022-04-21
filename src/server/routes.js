@@ -13,6 +13,13 @@ router.get("/sources", function(req,res){
 router.get("/about", function(req,res){
     res.redirect(301, '/');
 });
+router.get("/wall", function(req,res){
+    res.setHeader(
+        'Content-Security-Policy',
+        "img-src 'self' https://blinkies.neocities.org"
+    );
+    res.sendFile(global.appRoot + "/views/pages/wall.html");
+})
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);

@@ -1,4 +1,27 @@
 const styleProps = {
+    '0059-greenscreen': {
+        name:"green screen",
+        bday:20220426,
+        frames:3,
+        delay:5,
+        colour:["#00ff00","#00ff00","#00ff00"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"me :)",
+    },
+    '0058-snail': {
+        name:"dewdrop drinker /heart",
+        bday:20220421,
+        frames:2,
+        delay:20,
+        colour:["#000000","#000000"],
+        font: "lanapixel",
+        fontsize:11,
+        x:-13, y:-1,
+        sourceName:"Always Kala",
+        sourceURL:"https://web.archive.org/web/20091027000208/http://geocities.com/juicy_juice7/Adoptions/"
+    },
     '0057-ophiuchus': {
         name:"let's play a GAME",
         bday:20220420,
@@ -108,8 +131,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:19, y:0,
-        sourceName:"y2k.neocities.org",
-        sourceURL:"https://y2k.neocities.org"
+        sourceName:"Homepage of the Lodder Familie",
+        sourceURL:"https://web.archive.org/web/20091027145901/http://geocities.com/famlodder/main.htm"
     },
     '0036-fire': {
         name:"BURN IT ALL DOWN",

@@ -77,7 +77,7 @@ function selectStyle(styleList, targetKey) {
     if (firstPour) freshBlinkie.src = urlRoot + '/b/display/' + targetKey + '.gif';
 
     let blinkieText = document.getElementById('blinkieText');
-    const tips = ['your text here!', 'type /heart for ❤️', 'make smth cool :D'];
+    const tips = ['your text here!', 'type /heart for \u2665', 'make smth cool :D'];
     blinkieText.placeholder = tips[Math.floor(Math.random()*tips.length)];
 
     // show selected style first in dropdown.

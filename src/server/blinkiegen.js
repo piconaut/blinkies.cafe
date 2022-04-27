@@ -121,6 +121,20 @@ async function renderFrames(blinkieID, blinkieParms) {
     let stdout = [];
     let stderr = [];
     try {
+        if (typeof(blinkieParms.x) != 'object') {
+            const staticx = blinkieParms.x;
+            blinkieParms.x = [];
+            for (let i=0; i<blinkieParms.frames; i++) {
+                blinkieParms.x.push(staticx)
+            }
+        }
+        if (typeof(blinkieParms.shadowx) != 'object') {
+            const staticshadowx = blinkieParms.shadowx;
+            blinkieParms.shadowx = [];
+            for (let i=0; i<blinkieParms.frames; i++) {
+                blinkieParms.shadowx.push(staticshadowx)
+            }
+        }
         let argsArray = [];
         for (let i=0; i<blinkieParms.frames; i++) {
             argsArray[i] = [
@@ -131,16 +145,16 @@ async function renderFrames(blinkieID, blinkieParms) {
                 '-weight',blinkieParms.fontweight
             ]
             if (blinkieParms.shadow) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x-1)+'+'+blinkieParms.y, '-fill', blinkieParms.shadow[i],
-                                  '-draw', "text 0,0 '" + blinkieParms.cleantext1 + "'");
+                argsArray[i].push('-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])+'+'+blinkieParms.y, '-fill', blinkieParms.shadow[i],
+                                  "-annotate", "+0+0", blinkieParms.cleantext1);
             }
             if (blinkieParms.split) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x2)+'+'+blinkieParms.y2, '-fill', blinkieParms.colour[i],
-                                  '-draw', "text 0,0 '" + blinkieParms.cleantext2 + "'");
+                argsArray[i].push('-page', '+'+(blinkieParms.x[i])+'+'+blinkieParms.y2, '-fill', blinkieParms.colour[i],
+                                  "-annotate", "+0+0", blinkieParms.cleantext2);
             }
             argsArray[i].push(
-                '-page', '+'+blinkieParms.x+'+'+blinkieParms.y, '-fill', blinkieParms.colour[i],
-                '-draw', "text 0,0 '" + blinkieParms.cleantext1 + "'",
+                '-page', '+'+blinkieParms.x[i]+'+'+blinkieParms.y, '-fill', blinkieParms.colour[i],
+                "-annotate", "+0+0", blinkieParms.cleantext1,
                 global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.bgID + '-' + i + '.png',
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
             );
@@ -188,12 +202,13 @@ async function pour(instyle, intext, inscale, split) {
             'cleantext1': '',
             'cleantext2': '',
             'scale':      scaleVals[inscale] ? scaleVals[inscale] : '100%',
-            'antialias':  '+antialias',
+            'antialias':  blinkieData.styleProps[styleID].antialias ? blinkieData.styleProps[styleID].antialias : '+antialias',
             'delay':      blinkieData.styleProps[styleID].delay ? blinkieData.styleProps[styleID].delay : 10,
             'fontweight': blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal',
             'frames':     blinkieData.styleProps[styleID].frames,
             'colour':     blinkieData.styleProps[styleID].colour,
             'shadow':     blinkieData.styleProps[styleID].shadow,
+            'shadowx':    blinkieData.styleProps[styleID].shadowx ? blinkieData.styleProps[styleID].shadowx : -1,
             'font':       blinkieData.styleProps[styleID].font,
             'fontsize':   blinkieData.styleProps[styleID].fontsize,
             'x':          blinkieData.styleProps[styleID].x,

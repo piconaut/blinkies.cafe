@@ -1,4 +1,16 @@
 const styleProps = {
+    '0060-glitch': {
+        name:"oh no...,,",
+        bday:20220426,
+        frames:3,
+        delay:15,
+        colour:["#000000","#000000","#000000"],
+        shadow:["#ffffff","#ffffff","#ffffff"],
+        shadowx:[6,6,7],
+        font: "pixelpoiiz",
+        fontsize:10,
+        x:[0,0,-1], y:0,
+    },
     '0059-greenscreen': {
         name:"green screen",
         bday:20220426,

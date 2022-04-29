@@ -1,11 +1,25 @@
 const styleProps = {
+    '0062-flower': {
+        name:"I love gardening",
+        bday:20220429,
+        frames:2,
+        delay: 20,
+        colour:["#697446","#697446"],
+        font: "04b03",
+        fontsize:8,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"oldwww",
+        sourceURL:"https://oldwww.tumblr.com/post/672490960396173312"
+    },
     '0061-pinkcomputer': {
         name:"I love my computer <3",
         bday:20220429,
         frames:2,
         delay: 20,
         colour:["#ff0084","#ff0084"],
-        font: "monaco",
+        font: "monaco2",
         fontsize:16,
         x:11, y:0,
         subName:"ur-bro",
@@ -626,7 +640,7 @@ const styleProps = {
         colour:["#ffffff","#ffffff"],
         font: "04b03",
         fontsize:8,
-        x:6, y:-1,
+        x:6, y:0,
         sourceName:"y2k.neocities.org",
         sourceURL:"https://y2k.neocities.org"
     },

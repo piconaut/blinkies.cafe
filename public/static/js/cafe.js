@@ -8,6 +8,7 @@ const pageSize      = blinkieTiles.length;
 const urlRoot       = '';
 let currentSort     = 'bdaydesc';
 let firstPour       = true;
+let global = {};
 
 /*---------------------*/
 /* GET & POST requests */
@@ -155,6 +156,16 @@ function submit (event) {
         postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
             blinkieLinkHolder.innerHTML = '';
+            if (global.styleList[blinkieStyle].subName) {
+                blinkieLinkHolder.innerHTML = 'by ';
+                let subLink = document.createElement('a');
+                subLink.innerHTML = global.styleList[blinkieStyle].subName;
+                subLink.href = global.styleList[blinkieStyle].subURL;
+                subLink.target = "_blank";
+                blinkieLinkHolder.appendChild(subLink);
+                blinkieLinkHolder.innerHTML += ' tysm!!';
+            }
+            blinkieLinkHolder.innerHTML += '<br>';
             let blinkieLink = document.createElement('a');
             blinkieLink.innerHTML = 'download blinkie';
             blinkieLink.href = blinkieURL;
@@ -162,6 +173,7 @@ function submit (event) {
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br><br>';
+
             submitbtn.innerText = 'generate!!';
         });
     }
@@ -171,6 +183,7 @@ function submit (event) {
 /* initial load        */
 /*---------------------*/
 getStyleList().then(function(styleList){
+    global.styleList     = styleList;
     let currentPage      = 1;
     const nextPage       = document.getElementById("nextPage");
     const prevPage       = document.getElementById("prevPage");

@@ -1,4 +1,18 @@
 const styleProps = {
+    '0061-pinkcomputer': {
+        name:"I love my computer <3",
+        bday:20220429,
+        frames:2,
+        delay: 20,
+        colour:["#ff0084","#ff0084"],
+        font: "monaco",
+        fontsize:16,
+        x:11, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"oldwww",
+        sourceURL:"https://oldwww.tumblr.com/post/679395101729062912"
+    },
     '0060-glitch': {
         name:"oh no...,,",
         bday:20220426,
@@ -678,11 +692,11 @@ let j = 0;
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
     // add short blinkie data to list for clients.
-    styleList[key] = { name: value.name, bday:value.bday, tags:value.tags };
+    styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
 
     // add first 18 blinkies to page 1 for web app client.
     if (i < 18) {
-        stylePage[key] = { name: value.name, bday:value.bday, tags:value.tags };
+        stylePage[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
         i ++;
     }
 
@@ -697,19 +711,19 @@ for (const [key, value] of Object.entries(styleProps)) {
 }
 
 const fontList = {
-    1: {name:"Monaco", sourceName:"FontBlast Design", sourceURL:"mailto:jamie@creativeimagesphotography.co.uk"},
-    2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://ztdp.ca"},
-    3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://portfolio.zehfernando.com/"},
-    4: {name:"04b03", sourceName:"押本祐二", sourceURL:"http://www.04.jp.org/"},
-    5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"http://www.juspifon.com/"},
-    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"mailto:tr.camellina@gmail.com"},
+    1: {name:"Monaco", sourceName:"FontBlast Design", sourceURL:"https://www.dafont.com/monaco.font"},
+    2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://www.dafont.com/pixellari.font"},
+    3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://www.dafont.com/perfect-dos-vga-437.font"},
+    4: {name:"04b03", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-03.font"},
+    5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"https://www.dafont.com/infernalda.font"},
+    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"https://www.dafont.com/rainyhearts.font"},
     7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
     8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
-    9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://twitter.com/avreference"},
-    10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"mailto:tsoih@ymail.com"},
+    9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://www.dafont.com/dogica.font"},
+    10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"https://www.dafont.com/alagard.font"},
     11: {name:"Liberation Mono", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
     12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
-    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://pheist.net/"},
+    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://www.dafont.com/fipps.font"},
     14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
     15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"}
 };

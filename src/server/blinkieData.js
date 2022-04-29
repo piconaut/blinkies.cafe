@@ -19,7 +19,7 @@ const styleProps = {
         frames:2,
         delay: 20,
         colour:["#ff0084","#ff0084"],
-        font: "monaco2",
+        font: "monaco",
         fontsize:16,
         x:11, y:0,
         subName:"ur-bro",

@@ -1,9 +1,37 @@
 const styleProps = {
+    '0064-cow': {
+        name:"i Moo @ Cows",
+        bday:20220429,
+        frames:2,
+        colour:["#ff0000","#ff0000"],
+        shadow:["#bb0000","#bb0000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"oldwww",
+        sourceURL:"https://oldwww.tumblr.com/post/676575313583570944"
+    },
+    '0063-darth': {
+        name:"Join the Dark Side",
+        bday:20220429,
+        frames:2,
+        delay: 10,
+        colour:["#000000","#000000"],
+        font: "{pixelflag}",
+        fontsize:16,
+        x:-10, y:-1,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"sebray03",
+        sourceURL:"https://web.archive.org/web/20091022105418/http://geocities.com/sebray03/blinkies1.htm"
+    },
     '0062-flower': {
         name:"I love gardening",
         bday:20220429,
         frames:2,
-        delay: 20,
+        delay: 10,
         colour:["#697446","#697446"],
         font: "04b03",
         fontsize:8,
@@ -739,7 +767,9 @@ const fontList = {
     12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
     13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://www.dafont.com/fipps.font"},
     14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
-    15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"}
+    15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"},
+    16: {name:"{pixelflag}", sourceName:"Chequered Ink", sourceURL:"https://www.dafont.com/pixelflag.font"},
+    17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"}
 };
 
 const fallbackFonts = {

@@ -1,4 +1,29 @@
 const styleProps = {
+    '0066-orangekitty': {
+        name:"h...hewwo???",
+        bday:20220501,
+        frames:2,
+        colour:["#ff7b00","#ff7b00"],
+        font: "04b03",
+        fontsize:8,
+        x:-25, y:0,
+        sourceName:"Ca do armario",
+        sourceURL:"https://web.archive.org/web/20090723185349/http://br.geocities.com:80/ca_doarmario/pgblink1.htm"
+    },
+    '0065-bunnies': {
+        name:"good night /eheart sleep tight",
+        bday:20220501,
+        frames:6,
+        delay:20,
+        colour:["#394aa5","#394aa5","#394aa5","#394aa5","#394aa5","#394aa5"],
+        font: "lanapixel",
+        fontsize:11,
+        x:-15, y:-1,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"sebray03",
+        sourceURL:"https://web.archive.org/web/20091022142333/http://geocities.com/sebray03/blinkies4.htm"
+    },
     '0064-cow': {
         name:"i Moo @ Cows",
         bday:20220429,

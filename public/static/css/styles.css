@@ -110,6 +110,10 @@ action {
 .content {
     max-width: 540px;
 }
+.divider {
+    background-image: url("/divider.gif");
+    background-repeat: repeat-x;
+}
 .singleLineText {
     resize:none;
     margin-bottom: -6px;

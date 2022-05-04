@@ -113,6 +113,8 @@ action {
 .divider {
     background-image: url("/divider.gif");
     background-repeat: repeat-x;
+    height:6px;
+    margin:2px 0px 2px 0px;
 }
 .singleLineText {
     resize:none;

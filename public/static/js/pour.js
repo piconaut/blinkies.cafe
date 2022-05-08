@@ -40,7 +40,7 @@ let submit = function (event) {
             blinkieLink.download = blinkieURL.split('/')[4];
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "copy image"';
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"';
             submitbtn.innerText = 'generate!!';
         });
     }

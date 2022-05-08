@@ -20,7 +20,7 @@ function makeid(length) {
 }
 
 function sanitizeText(str) {
-    return (str.substring(0,64) + '')
+    return (str.substring(0,128) + '')
     .replace(/[\\']/g, '\\$&')
     .replace(/\u0000/g, '\\0')
     .replace(/\ufe0f/g, '')

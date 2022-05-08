@@ -135,10 +135,10 @@ const serveCafe = function (req, res) {
 }
 
 const servePour = function (req, res) {
-    let defaultStyleIndex = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '0007-chocolate';
+    let defaultStyleIndex = String(req.query.s) in blinkieData.styleProps ? String(req.query.s) : '0007-chocolate';
     res.render('pages/pour.ejs', {
         defaultStyleKey: defaultStyleIndex,
-        styleList: blinkieData.styleList
+        styleList: blinkieData.styleProps
     });
 }
 

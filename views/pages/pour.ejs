@@ -22,12 +22,9 @@ blinkies.cafe
 <a href='/'>&#60; back to gallery</a><br><br>
 text:  &nbsp;<textarea placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></textarea><br>
 <div style='margin-top: 3px;'>style: <select class='blinkieOptions' name="blinkieStyle" id="blinkieStyle">
-    <option value="<%=defaultStyleKey%>"><%=styleList[defaultStyleKey].name%></option>
     <%
     for (const [key, value] of Object.entries(styleList)) {
-        if (key != defaultStyleKey) {
-            %><option value="<%=key%>"><%=value.name%></option><%
-        }
+        %><option value="<%=key%>"><%=key%></option><%
     }
     %>
 </select>

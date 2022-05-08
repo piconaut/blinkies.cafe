@@ -1,4 +1,80 @@
 const styleProps = {
+    '9997-bipride': {
+        name:"bi pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadow:["#444444","#444444","#444444","#444444","#444444"],
+        shadowx:-2,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:1,
+        sourceName:"me :)"
+    },
+    '9998-gaypride': {
+        name:"gay pride",
+        hide:true,
+        bday:20220601,
+        frames:4,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadow:["#444444","#444444","#444444","#444444"],
+        shadowx:-2,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:1,
+        sourceName:"me :)"
+    },
+    '9999-lesbianpride': {
+        name:"lesbian pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:1,
+        sourceName:"me :)"
+    },
+    '0069-alien': {
+        name:"ABUCTABLE",
+        bday:20220508,
+        frames:2,
+        delay:20,
+        colour:["#00ff00","#00ff00"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-13, y:1,
+        sourceName:"blinkieobsession",
+        sourceURL:"https://web.archive.org/web/20210411044139/http://blinkieobsession.freeservers.com/2/list.htm"
+    },
+    '0068-mainframe': {
+        name:"Command ===> ___",
+        bday:20220508,
+        bgID:"0059-greenscreen",
+        frames:3,
+        delay:5,
+        colour:["#00ff00","#00ff00","#00ff00"],
+        font: "green screen",
+        fontsize:12,
+        x:0, y:0,
+        sourceName:"me :)",
+    },
+    '0067-moonstars': {
+        name:"werewolf",
+        bday:20220506,
+        frames:5,
+        colour:["#c694f7","#c694f7","#c694f7","#c694f7","#c694f7"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-14, y:0,
+        sourceName:"y2k.neocities.org",
+        sourceURL:"https://y2k.neocities.org"
+    },
     '0066-orangekitty': {
         name:"h...hewwo???",
         bday:20220501,
@@ -629,8 +705,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"y2k.neocities.org",
-        sourceURL:"https://y2k.neocities.org"
+        sourceName:"jazzybos1003",
+        sourceURL:"https://web.archive.org/web/20091027131929/http://www.geocities.com/jazzybos1003/blinkies.html"
     },
     '0011-frog': {
         name:"frog friend",
@@ -758,21 +834,23 @@ let j = 0;
 
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
-    // add short blinkie data to list for clients.
-    styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
+    if (!value.hide) {
+        // add short blinkie data to list for clients.
+        styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
 
-    // add first 18 blinkies to page 1 for web app client.
-    if (i < 18) {
-        stylePage[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
-        i ++;
-    }
+        // add first 18 blinkies to page 1 for web app client.
+        if (i < 18) {
+            stylePage[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };
+            i ++;
+        }
 
-    // add non-original blinkies to source list for archive.
-    if (value.sourceURL) {
-        sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
-        if (j < 6) {
-            sourcePage[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
-            j++
+        // add non-original blinkies to source list for archive.
+        if (value.sourceURL) {
+            sourceList[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+            if (j < 6) {
+                sourcePage[key] = { name: value.name, sourceName: value.sourceName, sourceURL: value.sourceURL };
+                j++
+            }
         }
     }
 }
@@ -794,7 +872,9 @@ const fontList = {
     14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
     15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"},
     16: {name:"{pixelflag}", sourceName:"Chequered Ink", sourceURL:"https://www.dafont.com/pixelflag.font"},
-    17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"}
+    17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"},
+    18: {name:"Pixeloid", sourceName:"ggbot", sourceURL:"https://ggbot.itch.io/pixeloid-font"},
+    19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"}
 };
 
 const fallbackFonts = {

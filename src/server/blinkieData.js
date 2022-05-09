@@ -39,6 +39,18 @@ const styleProps = {
         x:0, y:1,
         sourceName:"me :)"
     },
+    '0070-lavalamp': {
+        name:"lava lamp",
+        bday:20220508,
+        frames:10,
+        delay: 10,
+        colour:["#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb","#00dcfb"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        sourceName:"squigglevision",
+        sourceURL:"https://squigglevision.neocities.org/"
+    },
     '0069-alien': {
         name:"ABUCTABLE",
         bday:20220508,

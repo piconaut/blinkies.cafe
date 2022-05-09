@@ -99,6 +99,11 @@ action {
     height: 20px;
     margin: 2px 6px 2px 6px;
 }
+.blinkie-wall {
+    width:  150px;
+    height: 20px;
+    margin: 2px;
+}
 .blinkieBanner {
     width:  258px;
     height: 60px;

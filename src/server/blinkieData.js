@@ -1,19 +1,153 @@
 const styleProps = {
-    '9997-bipride': {
-        name:"bi pride",
+    '0084-agender': {
+        name:"agender pride",
         hide:true,
         bday:20220601,
-        frames:5,
-        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
-        shadow:["#444444","#444444","#444444","#444444","#444444"],
+        frames:6,
+        colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0083-demiromantic': {
+        name:"demiromantic pride",
+        hide:true,
+        bday:20220601,
+        frames:2,
+        colour:["#000000","#000000"],
+        shadow:["#ffffff","#ffffff"],
+        shadowx:-2,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-12, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0082-aromantic': {
+        name:"aromantic pride",
+        hide:true,
+        bday:20220601,
+        frames:4,
+        colour:["#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0081-asexual': {
+        name:"asexual pride",
+        hide:true,
+        bday:20220601,
+        frames:4,
+        colour:["#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0080-genderfluid': {
+        name:"genderfluid pride",
+        hide:true,
+        bday:20220601,
+        frames:4,
+        colour:["#ff6d9d","#ff6d9d","#ff6d9d","#ff6d9d"],
+        shadow:["#000000","#000000","#000000","#000000"],
         shadowx:-2,
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
         x:0, y:1,
-        sourceName:"me :)"
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
     },
-    '9998-gaypride': {
+    '0079-nonbinary': {
+        name:"non-binary pride",
+        hide:true,
+        bday:20220601,
+        frames:4,
+        colour:["#000000","#000000","#000000","#000000"],
+        shadow:["#cccccc","#cccccc","#cccccc","#cccccc"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0078-intersex': {
+        name:"intersex pride",
+        hide:true,
+        bday:20220601,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-12, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0077-demiboy': {
+        name:"demiboy pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0076-demigirl': {
+        name:"demigirl pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0075-demigender': {
+        name:"demigender pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0074-pan': {
+        name:"pan pride",
+        hide:true,
+        bday:20220601,
+        frames:3,
+        colour:["#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0073-gay': {
         name:"gay pride",
         hide:true,
         bday:20220601,
@@ -24,10 +158,11 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:0, y:1,
-        sourceName:"me :)"
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
     },
-    '9999-lesbianpride': {
+    '0072-lesbian': {
         name:"lesbian pride",
         hide:true,
         bday:20220601,
@@ -36,8 +171,47 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:0, y:1,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0071-bi': {
+        name:"bi pride",
+        hide:true,
+        bday:20220601,
+        frames:5,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadow:["#444444","#444444","#444444","#444444","#444444"],
+        shadowx:-2,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0086-dollface': {
+        name:"bishoujo",
+        bday:20220511,
+        frames:2,
+        delay:10,
+        colour:["#350b47","#350b47"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:-15, y:0,
         sourceName:"me :)"
+    },
+    '0085-dolleyes': {
+        name:"i luv boyz!",
+        bday:20220511,
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"hlmbabe9",
+        sourceURL:"https://web.archive.org/web/20040725013810/http://www.geocities.com:80/hlmbabe9/"
     },
     '0070-lavalamp': {
         name:"lava lamp",
@@ -469,9 +643,9 @@ const styleProps = {
         frames:2,
         delay: 25,
         colour:["#ffffff","#ffffff"],
-        font: "monaco",
+        font: "monogramextended",
         fontsize:16,
-        x:7, y:0,
+        x:7, y:1,
         sourceName:"網頁 素 材",
         sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
     },
@@ -803,7 +977,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)"
+        sourceName:"me :)",
+        tags:["plain"]
     },
     '0008-pink': {
         name:"simple pink",
@@ -813,7 +988,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)"
+        sourceName:"me :)",
+        tags:["plain"]
     },
     '0009-gradient-pink': {
         name:"gradient pink",
@@ -823,7 +999,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)"
+        sourceName:"me :)",
+        tags:["plain"]
     },
     '0010-blue': {
         name:"simple blue",
@@ -833,7 +1010,8 @@ const styleProps = {
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)"
+        sourceName:"me :)",
+        tags:["plain"]
     }
 };
 
@@ -886,7 +1064,8 @@ const fontList = {
     16: {name:"{pixelflag}", sourceName:"Chequered Ink", sourceURL:"https://www.dafont.com/pixelflag.font"},
     17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"},
     18: {name:"Pixeloid", sourceName:"ggbot", sourceURL:"https://ggbot.itch.io/pixeloid-font"},
-    19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"}
+    19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"},
+    20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"}
 };
 
 const fallbackFonts = {

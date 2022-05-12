@@ -35,7 +35,11 @@ function sanitizeText(str) {
     .replace(/\ud83d\udd84/gu,'\u2665')
     .replace(/\ud83d\udc99/gu,'\u2665')
     .replace(/\ud83e\udde1/gu,'\u2665')
-    .replace(/\/eheart/g,'\u2661');
+    .replace(/\/eheart/g,'\u2661')
+    .replace(/\/spade/g,'\u2660')
+    .replace(/\/club/g,'\u2663')
+    .replace(/\/diamond/g,'\u2666')
+    .replace(/\/dia/g,'\u2666');
 }
 
 async function processText(blinkieParms) {

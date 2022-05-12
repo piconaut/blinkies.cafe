@@ -1,8 +1,20 @@
 const styleProps = {
+    '0089-kiss': {
+        name:"*~ mwah!! ~*",
+        bday:20220512,
+        frames:3,
+        delay: 25,
+        colour:["#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        sourceName:"yalmonter",
+        sourceURL:"https://web.archive.org/web/20091027053945/http://geocities.com/yalmonter/blinkies/"
+    },
     '0084-agender': {
         name:"agender pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:6,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -12,14 +24,27 @@ const styleProps = {
         subName:"ur-bro",
         subURL:"https://ur-bro.tumblr.com/"
     },
-    '0083-demiromantic': {
-        name:"demiromantic pride",
-        hide:true,
-        bday:20220601,
+    '0087-demisexual': {
+        name:"demisexual pride",
+        bday:20220512,
         frames:2,
         colour:["#000000","#000000"],
         shadow:["#ffffff","#ffffff"],
-        shadowx:-2,
+        shadowy:1,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-12, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0083-demiromantic': {
+        name:"demiromantic pride",
+        bday:20220512,
+        frames:2,
+        colour:["#000000","#000000"],
+        shadow:["#ffffff","#ffffff"],
+        shadowy:1,
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
@@ -29,8 +54,7 @@ const styleProps = {
     },
     '0082-aromantic': {
         name:"aromantic pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -42,8 +66,7 @@ const styleProps = {
     },
     '0081-asexual': {
         name:"asexual pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -55,23 +78,22 @@ const styleProps = {
     },
     '0080-genderfluid': {
         name:"genderfluid pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:4,
-        colour:["#ff6d9d","#ff6d9d","#ff6d9d","#ff6d9d"],
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#000000","#000000","#000000","#000000"],
-        shadowx:-2,
+        shadowx:-1,
+        shadowy:1,
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:0, y:1,
+        x:0, y:0,
         subName:"ur-bro",
         subURL:"https://ur-bro.tumblr.com/"
     },
     '0079-nonbinary': {
         name:"non-binary pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         shadow:["#cccccc","#cccccc","#cccccc","#cccccc"],
@@ -84,8 +106,7 @@ const styleProps = {
     },
     '0078-intersex': {
         name:"intersex pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:2,
         colour:["#000000","#000000"],
         font: "pixeloid sans",
@@ -97,8 +118,7 @@ const styleProps = {
     },
     '0077-demiboy': {
         name:"demiboy pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -110,8 +130,7 @@ const styleProps = {
     },
     '0076-demigirl': {
         name:"demigirl pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -123,8 +142,7 @@ const styleProps = {
     },
     '0075-demigender': {
         name:"demigender pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -136,8 +154,7 @@ const styleProps = {
     },
     '0074-pan': {
         name:"pan pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -149,8 +166,7 @@ const styleProps = {
     },
     '0073-gay': {
         name:"gay pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#444444","#444444","#444444","#444444"],
@@ -164,8 +180,7 @@ const styleProps = {
     },
     '0072-lesbian': {
         name:"lesbian pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -177,8 +192,7 @@ const styleProps = {
     },
     '0071-bi': {
         name:"bi pride",
-        hide:true,
-        bday:20220601,
+        bday:20220512,
         frames:5,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#444444","#444444","#444444","#444444","#444444"],
@@ -189,6 +203,40 @@ const styleProps = {
         x:0, y:0,
         subName:"ur-bro",
         subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0023-trans-pride': {
+        name:"this user is trains",
+        bday:20220512,
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        shadow:["#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa"],
+        font: "monaco",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
+    '0014-pride': {
+        name:"kinda gay tbh...",
+        bday:20220512,
+        frames:4,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadow:["#666666","#666666","#666666","#666666"],
+        font: "monaco",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)"
+    },
+    '0088-cow': {
+        name:"happy MOO 2 U !!!",
+        bday:20220512,
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "pixeloid sans",
+        fontsize:9,
+        x:-14, y:0,
+        sourceName:"lilqtgrl90",
+        sourceURL:"https://web.archive.org/web/20090902141258/http://geocities.com/lilqtgrl90/"
     },
     '0086-dollface': {
         name:"bishoujo",
@@ -758,17 +806,6 @@ const styleProps = {
         x:0, y:0,
         sourceName:"me :)"
     },
-    '0023-trans-pride': {
-        name:"this user is trains",
-        bday:20220301,
-        frames:5,
-        colour:["#000000","#000000","#000000","#000000","#000000"],
-        shadow:["#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa"],
-        font: "monaco",
-        fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
-    },
     '0022-iheart': {
         name:"blinkies so much !!!",
         bday:20220227,
@@ -860,17 +897,6 @@ const styleProps = {
         x:12, y:0,
         sourceName:"y2k.neocities.org",
         sourceURL:"https://y2k.neocities.org"
-    },
-    '0014-pride': {
-        name:"kinda gay tbh...",
-        bday:20220206,
-        frames:4,
-        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
-        shadow:["#666666","#666666","#666666","#666666"],
-        font: "monaco",
-        fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
     },
     '0013-starryeyes': {
         name:"Starry Eyes!",

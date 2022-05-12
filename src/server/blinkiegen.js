@@ -150,12 +150,15 @@ async function renderFrames(blinkieID, blinkieParms) {
                 '-weight',blinkieParms.fontweight
             ]
             if (blinkieParms.shadow) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])+'+'+blinkieParms.y, '-fill', blinkieParms.shadow[i],
+                argsArray[i].push('-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])+'+'+(blinkieParms.y+blinkieParms.shadowy), '-fill', blinkieParms.shadow[i],
                                   "-annotate", "+0+0", blinkieParms.cleantext1);
             }
             if (blinkieParms.split) {
                 argsArray[i].push('-page', '+'+(blinkieParms.x[i])+'+'+blinkieParms.y2, '-fill', blinkieParms.colour[i],
                                   "-annotate", "+0+0", blinkieParms.cleantext2);
+            }
+            if (blinkieParms.undercolor) {
+                argsArray[i].push("-undercolor",blinkieParms.undercolor);
             }
             argsArray[i].push(
                 '-page', '+'+blinkieParms.x[i]+'+'+blinkieParms.y, '-fill', blinkieParms.colour[i],
@@ -214,6 +217,8 @@ async function pour(instyle, intext, inscale, split) {
             'colour':     blinkieData.styleProps[styleID].colour,
             'shadow':     blinkieData.styleProps[styleID].shadow,
             'shadowx':    blinkieData.styleProps[styleID].shadowx ? blinkieData.styleProps[styleID].shadowx : -1,
+            'shadowy':    blinkieData.styleProps[styleID].shadowy ? blinkieData.styleProps[styleID].shadowy : 0,
+            'undercolor': blinkieData.styleProps[styleID].undercolor,
             'font':       blinkieData.styleProps[styleID].font,
             'fontsize':   blinkieData.styleProps[styleID].fontsize,
             'x':          blinkieData.styleProps[styleID].x,

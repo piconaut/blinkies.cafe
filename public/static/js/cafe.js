@@ -189,16 +189,32 @@ function submit (event) {
 /* initial load        */
 /*---------------------*/
 getStyleList().then(function(styleList){
-    global.styleList     = styleList;
+    global.styleList = {}
+    Object.assign(global.styleList,styleList)
     let currentPage      = 1;
     const nextPage       = document.getElementById("nextPage");
     const prevPage       = document.getElementById("prevPage");
     const sortNew        = document.getElementById("sortNew");
     const sortOld        = document.getElementById("sortOld");
     const sortRandom     = document.getElementById("sortRandom");
+    const selectTags     = document.getElementById("selectTags");
 
     let styleOrder = sortStyles(styleList,'bday','desc');
     loadStyles(styleList, styleOrder, 1);
+    selectTags.onchange = function() {
+        const tag = selectTags.value;
+        Object.assign(styleList, global.styleList);
+        if (tag != 'all') {
+            for (var style in styleList){
+                if (!styleList[style].tags || !(styleList[style].tags.includes(tag))) {
+                    delete styleList[style];
+                }
+            }
+        }
+        styleOrder = sortStyles(styleList,'bday', 'desc');
+        loadStyles(styleList, styleOrder, 1);
+        currentPage = 1;
+    }
     sortNew.onclick = function() {
         if (currentSort != 'bdaydesc') {
             styleOrder = sortStyles(styleList,'bday', 'desc');

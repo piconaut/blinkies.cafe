@@ -2,8 +2,9 @@ const styleProps = {
     '0089-kiss': {
         name:"*~ mwah!! ~*",
         bday:20220512,
+        tags:["love", "pink"],
         frames:3,
-        delay: 25,
+        delay: 22,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
         fontweight:"bold",
@@ -15,6 +16,7 @@ const styleProps = {
     '0084-agender': {
         name:"agender pride",
         bday:20220512,
+        tags:["pride"],
         frames:6,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -27,6 +29,7 @@ const styleProps = {
     '0087-demisexual': {
         name:"demisexual pride",
         bday:20220512,
+        tags:["pride"],
         frames:2,
         colour:["#000000","#000000"],
         shadow:["#ffffff","#ffffff"],
@@ -41,6 +44,7 @@ const styleProps = {
     '0083-demiromantic': {
         name:"demiromantic pride",
         bday:20220512,
+        tags:["pride"],
         frames:2,
         colour:["#000000","#000000"],
         shadow:["#ffffff","#ffffff"],
@@ -55,6 +59,7 @@ const styleProps = {
     '0082-aromantic': {
         name:"aromantic pride",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -67,6 +72,7 @@ const styleProps = {
     '0081-asexual': {
         name:"asexual pride",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -79,6 +85,7 @@ const styleProps = {
     '0080-genderfluid': {
         name:"genderfluid pride",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#000000","#000000","#000000","#000000"],
@@ -94,6 +101,7 @@ const styleProps = {
     '0079-nonbinary': {
         name:"non-binary pride",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         shadow:["#cccccc","#cccccc","#cccccc","#cccccc"],
@@ -107,6 +115,7 @@ const styleProps = {
     '0078-intersex': {
         name:"intersex pride",
         bday:20220512,
+        tags:["pride"],
         frames:2,
         colour:["#000000","#000000"],
         font: "pixeloid sans",
@@ -119,6 +128,7 @@ const styleProps = {
     '0077-demiboy': {
         name:"demiboy pride",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -131,6 +141,7 @@ const styleProps = {
     '0076-demigirl': {
         name:"demigirl pride",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -143,6 +154,7 @@ const styleProps = {
     '0075-demigender': {
         name:"demigender pride",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -155,6 +167,7 @@ const styleProps = {
     '0074-pan': {
         name:"pan pride",
         bday:20220512,
+        tags:["pride"],
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -167,6 +180,7 @@ const styleProps = {
     '0073-gay': {
         name:"gay pride",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#444444","#444444","#444444","#444444"],
@@ -181,6 +195,7 @@ const styleProps = {
     '0072-lesbian': {
         name:"lesbian pride",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -193,6 +208,7 @@ const styleProps = {
     '0071-bi': {
         name:"bi pride",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#444444","#444444","#444444","#444444","#444444"],
@@ -207,6 +223,7 @@ const styleProps = {
     '0023-trans-pride': {
         name:"this user is trains",
         bday:20220512,
+        tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         shadow:["#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa","#aaaaaa"],
@@ -218,6 +235,7 @@ const styleProps = {
     '0014-pride': {
         name:"kinda gay tbh...",
         bday:20220512,
+        tags:["pride"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#666666","#666666","#666666","#666666"],
@@ -229,6 +247,7 @@ const styleProps = {
     '0088-cow': {
         name:"happy MOO 2 U !!!",
         bday:20220512,
+        tags:["nature"],
         frames:2,
         delay:10,
         colour:["#000000","#000000"],
@@ -241,6 +260,7 @@ const styleProps = {
     '0086-dollface': {
         name:"bishoujo",
         bday:20220511,
+        tags:["pink"],
         frames:2,
         delay:10,
         colour:["#350b47","#350b47"],
@@ -252,6 +272,7 @@ const styleProps = {
     '0085-dolleyes': {
         name:"i luv boyz!",
         bday:20220511,
+        tags:["pink"],
         frames:2,
         delay:10,
         colour:["#000000","#000000"],
@@ -263,6 +284,7 @@ const styleProps = {
     },
     '0070-lavalamp': {
         name:"lava lamp",
+        tags:["fav"],
         bday:20220508,
         frames:10,
         delay: 10,
@@ -288,6 +310,7 @@ const styleProps = {
     '0068-mainframe': {
         name:"Command ===> ___",
         bday:20220508,
+        tags:["plain"],
         bgID:"0059-greenscreen",
         frames:3,
         delay:5,
@@ -300,6 +323,7 @@ const styleProps = {
     '0067-moonstars': {
         name:"werewolf",
         bday:20220506,
+        tags:["nature"],
         frames:5,
         colour:["#c694f7","#c694f7","#c694f7","#c694f7","#c694f7"],
         font: "pixeloid sans",
@@ -312,6 +336,7 @@ const styleProps = {
     '0066-orangekitty': {
         name:"h...hewwo???",
         bday:20220501,
+        tags:["nature"],
         frames:2,
         colour:["#ff7b00","#ff7b00"],
         font: "04b03",
@@ -323,6 +348,7 @@ const styleProps = {
     '0065-bunnies': {
         name:"good night /eheart sleep tight",
         bday:20220501,
+        tags:["nature"],
         frames:6,
         delay:20,
         colour:["#394aa5","#394aa5","#394aa5","#394aa5","#394aa5","#394aa5"],
@@ -337,6 +363,7 @@ const styleProps = {
     '0064-cow': {
         name:"i Moo @ Cows",
         bday:20220429,
+        tags:["nature"],
         frames:2,
         colour:["#ff0000","#ff0000"],
         shadow:["#bb0000","#bb0000"],
@@ -365,6 +392,7 @@ const styleProps = {
     '0062-flower': {
         name:"I love gardening",
         bday:20220429,
+        tags:["nature"],
         frames:2,
         delay: 10,
         colour:["#697446","#697446"],
@@ -379,6 +407,7 @@ const styleProps = {
     '0061-pinkcomputer': {
         name:"I love my computer <3",
         bday:20220429,
+        tags:["computer","fav","pink"],
         frames:2,
         delay: 20,
         colour:["#ff0084","#ff0084"],
@@ -405,6 +434,7 @@ const styleProps = {
     '0059-greenscreen': {
         name:"green screen",
         bday:20220426,
+        tags:["plain"],
         frames:3,
         delay:5,
         colour:["#00ff00","#00ff00","#00ff00"],
@@ -416,6 +446,7 @@ const styleProps = {
     '0058-snail': {
         name:"dewdrop drinker /heart",
         bday:20220421,
+        tags:["nature"],
         frames:2,
         delay:20,
         colour:["#000000","#000000"],
@@ -439,6 +470,7 @@ const styleProps = {
     '0056-pirate': {
         name:"You came back.",
         bday:20220418,
+        tags:["fav"],
         frames:5,
         delay:10,
         colour:["#000000","#000000","#000000","#000000","#000000"],
@@ -452,6 +484,7 @@ const styleProps = {
     '0055-rainbowswirl': {
         name:"technicolor dreams",
         bday:20220415,
+        tags:["rainbow"],
         frames:10,
         bgType:"png",
         colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
@@ -475,6 +508,7 @@ const styleProps = {
     '0053-pinkchecker': {
         name:"pastel luvr!",
         bday:20220414,
+        tags:["pink"],
         frames:2,
         delay:10,
         colour:["#000000","#000000"],
@@ -486,6 +520,7 @@ const styleProps = {
     '0044-hearts': {
         name:"Your Sweetness~!",
         bday:20220410,
+        tags:["love","pink"],
         frames:3,
         colour:["#ba5190","#ba5190","#ba5190"],
         font: "rainyhearts",
@@ -508,6 +543,7 @@ const styleProps = {
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
         bgID:"0037-aprilfools",
+        tags:["rainbow","fav"],
         bday:20220401,
         frames:8,
         colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
@@ -519,6 +555,7 @@ const styleProps = {
     '0037-aprilfools': {
         name:"APRIL FOOLS!",
         bday:20220401,
+        tags:["rainbow"],
         frames:8,
         colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
         font: "pixel icons compilation",
@@ -529,6 +566,7 @@ const styleProps = {
     '0038-exitbutton2': {
         name:"don't like, don't read",
         bday:20220329,
+        tags:["computer"],
         frames:3,
         colour:["#ffffff","#ffffff","#ffffff"],
         font: "monaco",
@@ -540,6 +578,7 @@ const styleProps = {
     '0036-fire': {
         name:"BURN IT ALL DOWN",
         bday:20220326,
+        tags:["fav"],
         frames:4,
         delay:10,
         colour:["#f39b29","#fed439","#f39b29","#e84d00"],
@@ -552,6 +591,7 @@ const styleProps = {
     '0035-edgyred': {
         name:"I literally don't care.",
         bday:20220322,
+        tags:["plain"],
         frames:2,
         delay:10,
         colour:["#000000","#000000"],
@@ -563,6 +603,7 @@ const styleProps = {
     '0034-skull': {
         name:"cyberbully",
         bday:20220322,
+        tags:["pink"],
         frames:2,
         delay:15,
         colour:["#ff00ff","#ff0080"],
@@ -653,6 +694,7 @@ const styleProps = {
     '0031-dogpaw': {
         name:"doggirl  rights !!  :3",
         bday:20220313,
+        tags:["nature"],
         frames:2,
         colour:["#000000","#000000"],
         shadow:["#888888","#888888"],
@@ -664,6 +706,7 @@ const styleProps = {
     '0030-catpaw': {
         name:"catboy  rights !!  :3",
         bday:20220313,
+        tags:["nature"],
         frames:2,
         colour:["#000000","#000000"],
         shadow:["#888888","#888888"],
@@ -675,6 +718,7 @@ const styleProps = {
     '0029-pinksparkle': {
         name:"!!! Bad Bitch !!!",
         bday:20220310,
+        tags:["pink"],
         frames:2,
         delay:15,
         colour:["#ffb3ed","#ffb3ed"],
@@ -688,6 +732,7 @@ const styleProps = {
     '0028-computer': {
         name:"a computer can never be held accountable",
         bday:20220306,
+        tags:["computer","fav"],
         frames:2,
         delay: 25,
         colour:["#ffffff","#ffffff"],
@@ -776,6 +821,7 @@ const styleProps = {
     '0026-iheart2': {
         name:"my bf",
         bday:20220303,
+        tags:["love"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#888888","#888888","#888888","#888888"],
@@ -799,6 +845,7 @@ const styleProps = {
     '0024-red': {
         name:"simple red",
         bday:20220301,
+        tags:["plain"],
         frames:2,
         colour:["#800000","#800000"],
         font: "monaco",
@@ -809,6 +856,7 @@ const styleProps = {
     '0022-iheart': {
         name:"blinkies so much !!!",
         bday:20220227,
+        tags:["love"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         shadow:["#888888","#888888","#888888","#888888"],
@@ -868,6 +916,7 @@ const styleProps = {
     '0017-love': {
         name:"love u 4ever <3",
         bday:20220214,
+        tags:["love","fav"],
         frames:8,
         colour:["#d61a49","#e33a8e","#ea4aad","#e33a8e","#d61a49","#cf0c1f","#c80000","#cf0c1f"],
         shadow:["#d61a49","#e33a8e","#ea4aad","#e33a8e","#d61a49","#cf0c1f", "#c80000","#cf0c1f"],
@@ -879,6 +928,7 @@ const styleProps = {
     '0016-valentine': {
         name:"be my valentine?",
         bday:20220211,
+        tags:["love"],
         frames:2,
         colour:["#ad2121","#ad2121"],
         font: "monaco",
@@ -890,6 +940,7 @@ const styleProps = {
     '0015-exit-button': {
         name:"too many tabs!!",
         bday:20220211,
+        tags:["computer"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         font: "monaco",
@@ -901,6 +952,7 @@ const styleProps = {
     '0013-starryeyes': {
         name:"Starry Eyes!",
         bday:20220201,
+        tags:["pink"],
         frames:3,
         colour:["#002984","#002984","#002984"],
         font: "rainyhearts",
@@ -912,6 +964,7 @@ const styleProps = {
     '0012-kiss': {
         name:"good kisser",
         bday:20220124,
+        tags:["love"],
         frames:2,
         colour:["#feaaaa","#feaaaa"],
         font: "monaco",
@@ -923,6 +976,7 @@ const styleProps = {
     '0011-frog': {
         name:"frog friend",
         bday:20220124,
+        tags:["nature"],
         frames:2,
         colour:["#000000","#000000"],
         font: "monaco",
@@ -944,6 +998,7 @@ const styleProps = {
     '0002-mushroom': {
         name:"mushroom boy",
         bday:20220118,
+        tags:["nature"],
         frames:2,
         colour:["#8c2000","#8c2000"],
         font: "monaco",
@@ -1009,24 +1064,24 @@ const styleProps = {
     '0008-pink': {
         name:"simple pink",
         bday:20211201,
+        tags:["plain","pink"],
         frames:2,
         colour:["#ff40ff","#ff40ff"],
         font: "monaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)",
-        tags:["plain"]
+        sourceName:"me :)"
     },
     '0009-gradient-pink': {
         name:"gradient pink",
         bday:20211201,
+        tags:["plain","pink"],
         frames:2,
         colour:["#ff40ff","#ff40ff"],
         font: "monaco",
         fontsize:16,
         x:0, y:0,
         sourceName:"me :)",
-        tags:["plain"]
     },
     '0010-blue': {
         name:"simple blue",

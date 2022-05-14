@@ -20,6 +20,12 @@ router.get("/wall", function(req,res){
     );
     res.sendFile(global.appRoot + "/views/pages/wall.html");
 })
+router.get("/blog", function(req,res){
+    res.render('pages/blog.ejs');
+})
+router.get("/blog/:post", function(req,res){
+    res.render('pages/blog/' + req.params['post'] + '.ejs');
+})
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);

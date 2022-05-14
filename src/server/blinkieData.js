@@ -407,7 +407,7 @@ const styleProps = {
     '0061-pinkcomputer': {
         name:"I love my computer <3",
         bday:20220429,
-        tags:["computer","fav","pink"],
+        tags:["computer","fav","pink","love"],
         frames:2,
         delay: 20,
         colour:["#ff0084","#ff0084"],
@@ -811,6 +811,7 @@ const styleProps = {
     '0027-sakura': {
         name:"サ ク  ラ",
         bday:20220304,
+        tags:["pink","nature"],
         frames:4,
         colour:["#cc557f","#cc557f","#cc557f","#cc557f"],
         font: "lanapixel",
@@ -1105,6 +1106,10 @@ let j = 0;
 
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
+
+    //console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
+    //console.log('<img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + '" class="blinkie-wall">');
+
     if (!value.hide) {
         // add short blinkie data to list for clients.
         styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };

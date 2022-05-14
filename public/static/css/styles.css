@@ -66,10 +66,10 @@ small {
     font-size: 8pt;
 }
 table, tbody, td, th {
-  border: 0px;
-  border-spacing: 0px;
-  padding: 0px;
-  line-height: 1.0
+    border: 0px;
+    border-spacing: 0px;
+    padding: 0px;
+    line-height: 1.0
 }
 td {
     height: 22.5px;
@@ -131,38 +131,38 @@ action {
     overflow-x: scroll;                       /* show horizontal scrollbar */
 }
 .tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
 }
 .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  position: absolute;
-  z-index: 1;
-  font-size: 8pt;
-  width: 120px;
-  top: 125%;
-  left: 50%;
-  margin-left: -70px;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    font-size: 8pt;
+    width: 120px;
+    top: 125%;
+    left: 50%;
+    margin-left: -70px;
 }
 .tooltip:hover .tooltiptext {
-  visibility: visible;
+    visibility: visible;
 }
 #banner, #navbar {
-    width:240px;
+    width:300px;
     text-align:center;
     font-weight:bold;
     padding:4px;
 }
 #banner {
-  margin-top:18px;
-  font-size: 16pt;
+    margin-top:18px;
+    font-size: 16pt;
 }
 #blinkieTable {
-      width: 2px;
+    width: 2px;
 }
 #blinkieText, #msgText {
     width:145px;

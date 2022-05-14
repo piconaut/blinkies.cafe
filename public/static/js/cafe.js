@@ -204,13 +204,26 @@ getStyleList().then(function(styleList){
     selectTags.onchange = function() {
         const tag = selectTags.value;
         Object.assign(styleList, global.styleList);
-        if (tag != 'all') {
-            for (var style in styleList){
-                if (!styleList[style].tags || !(styleList[style].tags.includes(tag))) {
-                    delete styleList[style];
+
+        switch(tag) {
+            case 'all':
+                break;
+            case 'idk':
+                for (let style in styleList){
+                    if (styleList[style].tags) {
+                        delete styleList[style];
+                    }
                 }
-            }
+                break;
+            default:
+                for (let style in styleList){
+                    if (!styleList[style].tags || !(styleList[style].tags.includes(tag))) {
+                        delete styleList[style];
+                    }
+                }
         }
+
+
         styleOrder = sortStyles(styleList,'bday', 'desc');
         loadStyles(styleList, styleOrder, 1);
         currentPage = 1;

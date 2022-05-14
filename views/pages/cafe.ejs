@@ -12,7 +12,7 @@
 blinkies.cafe
 </div>
 <div id='navbar' class='content'>
-        generator | <a href='/archive'>archive</a><br>
+        generator | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
 </div><hr>
 <div class='content'>
     <h1>blinkie maker: build a blinkie!</h1>
@@ -60,18 +60,20 @@ blinkies.cafe
         click a blinkie to add custom text!<br><br>
         <galleryUI>
             sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action> <action id='sortOld'>old</action><br>
-            tags:&nbsp;<select id='selectTags' style='width:100px;'>
+            tags:&nbsp;<select id='selectTags' style='width:100px;margin-top:8px;'>
                 <option value='all'>all</option>
                 <option value='fav'>my faves</option>
+                <option value='idk'>┐(シ)┌</option>
                 <option value='love'>love</option>
                 <option value='plain'>plain</option>
                 <option value='pride'>pride</option>
                 <option value='nature'>nature</option>
+                <option value='computer'>computer</option>
                 <option value='rainbow'>rainbow</option>
                 <option value='pink'>pink</option>
                 <option value='zodiac'>zodiac</option>
             </select>
-        </galleryUI>
+        </galleryUI><br><br>
         <center id='tiles'>
             <%
             let i=0;
@@ -94,7 +96,7 @@ blinkies.cafe
         new blinkies added weekly!
     </div>
     </center>
-    <br><br>
+    <br>
     <div class='divider'></div>
 </div>
 <hr>

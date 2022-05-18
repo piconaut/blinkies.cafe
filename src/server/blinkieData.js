@@ -1,4 +1,16 @@
 const styleProps = {
+    '0090-flatline': {
+        name:"still hanging on",
+        bday:20220512,
+        frames:2,
+        delay: 10,
+        colour:["#e70000","#e70000"],
+        font: "monaco",
+        fontsize:16,
+        x:11, y:0,
+        sourceName:"jazzybos1003",
+        sourceURL:"http://web.archive.org/web/20091027031424/http://geocities.com/jazzybos1003/"
+    },
     '0089-kiss': {
         name:"*~ mwah!! ~*",
         bday:20220512,
@@ -296,8 +308,9 @@ const styleProps = {
         sourceURL:"https://squigglevision.neocities.org/"
     },
     '0069-alien': {
-        name:"ABUCTABLE",
+        name:"ABDUCTABLE",
         bday:20220508,
+        tags:["paranormal"],
         frames:2,
         delay:20,
         colour:["#00ff00","#00ff00"],
@@ -683,6 +696,7 @@ const styleProps = {
     '0032-coffeecup': {
         name:"need moar coffee XD",
         bday:20220317,
+        tags:["food"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         font:"monaco",
@@ -834,6 +848,7 @@ const styleProps = {
     '0025-birthdaycake': {
         name:"hbd ur old lmao",
         bday:20220302,
+        tags:["food"],
         frames:4,
         delay:10,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -870,6 +885,7 @@ const styleProps = {
     '0021-vampirefangs': {
         name:"Blood-Sucker",
         bday:20220223,
+        tags:["paranormal"],
         frames:8,
         colour:["#d00000","#d00000","#ff0000","#d00000","#d00000","#ff0000","#ff0000","#ff0000"],
         font: "alagard",
@@ -893,6 +909,7 @@ const styleProps = {
         name:"Sweet Tooth",
         bday:20220218,
         frames:2,
+        tags:["food"],
         delay:25,
         colour:["#ffcee7","#ffcee7"],
         font: "monaco",
@@ -988,6 +1005,7 @@ const styleProps = {
     '0007-chocolate': {
         name:"chocolate dreams",
         bday:20220120,
+        tags:["food"],
         frames:2,
         colour:["#000000","#000000"],
         font: "monaco",
@@ -999,7 +1017,7 @@ const styleProps = {
     '0002-mushroom': {
         name:"mushroom boy",
         bday:20220118,
-        tags:["nature"],
+        tags:["nature","food"],
         frames:2,
         colour:["#8c2000","#8c2000"],
         font: "monaco",
@@ -1010,6 +1028,7 @@ const styleProps = {
     '0003-ghost': {
         name:"Spooky vibes only!!",
         bday:20211215,
+        tags:["paranormal"],
         frames:2,
         colour:["#e79400","#e77400"],
         font: "infernalda",
@@ -1021,6 +1040,7 @@ const styleProps = {
     '0004-peachy': {
         name:"just peachy",
         bday:20211214,
+        tags:["food"],
         frames:2,
         colour:["black","black"],
         font:"monaco",
@@ -1044,6 +1064,7 @@ const styleProps = {
     '0001-saucer': {
         name:"crash-landed",
         bday:20211203,
+        tags:["paranormal"],
         frames:2,
         colour:["#ff0000","#ff4e4e"],
         font: "Perfect DOS VGA 437",
@@ -1108,7 +1129,7 @@ let j = 0;
 for (const [key, value] of Object.entries(styleProps)) {
 
     //console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
-    //console.log('<img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + '" class="blinkie-wall">');
+    //console.log('<img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall">');
 
     if (!value.hide) {
         // add short blinkie data to list for clients.

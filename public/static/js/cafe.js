@@ -33,7 +33,7 @@ function postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText) {
 /*------------------*/
 
 // populate gallery page.
-function loadStyles (styleList, styleOrder, currentPage) {
+function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
     // calculate index of first & last blinkies on page.
     const indexStart = pageSize*(currentPage-1);
     const indexEnd   = indexStart + pageSize;
@@ -54,10 +54,13 @@ function loadStyles (styleList, styleOrder, currentPage) {
         // if page has enough blinkies to populate tile, update the tile.
         if (i < stylePage.length) {
             const styleID            = stylePage[i][0];
-            blinkieTiles[i].src      = '/b/display/' + styleID + '.gif';
-            blinkieTiles[i].alt      = styleList[styleID].name + ' blinkie';
-            blinkieTiles[i].onclick = function() { selectStyle(styleList, styleID); }
+            blinkieTiles[i].onclick  = function() { selectStyle(styleList, styleID); }
             blinkieTiles[i].style.visibility = '';
+            if (!firstLoad) {
+                console.log(blinkieTiles[i].src)
+                blinkieTiles[i].src      = '/b/display/' + styleID + '.gif';
+                blinkieTiles[i].alt      = styleList[styleID].name + ' blinkie';
+            }
         }
         // if page has insufficient blinkies to populate tile, hide the tile.
         else {
@@ -200,7 +203,7 @@ getStyleList().then(function(styleList){
     const selectTags     = document.getElementById("selectTags");
 
     let styleOrder = sortStyles(styleList,'bday','desc');
-    loadStyles(styleList, styleOrder, 1);
+    loadStyles(styleList, styleOrder, 1, true);
     selectTags.onchange = function() {
         const tag = selectTags.value;
         Object.assign(styleList, global.styleList);
@@ -225,35 +228,35 @@ getStyleList().then(function(styleList){
 
 
         styleOrder = sortStyles(styleList,'bday', 'desc');
-        loadStyles(styleList, styleOrder, 1);
+        loadStyles(styleList, styleOrder, 1, false);
         currentPage = 1;
     }
     sortNew.onclick = function() {
         if (currentSort != 'bdaydesc') {
             styleOrder = sortStyles(styleList,'bday', 'desc');
-            loadStyles(styleList, styleOrder, 1);
+            loadStyles(styleList, styleOrder, 1, false);
             currentPage = 1;
         }
     }
     sortOld.onclick = function() {
         if (currentSort != 'bdayasc') {
             styleOrder = sortStyles(styleList,'bday', 'asc');
-            loadStyles(styleList, styleOrder, 1);
+            loadStyles(styleList, styleOrder, 1, false);
             currentPage = 1;
         }
     }
     sortRandom.onclick = function() {
         styleOrder = shuffleStyles(styleList);
-        loadStyles(styleList, styleOrder, 1);
+        loadStyles(styleList, styleOrder, 1, false);
         currentPage = 1;
     }
     nextPage.onclick = function() {
         currentPage ++;
-        loadStyles(styleList, styleOrder, currentPage);
+        loadStyles(styleList, styleOrder, currentPage, false);
     }
     prevPage.onclick = function() {
         currentPage --;
-        loadStyles(styleList, styleOrder, currentPage);
+        loadStyles(styleList, styleOrder, currentPage, false);
     }
 });
 

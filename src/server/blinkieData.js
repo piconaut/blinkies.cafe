@@ -1,7 +1,33 @@
 const styleProps = {
+    '0092-computerconnect': {
+        name:"establishing connection...",
+        bday:20220520,
+        tags:["computer"],
+        frames:10,
+        delay: 15,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "monaco",
+        fontsize:16,
+        x:8, y:0,
+        sourceName:"enfermagemweb",
+        sourceURL:"https://web.archive.org/web/20091026203603/http://br.geocities.com/enfermagemweb/controle.htm"
+    },
+    '0091-bug': {
+        name:"bitten by the blinkie bug",
+        bday:20220520,
+        tags:["nature"],
+        frames:2,
+        delay:10,
+        colour:["#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontsize:9,
+        x:7, y:0,
+        sourceName:"shannenmoon",
+        sourceURL:"http://web.archive.org/web/20091025060747/http://geocities.com/shannenmoon/blinkies.html"
+    },
     '0090-flatline': {
         name:"still hanging on",
-        bday:20220512,
+        bday:20220517,
         frames:2,
         delay: 10,
         colour:["#e70000","#e70000"],
@@ -516,7 +542,8 @@ const styleProps = {
         font: "hud",
         fontsize:5,
         x:0, y:0,
-        sourceName:"me :)",
+        sourceName:"shannenmoon",
+        sourceURL:"http://web.archive.org/web/20091025060747/http://geocities.com/shannenmoon/blinkies.html"
     },
     '0053-pinkchecker': {
         name:"pastel luvr!",
@@ -750,9 +777,9 @@ const styleProps = {
         frames:2,
         delay: 25,
         colour:["#ffffff","#ffffff"],
-        font: "monogramextended",
+        font: "monaco",
         fontsize:16,
-        x:7, y:1,
+        x:7, y:0,
         sourceName:"網頁 素 材",
         sourceURL:"https://web.archive.org/web/20090729224850/http://hk.geocities.com/useinweb_pic/pic_line.htm"
     },
@@ -1129,7 +1156,6 @@ let j = 0;
 for (const [key, value] of Object.entries(styleProps)) {
 
     //console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
-    //console.log('<img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall">');
 
     if (!value.hide) {
         // add short blinkie data to list for clients.

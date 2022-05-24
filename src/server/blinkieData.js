@@ -1,10 +1,73 @@
 const styleProps = {
+    '0097-purple': {
+        name:"Sarcasm is the 1 service I offer.",
+        bday:20220524,
+        tags:["plain"],
+        frames:2,
+        colour:["#5500aa","#5500aa"],
+        font: "04b03",
+        fontsize:8,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"pixel_addict09",
+        sourceURL:"https://web.archive.org/web/20091027121122fw_/http://www.geocities.com/pixel_addict09/blinkies.html"
+    },
+    '0096-blackgreen': {
+        name:"black & green",
+        bday:20220524,
+        tags:["plain"],
+        frames:2,
+        colour:["#00ff00","#00ff00"],
+        font: "monogramextended",
+        fontsize:16,
+        x:0, y:1,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
+    '0095-tinycats': {
+        name:"my cat made me do it",
+        bday:20220521,
+        tags:["nature"],
+        frames:2,
+        delay:10,
+        colour:["#844200","#844200"],
+        font: "lanapixel",
+        fontsize:11,
+        x:0, y:-1,
+        sourceName:"lesbianlr",
+        sourceURL:"https://web.archive.org/web/20091027142856/http://geocities.com/lesbianlr/dollz/crazycatlady.gif"
+    },
+    '0094-tinycats': {
+        name:"/heart  proud cat dad  /heart",
+        bday:20220521,
+        tags:["nature"],
+        frames:2,
+        delay:10,
+        colour:["#844200","#844200"],
+        font: "lanapixel",
+        fontsize:11,
+        x:0, y:-1
+    },
+    '0093-cats': {
+        name:"hehe just kitten!! ;3c",
+        bday:20220521,
+        tags:["nature"],
+        frames:2,
+        delay:10,
+        colour:["#000000","#000000"],
+        font: "pixeloid sans",
+        fontsize:9,
+        x:0, y:0,
+        sourceName:"lesbianlr",
+        sourceURL:"https://web.archive.org/web/20091027142902/http://geocities.com/lesbianlr/dollz/curiosityblink.gif"
+    },
     '0092-computerconnect': {
         name:"establishing connection...",
         bday:20220520,
         tags:["computer"],
         frames:10,
-        delay: 15,
+        delay: 10,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "monaco",
         fontsize:16,
@@ -349,7 +412,7 @@ const styleProps = {
     '0068-mainframe': {
         name:"Command ===> ___",
         bday:20220508,
-        tags:["plain"],
+        tags:["plain","computer"],
         bgID:"0059-greenscreen",
         frames:3,
         delay:5,
@@ -625,8 +688,8 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:14, y:0,
-        sourceName:"y2k.neocities.org",
-        sourceURL:"https://y2k.neocities.org"
+        sourceName:"lesbianlr",
+        sourceURL:"https://web.archive.org/web/20091027142821/http://geocities.com/lesbianlr/dollz/fbb.gif"
     },
     '0035-edgyred': {
         name:"I literally don't care.",
@@ -759,7 +822,7 @@ const styleProps = {
     '0029-pinksparkle': {
         name:"!!! Bad Bitch !!!",
         bday:20220310,
-        tags:["pink"],
+        tags:["pink","plain"],
         frames:2,
         delay:15,
         colour:["#ffb3ed","#ffb3ed"],
@@ -1155,7 +1218,7 @@ let j = 0;
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
 
-    //console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
+    if (!global.prod) console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
 
     if (!value.hide) {
         // add short blinkie data to list for clients.

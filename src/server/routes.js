@@ -18,7 +18,7 @@ router.get("/wall", function(req,res){
         'Content-Security-Policy',
         "img-src 'self' https://blinkies.neocities.org"
     );
-    res.sendFile(global.appRoot + "/views/pages/wall.html");
+    res.render("pages/wall.ejs");
 })
 router.get("/blog", function(req,res){
     res.render('pages/blog.ejs');

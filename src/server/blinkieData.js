@@ -355,8 +355,8 @@ const styleProps = {
         font: "pixeloid sans",
         fontsize:9,
         x:-14, y:0,
-        sourceName:"lilqtgrl90",
-        sourceURL:"https://web.archive.org/web/20090902141258/http://geocities.com/lilqtgrl90/"
+        sourceName:"moolium",
+        sourceURL:"https://web.archive.org/web/20040902113936/http://www.geocities.com/moolium/"
     },
     '0086-dollface': {
         name:"bishoujo",

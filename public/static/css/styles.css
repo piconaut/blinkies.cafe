@@ -26,7 +26,7 @@ body {
   background-color: #822ed6;
   border-radius: 20px;
 }
-button, option, select {
+button, option, select, input {
   font-family: "Consolas", "Hack", "Liberation Mono", monospace;
 }
 select,button {
@@ -166,6 +166,7 @@ action {
 }
 #blinkieText, #msgText {
     width:145px;
+    height:13px;
     overflow:hidden;
     resize:none;
     margin-bottom: -6px;

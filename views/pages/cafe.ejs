@@ -22,31 +22,33 @@ blinkies.cafe
     <div id='pour' style='position:absolute; visibility:<%if (pourStyle == '') {%>hidden<%} else {%>visible<%}%>'>
         <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
         <form id='blinkieForm'>
-        text:  &nbsp;<input placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></input>&nbsp;<input type="checkbox" id="toggleSplit" name="toggleSplit"><label for="toggleSplit">split</label>(<div class="tooltip">?
-            <span class="tooltiptext">fit more text by splitting into two lines</span>
-        </div>)
-        <div style='margin-top: 2px'>
-            style: <select name="blinkieStyle" id="blinkieStyle" cols=20>
-                <%
-                if (pourStyle != '') {
-                    %><option value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
-                }
-
-                for (const [key, value] of Object.entries(styleList)) {
-                    if (key != pourStyle) {
-                        %><option value="<%=key%>"><%=value.name%></option><%
+            <div>
+                text:  &nbsp;<input placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off' type='text' autocomplete="off"></input>&nbsp;<input type="checkbox" id="toggleSplit" name="toggleSplit"><label for="toggleSplit">split</label>(<div class="tooltip">?
+                    <span class="tooltiptext">fit more text by splitting into two lines</span>
+                </div>)
+            </div>
+            <div style='margin-top: 1px'>
+                style: <select name="blinkieStyle" id="blinkieStyle" cols=20>
+                    <%
+                    if (pourStyle != '') {
+                        %><option value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
                     }
-                }
-                %>
-            </select>
-        </div>
-        <div>scale:
-            <select name="blinkieScale" id="blinkieScale">
-                <option value=1>1x: small &amp; classic. good in rows &amp; columns. great on desktop.</option>
-                <option value=2>2x: happy medium?</option>
-                <option value=4>4x: large &amp; crisp. good for individual blinkies. mobile-friendly.</option>
-            </select>
-        </div>
+
+                    for (const [key, value] of Object.entries(styleList)) {
+                        if (key != pourStyle) {
+                            %><option value="<%=key%>"><%=value.name%></option><%
+                        }
+                    }
+                    %>
+                </select>
+            </div>
+            <div>scale:
+                <select name="blinkieScale" id="blinkieScale">
+                    <option value=1>1x: small &amp; classic. good in rows &amp; columns. great on desktop.</option>
+                    <option value=2>2x: happy medium?</option>
+                    <option value=4>4x: large &amp; crisp. good for individual blinkies. mobile-friendly.</option>
+                </select>
+            </div>
         <button type='submit' id='submitbtn'>generate!!</button><br>
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>

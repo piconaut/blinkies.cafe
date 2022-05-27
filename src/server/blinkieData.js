@@ -1,4 +1,77 @@
 const styleProps = {
+    '0103-kitty': {
+        name:"too kawaii to live",
+        bday:20220527,
+        tags:["nature","pink"],
+        frames:2,
+        delay:10,
+        colour:["#9f006a","#9f006a"],
+        font: "pixeloid sans",
+        fontsize:9,
+        x:-10, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"lowpolygirls",
+        sourceURL:"https://vaarwelentotmorgen.neocities.org/aboutme.html"
+    },
+    '0102-rainbowchecker': {
+        name:"102 blinkies!!!!",
+        bday:20220527,
+        tags:["rainbow"],
+        frames:7,
+        delay:10,
+        colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "digitaldisco",
+        fontsize:16,
+        x:0, y:0,
+    },
+    '0101-ballcplyellowyellow': {
+        name:"me and who? (*¯ ³¯*)♡",
+        bday:20220526,
+        tags:["love"],
+        frames:2,
+        delay:10,
+        colour:["#31ffef","#31ffef"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:-20, y:0
+    },
+    '0100-ballcplblueblue': {
+        name:"me and who? (*^^*)♡",
+        bday:20220526,
+        tags:["love"],
+        frames:2,
+        delay:10,
+        colour:["#31ffef","#31ffef"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:-20, y:0
+    },
+    '0099-ballcplpinkpink': {
+        name:"me and who? (//ω//)",
+        bday:20220526,
+        tags:["love"],
+        frames:2,
+        delay:10,
+        colour:["#31ffef","#31ffef"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:-20, y:0
+    },
+    '0098-ballcplpinkblue': {
+        name:"us <3<3<3<3<3",
+        bday:20220526,
+        tags:["love"],
+        frames:2,
+        delay:10,
+        colour:["#31ffef","#31ffef"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:-20, y:0,
+        sourceName:"Blinktastic Blinkies",
+        sourceURL:"https://web.archive.org/web/20090726012734/http://geocities.com/blinktasticblinkie/"
+    },
     '0097-purple': {
         name:"Sarcasm is the 1 service I offer.",
         bday:20220524,
@@ -67,7 +140,7 @@ const styleProps = {
         bday:20220520,
         tags:["computer"],
         frames:10,
-        delay: 10,
+        delay: 15,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "monaco",
         fontsize:16,
@@ -1261,7 +1334,8 @@ const fontList = {
     17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"},
     18: {name:"Pixeloid", sourceName:"ggbot", sourceURL:"https://ggbot.itch.io/pixeloid-font"},
     19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"},
-    20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"}
+    20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"},
+    21: {name:"Digital Disco", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
 };
 
 const fallbackFonts = {

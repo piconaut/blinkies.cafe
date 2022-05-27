@@ -18,7 +18,7 @@ function cooldown(ip) {
     // remove requests older than 1 sec from recentRequests,
     // add newer requests to IPs on cooldown.
     for (let i=recentRequests.length-1; i>=0; i--) {
-        if (recentRequests[i][1] < currentTime - 1000) {
+        if (recentRequests[i][1] < currentTime - 2000) {
             recentRequests.shift();
         }
         else {

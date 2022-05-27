@@ -8,7 +8,10 @@ const pageSize      = blinkieTiles.length;
 const urlRoot       = '';
 let currentSort     = 'bdaydesc';
 let firstPour       = true;
-let global = {};
+let global = {
+    'delay':2010
+};
+
 
 /*---------------------*/
 /* GET & POST requests */
@@ -87,7 +90,8 @@ function selectStyle(styleList, targetKey) {
                   'type /spade for \u2660',
                   'type /dia for \u2666',
                   'type /club for \u2663',
-                  'make smth cool :D'];
+                  'make smth cool :D',
+                  'trans rights!!'];
     blinkieText.placeholder = tips[Math.floor(Math.random()*tips.length)];
 
     // show selected style first in dropdown.
@@ -148,9 +152,9 @@ function submit (event) {
     event.preventDefault();
     firstPour = false;
 
-    // if last submitted request was more than 1s ago, submit parms from form,
+    // if last submitted request was more than cooldown ago, submit parms from form,
     // then after receiving reply, display the newly generated blinkie.
-    if (lastRequestTime < Date.now() - 1000) {
+    if (lastRequestTime < Date.now() - global.delay) {
         lastRequestTime = Date.now();
         let freshBlinkie = document.getElementById("freshBlinkie");
         let blinkieText = document.getElementById("blinkieText").value;
@@ -161,6 +165,7 @@ function submit (event) {
         let submitbtn = document.getElementById('submitbtn');
 
         submitbtn.innerText = 'brewing...';
+        setTimeout(function() { submitbtn.innerText = 'generate!!'; }, global.delay);
 
         postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
@@ -182,8 +187,7 @@ function submit (event) {
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br><br>';
-
-            submitbtn.innerText = 'generate!!';
+            if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'
         });
     }
 }

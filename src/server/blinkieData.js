@@ -1,7 +1,21 @@
 const styleProps = {
+    '0107-gradientorange': {
+        name:"Radiant Dawn",
+        bday:20220602,
+        tags:["plain"],
+        frames:2,
+        delay:10,
+        colour:["#7a183f","#7a183f"],
+        font: "monacoext",
+        fontsize:16,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
     '0106-vicioussmiley': {
         name:"AT MY FUCKING LIMIT",
         bday:20220601,
+        tags:["smiley"],
         frames:2,
         delay:12,
         colour:["#000000","#99197d"],
@@ -16,11 +30,11 @@ const styleProps = {
     '0105-gradientpurple': {
         name:"Neon Sunset",
         bday:20220531,
-        tags:["plain"],
+        tags:["plain","fav"],
         frames:2,
         delay:10,
         colour:["#ffb4ff","#ffb4ff"],
-        font: "monaco",
+        font: "monacoext",
         fontsize:16,
         x:0, y:0,
         subName:"ur-bro",
@@ -55,7 +69,7 @@ const styleProps = {
     '0102-rainbowchecker': {
         name:"102 blinkies!!!!",
         bday:20220527,
-        tags:["rainbow"],
+        tags:["rainbow","fav"],
         frames:7,
         delay:10,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
@@ -67,7 +81,7 @@ const styleProps = {
     '0101-ballcplyellowyellow': {
         name:"me and who? (*¯ ³¯*)♡",
         bday:20220526,
-        tags:["love"],
+        tags:["love","smiley"],
         frames:2,
         delay:10,
         colour:["#31ffef","#31ffef"],
@@ -78,7 +92,7 @@ const styleProps = {
     '0100-ballcplblueblue': {
         name:"me and who? (*^^*)♡",
         bday:20220526,
-        tags:["love"],
+        tags:["love","smiley"],
         frames:2,
         delay:10,
         colour:["#31ffef","#31ffef"],
@@ -89,7 +103,7 @@ const styleProps = {
     '0099-ballcplpinkpink': {
         name:"me and who? (//ω//)",
         bday:20220526,
-        tags:["love"],
+        tags:["love","smiley"],
         frames:2,
         delay:10,
         colour:["#31ffef","#31ffef"],
@@ -100,7 +114,7 @@ const styleProps = {
     '0098-ballcplpinkblue': {
         name:"us <3<3<3<3<3",
         bday:20220526,
-        tags:["love"],
+        tags:["love","smiley"],
         frames:2,
         delay:10,
         colour:["#31ffef","#31ffef"],
@@ -176,7 +190,7 @@ const styleProps = {
     '0092-computerconnect': {
         name:"establishing connection...",
         bday:20220520,
-        tags:["computer"],
+        tags:["computer","fav"],
         frames:10,
         delay: 15,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -630,6 +644,7 @@ const styleProps = {
     '0060-glitch': {
         name:"oh no...,,",
         bday:20220426,
+        tags:["smiley"],
         frames:3,
         delay:15,
         colour:["#000000","#000000","#000000"],
@@ -880,6 +895,7 @@ const styleProps = {
     '0033-confused': {
         name:"head empty",
         bday:20220321,
+        tags:["smiley"],
         frames:2,
         delay:10,
         colour:["#000000","#000000"],
@@ -1166,7 +1182,7 @@ const styleProps = {
     '0013-starryeyes': {
         name:"Starry Eyes!",
         bday:20220201,
-        tags:["pink"],
+        tags:["pink","nature"],
         frames:3,
         colour:["#002984","#002984","#002984"],
         font: "rainyhearts",

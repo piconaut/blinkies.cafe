@@ -49,7 +49,7 @@ blinkies.cafe
                     <option value=4>4x: large &amp; crisp. good for individual blinkies. mobile-friendly.</option>
                 </select>
             </div>
-        <button type='submit' id='submitbtn'>generate!!</button><br>
+        <button type='submit' id='submitbtn'>generate!!</button>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="toggleFeed" name="toggleFeed" checked>&nbsp;<label for="toggleFeed">add to <a href="/feed?warn=y">feed</a>?</label><br>
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
         <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br><br><br></div>
@@ -128,9 +128,9 @@ enjoy~
 </div>
 <div class='content'>
     <h2>our links</h2><br>
-    follow: <a href='https://graphics-cafe.tumblr.com/'>tumblr</a>, <a href='https://neocities.org/site/blinkies'>neocities</a>, <a href='https://www.deviantart.com/blinkies-cafe'>deviantart</a><br><br>
-    email:&nbsp;&nbsp;<a href="mailto:hi@blinkies.cafe">hi@blinkies.cafe</a><br><br>
-    suport: <a href="https://ko-fi.com/blinkies">ko-fi</a><br><br>
+    follow:&nbsp;&nbsp;<a href='https://graphics-cafe.tumblr.com/'>tumblr</a>, <a href='https://neocities.org/site/blinkies'>neocities</a>, <a href='https://www.deviantart.com/blinkies-cafe'>deviantart</a><br><br>
+    email:&nbsp;&nbsp;&nbsp;<a href="mailto:hi@blinkies.cafe">hi@blinkies.cafe</a><br><br>
+    support: <a href="https://ko-fi.com/blinkies">ko-fi</a><br><br>
     <br>also check out our <a href='https://chrome.google.com/webstore/detail/blinkiescafe/eopblkihdgjjlipjpdjpekabokhlenoo'>chrome extension</a> !!
     <br><br>
     blinkies.cafe is a member of the yesterweb ring:<br>
@@ -141,8 +141,15 @@ enjoy~
     <a href="https://yesterweb.org/webring/members.html">..</a>
 </div>
 <div class='content'>
+    <h2>acknowledgements</h2><br>
+    <p>
+        special thanks to <a href='https://ur-bro.tumblr.com/'>ur-bro</a> for some awesome templates!!
+    </p>
+</div>
+<div class='content'>
 <h2>what's new</h2><br>
 <ul>
+    <li>added a <a href='/feed?warn=y'>feed</a> of recent user-created blinkies!</li>
     <li>added "smileys" tag!</li>
     <li>text outline for readability on high-contrast backgrounds!</li>
     <li>submit from keyboard on mobile</li>
@@ -153,8 +160,6 @@ enjoy~
     <li>added option to toggle multi-line splitting.</li>
     <li>improved multi-line splitting algorithm.</li>
     <li>joined yesterweb ring!! &lt;3</li>
-    <li>allow longer input text by splitting into two lines.</li>
-    <li>added support for 日本語, 中文, and 한국어 characters!</li>
 </ul>
 </div>
 <div class='content'>

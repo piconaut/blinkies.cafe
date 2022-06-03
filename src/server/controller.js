@@ -56,13 +56,17 @@ const msg = async function (req, res) {
 
 const queue = require('promise-queue')
 var brueue = new queue(1, Infinity);
-
-var orderBlinkie = function(res, style, intext, scale, split)
+var recentBlinkies = [];
+var orderBlinkie = function(res, style, intext, scale, split, toFeed)
 {
     var promise = new Promise((resolve) => {
         blinkiegen.pour(style, intext, scale, split).then(function(blinkieLink) {
             res.end(blinkieLink);
             resolve(blinkieLink);
+            if (toFeed) {
+                recentBlinkies.unshift(blinkieLink);
+                if (recentBlinkies.length > 18) recentBlinkies.pop();
+            }
         });
     })
     return promise;
@@ -75,6 +79,7 @@ const pourBlinkie = async function (req, res) {
         let intext   = req.body.blinkieText;
         const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
         const split = Boolean(req.body.splitText);
+        const toFeed = Boolean(req.body.toFeed);
         const starttime = Date.now();
 
         if (origintext.substring(0,7) == '/nolog ') {
@@ -84,7 +89,7 @@ const pourBlinkie = async function (req, res) {
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
 
-        await brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split));
+        await brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split, toFeed));
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
@@ -142,6 +147,14 @@ const servePour = function (req, res) {
     });
 }
 
+const serveFeed = function (req, res) {
+    let warn = Boolean(req.query.warn);
+    res.render('pages/feed.ejs', {
+        warn: warn,
+        recentBlinkies: recentBlinkies
+    });
+}
+
 const serveSitemap = function (req, res) {
     const displayBaseUrl = 'https://blinkies.cafe/b/display/';
     res.contentType("text/plain");
@@ -183,5 +196,6 @@ module.exports = {
     serveStyleList,
     serveArchive,
     pourBlinkie,
-    servePour
+    servePour,
+    serveFeed
 }

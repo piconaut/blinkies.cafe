@@ -1,5 +1,6 @@
 https://blinkies.cafe/
 https://blinkies.cafe/archive
+https://blinkies.cafe/feed
 https://blinkies.cafe/pour
 https://blinkies.cafe/blog
 https://blinkies.cafe/blog/2022-05-14-how-to-make-blinkies

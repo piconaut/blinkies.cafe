@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>the blinkie feed | recently created blinkies!</title>
+  <meta name='description' content="a feed of the 18 latest user-created blinkies.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://blinkies.cafe/feed">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <div id='banner' class='content'>
+    blinkies.cafe
+    </div>
+    <div id='navbar' class='content'>
+        <a href='/'>generator</a> | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
+    </div><hr>
+<div class='content'>
+    <h1>recently generated blinkies</h1>
+</div>
+<%
+    if (warn) {
+%>
+        <div class='content'>
+            this page hosts the most recent 18 blinkies generated with the "add to feed" option checked.<br><br>
+            these blinkies have user-created text which blinkies.cafe doesn't necessarily endorse.<br><br>
+            please be kind! &lt;3<br><br>
+            <center>&gt;&nbsp;<b><a href='/feed'>ENTER</a>&nbsp;&lt;</b></center>
+        </div>
+<%
+    }
+    else {
+%>
+        <div class='content'>
+            <center>
+            <a href='/feed'>refresh</a>
+            <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
+                <center id='tiles'>
+                    <%
+                    for (const blinkieSrc of recentBlinkies) {
+                        %><img src="<%=blinkieSrc%>" class="blinkie blinkieTile"><%
+                    }
+                    %>
+                </center>
+            </div>
+            </center>
+        </div>
+<%
+    }
+%>
+<%- include('components/footer.html') %>
+</body>
+</html>

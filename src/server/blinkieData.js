@@ -1400,7 +1400,8 @@ const fontList = {
     19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"},
     20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"},
     21: {name:"Digital Disco", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
-    22: {name:"04b_19", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-19.font"}
+    22: {name:"04b_19", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-19.font"},
+    23: {name:"Pixeloid Sans", sourceName:"GGBotNet", sourceURL:"https://www.dafont.com/pixeloid-sans.font"}
 };
 
 const fallbackFonts = {

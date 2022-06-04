@@ -101,7 +101,8 @@ const pourBlinkie = async function (req, res) {
                     scale:  scale,
                     style:  style,
                     text:   intext,
-                    split:  split
+                    split:  split,
+                    toFeed: toFeed
                 }       // parms
             });         // logger.info
         }               // nolog

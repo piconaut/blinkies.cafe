@@ -21,10 +21,10 @@
     if (warn) {
 %>
         <div class='content'>
-            this page hosts the most recent 18 blinkies generated with the "add to feed" option checked.<br><br>
+            this page hosts the 18 most recent generated blinkies.<br><br>
             these blinkies have user-created text which blinkies.cafe doesn't necessarily endorse.<br><br>
             please be kind! &lt;3<br><br>
-            <center>&gt;&nbsp;<b><a href='/feed'>ENTER</a>&nbsp;&lt;</b></center>
+            <center><b>&gt;&nbsp;<a href='/feed'>ENTER</a>&nbsp;&lt;</b></center>
         </div>
 <%
     }
@@ -37,7 +37,7 @@
                 <center id='tiles'>
                     <%
                     for (const blinkieSrc of recentBlinkies) {
-                        %><img src="<%=blinkieSrc%>" class="blinkie blinkieTile"><%
+                        %><img src="<%=blinkieSrc%>" class="blinkie"><%
                     }
                     %>
                 </center>

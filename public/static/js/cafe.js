@@ -161,7 +161,7 @@ function submit (event) {
         let splitText = document.getElementById("toggleSplit").checked;
         let blinkieStyle = document.getElementById("blinkieStyle").value;
         let blinkieScale = document.getElementById("blinkieScale").value;
-        let toFeed = document.getElementById("toggleFeed").checked;
+        let toFeed = !document.getElementById("hideFeed").checked;
         let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
         let submitbtn = document.getElementById('submitbtn');
 

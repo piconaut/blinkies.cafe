@@ -49,7 +49,7 @@ blinkies.cafe
                     <option value=4>4x: large &amp; crisp. good for individual blinkies. mobile-friendly.</option>
                 </select>
             </div>
-        <button type='submit' id='submitbtn'>generate!!</button>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="hideFeed" name="hideFeed">&nbsp;<label for="hideFeed">don't show in <a href="/feed?warn=y">feed</a></label><br>
+        <button type='submit' id='submitbtn'>generate!!</button>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="hideFeed" name="hideFeed">&nbsp;<label for="hideFeed">don't show in <a href="/feed">feed</a></label><br>
         </form><br>
         <img id='freshBlinkie' src='/b/display/<%if (pourStyle == '') {%>0007-chocolate<%} else {%><%=pourStyle%><%}%>.gif' alt='generated blinkie'><br>
         <div id='blinkieLinkHolder' style='font-size:8pt;'><br><br><br><br><br></div>
@@ -96,7 +96,7 @@ blinkies.cafe
             </galleryUI>
         </center>
         <br>
-        <a href="/wall">browse all</a>&nbsp;|&nbsp;<a href="/feed?warn=y">recently generated</a> <img src="/new.gif">
+        <a href="/wall">browse all</a>&nbsp;|&nbsp;<a href="/feed">recently generated</a> <img src="/new.gif">
         <br><br>
         new blinkies added weekly!
     </div>

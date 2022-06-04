@@ -11,7 +11,8 @@ const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
 function makeid(length) {
     var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvw'
+                         + 'xyz0123456789';
     var charactersLength = characters.length;
     for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random()*charactersLength));
@@ -47,17 +48,21 @@ async function processText(blinkieParms) {
         // get all unicode char codes from string.
         blinkieParms.unicodeCharCodes = '';
         for (var i = 0; i < blinkieParms.cleantext.length; i++) {
-            blinkieParms.unicodeCharCodes += blinkieParms.cleantext.charCodeAt(i).toString(16) + ' ';
+            blinkieParms.unicodeCharCodes
+            += blinkieParms.cleantext.charCodeAt(i).toString(16) + ' ';
         }
 
         // if text has chars not in style font, try fallback fonts in order.
-        let fontSearch   = "fc-list '" + blinkieParms.font + ":charset=" + blinkieParms.unicodeCharCodes + "'";
-        let foundFont    = await exec(fontSearch);
+        let fontSearch   = "fc-list '" + blinkieParms.font + ":charset="
+                         + blinkieParms.unicodeCharCodes + "'";
+        let foundFont = await exec(fontSearch);
         if (foundFont.stdout.length == 0) {
             let i = 0;
             let fontFound = false;
-            while (!fontFound && i<Object.keys(blinkieData.fallbackFonts).length) {
-                fontSearch = "fc-list '" + blinkieData.fallbackFonts[i].family + ":charset=" + blinkieParms.unicodeCharCodes + "'";
+            const numFonts = Object.keys(blinkieData.fallbackFonts);
+            while (!fontFound && i<numFonts.length) {
+                fontSearch = "fc-list '" + blinkieData.fallbackFonts[i].family
+                           + ":charset=" + blinkieParms.unicodeCharCodes + "'";
                 foundFont  = await exec(fontSearch);
                 if (foundFont.stdout.length > 0) {
                     blinkieParms.font      = blinkieData.fallbackFonts[i].family;
@@ -150,32 +155,63 @@ async function renderFrames(blinkieID, blinkieParms) {
                 '-weight',blinkieParms.fontweight
             ]
             if (blinkieParms.outline) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x[i]+1)+'+'+(blinkieParms.y), '-fill', blinkieParms.outline[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext1,
-                                  '-page', '+'+(blinkieParms.x[i]-1)+'+'+(blinkieParms.y), '-fill', blinkieParms.outline[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext1,
-                                  '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y+1), '-fill', blinkieParms.outline[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext1,
-                                  '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y-1), '-fill', blinkieParms.outline[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext1,
-                              );
+                argsArray[i].push(
+                    '-page', '+'+(blinkieParms.x[i]+1)+'+'+(blinkieParms.y),
+                    '-fill', blinkieParms.outline[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext1,
+                    '-page', '+'+(blinkieParms.x[i]-1)+'+'+(blinkieParms.y),
+                    '-fill', blinkieParms.outline[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext1,
+                    '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y+1),
+                    '-fill', blinkieParms.outline[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext1,
+                    '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y-1),
+                    '-fill', blinkieParms.outline[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext1,
+                );
+                if (blinkieParms.split) {
+                    argsArray[i].push(
+                        '-page', '+'+(blinkieParms.x[i]+1)+'+'+(blinkieParms.y2),
+                        '-fill', blinkieParms.outline[i],
+                        "-annotate", "+0+0", blinkieParms.cleantext2,
+                        '-page', '+'+(blinkieParms.x[i]-1)+'+'+(blinkieParms.y2),
+                        '-fill', blinkieParms.outline[i],
+                        "-annotate", "+0+0", blinkieParms.cleantext2,
+                        '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y2+1),
+                        '-fill', blinkieParms.outline[i],
+                        "-annotate", "+0+0", blinkieParms.cleantext2,
+                        '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y2-1),
+                        '-fill', blinkieParms.outline[i],
+                        "-annotate", "+0+0", blinkieParms.cleantext2,
+                    );
+                }
+                argsArray
             }
             if (blinkieParms.shadow) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])+'+'+(blinkieParms.y+blinkieParms.shadowy), '-fill', blinkieParms.shadow[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext1);
+                argsArray[i].push(
+                    '-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])
+                    +'+'+(blinkieParms.y+blinkieParms.shadowy),
+                    '-fill', blinkieParms.shadow[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext1
+                );
             }
             if (blinkieParms.split) {
-                argsArray[i].push('-page', '+'+(blinkieParms.x[i])+'+'+blinkieParms.y2, '-fill', blinkieParms.colour[i],
-                                  "-annotate", "+0+0", blinkieParms.cleantext2);
+                argsArray[i].push(
+                    '-page', '+'+(blinkieParms.x[i])+'+'+blinkieParms.y2,
+                    '-fill', blinkieParms.colour[i],
+                    "-annotate", "+0+0", blinkieParms.cleantext2);
             }
             if (blinkieParms.undercolor) {
                 argsArray[i].push("-undercolor",blinkieParms.undercolor);
             }
             argsArray[i].push(
-                '-page', '+'+blinkieParms.x[i]+'+'+blinkieParms.y, '-fill', blinkieParms.colour[i],
+                '-page', '+'+blinkieParms.x[i]+'+'+blinkieParms.y,
+                '-fill', blinkieParms.colour[i],
                 "-annotate", "+0+0", blinkieParms.cleantext1,
-                global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.bgID + '-' + i + '.png',
-                global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
+                global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.bgID
+                + '-' + i + '.png',
+                global.appRoot + '/assets/blinkies-frames/' + blinkieID
+                + '-' + i + '.png'
             );
             stdout[i] = execFile('convert', argsArray[i]);
         }
@@ -212,23 +248,30 @@ async function pour(instyle, intext, inscale, split) {
     try {
         // assign blinkie parms
         const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
-        let styleID = String(instyle) in blinkieData.styleProps ? String(instyle) : '0020-blinkiesCafe';
+        let styleID = String(instyle) in blinkieData.styleProps
+            ? String(instyle) : '0020-blinkiesCafe';
         let blinkieParms = {
             'styleID':    styleID,
-            'bgID':       blinkieData.styleProps[styleID].bgID ? blinkieData.styleProps[styleID].bgID : styleID,
+            'bgID':       blinkieData.styleProps[styleID].bgID
+                ? blinkieData.styleProps[styleID].bgID : styleID,
             'intext':     intext,
             'cleantext':  '',
             'cleantext1': '',
             'cleantext2': '',
             'scale':      scaleVals[inscale] ? scaleVals[inscale] : '100%',
-            'antialias':  blinkieData.styleProps[styleID].antialias ? blinkieData.styleProps[styleID].antialias : '+antialias',
-            'delay':      blinkieData.styleProps[styleID].delay ? blinkieData.styleProps[styleID].delay : 10,
-            'fontweight': blinkieData.styleProps[styleID].fontweight ? blinkieData.styleProps[styleID].fontweight : 'normal',
+            'antialias':  blinkieData.styleProps[styleID].antialias
+                ? blinkieData.styleProps[styleID].antialias : '+antialias',
+            'delay':      blinkieData.styleProps[styleID].delay
+                ? blinkieData.styleProps[styleID].delay : 10,
+            'fontweight': blinkieData.styleProps[styleID].fontweight
+                ? blinkieData.styleProps[styleID].fontweight : 'normal',
             'frames':     blinkieData.styleProps[styleID].frames,
             'colour':     blinkieData.styleProps[styleID].colour,
             'shadow':     blinkieData.styleProps[styleID].shadow,
-            'shadowx':    blinkieData.styleProps[styleID].shadowx ? blinkieData.styleProps[styleID].shadowx : -1,
-            'shadowy':    blinkieData.styleProps[styleID].shadowy ? blinkieData.styleProps[styleID].shadowy : 0,
+            'shadowx':    blinkieData.styleProps[styleID].shadowx
+                ? blinkieData.styleProps[styleID].shadowx : -1,
+            'shadowy':    blinkieData.styleProps[styleID].shadowy
+                ? blinkieData.styleProps[styleID].shadowy : 0,
             'outline':    blinkieData.styleProps[styleID].outline,
             'undercolor': blinkieData.styleProps[styleID].undercolor,
             'font':       blinkieData.styleProps[styleID].font,
@@ -259,7 +302,8 @@ async function pour(instyle, intext, inscale, split) {
         // delete frames.
         let frameFname = '';
         for (let i=0; i<blinkieParms.frames; i++) {
-            frameFname = global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png';
+            frameFname = global.appRoot + '/assets/blinkies-frames/'
+                + blinkieID + '-' + i + '.png';
             fs.unlink(frameFname, function(err) {
                 if (err) logger.error({
                     time: Date.now(),

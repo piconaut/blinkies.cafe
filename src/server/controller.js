@@ -5,6 +5,17 @@ const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./blinkieData.js');
 const logger      = require('./logger.js').logger;
 
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvw'
+                         + 'xyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random()*charactersLength));
+    }
+    return result;
+}
+
 function cleanBlinkieID(str) {
     return str.replace(/[^a-zA-Z0-9-.]/g, '');
 }
@@ -60,7 +71,20 @@ var recentBlinkies = [];
 var orderBlinkie = function(res, style, intext, scale, split, toFeed)
 {
     var promise = new Promise((resolve) => {
-        blinkiegen.pour(style, intext, scale, split).then(function(blinkieLink) {
+        // generate unique blinkie ID & URL.
+        let blinkieIDassigned = false;
+        let blinkieID = makeid(2);
+        let blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
+        while (!blinkieIDassigned) {
+            if (!recentBlinkies.includes(blinkieLink)) {
+                blinkieIDassigned = true;
+            }
+            else {
+                blinkieID = makeid(2);
+                blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
+            }
+        }
+        blinkiegen.pour(blinkieID, style, intext, scale, split).then(function(blinkieLink) {
             res.end(blinkieLink);
             resolve(blinkieLink);
             if (toFeed) {

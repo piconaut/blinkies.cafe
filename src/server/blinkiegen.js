@@ -9,17 +9,6 @@ const logger      = require('./logger.js').logger
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
-function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvw'
-                         + 'xyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random()*charactersLength));
-    }
-    return result;
-}
-
 function sanitizeText(str) {
     return (str.substring(0,128) + '')
     .replace(/[\\']/g, '\\$&')
@@ -242,7 +231,7 @@ async function renderBlinkie(blinkieID, blinkieParms) {
     return blinkieParms;
 }
 
-async function pour(instyle, intext, inscale, split) {
+async function pour(blinkieID, instyle, intext, inscale, split) {
     let blinkieLink = ''
 
     try {
@@ -284,8 +273,6 @@ async function pour(instyle, intext, inscale, split) {
             'split':      split
         };
 
-        // generate unique blinkie ID & URL.
-        const blinkieID = makeid(2);
         blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
         // sanitize input text, use default text if empty.

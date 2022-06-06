@@ -1,6 +1,6 @@
 const styleProps = {
     '0108-crewmate': {
-        name:"HAPPY PRIDE!!",
+        name:"happy pride!!",
         bday:20220602,
         tags:["rainbow"],
         frames:8,
@@ -301,6 +301,7 @@ const styleProps = {
         tags:["pride"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
@@ -314,6 +315,7 @@ const styleProps = {
         tags:["pride"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
@@ -434,6 +436,7 @@ const styleProps = {
         tags:["pride"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
@@ -971,7 +974,7 @@ const styleProps = {
         sourceURL:"https://web.archive.org/web/20091022120840/http://geocities.com/poetshowit2000/LUVDRAMACATS.html"
     },
     '0028-computer': {
-        name:"a computer can never be held accountable",
+        name:"be kind to your computer",
         bday:20220306,
         tags:["computer","fav"],
         frames:2,

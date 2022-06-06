@@ -1,4 +1,17 @@
 const styleProps = {
+    '0109-gradientgreen': {
+        name:"Verdant Zenith",
+        bday:20220606,
+        tags:["plain"],
+        frames:2,
+        delay:10,
+        colour:["#165a4c","#165a4c"],
+        font: "moonaco",
+        fontsize:16,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/"
+    },
     '0108-crewmate': {
         name:"happy pride!!",
         bday:20220602,

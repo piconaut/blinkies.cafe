@@ -1,4 +1,16 @@
 const styleProps = {
+    '0110-yeah': {
+        name:"I have social anxiety",
+        bday:20220608,
+        frames:2,
+        delay:10,
+        colour:["#003399","#003399"],
+        font: "moonaco",
+        fontsize:16,
+        x:13, y:0,
+        sourceName:"ville_valo_gaze",
+        sourceURL:"https://web.archive.org/web/20041113165949/http://www.geocities.com:80/ville_valo_gaze/index2"
+    },
     '0109-gradientgreen': {
         name:"Verdant Zenith",
         bday:20220606,

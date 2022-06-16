@@ -1,4 +1,43 @@
 const styleProps = {
+    '0113-autism': {
+        name:"Autism!",
+        bday:20220615,
+        tags:["rainbow"],
+        frames:8,
+        delay:10,
+        colour:["#03a9f4","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-16, y:0
+    },
+    '0112-peep': {
+        name:"Luv my peeps",
+        bday:20220614,
+        tags:["rainbow"],
+        frames:6,
+        delay:10,
+        colour:["#590d27","#7d4701","#755907","#346903","#0b4d54","#601070"],
+        font: "fipps",
+        fontsize:8,
+        x:0, y:0,
+        subName:"ur-bro",
+        subURL:"https://ur-bro.tumblr.com/",
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/686817611732893696/transbro-custom-peeps-blinkie"
+    },
+    '0111-glittergold': {
+        name:"ur Princess xoxo",
+        bday:20220611,
+        tags:["plain"],
+        bgID:"0018-glitter",
+        frames:3,
+        colour:["#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+    },
     '0110-yeah': {
         name:"I have social anxiety",
         bday:20220608,
@@ -1177,6 +1216,7 @@ const styleProps = {
     '0018-glitter': {
         name:"I <3 GLITTER",
         bday:20220218,
+        tags:["plain"],
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "Dogica",

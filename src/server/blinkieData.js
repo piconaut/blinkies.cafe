@@ -1,4 +1,14 @@
 const styleProps = {
+    '0114-tbh': {
+        name:"autism!",
+        bday:20220617,
+        frames:3,
+        colour:["#000000","#000000","#000000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:8, y:0,
+        sourceName:"me :)"
+    },
     '0113-autism': {
         name:"Autism!",
         bday:20220615,

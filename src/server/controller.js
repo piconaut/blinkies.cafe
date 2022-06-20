@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./blinkieData.js');
+const blacklist   = require('./blacklist.js');
 const logger      = require('./logger.js').logger;
 
 function makeid(length) {
@@ -65,6 +66,12 @@ const msg = async function (req, res) {
     }
 }
 
+function profane(intext) {
+    const words = intext.toLowerCase().split(/[^A-Za-z]/);
+    const profane = words.some(r=> blacklist.words.includes(r))
+    return profane;
+}
+
 const queue = require('promise-queue')
 var brueue = new queue(1, Infinity);
 var recentBlinkies = [];
@@ -88,8 +95,10 @@ var orderBlinkie = function(res, style, intext, scale, split, toFeed)
             res.end(blinkieLink);
             resolve(blinkieLink);
             if (toFeed) {
-                recentBlinkies.unshift(blinkieLink);
-                if (recentBlinkies.length > 18) recentBlinkies.pop();
+                if (!profane(intext)) {
+                    recentBlinkies.unshift(blinkieLink);
+                    if (recentBlinkies.length > 18) recentBlinkies.pop();
+                }
             }
         });
     })

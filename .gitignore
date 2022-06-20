@@ -1,3 +1,4 @@
+src/server/blacklist.js
 public/blinkies-public/*gif
 assets/blinkies-frames
 logs/

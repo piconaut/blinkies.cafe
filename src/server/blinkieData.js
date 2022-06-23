@@ -1,4 +1,25 @@
 const styleProps = {
+    '0116-debian': {
+        name:"powered by debian",
+        bday:20220622,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-8, y:0,
+        sourceName:"me :)"
+    },
+    '0115-alpinelinux': {
+        name:"runs on alpine",
+        bday:20220622,
+        frames:2,
+        colour:["#0d597f","#0d597f"],
+        font: "digitaldisco",
+        fontsize:16,
+        x:-12, y:0,
+        sourceName:"me :)"
+    },
     '0114-tbh': {
         name:"autism!",
         bday:20220617,

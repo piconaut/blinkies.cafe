@@ -1,4 +1,15 @@
 const styleProps = {
+    '0117-redlightsaber': {
+        name:"*SITH*  ",
+        bday:20220624,
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "bm army",
+        fontsize:12,
+        x:-20, y:-1,
+        sourceName:"Misfit of the Jedi",
+        sourceURL:"http://web.archive.org/web/20091027123133/http://www.geocities.com/misfit_of_the_jedi/motjblinkies.html"
+    },
     '0116-debian': {
         name:"powered by debian",
         bday:20220622,
@@ -7,7 +18,7 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:-8, y:0,
+        x:-9, y:0,
         sourceName:"me :)"
     },
     '0115-alpinelinux': {
@@ -1130,9 +1141,9 @@ const styleProps = {
         bday:20220304,
         frames:2,
         colour:["#d0d0d0","#d0d0d0"],
-        font: "monogramextended",
+        font: "moonaco",
         fontsize:16,
-        x:-1, y:1,
+        x:-1, y:0,
         sourceName:"me :)",
         tags:["zodiac"]
     },

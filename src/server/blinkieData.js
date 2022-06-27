@@ -62,8 +62,8 @@ const styleProps = {
         font: "fipps",
         fontsize:8,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/686817611732893696/transbro-custom-peeps-blinkie"
     },
@@ -102,8 +102,8 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0108-crewmate': {
         name:"happy pride!!",
@@ -115,8 +115,8 @@ const styleProps = {
         font: "04b_19",
         fontsize:14,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/685846435983507456/happy-bday-gay-people"
     },
@@ -130,8 +130,8 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0106-vicioussmiley': {
         name:"AT MY FUCKING LIMIT",
@@ -143,8 +143,8 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:-9, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/685724384549289984"
     },
@@ -158,8 +158,8 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0104-redsnowflake': {
         name:"Winter",
@@ -182,8 +182,8 @@ const styleProps = {
         font: "pixeloid sans",
         fontsize:9,
         x:-10, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"lowpolygirls",
         sourceURL:"https://vaarwelentotmorgen.neocities.org/aboutme.html"
     },
@@ -254,8 +254,8 @@ const styleProps = {
         font: "04b03",
         fontsize:8,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"pixel_addict09",
         sourceURL:"https://web.archive.org/web/20091027121122fw_/http://www.geocities.com/pixel_addict09/blinkies.html"
     },
@@ -268,8 +268,8 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0095-tinycats': {
         name:"my cat made me do it",
@@ -370,8 +370,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0087-demisexual': {
         name:"demisexual pride",
@@ -384,8 +384,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0083-demiromantic': {
         name:"demiromantic pride",
@@ -398,8 +398,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0082-aromantic': {
         name:"aromantic pride",
@@ -412,8 +412,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0081-asexual': {
         name:"asexual pride",
@@ -426,8 +426,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0080-genderfluid': {
         name:"genderfluid pride",
@@ -440,8 +440,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0079-nonbinary': {
         name:"non-binary pride",
@@ -454,8 +454,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0078-intersex': {
         name:"intersex pride",
@@ -467,8 +467,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0077-demiboy': {
         name:"demiboy pride",
@@ -480,8 +480,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0076-demigirl': {
         name:"demigirl pride",
@@ -493,8 +493,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0075-demigender': {
         name:"demigender pride",
@@ -506,8 +506,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0074-pan': {
         name:"pan pride",
@@ -519,8 +519,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0073-gay': {
         name:"gay pride",
@@ -533,8 +533,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0072-lesbian': {
         name:"lesbian pride",
@@ -547,8 +547,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0071-bi': {
         name:"bi pride",
@@ -561,8 +561,8 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/"
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0023-trans-pride': {
         name:"this user is trains",
@@ -701,8 +701,8 @@ const styleProps = {
         font: "lanapixel",
         fontsize:11,
         x:-15, y:-1,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"sebray03",
         sourceURL:"https://web.archive.org/web/20091022142333/http://geocities.com/sebray03/blinkies4.htm"
     },
@@ -716,8 +716,8 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/676575313583570944"
     },
@@ -730,8 +730,8 @@ const styleProps = {
         font: "{pixelflag}",
         fontsize:16,
         x:-10, y:-1,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"sebray03",
         sourceURL:"https://web.archive.org/web/20091022105418/http://geocities.com/sebray03/blinkies1.htm"
     },
@@ -745,8 +745,8 @@ const styleProps = {
         font: "04b03",
         fontsize:8,
         x:0, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/672490960396173312"
     },
@@ -760,8 +760,8 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:11, y:0,
-        subName:"ur-bro",
-        subURL:"https://ur-bro.tumblr.com/",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/679395101729062912"
     },

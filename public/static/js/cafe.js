@@ -156,6 +156,7 @@ function submit (event) {
     // then after receiving reply, display the newly generated blinkie.
     if (lastRequestTime < Date.now() - global.delay) {
         lastRequestTime = Date.now();
+        let anakinLink = document.getElementById("anakinLink");
         let freshBlinkie = document.getElementById("freshBlinkie");
         let blinkieText = document.getElementById("blinkieText").value;
         let splitText = document.getElementById("toggleSplit").checked;
@@ -171,23 +172,14 @@ function submit (event) {
         postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText, toFeed).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
             blinkieLinkHolder.innerHTML = '';
-            if (global.styleList[blinkieStyle].subName) {
-                blinkieLinkHolder.innerHTML = 'by ';
-                let subLink = document.createElement('a');
-                subLink.innerHTML = global.styleList[blinkieStyle].subName;
-                subLink.href = global.styleList[blinkieStyle].subURL;
-                subLink.target = "_blank";
-                blinkieLinkHolder.appendChild(subLink);
-                blinkieLinkHolder.innerHTML += ' tysm!!';
-            }
-            blinkieLinkHolder.innerHTML += '<br>';
             let blinkieLink = document.createElement('a');
             blinkieLink.innerHTML = 'download blinkie';
             blinkieLink.href = blinkieURL;
             blinkieLink.download = blinkieURL.split('/')[4];
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br><br>';
+            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br>';
+            if (global.styleList[blinkieStyle].subName == 'Anakin') anakinLink.style.visibility = ''; else anakinLink.style.visibility = 'hidden';
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'
         });
     }

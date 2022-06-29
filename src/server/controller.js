@@ -168,7 +168,7 @@ const serveCafe = function (req, res) {
     let pourStyle = String(req.query.s) in blinkieData.styleList ? String(req.query.s) : '';
     res.setHeader(
         'Content-Security-Policy',
-        "script-src 'self' https://yesterweb.org"
+        "script-src 'self'"
     )
     res.render('pages/cafe.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage });
 }

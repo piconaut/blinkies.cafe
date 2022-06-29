@@ -1,4 +1,36 @@
 const styleProps = {
+    '0119-pastelstars': {
+        name:"twinkle twinkle",
+        bday:20220629,
+        frames:4,
+        delay:13,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        outline:["#ff7ba5","#bdef94","#f7e794","#e7adf7"],
+        font: "grapesoda",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"summalovinsweetie",
+        sourceURL:"https://web.archive.org/web/20091027141703/http://geocities.com/summalovinsweetie/Blinkies.html",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0118-rubberducky': {
+        name:"YOU QUACK ME UP!",
+        bday:20220628,
+        frames:2,
+        colour:["#d23100","#d23100"],
+        shadow:["#fede18","#fede18"],
+        shadowx:[1,1],
+        shadowy:-1,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:13, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/",
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com"
+    },
     '0117-redlightsaber': {
         name:"*SITH*  ",
         bday:20220624,
@@ -1489,7 +1521,7 @@ for (const [key, value] of Object.entries(styleProps)) {
 }
 
 const fontList = {
-    1: {name:"moonaco", sourceName:"FontBlast Design", sourceURL:"https://www.dafont.com/moonaco.font"},
+    1: {name:"monaco", sourceName:"FontBlast Design", sourceURL:"https://www.dafont.com/monaco.font"},
     2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://www.dafont.com/pixellari.font"},
     3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://www.dafont.com/perfect-dos-vga-437.font"},
     4: {name:"04b03", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-03.font"},

@@ -1,4 +1,28 @@
 const styleProps = {
+    '0121-blinkiescafe': {
+        name:"blinkies.cafe <3",
+        bday:20220704,
+        tags:["computer","fav","pink"],
+        frames:2,
+        delay: 25,
+        colour:["#ff7eff","#ff7eff"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-8, y:1,
+        sourceName:"me :)"
+    },
+    '0120-starofdavid': {
+        name:"Star of David",
+        bday:20220702,
+        tags:["rainbow"],
+        frames:8,
+        delay:10,
+        colour:["#03a9f4","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-9, y:0
+    },
     '0119-pastelstars': {
         name:"twinkle twinkle",
         bday:20220629,
@@ -65,6 +89,7 @@ const styleProps = {
     },
     '0114-tbh': {
         name:"autism!",
+        tags:["fav"],
         bday:20220617,
         frames:3,
         colour:["#000000","#000000","#000000"],
@@ -76,7 +101,7 @@ const styleProps = {
     '0113-autism': {
         name:"Autism!",
         bday:20220615,
-        tags:["rainbow"],
+        tags:["rainbow","fav"],
         frames:8,
         delay:10,
         colour:["#03a9f4","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
@@ -140,7 +165,7 @@ const styleProps = {
     '0108-crewmate': {
         name:"happy pride!!",
         bday:20220602,
-        tags:["rainbow"],
+        tags:["rainbow","fav"],
         frames:8,
         delay:10,
         colour:["#03a9f3","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
@@ -863,7 +888,7 @@ const styleProps = {
     '0055-rainbowswirl': {
         name:"technicolor dreams",
         bday:20220415,
-        tags:["rainbow"],
+        tags:["rainbow","fav"],
         frames:10,
         bgType:"png",
         colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],

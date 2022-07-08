@@ -32,18 +32,18 @@ function sanitizeText(str) {
     .replace(/\/dia/g,'\u2666');
 }
 
-async function processText(blinkieParms) {
+async function processText(bParms) {
     try {
         // get all unicode char codes from string.
-        blinkieParms.unicodeCharCodes = '';
-        for (var i = 0; i < blinkieParms.cleantext.length; i++) {
-            blinkieParms.unicodeCharCodes
-            += blinkieParms.cleantext.charCodeAt(i).toString(16) + ' ';
+        bParms.unicodeCharCodes = '';
+        for (var i = 0; i < bParms.cleantext.length; i++) {
+            bParms.unicodeCharCodes
+            += bParms.cleantext.charCodeAt(i).toString(16) + ' ';
         }
 
         // if text has chars not in style font, try fallback fonts in order.
-        let fontSearch   = "fc-list '" + blinkieParms.font + ":charset="
-                         + blinkieParms.unicodeCharCodes + "'";
+        let fontSearch   = "fc-list '" + bParms.font + ":charset="
+                         + bParms.unicodeCharCodes + "'";
         let foundFont = await exec(fontSearch);
         if (foundFont.stdout.length == 0) {
             let i = 0;
@@ -51,41 +51,41 @@ async function processText(blinkieParms) {
             const numFonts = Object.keys(blinkieData.fallbackFonts);
             while (!fontFound && i<numFonts.length) {
                 fontSearch = "fc-list '" + blinkieData.fallbackFonts[i].family
-                           + ":charset=" + blinkieParms.unicodeCharCodes + "'";
+                           + ":charset=" + bParms.unicodeCharCodes + "'";
                 foundFont  = await exec(fontSearch);
                 if (foundFont.stdout.length > 0) {
-                    blinkieParms.font      = blinkieData.fallbackFonts[i].family;
-                    blinkieParms.antialias = blinkieData.fallbackFonts[i].antialias;
-                    blinkieParms.fontsize  = blinkieData.fallbackFonts[i].fontsize;
-                    blinkieParms.y         = blinkieData.fallbackFonts[i].y;
+                    bParms.font      = blinkieData.fallbackFonts[i].family;
+                    bParms.antialias = blinkieData.fallbackFonts[i].antialias;
+                    bParms.fontsize  = blinkieData.fallbackFonts[i].fontsize;
+                    bParms.y         = blinkieData.fallbackFonts[i].y;
                     fontFound = true;
                 }
                 i ++;
             }
         }
 
-        blinkieParms.cleantext1 = blinkieParms.cleantext;
-        blinkieParms.cleantext2 = '';
+        bParms.cleantext1 = bParms.cleantext;
+        bParms.cleantext2 = '';
 
         // if input text is long & supported by small font, set split flag.
-        if (!blinkieParms.split && blinkieParms.cleantext.length > 35) {
-            fontSearch = "fc-list '04b03:charset=" + blinkieParms.unicodeCharCodes + "'";
+        if (!bParms.split && bParms.cleantext.length > 35) {
+            fontSearch = "fc-list '04b03:charset=" + bParms.unicodeCharCodes + "'";
             foundFont  = await exec(fontSearch);
-            if (foundFont.stdout.length > 0) blinkieParms.split = true;
+            if (foundFont.stdout.length > 0) bParms.split = true;
         }
 
         // if split flag is set, split text into two lines.
-        if (blinkieParms.split) {
-            blinkieParms.antialias = '+antialias';
-            blinkieParms.font = '04b03';
-            blinkieParms.fontsize = 8;
-            blinkieParms.shadow = undefined;
-            blinkieParms.y = 4;
-            blinkieParms.y2 = -4;
+        if (bParms.split) {
+            bParms.antialias = '+antialias';
+            bParms.font = '04b03';
+            bParms.fontsize = 8;
+            bParms.shadow = undefined;
+            bParms.y = 4;
+            bParms.y2 = -4;
 
             // if text has spaces, split on space closest to middle.
-            if (blinkieParms.cleantext.includes(' ')) {
-                const words = blinkieParms.cleantext.split(' ');
+            if (bParms.cleantext.includes(' ')) {
+                const words = bParms.cleantext.split(' ');
                 let diff = 99;
                 let line1 = '';
                 let line2 = '';
@@ -94,141 +94,110 @@ async function processText(blinkieParms) {
                     line2 = words.slice(i+1,words.length+1).join(' ');
                     if ( Math.abs(line1.length - line2.length) < diff ) {
                         diff = Math.abs(line1.length - line2.length);
-                        blinkieParms.cleantext1 = line1;
-                        blinkieParms.cleantext2 = line2;
+                        bParms.cleantext1 = line1;
+                        bParms.cleantext2 = line2;
                     }
                 }
             }
             // else (no spaces), split at middle char.
             else {
-                const chars = blinkieParms.cleantext.split('');
+                const chars = bParms.cleantext.split('');
                 const half = Math.ceil(chars.length / 2);
-                blinkieParms.cleantext1 = chars.splice(0, half).join('');
-                blinkieParms.cleantext2 = chars.splice(-half).join('');
+                bParms.cleantext1 = chars.splice(0, half).join('');
+                bParms.cleantext2 = chars.splice(-half).join('');
             }
         }
     }
     catch (err) {
-        blinkieParms.errmsg = err.msg;
-        blinkieParms.errloc = 'processText()';
+        bParms.errmsg = err.msg;
+        bParms.errloc = 'processText()';
     }
 
-    return blinkieParms;
+    return bParms;
 }
 
-async function renderFrames(blinkieID, blinkieParms) {
+async function renderFrames(blinkieID, bParms) {
     let stdout = [];
     let stderr = [];
+
+    function buildTextArgs(text, x, y, xoff, yoff, colour) {
+        return(['-page', '+'+(x+xoff)+'+'+(y+yoff),'-fill', colour,"-annotate", "+0+0", text]);
+    }
+
     try {
-        if (typeof(blinkieParms.x) != 'object') {
-            const staticx = blinkieParms.x;
-            blinkieParms.x = [];
-            for (let i=0; i<blinkieParms.frames; i++) {
-                blinkieParms.x.push(staticx)
+        if (typeof(bParms.x) != 'object') {
+            const staticx = bParms.x;
+            bParms.x = [];
+            for (let i=0; i<bParms.frames; i++) {
+                bParms.x.push(staticx)
             }
         }
-        if (typeof(blinkieParms.shadowx) != 'object') {
-            const staticshadowx = blinkieParms.shadowx;
-            blinkieParms.shadowx = [];
-            for (let i=0; i<blinkieParms.frames; i++) {
-                blinkieParms.shadowx.push(staticshadowx)
+        if (typeof(bParms.shadowx) != 'object') {
+            const staticshadowx = bParms.shadowx;
+            bParms.shadowx = [];
+            for (let i=0; i<bParms.frames; i++) {
+                bParms.shadowx.push(staticshadowx)
             }
         }
         let argsArray = [];
-        for (let i=0; i<blinkieParms.frames; i++) {
+        for (let i=0; i<bParms.frames; i++) {
             argsArray[i] = [
-                blinkieParms.antialias,
+                bParms.antialias,
                 '-gravity','Center',
-                '-family',blinkieParms.font,
-                '-pointsize',blinkieParms.fontsize,
-                '-weight',blinkieParms.fontweight
+                '-family',bParms.font,
+                '-pointsize',bParms.fontsize,
+                '-weight',bParms.fontweight
             ]
-            if (blinkieParms.outline) {
+            if (bParms.outline) {
                 argsArray[i].push(
-                    '-page', '+'+(blinkieParms.x[i]+1)+'+'+(blinkieParms.y),
-                    '-fill', blinkieParms.outline[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext1,
-                    '-page', '+'+(blinkieParms.x[i]-1)+'+'+(blinkieParms.y),
-                    '-fill', blinkieParms.outline[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext1,
-                    '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y+1),
-                    '-fill', blinkieParms.outline[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext1,
-                    '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y-1),
-                    '-fill', blinkieParms.outline[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext1,
+                    ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,1,0,bParms.outline[i]),
+                    ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,-1,0,bParms.outline[i]),
+                    ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,1,bParms.outline[i]),
+                    ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,-1,bParms.outline[i])
                 );
-                if (blinkieParms.split) {
+                if (bParms.split) {
                     argsArray[i].push(
-                        '-page', '+'+(blinkieParms.x[i]+1)+'+'+(blinkieParms.y2),
-                        '-fill', blinkieParms.outline[i],
-                        "-annotate", "+0+0", blinkieParms.cleantext2,
-                        '-page', '+'+(blinkieParms.x[i]-1)+'+'+(blinkieParms.y2),
-                        '-fill', blinkieParms.outline[i],
-                        "-annotate", "+0+0", blinkieParms.cleantext2,
-                        '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y2+1),
-                        '-fill', blinkieParms.outline[i],
-                        "-annotate", "+0+0", blinkieParms.cleantext2,
-                        '-page', '+'+(blinkieParms.x[i])+'+'+(blinkieParms.y2-1),
-                        '-fill', blinkieParms.outline[i],
-                        "-annotate", "+0+0", blinkieParms.cleantext2,
+                        ...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,1,0,bParms.outline[i]),
+                        ...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,-1,0,bParms.outline[i]),
+                        ...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,0,1,bParms.outline[i]),
+                        ...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,0,-1,bParms.outline[i])
                     );
                 }
-                argsArray
             }
-            if (blinkieParms.shadow) {
-                argsArray[i].push(
-                    '-page', '+'+(blinkieParms.x[i]+blinkieParms.shadowx[i])
-                    +'+'+(blinkieParms.y+blinkieParms.shadowy),
-                    '-fill', blinkieParms.shadow[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext1
-                );
-            }
-            if (blinkieParms.split) {
-                argsArray[i].push(
-                    '-page', '+'+(blinkieParms.x[i])+'+'+blinkieParms.y2,
-                    '-fill', blinkieParms.colour[i],
-                    "-annotate", "+0+0", blinkieParms.cleantext2);
-            }
-            if (blinkieParms.undercolor) {
-                argsArray[i].push("-undercolor",blinkieParms.undercolor);
-            }
+            if (bParms.shadow) argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,bParms.shadowx[i],bParms.shadowy,bParms.shadow[i]));
+            if (bParms.split) argsArray[i].push(...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,0,0,bParms.colour[i]));
+            argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,0,bParms.colour[i]));
             argsArray[i].push(
-                '-page', '+'+blinkieParms.x[i]+'+'+blinkieParms.y,
-                '-fill', blinkieParms.colour[i],
-                "-annotate", "+0+0", blinkieParms.cleantext1,
-                global.appRoot + '/assets/blinkies-bg/png/' + blinkieParms.bgID
-                + '-' + i + '.png',
-                global.appRoot + '/assets/blinkies-frames/' + blinkieID
-                + '-' + i + '.png'
+                global.appRoot + '/assets/blinkies-bg/png/' + bParms.bgID + '-' + i + '.png',
+                global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
             );
             stdout[i] = execFile('convert', argsArray[i]);
         }
     }
     catch (err) {
-        blinkieParms.errmsg = err.message;
-        blinkieParms.errloc = 'renderFrames()';
+        bParms.errmsg = err.message;
+        bParms.errloc = 'renderFrames()';
     }
 
     await Promise.all(stdout);
-    return blinkieParms;
+    return bParms;
 }
 
-async function renderBlinkie(blinkieID, blinkieParms) {
+async function renderBlinkie(blinkieID, bParms) {
     let args_gif = [
         '-page','+0+0',
-        '-delay',blinkieParms.delay,
+        '-delay',bParms.delay,
         '-loop','0',
-        '-scale',blinkieParms.scale,
+        '-scale',bParms.scale,
         global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
     ]
     const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
     if (stderr_gif) {
-        blinkieParms.errmsg = stderr_gif;
-        blinkieParms.errloc = 'renderBlinkie()';
+        bParms.errmsg = stderr_gif;
+        bParms.errloc = 'renderBlinkie()';
     }
-    return blinkieParms;
+    return bParms;
 }
 
 async function pour(blinkieID, instyle, intext, inscale, split) {
@@ -239,7 +208,7 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
         const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
         let styleID = String(instyle) in blinkieData.styleProps
             ? String(instyle) : '0020-blinkiesCafe';
-        let blinkieParms = {
+        let bParms = {
             'styleID':    styleID,
             'bgID':       blinkieData.styleProps[styleID].bgID
                 ? blinkieData.styleProps[styleID].bgID : styleID,
@@ -262,7 +231,6 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
             'shadowy':    blinkieData.styleProps[styleID].shadowy
                 ? blinkieData.styleProps[styleID].shadowy : 0,
             'outline':    blinkieData.styleProps[styleID].outline,
-            'undercolor': blinkieData.styleProps[styleID].undercolor,
             'font':       blinkieData.styleProps[styleID].font,
             'fontsize':   blinkieData.styleProps[styleID].fontsize,
             'x':          blinkieData.styleProps[styleID].x,
@@ -276,19 +244,19 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
         blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
         // sanitize input text, use default text if empty.
-        blinkieParms.cleantext = sanitizeText(blinkieParms.intext);
-        if (blinkieParms.cleantext.replace(/\s/g, '').length == 0) {
-            blinkieParms.cleantext = sanitizeText(blinkieData.styleProps[blinkieParms.styleID].name);
+        bParms.cleantext = sanitizeText(bParms.intext);
+        if (bParms.cleantext.replace(/\s/g, '').length == 0) {
+            bParms.cleantext = sanitizeText(blinkieData.styleProps[bParms.styleID].name);
         }
 
         // prepare text for rendering, then render frames and generate gif.
-        blinkieParms = await processText(blinkieParms);
-        if (!blinkieParms.errloc) blinkieParms = await renderFrames(blinkieID, blinkieParms);
-        if (!blinkieParms.errloc) blinkieParms = await renderBlinkie(blinkieID, blinkieParms, blinkieLink);
+        bParms = await processText(bParms);
+        if (!bParms.errloc) bParms = await renderFrames(blinkieID, bParms);
+        if (!bParms.errloc) bParms = await renderBlinkie(blinkieID, bParms, blinkieLink);
 
         // delete frames.
         let frameFname = '';
-        for (let i=0; i<blinkieParms.frames; i++) {
+        for (let i=0; i<bParms.frames; i++) {
             frameFname = global.appRoot + '/assets/blinkies-frames/'
                 + blinkieID + '-' + i + '.png';
             fs.unlink(frameFname, function(err) {
@@ -302,14 +270,14 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
             });
         }
 
-        if (blinkieParms.errloc) {
+        if (bParms.errloc) {
             blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
             logger.error({
                 time:  Date.now(),
                 mtype: 'pour',
                 details: {
-                    errloc: blinkieParms.errloc,
-                    errmsg: blinkieParms.errmsg
+                    errloc: bParms.errloc,
+                    errmsg: bParms.errmsg
                 }
             });
         }

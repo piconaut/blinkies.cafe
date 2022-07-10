@@ -1,4 +1,16 @@
 const styleProps = {
+    '0122-hsbreath': {
+        name:"heir of breath",
+        bday:20220710,
+        frames:2,
+        delay:20,
+        colour:["#10e0ff","#10e0ff"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-14, y:1,
+        sourceName:"me :)",
+        tags:["zodiac"]
+    },
     '0121-blinkiescafe': {
         name:"blinkies.cafe <3",
         bday:20220704,

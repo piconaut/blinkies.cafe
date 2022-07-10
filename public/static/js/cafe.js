@@ -60,7 +60,6 @@ function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
             blinkieTiles[i].onclick  = function() { selectStyle(styleList, styleID); }
             blinkieTiles[i].style.visibility = '';
             if (!firstLoad) {
-                console.log(blinkieTiles[i].src)
                 blinkieTiles[i].src      = '/b/display/' + styleID + '.gif';
                 blinkieTiles[i].alt      = styleList[styleID].name + ' blinkie';
             }

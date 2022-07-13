@@ -1,15 +1,69 @@
 const styleProps = {
+    '0126-slime': {
+        name:"slime girl",
+        bday:20220713,
+        tags:["paranormal"],
+        frames:5,
+        colour:["#00ff1f","#00ff1f","#00ff1f","#00ff1f","#00ff1f"],
+        outline:["#004700","#004700","#004700","#004700","#004700"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"lady_rebel_liteoluv",
+        sourceURL:"https://web.archive.org/web/20091021223838/http://geocities.com/lady_rebel_liteoluv/happy_halloween.html"
+    },
+    '0125-blood': {
+        name:"thirsty?",
+        bday:20220712,
+        tags:["paranormal"],
+        frames:5,
+        colour:["#ff1f1f","#ff1f1f","#ff1f1f","#ff1f1f","#ff1f1f"],
+        outline:["#470000","#470000","#470000","#470000","#470000"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"sway_angel_84",
+        sourceURL:"https://web.archive.org/web/20091022193634/http://geocities.com/sway_angel_84/index.html"
+    },
+    '0124-stars': {
+        name:"stargazer",
+        bday:20220712,
+        tags:["nature"],
+        frames:6,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        sourceName:"sailormeteor512",
+        sourceURL:"https://web.archive.org/web/20090829073523/http://geocities.com/sailormeteor512/toplists.html"
+    },
+    '0123-glitterpink': {
+        name:"never stop sparkling!",
+        bday:20220712,
+        tags:["pink"],
+        frames:2,
+        delay:10,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"me :)",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
     '0122-hsbreath': {
         name:"heir of breath",
         bday:20220710,
+        tags:["zodiac"],
         frames:2,
         delay:20,
         colour:["#10e0ff","#10e0ff"],
         font: "monogramextended",
         fontsize:16,
         x:-14, y:1,
-        sourceName:"me :)",
-        tags:["zodiac"]
+        sourceName:"me :)"
     },
     '0121-blinkiescafe': {
         name:"blinkies.cafe <3",
@@ -1580,7 +1634,8 @@ const fontList = {
     20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"},
     21: {name:"Digital Disco", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
     22: {name:"04b_19", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-19.font"},
-    23: {name:"Pixeloid Sans", sourceName:"GGBotNet", sourceURL:"https://www.dafont.com/pixeloid-sans.font"}
+    23: {name:"Pixeloid Sans", sourceName:"GGBotNet", sourceURL:"https://www.dafont.com/pixeloid-sans.font"},
+    24: {name:"Hydrating Lip", sourceName:"Hazel Abbiati", sourceURL:"https://diamondidiocy.tumblr.com/"},
 };
 
 const fallbackFonts = {

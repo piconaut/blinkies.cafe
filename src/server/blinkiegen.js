@@ -189,6 +189,7 @@ async function renderBlinkie(blinkieID, bParms) {
         '-delay',bParms.delay,
         '-loop','0',
         '-scale',bParms.scale,
+        '-dispose','previous',
         global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
     ]

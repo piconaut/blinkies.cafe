@@ -1,4 +1,43 @@
 const styleProps = {
+    '0129-splatoon3': {
+        name:"Splatoon 3",
+        bday:20220718,
+        tags:["fandom"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+    },
+    '0128-splatoon2': {
+        name:"Splatoon 2",
+        bday:20220718,
+        tags:["fandom"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+    },
+    '0127-splatoon1': {
+        name:"Splatoon!",
+        bday:20220718,
+        tags:["fandom"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+    },
     '0126-slime': {
         name:"slime girl",
         bday:20220713,
@@ -56,7 +95,7 @@ const styleProps = {
     '0122-hsbreath': {
         name:"heir of breath",
         bday:20220710,
-        tags:["zodiac"],
+        tags:["fandom"],
         frames:2,
         delay:20,
         colour:["#10e0ff","#10e0ff"],
@@ -124,6 +163,7 @@ const styleProps = {
     '0117-redlightsaber': {
         name:"*SITH*  ",
         bday:20220624,
+        tags:["fandom"],
         frames:2,
         colour:["#000000","#000000"],
         font: "bm army",
@@ -155,7 +195,7 @@ const styleProps = {
     },
     '0114-tbh': {
         name:"autism!",
-        tags:["fav"],
+        tags:["fav","fandom"],
         bday:20220617,
         frames:3,
         colour:["#000000","#000000","#000000"],
@@ -231,7 +271,7 @@ const styleProps = {
     '0108-crewmate': {
         name:"happy pride!!",
         bday:20220602,
-        tags:["rainbow","fav"],
+        tags:["rainbow","fav","fandom"],
         frames:8,
         delay:10,
         colour:["#03a9f3","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
@@ -298,7 +338,7 @@ const styleProps = {
     '0103-kitty': {
         name:"too kawaii to live",
         bday:20220527,
-        tags:["nature","pink"],
+        tags:["nature","pink","fandom"],
         frames:2,
         delay:10,
         colour:["#9f006a","#9f006a"],
@@ -847,6 +887,7 @@ const styleProps = {
     '0063-darth': {
         name:"Join the Dark Side",
         bday:20220429,
+        tags:["fandom"],
         frames:2,
         delay: 10,
         colour:["#000000","#000000"],
@@ -935,12 +976,12 @@ const styleProps = {
         fontsize:16,
         x:1, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0056-pirate': {
         name:"You came back.",
         bday:20220418,
-        tags:["fav"],
+        tags:["fav","fandom"],
         frames:5,
         delay:10,
         colour:["#000000","#000000","#000000","#000000","#000000"],
@@ -1009,7 +1050,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
@@ -1093,7 +1134,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0052-cancer': {
         name:"YOU ARE DEAD TO ME",
@@ -1104,7 +1145,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0047-virgo': {
         name:"If Not Me Then Who",
@@ -1115,7 +1156,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0043-taurus': {
         name:"(thiS is noT cOOl,)",
@@ -1126,7 +1167,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0042-aries': {
         name:"n0thing inside",
@@ -1137,7 +1178,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0033-confused': {
         name:"head empty",
@@ -1224,7 +1265,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0049-sagittarius': {
         name:"D --> Disgusting",
@@ -1235,7 +1276,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0048-libra': {
         name:"H4H4H4H4H3H3H3H3",
@@ -1246,7 +1287,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0046-leo': {
         name:":33 < rawwrrrrr",
@@ -1257,7 +1298,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0045-scorpio': {
         name:"Impenitent 8itch!!",
@@ -1268,7 +1309,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:0,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0041-aquarius': {
         name:"vvici vvidi vveni",
@@ -1279,7 +1320,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["zodiac"]
+        tags:["fandom"]
     },
     '0027-sakura': {
         name:"サ ク  ラ",

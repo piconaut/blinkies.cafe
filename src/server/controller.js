@@ -62,13 +62,16 @@ const msg = async function (req, res) {
                 msg: req.body.msg
             }
         });
-        res.end("ty");
+        res.end('ty');
     }
 }
 
 function profane(intext) {
-    const words = intext.toLowerCase().split(/[^A-Za-z]/);
-    const profane = words.some(r=> blacklist.words.includes(r))
+    const intextAlpha = intext
+        .toLowerCase()
+        .replaceAll('3','e').replaceAll('1','i').replaceAll('4','a')
+        .replaceAll(/[^a-z]/g,'');
+    const profane = blacklist.words.some(v => intextAlpha.includes(v));
     return profane;
 }
 
@@ -130,6 +133,7 @@ const pourBlinkie = async function (req, res) {
                 orderMs: Date.now() - starttime,
                 mtype:   'pour',
                 origin:  req.get('origin'),
+                ip:      req.ip,
                 parms: {
                     scale:  scale,
                     style:  style,

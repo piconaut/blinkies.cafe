@@ -7,13 +7,14 @@ body {
     line-height: 1.15;
     font-size: 10pt;
     overflow-y: scroll;                          /* show vertical scrollbar */
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;                   /* firefox         */
-    image-rendering: -o-crisp-edges;                     /* opera           */
-    image-rendering: -webkit-optimize-contrast;          /* chrome & safari */
-    image-rendering: pixelated;                          /* chrome          */
-    image-rendering: optimize-contrast;                  /* CSS3 proposed   */
-    -ms-interpolation-mode: nearest-neighbor;            /* IE8+            */
+/*    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+*/
 }
 *::-webkit-scrollbar {
   width: 5px;

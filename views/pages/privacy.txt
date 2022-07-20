@@ -5,6 +5,7 @@ to maintain & improve the quality of our blinkies, we log blinkie inputs & diagn
   - blinkie style
   - blinkie scale
   - server processing time
+  - ip address
 
 we use these data to:
   - estimate & forecast server load
@@ -12,6 +13,6 @@ we use these data to:
   - prioritize character sets to add next
   - decide maximum text length to support
 
-you can opt out of logging: if you add "/nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.
+we use logged ip addresses to moderate the blinkie feed.
 
-we do *not* collect any data that identifies individual users in any way.
+you can opt out of logging: if you add "/nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.

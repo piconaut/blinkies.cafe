@@ -1570,7 +1570,7 @@ const styleProps = {
         colour:["#ff0000","#ff4e4e"],
         font: "Perfect DOS VGA 437",
         fontsize:16,
-        x:"-14", y:-1,
+        x:-14, y:-1,
         sourceName:"me :)"
     },
     '0006-purple': {

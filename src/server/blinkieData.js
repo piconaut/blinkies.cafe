@@ -1,4 +1,80 @@
 const styleProps = {
+    '0135-pinkiepie': {
+        name:"Pinkie Pie",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#f05f99","#f05f99"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0134-fluttershy': {
+        name:"Fluttershy",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#c98791","#c98791"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0133-applejack': {
+        name:"Applejack",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#f14135","#f14135"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0132-rainbowdash': {
+        name:"Rainbow Dash",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#0681bf","#0681bf"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0131-rarity': {
+        name:"Rarity",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#5a2b78","#5a2b78"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690125890832728064/preview-of-some-mlp-blinkies-for-blinkiescafe",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0130-twilightsparkle': {
+        name:"Twilight Sparkle",
+        bday:20220723,
+        tags:["fandom"],
+        frames:2,
+        colour:["#414373","#414373"],
+        font: "moonaco",
+        fontsize:16,
+        x:-3, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690125890832728064/preview-of-some-mlp-blinkies-for-blinkiescafe",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
     '0129-splatoon3': {
         name:"Splatoon 3",
         bday:20220718,
@@ -10,7 +86,9 @@ const styleProps = {
         fontsize:13,
         x:0, y:0,
         sourceName:"Anakin's Place",
-        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0128-splatoon2': {
         name:"Splatoon 2",
@@ -23,7 +101,9 @@ const styleProps = {
         fontsize:13,
         x:0, y:0,
         sourceName:"Anakin's Place",
-        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0127-splatoon1': {
         name:"Splatoon!",
@@ -36,7 +116,9 @@ const styleProps = {
         fontsize:13,
         x:0, y:0,
         sourceName:"Anakin's Place",
-        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies"
+        sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0126-slime': {
         name:"slime girl",

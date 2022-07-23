@@ -177,7 +177,7 @@ function submit (event) {
             blinkieLink.download = blinkieURL.split('/')[4];
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += '&nbsp;or<br>desktop: drag &#38; drop<br>mobile:&nbsp;&nbsp;tap &amp; hold &gt; "share image"<br>';
+            blinkieLinkHolder.innerHTML += "<br>blinkies kept for 1 hour only!<br>upload to <a href='https://imgur.com/upload' target='_blank'>imgur</a> to use on spacehey.";
             if (global.styleList[blinkieStyle].subName == 'Anakin') anakinLink.style.visibility = ''; else anakinLink.style.visibility = 'hidden';
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'
         });

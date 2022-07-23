@@ -184,15 +184,23 @@ async function renderFrames(blinkieID, bParms) {
 }
 
 async function renderBlinkie(blinkieID, bParms) {
-    let args_gif = [
-        '-page','+0+0',
-        '-delay',bParms.delay,
+    let args_gif = [];
+    let frameDelay = bParms.delay + 1;
+    for (let i=0;i<bParms.frames;i++) {
+        args_gif.push(
+            '-delay',frameDelay,
+            '-page','+0+0',
+            '-dispose','previous',
+            global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
+        );
+        frameDelay = bParms.delay;
+    }
+
+    args_gif.push(
         '-loop','0',
         '-scale',bParms.scale,
-        '-dispose','previous',
-        global.appRoot + '/assets/blinkies-frames/' + blinkieID + '*',
-        global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif'
-    ]
+        global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif');
+
     const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
     if (stderr_gif) {
         bParms.errmsg = stderr_gif;

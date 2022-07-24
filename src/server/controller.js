@@ -109,7 +109,7 @@ var orderBlinkie = function(res, style, intext, scale, split, toFeed)
 }
 
 const pourBlinkie = async function (req, res) {
-    if (cooldown(req.ip)) {
+    if (cooldown(req.ip) && !blacklist.ips.includes(req.ip)) {
         const style  = req.body.blinkieStyle;
         const origintext = req.body.blinkieText;
         let intext   = req.body.blinkieText;

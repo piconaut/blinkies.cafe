@@ -1,4 +1,105 @@
 const styleProps = {
+    '0144-pokeball': {
+        name:"I choose you!! <3",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-9, y:0,
+    },
+    '0143-webkinz': {
+        name:"Webkinz",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#1014a9","#1014a9"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-15, y:0,
+    },
+    '0142-virusgender': {
+        name:"i'm a virus",
+        bday:20220806,
+        tags:["mogai"],
+        frames:2,
+        colour:["#00adac","#00adac"],
+        outline:["#000000","#000000"],
+        font: "green screen",
+        fontsize:12,
+        x:0, y:0,
+    },
+    '0141-digigender': {
+        name:"i'm digital",
+        bday:20220806,
+        tags:["mogai"],
+        frames:4,
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        colour:["#000000","#000000","#000000","#000000"],
+        font: "green screen",
+        fontsize:12,
+        x:0, y:0,
+    },
+    '0140-hsroxy': {
+        name:"rogue of void",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#ff6ff2","#ff6ff2"],
+        font: "monogramextended",
+        fontsize:16,
+        x:-14, y:1,
+    },
+    '0139-robotgender': {
+        name:"my gender is robot lol",
+        bday:20220806,
+        tags:["mogai"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "moonaco",
+        fontsize:16,
+        x:-12, y:0,
+    },
+    '0138-greenglow': {
+        name:"I Glow in the Dark",
+        bday:20220806,
+        tags:["plain"],
+        frames:4,
+        delay:15,
+        colour:["#000000","#000000","#000000","#000000"],
+        outline:["#296b29","#29c629","#42ff42","#29c629"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        sourceName:"loverlymuzakmaker",
+        sourceURL:"https://web.archive.org/web/20090901212908/http://geocities.com/loverlymuzakmaker/Blinkies.html",
+    },
+    '0136-clock': {
+        name:"This user is time blind",
+        bday:20220806,
+        frames:8,
+        colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
+        font: "moonaco",
+        fontsize:16,
+        x:7, y:0,
+        sourceName:"blinkiegalore",
+        sourceURL:"https://web.archive.org/web/20091021161347/http://geocities.com/blinkiegalore/adoptedpage.html?1113959419359",
+    },
+    '0137-catgender': {
+        name:"you know, like *nya*",
+        bday:20220730,
+        tags:["mogai"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "moonaco",
+        fontsize:16,
+        x:-13, y:0,
+    },
     '0135-pinkiepie': {
         name:"Pinkie Pie",
         bday:20220723,
@@ -149,7 +250,7 @@ const styleProps = {
     '0124-stars': {
         name:"stargazer",
         bday:20220712,
-        tags:["nature"],
+        tags:["nature", "plain"],
         frames:6,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "pixeloid sans",
@@ -162,7 +263,7 @@ const styleProps = {
     '0123-glitterpink': {
         name:"never stop sparkling!",
         bday:20220712,
-        tags:["pink"],
+        tags:["pink", "plain"],
         frames:2,
         delay:10,
         colour:["#ffffff","#ffffff"],
@@ -608,7 +709,7 @@ const styleProps = {
     '0084-agender': {
         name:"agender pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:6,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -621,7 +722,7 @@ const styleProps = {
     '0087-demisexual': {
         name:"demisexual pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -635,7 +736,7 @@ const styleProps = {
     '0083-demiromantic': {
         name:"demiromantic pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -649,7 +750,7 @@ const styleProps = {
     '0082-aromantic': {
         name:"aromantic pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -663,7 +764,7 @@ const styleProps = {
     '0081-asexual': {
         name:"asexual pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -677,7 +778,7 @@ const styleProps = {
     '0080-genderfluid': {
         name:"genderfluid pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -691,7 +792,7 @@ const styleProps = {
     '0079-nonbinary': {
         name:"non-binary pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -705,7 +806,7 @@ const styleProps = {
     '0078-intersex': {
         name:"intersex pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:2,
         colour:["#000000","#000000"],
         font: "pixeloid sans",
@@ -718,7 +819,7 @@ const styleProps = {
     '0077-demiboy': {
         name:"demiboy pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -731,7 +832,7 @@ const styleProps = {
     '0076-demigirl': {
         name:"demigirl pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -744,7 +845,7 @@ const styleProps = {
     '0075-demigender': {
         name:"demigender pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -757,7 +858,7 @@ const styleProps = {
     '0074-pan': {
         name:"pan pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -770,7 +871,7 @@ const styleProps = {
     '0073-gay': {
         name:"gay pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000"],
@@ -784,7 +885,7 @@ const styleProps = {
     '0072-lesbian': {
         name:"lesbian pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -798,7 +899,7 @@ const styleProps = {
     '0071-bi': {
         name:"bi pride",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000","#000000"],
@@ -812,7 +913,7 @@ const styleProps = {
     '0023-trans-pride': {
         name:"this user is trains",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -824,7 +925,7 @@ const styleProps = {
     '0014-pride': {
         name:"kinda gay tbh...",
         bday:20220512,
-        tags:["pride"],
+        tags:["lgbtq"],
         frames:4,
         outline:["#000000","#000000","#000000","#000000"],
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1058,7 +1159,7 @@ const styleProps = {
         fontsize:16,
         x:1, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0056-pirate': {
         name:"You came back.",
@@ -1132,7 +1233,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
@@ -1216,7 +1317,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0052-cancer': {
         name:"YOU ARE DEAD TO ME",
@@ -1227,7 +1328,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0047-virgo': {
         name:"If Not Me Then Who",
@@ -1238,7 +1339,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0043-taurus': {
         name:"(thiS is noT cOOl,)",
@@ -1249,7 +1350,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0042-aries': {
         name:"n0thing inside",
@@ -1260,7 +1361,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0033-confused': {
         name:"head empty",
@@ -1347,7 +1448,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0049-sagittarius': {
         name:"D --> Disgusting",
@@ -1358,7 +1459,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0048-libra': {
         name:"H4H4H4H4H3H3H3H3",
@@ -1369,7 +1470,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0046-leo': {
         name:":33 < rawwrrrrr",
@@ -1380,7 +1481,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0045-scorpio': {
         name:"Impenitent 8itch!!",
@@ -1391,7 +1492,7 @@ const styleProps = {
         fontsize:16,
         x:-1, y:0,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0041-aquarius': {
         name:"vvici vvidi vveni",
@@ -1402,7 +1503,7 @@ const styleProps = {
         fontsize:16,
         x:0, y:1,
         sourceName:"me :)",
-        tags:["fandom"]
+        tags:["fandom","zodiac"]
     },
     '0027-sakura': {
         name:"サ ク  ラ",

@@ -1,14 +1,5 @@
 const styleProps = {
-    '0144-pokeball': {
-        name:"I choose you!! <3",
-        bday:20220806,
-        tags:["fandom"],
-        frames:2,
-        colour:["#000000","#000000"],
-        font: "grapesoda",
-        fontsize:16,
-        x:-9, y:0,
-    },
+    /*
     '0143-webkinz': {
         name:"Webkinz",
         bday:20220806,
@@ -27,17 +18,6 @@ const styleProps = {
         frames:2,
         colour:["#00adac","#00adac"],
         outline:["#000000","#000000"],
-        font: "green screen",
-        fontsize:12,
-        x:0, y:0,
-    },
-    '0141-digigender': {
-        name:"i'm digital",
-        bday:20220806,
-        tags:["mogai"],
-        frames:4,
-        outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
-        colour:["#000000","#000000","#000000","#000000"],
         font: "green screen",
         fontsize:12,
         x:0, y:0,
@@ -77,10 +57,96 @@ const styleProps = {
         x:0, y:0,
         sourceName:"loverlymuzakmaker",
         sourceURL:"https://web.archive.org/web/20090901212908/http://geocities.com/loverlymuzakmaker/Blinkies.html",
+    },*/
+    '0148-kirbyswim': {
+        name:"just keep swimming",
+        bday:20220730,
+        tags:["fandom","anakin"],
+        frames:8,
+        delay:10,
+        colour:["#3e36af","#3e36af","#3e36af","#3e36af","#3e36af","#3e36af","#3e36af","#3e36af"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        shadowx:1,
+        shadowy:-1,
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-12, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0147-kirbywalk': {
+        name:"im walkin here!!!",
+        bday:20220730,
+        tags:["fandom","anakin","pink"],
+        frames:10,
+        delay:10,
+        colour:["#9f006a","#9f006a","#9f006a","#9f006a","#9f006a","#9f006a","#9f006a","#9f006a","#9f006a","#9f006a"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-10, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0146-kirbydance': {
+        name:"best buds",
+        bday:20220730,
+        tags:["fandom","anakin","pink"],
+        frames:4,
+        delay:10,
+        colour:["#9f006a","#9f006a","#9f006a","#9f006a"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0145-kirbysquish': {
+        name:"ow ow ow",
+        bday:20220730,
+        tags:["fandom","anakin","pink"],
+        frames:2,
+        delay:20,
+        colour:["#9f006a","#9f006a"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-12, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0144-pokeball': {
+        name:"I choose you!! <3",
+        bday:20220730,
+        tags:["fandom"],
+        frames:2,
+        colour:["#000000","#000000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-9, y:0,
+    },
+    '0141-digigender': {
+        name:"i'm digital",
+        bday:20220730,
+        tags:["mogai"],
+        frames:4,
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
+        colour:["#000000","#000000","#000000","#000000"],
+        font: "green screen",
+        fontsize:12,
+        x:0, y:0,
     },
     '0136-clock': {
         name:"This user is time blind",
-        bday:20220806,
+        bday:20220730,
         frames:8,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "moonaco",
@@ -100,10 +166,24 @@ const styleProps = {
         fontsize:16,
         x:-13, y:0,
     },
+    '0149-ty': {
+        name:"I /heart beanie babies",
+        bday:20220730,
+        tags:["fandom","anakin"],
+        frames:2,
+        colour:["#ff0606","#ff0606"],
+        font: "moonaco",
+        fontsize:16,
+        x:11, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690627332242817024/ty-logo-is-alright-anything-themed-im-alright",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
     '0135-pinkiepie': {
         name:"Pinkie Pie",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#f05f99","#f05f99"],
         font: "moonaco",
@@ -115,7 +195,7 @@ const styleProps = {
     '0134-fluttershy': {
         name:"Fluttershy",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#c98791","#c98791"],
         font: "moonaco",
@@ -127,7 +207,7 @@ const styleProps = {
     '0133-applejack': {
         name:"Applejack",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#f14135","#f14135"],
         font: "moonaco",
@@ -139,7 +219,7 @@ const styleProps = {
     '0132-rainbowdash': {
         name:"Rainbow Dash",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#0681bf","#0681bf"],
         font: "moonaco",
@@ -151,7 +231,7 @@ const styleProps = {
     '0131-rarity': {
         name:"Rarity",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#5a2b78","#5a2b78"],
         font: "moonaco",
@@ -165,7 +245,7 @@ const styleProps = {
     '0130-twilightsparkle': {
         name:"Twilight Sparkle",
         bday:20220723,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#414373","#414373"],
         font: "moonaco",
@@ -179,7 +259,7 @@ const styleProps = {
     '0129-splatoon3': {
         name:"Splatoon 3",
         bday:20220718,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -194,7 +274,7 @@ const styleProps = {
     '0128-splatoon2': {
         name:"Splatoon 2",
         bday:20220718,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -209,7 +289,7 @@ const styleProps = {
     '0127-splatoon1': {
         name:"Splatoon!",
         bday:20220718,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -263,7 +343,7 @@ const styleProps = {
     '0123-glitterpink': {
         name:"never stop sparkling!",
         bday:20220712,
-        tags:["pink", "plain"],
+        tags:["pink", "plain","anakin"],
         frames:2,
         delay:10,
         colour:["#ffffff","#ffffff"],
@@ -314,6 +394,7 @@ const styleProps = {
     '0119-pastelstars': {
         name:"twinkle twinkle",
         bday:20220629,
+        tags:["anakin"],
         frames:4,
         delay:13,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -329,6 +410,7 @@ const styleProps = {
     '0118-rubberducky': {
         name:"YOU QUACK ME UP!",
         bday:20220628,
+        tags:["anakin"],
         frames:2,
         colour:["#d23100","#d23100"],
         shadow:["#fede18","#fede18"],
@@ -401,7 +483,7 @@ const styleProps = {
     '0112-peep': {
         name:"Luv my peeps",
         bday:20220614,
-        tags:["rainbow"],
+        tags:["rainbow","anakin"],
         frames:6,
         delay:10,
         colour:["#590d27","#7d4701","#755907","#346903","#0b4d54","#601070"],
@@ -441,7 +523,7 @@ const styleProps = {
     '0109-gradientgreen': {
         name:"Verdant Zenith",
         bday:20220606,
-        tags:["plain"],
+        tags:["plain","anakin"],
         frames:2,
         delay:10,
         colour:["#165a4c","#165a4c"],
@@ -454,7 +536,7 @@ const styleProps = {
     '0108-crewmate': {
         name:"happy pride!!",
         bday:20220602,
-        tags:["rainbow","fav","fandom"],
+        tags:["rainbow","fav","fandom","anakin"],
         frames:8,
         delay:10,
         colour:["#03a9f3","#3f51b5","#673ab7","#ea6793","#f03e3d","#fe5722","#feeb3b","#4caf50"],
@@ -469,7 +551,7 @@ const styleProps = {
     '0107-gradientorange': {
         name:"Radiant Dawn",
         bday:20220602,
-        tags:["plain"],
+        tags:["plain","anakin"],
         frames:2,
         delay:10,
         colour:["#7a183f","#7a183f"],
@@ -482,7 +564,7 @@ const styleProps = {
     '0106-vicioussmiley': {
         name:"AT MY FUCKING LIMIT",
         bday:20220601,
-        tags:["smiley"],
+        tags:["smiley","anakin"],
         frames:2,
         delay:12,
         colour:["#000000","#99197d"],
@@ -497,7 +579,7 @@ const styleProps = {
     '0105-gradientpurple': {
         name:"Neon Sunset",
         bday:20220531,
-        tags:["plain","fav"],
+        tags:["plain","fav","anakin"],
         frames:2,
         delay:10,
         colour:["#ffb4ff","#ffb4ff"],
@@ -521,7 +603,7 @@ const styleProps = {
     '0103-kitty': {
         name:"too kawaii to live",
         bday:20220527,
-        tags:["nature","pink","fandom"],
+        tags:["nature","pink","fandom","anakin"],
         frames:2,
         delay:10,
         colour:["#9f006a","#9f006a"],
@@ -594,7 +676,7 @@ const styleProps = {
     '0097-purple': {
         name:"Sarcasm is the 1 service I offer.",
         bday:20220524,
-        tags:["plain"],
+        tags:["plain","anakin"],
         frames:2,
         colour:["#5500aa","#5500aa"],
         font: "04b03",
@@ -608,7 +690,7 @@ const styleProps = {
     '0096-blackgreen': {
         name:"black & green",
         bday:20220524,
-        tags:["plain"],
+        tags:["plain","anakin"],
         frames:2,
         colour:["#00ff00","#00ff00"],
         font: "monogramextended",
@@ -709,7 +791,7 @@ const styleProps = {
     '0084-agender': {
         name:"agender pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:6,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -722,7 +804,7 @@ const styleProps = {
     '0087-demisexual': {
         name:"demisexual pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -736,7 +818,7 @@ const styleProps = {
     '0083-demiromantic': {
         name:"demiromantic pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -750,7 +832,7 @@ const styleProps = {
     '0082-aromantic': {
         name:"aromantic pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -764,7 +846,7 @@ const styleProps = {
     '0081-asexual': {
         name:"asexual pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -778,7 +860,7 @@ const styleProps = {
     '0080-genderfluid': {
         name:"genderfluid pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -792,7 +874,7 @@ const styleProps = {
     '0079-nonbinary': {
         name:"non-binary pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -806,7 +888,7 @@ const styleProps = {
     '0078-intersex': {
         name:"intersex pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         font: "pixeloid sans",
@@ -819,7 +901,7 @@ const styleProps = {
     '0077-demiboy': {
         name:"demiboy pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -832,7 +914,7 @@ const styleProps = {
     '0076-demigirl': {
         name:"demigirl pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -845,7 +927,7 @@ const styleProps = {
     '0075-demigender': {
         name:"demigender pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -858,7 +940,7 @@ const styleProps = {
     '0074-pan': {
         name:"pan pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -871,7 +953,7 @@ const styleProps = {
     '0073-gay': {
         name:"gay pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000"],
@@ -885,7 +967,7 @@ const styleProps = {
     '0072-lesbian': {
         name:"lesbian pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -899,7 +981,7 @@ const styleProps = {
     '0071-bi': {
         name:"bi pride",
         bday:20220512,
-        tags:["lgbtq"],
+        tags:["lgbtq","anakin"],
         frames:5,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000","#000000"],
@@ -1040,7 +1122,7 @@ const styleProps = {
     '0065-bunnies': {
         name:"good night /eheart sleep tight",
         bday:20220501,
-        tags:["nature"],
+        tags:["nature","anakin","fav"],
         frames:6,
         delay:20,
         colour:["#394aa5","#394aa5","#394aa5","#394aa5","#394aa5","#394aa5"],
@@ -1055,7 +1137,7 @@ const styleProps = {
     '0064-cow': {
         name:"i Moo @ Cows",
         bday:20220429,
-        tags:["nature"],
+        tags:["nature","anakin"],
         frames:2,
         colour:["#ff0000","#ff0000"],
         shadow:["#bb0000","#bb0000"],
@@ -1070,7 +1152,7 @@ const styleProps = {
     '0063-darth': {
         name:"Join the Dark Side",
         bday:20220429,
-        tags:["fandom"],
+        tags:["fandom","anakin"],
         frames:2,
         delay: 10,
         colour:["#000000","#000000"],
@@ -1085,7 +1167,7 @@ const styleProps = {
     '0062-flower': {
         name:"I love gardening",
         bday:20220429,
-        tags:["nature"],
+        tags:["nature","anakin"],
         frames:2,
         delay: 10,
         colour:["#697446","#697446"],
@@ -1100,7 +1182,7 @@ const styleProps = {
     '0061-pinkcomputer': {
         name:"I love my computer <3",
         bday:20220429,
-        tags:["computer","fav","pink","love"],
+        tags:["computer","fav","pink","love","anakin"],
         frames:2,
         delay: 20,
         colour:["#ff0084","#ff0084"],

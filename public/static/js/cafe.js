@@ -9,7 +9,8 @@ const urlRoot       = '';
 let currentSort     = 'bdaydesc';
 let firstPour       = true;
 let global = {
-    'delay':2010
+    'delay':2010,
+    'currentPage':1
 };
 
 
@@ -187,10 +188,37 @@ function submit (event) {
 /*---------------------*/
 /* initial load        */
 /*---------------------*/
+
+function filterTag(tag) {
+    const styleList = {};
+    Object.assign(styleList, global.styleList);
+
+    switch(tag) {
+        case 'all':
+            break;
+        case 'idk':
+            for (let style in styleList){
+                if (styleList[style].tags) {
+                    delete styleList[style];
+                }
+            }
+            break;
+        default:
+            for (let style in styleList){
+                if (!styleList[style].tags || !(styleList[style].tags.includes(tag))) {
+                    delete styleList[style];
+                }
+            }
+    }
+
+    const styleOrder = sortStyles(styleList,'bday', 'desc');
+    global.currentPage = 1;
+    return styleOrder
+}
+
 getStyleList().then(function(styleList){
     global.styleList = {}
     Object.assign(global.styleList,styleList)
-    let currentPage      = 1;
     const nextPage       = document.getElementById("nextPage");
     const prevPage       = document.getElementById("prevPage");
     const sortNew        = document.getElementById("sortNew");
@@ -198,61 +226,49 @@ getStyleList().then(function(styleList){
     const sortRandom     = document.getElementById("sortRandom");
     const selectTags     = document.getElementById("selectTags");
 
-    let styleOrder = sortStyles(styleList,'bday','desc');
-    loadStyles(styleList, styleOrder, 1, true);
+    let tags = []
+    document.querySelectorAll(".tag").forEach(tag => tags.push(tag.value));
+
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let reqTag = urlParams.get('t');
+    if (tags.includes(reqTag)) {
+        selectTags.selectedIndex = tags.indexOf(reqTag);
+    }
+
+    let styleOrder = filterTag(selectTags.value);
+    loadStyles(styleList, styleOrder, global.currentPage, false);
+
     selectTags.onchange = function() {
-        const tag = selectTags.value;
-        Object.assign(styleList, global.styleList);
-
-        switch(tag) {
-            case 'all':
-                break;
-            case 'idk':
-                for (let style in styleList){
-                    if (styleList[style].tags) {
-                        delete styleList[style];
-                    }
-                }
-                break;
-            default:
-                for (let style in styleList){
-                    if (!styleList[style].tags || !(styleList[style].tags.includes(tag))) {
-                        delete styleList[style];
-                    }
-                }
-        }
-
-
-        styleOrder = sortStyles(styleList,'bday', 'desc');
-        loadStyles(styleList, styleOrder, 1, false);
-        currentPage = 1;
+        styleOrder = filterTag(selectTags.value);
+        loadStyles(styleList, styleOrder, global.currentPage, false);
     }
     sortNew.onclick = function() {
         if (currentSort != 'bdaydesc') {
             styleOrder = sortStyles(styleList,'bday', 'desc');
-            loadStyles(styleList, styleOrder, 1, false);
-            currentPage = 1;
+            global.currentPage = 1;
+            loadStyles(styleList, styleOrder, global.currentPage, false);
         }
     }
     sortOld.onclick = function() {
         if (currentSort != 'bdayasc') {
             styleOrder = sortStyles(styleList,'bday', 'asc');
-            loadStyles(styleList, styleOrder, 1, false);
-            currentPage = 1;
+            global.currentPage = 1;
+            loadStyles(styleList, styleOrder, global.currentPage, false);
         }
     }
     sortRandom.onclick = function() {
         styleOrder = shuffleStyles(styleList);
-        loadStyles(styleList, styleOrder, 1, false);
-        currentPage = 1;
+        global.currentPage = 1;
+        loadStyles(styleList, styleOrder, global.currentPage, false);
     }
     nextPage.onclick = function() {
-        currentPage ++;
-        loadStyles(styleList, styleOrder, currentPage, false);
+        global.currentPage ++;
+        loadStyles(styleList, styleOrder, global.currentPage, false);
     }
     prevPage.onclick = function() {
-        currentPage --;
-        loadStyles(styleList, styleOrder, currentPage, false);
+        global.currentPage --;
+        loadStyles(styleList, styleOrder, global.currentPage, false);
     }
 });
 

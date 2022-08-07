@@ -90,6 +90,15 @@ function selectStyle(styleList, targetKey) {
                   'type /spade for \u2660',
                   'type /dia for \u2666',
                   'type /club for \u2663',
+                  'type /cat',
+                  'type /skull',
+                  'type /crab',
+                  'type /crown',
+                  'type /phone',
+                  'type /x',
+                  'type /eyes',
+                  'type /smile',
+                  'type /peace',
                   'make smth cool :D',
                   'trans rights!!'];
     blinkieText.placeholder = tips[Math.floor(Math.random()*tips.length)];

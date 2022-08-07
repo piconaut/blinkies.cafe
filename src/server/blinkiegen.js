@@ -15,7 +15,6 @@ function sanitizeText(str) {
     .replace(/\u0000/g, '\\0')
     .replace(/\ufe0f/g, '')
     .replace(/\u2764/g,'\u2665')
-    .replace(/\/heart/g,'\u2665')
     .replace(/\ud83d\udc9a/gu,'\u2665')
     .replace(/\ud83d\udc9b/gu,'\u2665')
     .replace(/\ud83d\udc9c/gu,'\u2665')
@@ -25,11 +24,22 @@ function sanitizeText(str) {
     .replace(/\ud83d\udd84/gu,'\u2665')
     .replace(/\ud83d\udc99/gu,'\u2665')
     .replace(/\ud83e\udde1/gu,'\u2665')
+    .replace(/\/heart/g,'\u2665')
     .replace(/\/eheart/g,'\u2661')
     .replace(/\/spade/g,'\u2660')
     .replace(/\/club/g,'\u2663')
     .replace(/\/diamond/g,'\u2666')
-    .replace(/\/dia/g,'\u2666');
+    .replace(/\/dia/g,'\u2666')
+    .replace(/\/skull/g,'\u2620')
+    .replace(/\/cat/g,'\u260b')
+    .replace(/\/smile/g,'\u263a')
+    .replace(/\/phone/g,'\u260e')
+    .replace(/\/x/g,'\u2613')
+    .replace(/\/peace/g,'\u262e')
+    .replace(/\/crown/g,'\u265b')
+    .replace(/\/eyes/g,'\u23ff')
+    .replace(/\/crab/g,'\u260a')
+    ;
 }
 
 async function processText(bParms) {

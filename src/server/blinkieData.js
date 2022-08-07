@@ -21,6 +21,21 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:0, y:0,
+    },*/
+    '0150-alligator': {
+        name:"cya later alligator!",
+        bday:20220806,
+        tags:["nature"],
+        frames:4,
+        colour:["#067332","#067332","#067332","#067332"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-16, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/691687344328278016/got-any-gator-blinkies",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
     },
     '0140-hsroxy': {
         name:"rogue of void",
@@ -57,7 +72,117 @@ const styleProps = {
         x:0, y:0,
         sourceName:"loverlymuzakmaker",
         sourceURL:"https://web.archive.org/web/20090901212908/http://geocities.com/loverlymuzakmaker/Blinkies.html",
-    },*/
+    },
+    '0159-toontrap': {
+        name:"i love trap gags",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#9a1d1b","#9a1d1b"],
+        font: "grapesoda",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0158-toonup': {
+        name:"i love toon-up",
+        bday:20220806,
+        tags:["fandom"],
+        frames:6,
+        colour:["#674482","#674482","#674482","#674482","#674482","#674482"],
+        font: "grapesoda",
+        fontsize:16,
+        x:2, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0157-toonzap': {
+        name:"i love zap gags",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#6a7000","#6a7000"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-4, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0156-toonlure': {
+        name:"i love lure",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#0f311e","#0f311e"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-3, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0155-toondrop': {
+        name:"i love drop gags",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#005679","#005679"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-3, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0154-toonsound': {
+        name:"i love sound",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#081355","#081355"],
+        font: "grapesoda",
+        fontsize:16,
+        x:0, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0153-toonsquirt': {
+        name:"i love squirt",
+        bday:20220806,
+        tags:["fandom"],
+        frames:2,
+        colour:["#003f73","#003f73"],
+        font: "grapesoda",
+        fontsize:16,
+        x:4, y:0,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0151-toonthrow': {
+        name:"i love throw",
+        bday:20220806,
+        tags:["fandom"],
+        frames:6,
+        colour:["#756830","#756830","#756830","#756830","#756830","#756830"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-2, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
     '0148-kirbyswim': {
         name:"just keep swimming",
         bday:20220730,
@@ -1946,18 +2071,24 @@ const fontList = {
 
 const fallbackFonts = {
     0: {
+        family:    'emotes!',
+        antialias: '+antialias',
+        fontsize:  16,
+        y:         0
+    },
+    1: {
         family:    'monogramextended',
         antialias: '+antialias',
         fontsize:  16,
         y:         1
     },
-    1: {
+    2: {
         family:    'lanapixel',
         antialias: '+antialias',
         fontsize:  11,
         y:         -1,
     },
-    2: {
+    3: {
         family:    'Liberation Mono',
         antialias: '-antialias',
         fontsize:  10,

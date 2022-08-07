@@ -9,37 +9,41 @@ const logger      = require('./logger.js').logger
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
-function sanitizeText(str) {
-    return (str.substring(0,128) + '')
-    .replace(/[\\']/g, '\\$&')
-    .replace(/\u0000/g, '\\0')
-    .replace(/\ufe0f/g, '')
-    .replace(/\u2764/g,'\u2665')
-    .replace(/\ud83d\udc9a/gu,'\u2665')
-    .replace(/\ud83d\udc9b/gu,'\u2665')
-    .replace(/\ud83d\udc9c/gu,'\u2665')
-    .replace(/\ud83d\udc9d/gu,'\u2665')
-    .replace(/\ud83d\udc9e/gu,'\u2665')
-    .replace(/\ud83d\udc9f/gu,'\u2665')
-    .replace(/\ud83d\udd84/gu,'\u2665')
-    .replace(/\ud83d\udc99/gu,'\u2665')
-    .replace(/\ud83e\udde1/gu,'\u2665')
-    .replace(/\/heart/g,'\u2665')
-    .replace(/\/eheart/g,'\u2661')
-    .replace(/\/spade/g,'\u2660')
-    .replace(/\/club/g,'\u2663')
-    .replace(/\/diamond/g,'\u2666')
-    .replace(/\/dia/g,'\u2666')
-    .replace(/\/skull/g,'\u2620')
-    .replace(/\/cat/g,'\u260b')
-    .replace(/\/smile/g,'\u263a')
-    .replace(/\/phone/g,'\u260e')
-    .replace(/\/x/g,'\u2613')
-    .replace(/\/peace/g,'\u262e')
-    .replace(/\/crown/g,'\u265b')
-    .replace(/\/eyes/g,'\u23ff')
-    .replace(/\/crab/g,'\u260a')
-    ;
+function replaceChars(str) {
+    const trimString = str.substring(0,128) + '';
+    const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '');
+    const charMap = {
+        '/heart':'\u2665',
+        '/eheart':'\u2661',
+        '/spade':'\u2660',
+        '/club':'\u2663',
+        '/diamond':'\u2666',
+        '/dia':'\u2666',
+        '/skull':'\u2620',
+        '/cat':'\u260b',
+        '/smile':'\u263a',
+        '/phone':'\u260e',
+        '/x':'\u2613',
+        '/peace':'\u262e',
+        '/crown':'\u265b',
+        '/eyes':'\u23ff',
+        '/crab':'\u260a',
+        '\u2764':'\u2665',
+        '\ud83d\udc9a':'\u2665',
+        '\ud83d\udc9b':'\u2665',
+        '\ud83d\udc9c':'\u2665',
+        '\ud83d\udc9d':'\u2665',
+        '\ud83d\udc9e':'\u2665',
+        '\ud83d\udc9f':'\u2665',
+        '\ud83d\udd84':'\u2665',
+        '\ud83d\udc99':'\u2665',
+        '\ud83e\udde1':'\u2665',
+    }
+    var re = new RegExp(Object.keys(charMap).join("|"),"gi");
+    const outString = sanitizedString.replace(re, function(matched){
+        return charMap[matched.toLowerCase()];
+    });
+    return outString;
 }
 
 async function processText(bParms) {
@@ -263,9 +267,9 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
         blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
 
         // sanitize input text, use default text if empty.
-        bParms.cleantext = sanitizeText(bParms.intext);
+        bParms.cleantext = replaceChars(bParms.intext);
         if (bParms.cleantext.replace(/\s/g, '').length == 0) {
-            bParms.cleantext = sanitizeText(blinkieData.styleProps[bParms.styleID].name);
+            bParms.cleantext = replaceChars(blinkieData.styleProps[bParms.styleID].name);
         }
 
         // prepare text for rendering, then render frames and generate gif.

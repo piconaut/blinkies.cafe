@@ -199,7 +199,7 @@ function submit (event) {
             }
             else {
                 subLink.href = 'https://graphics-cafe.tumblr.com';
-                subLink.innerHTML = 'by amy';
+                subLink.innerHTML = 'amy';
             }
 
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'

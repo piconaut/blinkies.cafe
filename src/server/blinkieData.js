@@ -22,8 +22,32 @@ const styleProps = {
         fontsize:12,
         x:0, y:0,
     },*/
+    '0161-genderqueer': {
+        name:"genderqueer pride",
+        bday:20220813,
+        tags:["lgbtq"],
+        frames:2,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"ceoofcrimes.tumblr.com",
+        subURL:"https://ceoofcrimes.tumblr.com/"
+    },
+    '0160-pupgender': {
+        name:"pupgender pride",
+        bday:20220813,
+        tags:["mogai"],
+        frames:2,
+        colour:["#fe5852","#fe5852"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-13, y:0,
+    },
     '0152-honeyslime': {
-        hide:true,
         name:"sweet as honey",
         bday:20220807,
         tags:["fandom"],
@@ -445,7 +469,7 @@ const styleProps = {
     '0126-slime': {
         name:"slime girl",
         bday:20220713,
-        tags:["paranormal"],
+        tags:["paranormal","fav"],
         frames:5,
         colour:["#00ff1f","#00ff1f","#00ff1f","#00ff1f","#00ff1f"],
         outline:["#004700","#004700","#004700","#004700","#004700"],

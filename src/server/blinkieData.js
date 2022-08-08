@@ -22,6 +22,22 @@ const styleProps = {
         fontsize:12,
         x:0, y:0,
     },*/
+    '0152-honeyslime': {
+        hide:true,
+        name:"sweet as honey",
+        bday:20220807,
+        tags:["fandom"],
+        frames:2,
+        delay:20,
+        colour:["#531007","#531007"],
+        font: "hydratinglip",
+        fontsize:13,
+        x:-1, y:0,
+        sourceName:"Cackle",
+        sourceURL:"https://otigan.tumblr.com/post/691942460873752576/honey-slime-blinkie-i-made-i-was-planning-on",
+        subName:"otigan.tumblr.com",
+        subURL:"https://otigan.tumblr.com/post/691942460873752576/honey-slime-blinkie-i-made-i-was-planning-on"
+    },
     '0150-alligator': {
         name:"cya later alligator!",
         bday:20220806,

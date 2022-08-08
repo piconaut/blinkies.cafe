@@ -22,21 +22,15 @@ blinkies.cafe
 <a href='/'>&#60; back to gallery</a><br><br>
 text:  &nbsp;<input placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off'></input><br>
 <div style='margin-top: 3px;'>style: <select class='blinkieOptions' name="blinkieStyle" id="blinkieStyle">
-    <%
-    for (const [key, value] of Object.entries(styleList)) {
-        %><option value="<%=key%>"><%=key%></option><%
-    }
-    %>
+    <option value="<%=defaultStyleKey%>"><%=defaultStyleKey%></option>
 </select>
 </div>
 <div>scale:
     <select class='blinkieOptions' name="blinkieScale" id="blinkieScale">
         <option value=1>1x - for websites</option>
+        <option value=2>2x - medium</option>
         <option value=4>4x - for chat apps</option>
     </select>
-    (<div class="tooltip">?
-        <span class="tooltiptext">4x res improves rendering in chat &#38; social media</span>
-    </div>)
 </div>
 <button type='submit' id='submitbtn'>generate!!</button>
 </form><br>

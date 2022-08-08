@@ -165,7 +165,7 @@ function submit (event) {
     // then after receiving reply, display the newly generated blinkie.
     if (lastRequestTime < Date.now() - global.delay) {
         lastRequestTime = Date.now();
-        let anakinLink = document.getElementById("anakinLink");
+        let subLink = document.getElementById("subLink");
         let freshBlinkie = document.getElementById("freshBlinkie");
         let blinkieText = document.getElementById("blinkieText").value;
         let splitText = document.getElementById("toggleSplit").checked;
@@ -188,7 +188,20 @@ function submit (event) {
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += "<br>blinkies kept for 1 hour only!<br>upload to <a href='https://imgur.com/upload' target='_blank'>imgur</a> to use on spacehey.";
-            if (global.styleList[blinkieStyle].subName == 'Anakin') anakinLink.style.visibility = ''; else anakinLink.style.visibility = 'hidden';
+            if (global.styleList[blinkieStyle].subName) {
+                subLink.href = global.styleList[blinkieStyle].subURL;
+                if (global.styleList[blinkieStyle].subName == 'Anakin') {
+                    subLink.innerHTML = "<img src='/b/display/anakin.gif' alt='Blinkie Made by Anakin' style='width:150px;height:22px;'>(x)";
+                }
+                else {
+                    subLink.innerHTML = global.styleList[blinkieStyle].subName;
+                }
+            }
+            else {
+                subLink.href = 'https://graphics-cafe.tumblr.com';
+                subLink.innerHTML = 'by amy';
+            }
+
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'
         });
     }

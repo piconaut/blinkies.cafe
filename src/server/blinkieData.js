@@ -54,11 +54,22 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:0, y:0,
+    },
+    '0168-catgender': {
+        name:"you know, like *nya*",
+        bday:20220820,
+        tags:["mogai","amy"],
+        frames:2,
+        colour:["#ffffff","#ffffff"],
+        outline:["#000000","#000000"],
+        font: "moonaco",
+        fontsize:16,
+        x:-11, y:0,
     },*/
     '0161-genderqueer': {
         name:"genderqueer pride",
         bday:20220813,
-        tags:["lgbtq","ceoofcrimes"],
+        tags:["lgbtq","ceoofcrimes","user"],
         frames:2,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -72,7 +83,7 @@ const styleProps = {
     '0152-honeyslime': {
         name:"sweet as honey",
         bday:20220813,
-        tags:["fandom","otigan"],
+        tags:["fandom","otigan","user"],
         frames:2,
         delay:20,
         colour:["#531007","#531007"],

@@ -204,7 +204,7 @@ async function renderBlinkie(blinkieID, bParms) {
         args_gif.push(
             '-delay',frameDelay,
             '-page','+0+0',
-            '-dispose','previous',
+            '-dispose','background',
             global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
         );
         frameDelay = bParms.delay;

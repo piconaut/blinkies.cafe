@@ -7,12 +7,6 @@ const controller = require('./controller.js')
 router.get("/", controller.serveCafe);
 router.get("/pour", controller.servePour);
 router.get("/archive", controller.serveArchive);
-router.get("/sources", function(req,res){
-    res.redirect(301, '/archive');
-});
-router.get("/about", function(req,res){
-    res.redirect(301, '/');
-});
 router.get("/feed", controller.serveFeed);
 router.get("/wall", function(req,res){
     res.setHeader(

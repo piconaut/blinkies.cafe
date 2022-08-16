@@ -2176,7 +2176,7 @@ for (const [key, value] of Object.entries(styleProps)) {
 }
 
 const fontList = {
-    1: {name:"monaco", sourceName:"FontBlast Design", sourceURL:"https://www.dafont.com/monaco.font"},
+    1: {name:"Offical Emotes.", sourceName:"transbro", sourceURL:"https://fontstruct.com/fontstructions/show/2151214/emotes-3-1"},
     2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://www.dafont.com/pixellari.font"},
     3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://www.dafont.com/perfect-dos-vga-437.font"},
     4: {name:"04b03", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-03.font"},
@@ -2204,7 +2204,7 @@ const fontList = {
 
 const fallbackFonts = {
     0: {
-        family:    'emotes!',
+        family:    'offical emotes.',
         antialias: '+antialias',
         fontsize:  16,
         y:         0

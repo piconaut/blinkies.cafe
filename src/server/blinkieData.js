@@ -22,6 +22,19 @@ const styleProps = {
         fontsize:12,
         x:0, y:0,
     },*/
+    '0169-topsurgery': {
+        name:"birthday boy",
+        bday:20220820,
+        tags:["lgbtq","amy"],
+        frames:2,
+        colour:["#a22633","#a22633","#a22633","#a22633","#a22633"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-14, y:0,
+        sourceName:"amy",
+        sourceURL:"https://graphics-cafe.tumblr.com/post/693041801283649536",
+    },
     '0143-webkinz': {
         name:"Webkinz",
         bday:20220820,

@@ -234,7 +234,7 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
 
     try {
         // assign blinkie parms
-        const scaleVals = {1: '100%', 2: '200%', 4:'400%'};
+        const scaleVals = {1: '100%', 2: '200%', 3: '300%', 4:'400%'};
         let styleID = String(instyle) in blinkieData.styleProps
             ? String(instyle) : '0020-blinkiesCafe';
         let bParms = {

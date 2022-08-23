@@ -23,7 +23,7 @@ const styleProps = {
         x:0, y:0,
     },*/
     '0169-topsurgery': {
-        name:"birthday boy",
+        name:"top surgery :D",
         bday:20220820,
         tags:["lgbtq","amy"],
         frames:2,

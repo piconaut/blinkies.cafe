@@ -10,10 +10,39 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-13, y:0,
+    },*/
+    '0172-rainbowequalizer': {
+        name:"SCENE KID!",
+        bday:20220827,
+        tags:["computer","rainbow","anakin"],
+        frames:6,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        outline:["#ff1a00","#ff7300","#ffe400","#2dff00","#00ceff","#ae00ff"],
+        font: "digitaldisco",
+        fontsize:16,
+        x:0, y:-1,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0171-jerma': {
+        name:"JERMA985",
+        bday:20220827,
+        tags:["fandom","anakin"],
+        frames:2,
+        colour:["#1faab8","#1faab8"],
+        shadow:["#085e80","#085e80"],
+        font: "grapesoda",
+        fontsize:16,
+        x:-3, y:0,
+        shadowx:1,shadowy:1,
+        sourceName:"Anakin's Place",
+        sourceURL:"https://transbro.tumblr.com/post/692090999396286464/jerma985-blinkie",
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/post/692090999396286464/jerma985-blinkie"
     },
     '0142-virusgender': {
         name:"i'm a virus",
-        bday:20220813,
+        bday:20220827,
         tags:["mogai","amy"],
         frames:2,
         colour:["#00adac","#00adac"],
@@ -21,13 +50,26 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:0, y:0,
-    },*/
+    },
+    '0170-bigender': {
+        name:"bigender pride",
+        bday:20220827,
+        tags:["lgbtq","amy"],
+        frames:2,
+        colour:["#000000","#000000"],
+        outline:["#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0,
+        subName:"amy",
+    },
     '0169-topsurgery': {
         name:"top surgery :D",
         bday:20220820,
         tags:["lgbtq","amy"],
         frames:2,
-        colour:["#a22633","#a22633","#a22633","#a22633","#a22633"],
+        colour:["#a22633","#a22633"],
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
@@ -2216,25 +2258,25 @@ const fontList = {
 };
 
 const fallbackFonts = {
-    0: {
+    3: {
         family:    'offical emotes.',
         antialias: '+antialias',
         fontsize:  16,
         y:         0
     },
-    1: {
+    0: {
         family:    'monogramextended',
         antialias: '+antialias',
         fontsize:  16,
         y:         1
     },
-    2: {
+    1: {
         family:    'lanapixel',
         antialias: '+antialias',
         fontsize:  11,
         y:         -1,
     },
-    3: {
+    2: {
         family:    'Liberation Mono',
         antialias: '-antialias',
         fontsize:  10,

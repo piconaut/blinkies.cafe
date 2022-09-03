@@ -2258,7 +2258,7 @@ const fontList = {
 };
 
 const fallbackFonts = {
-    3: {
+    2: {
         family:    'offical emotes.',
         antialias: '+antialias',
         fontsize:  16,
@@ -2276,7 +2276,7 @@ const fallbackFonts = {
         fontsize:  11,
         y:         -1,
     },
-    2: {
+    3: {
         family:    'Liberation Mono',
         antialias: '-antialias',
         fontsize:  10,

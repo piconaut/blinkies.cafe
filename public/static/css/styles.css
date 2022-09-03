@@ -133,6 +133,18 @@ action {
 .smalltext {
     font-size: 8pt;
 }
+#symbolTable {
+    position:absolute;
+    font-size: 8pt;
+}
+#symbolTable table {
+    border-collapse:collapse;
+}
+#symbolTable td {
+    background-color: #9786ac;
+    border:1px solid;
+    padding:2px;
+}
 .tableWrapper {
     overflow-x: scroll;                       /* show horizontal scrollbar */
 }

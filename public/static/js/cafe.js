@@ -318,6 +318,19 @@ document.getElementById("backToGalleryBtn").onclick = function() {
     pour.style.visibility = 'hidden';
 }
 
+const symbolToggle = document.getElementById("symbolToggle");
+const symbolTable = document.getElementById("symbolTable");
+symbolToggle.onclick = function() {
+    if (symbolTable.style.visibility == 'hidden') {
+        symbolTable.style.visibility = '';
+        symbolToggle.innerText = 'hide symbols ▴';
+    }
+    else {
+        symbolTable.style.visibility = 'hidden';
+        symbolToggle.innerText = 'show symbols ▾';
+    }
+}
+
 document.getElementById("badgetxt").onclick = function() {
     this.focus();
     this.select();

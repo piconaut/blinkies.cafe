@@ -85,8 +85,9 @@ var orderBlinkie = function(res, style, intext, scale, split, toFeed)
         let blinkieIDassigned = false;
         let blinkieID = makeid(2);
         let blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
+        let recentLinks = recentBlinkies.map(a => a.blinkieLink);
         while (!blinkieIDassigned) {
-            if (!recentBlinkies.includes(blinkieLink)) {
+            if (!recentLinks.includes(blinkieLink)) {
                 blinkieIDassigned = true;
             }
             else {

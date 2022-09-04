@@ -102,6 +102,12 @@ function selectStyle(styleList, targetKey) {
     let pour = document.getElementById('pour');
     gallery.style.visibility = 'hidden';
     pour.style.visibility = '';
+
+    let url = new URL(document.location.href);
+    if (url.search == '') {
+        url.search = '?s=' + targetKey;
+        window.history.replaceState('',document.title,url);
+    }
 }
 
 function shuffleStyles(styleList) {
@@ -290,6 +296,12 @@ document.getElementById("backToGalleryBtn").onclick = function() {
     let pour = document.getElementById("pour");
     gallery.style.visibility = '';
     pour.style.visibility = 'hidden';
+
+    let url = new URL(document.location.href);
+    if (url.search.substring(0,2) == '?s') {
+        url.search = '';
+        window.history.replaceState('',document.title,url);
+    }
 }
 
 const symbolToggle = document.getElementById("symbolToggle");

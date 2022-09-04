@@ -30,13 +30,15 @@
     else {
 %>
         <div class='content'>
+            click any blinkie to customize!
+            <br><br>
             <center>
             <a href='/feed'>refresh</a>
             <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
                 <center id='tiles'>
                     <%
-                    for (const blinkieSrc of recentBlinkies) {
-                        %><img src="<%=blinkieSrc%>" class="blinkie"><%
+                    for (const blinkie of recentBlinkies) {
+                        %><a href="/?s=<%=blinkie.style%>"><img src="<%=blinkie.blinkieLink%>" class="blinkie"></a><%
                     }
                     %>
                 </center>

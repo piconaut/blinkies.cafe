@@ -99,7 +99,7 @@ var orderBlinkie = function(res, style, intext, scale, split, toFeed)
             resolve(blinkieLink);
             if (toFeed) {
                 if (!profane(intext)) {
-                    recentBlinkies.unshift(blinkieLink);
+                    recentBlinkies.unshift({blinkieLink:blinkieLink,style:style});
                     if (recentBlinkies.length > 18) recentBlinkies.pop();
                 }
             }

@@ -44,6 +44,8 @@ function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
     const nextPage       = document.getElementById("nextPage");
     const pageNum        = document.getElementById("currPage")
     const prevPage       = document.getElementById("prevPage");
+    let url = new URL(document.location.href)
+    const blinkieExt = url.searchParams.get('freeze') ? 'png' : 'gif';
 
     // make array of all styles from first to last on page.
     let stylePage = [];
@@ -61,7 +63,7 @@ function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
             blinkieTiles[i].onclick  = function() { selectStyle(styleList, styleID); }
             blinkieTiles[i].style.visibility = '';
             if (!firstLoad) {
-                blinkieTiles[i].src      = '/b/display/' + styleID + '.gif';
+                blinkieTiles[i].src      = '/b/display/' + styleID + '.' + blinkieExt;
                 blinkieTiles[i].alt      = styleList[styleID].name + ' blinkie';
             }
         }
@@ -103,11 +105,9 @@ function selectStyle(styleList, targetKey) {
     gallery.style.visibility = 'hidden';
     pour.style.visibility = '';
 
-    let url = new URL(document.location.href);
-    if (url.search == '') {
-        url.search = '?s=' + targetKey;
-        window.history.replaceState('',document.title,url);
-    }
+    let url = new URL(document.location.href)
+    url.searchParams.set('s', targetKey);
+    window.history.pushState('',document.title,url);
 }
 
 function shuffleStyles(styleList) {
@@ -240,15 +240,22 @@ getStyleList().then(function(styleList){
     const sortRandom     = document.getElementById("sortRandom");
     const selectTags     = document.getElementById("selectTags");
 
+    let toggleFreeze = document.getElementById("toggleFreeze");
+    toggleFreeze.onclick = function () {
+        let url = new URL(document.location.href)
+        if (toggleFreeze.checked) url.searchParams.set('freeze',1);
+        else url.searchParams.delete('freeze')
+        window.history.pushState('',document.title,url);
+        loadStyles(styleList, styleOrder, global.currentPage, false);
+    }
+
     let tags = []
     document.querySelectorAll(".tag").forEach(tag => tags.push(tag.value));
 
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
     let reqTag = urlParams.get('t');
-    if (tags.includes(reqTag)) {
-        selectTags.selectedIndex = tags.indexOf(reqTag);
-    }
+    if (tags.includes(reqTag)) selectTags.selectedIndex = tags.indexOf(reqTag);
 
     let styleOrder = filterTag(selectTags.value);
     loadStyles(styleList, styleOrder, global.currentPage, false);
@@ -297,11 +304,9 @@ document.getElementById("backToGalleryBtn").onclick = function() {
     gallery.style.visibility = '';
     pour.style.visibility = 'hidden';
 
-    let url = new URL(document.location.href);
-    if (url.search.substring(0,2) == '?s') {
-        url.search = '';
-        window.history.replaceState('',document.title,url);
-    }
+    let url = new URL(document.location.href)
+    url.searchParams.delete('s');
+    window.history.pushState('',document.title,url);
 }
 
 const symbolToggle = document.getElementById("symbolToggle");

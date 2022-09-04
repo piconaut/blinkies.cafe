@@ -14,6 +14,10 @@ if [[ $* == *-b* ]]; then
     rm public/blinkies-public/blinkiesCafe-*gif
     rm assets/blinkies-frames/*png
     rm -rf logs/
+    for file in public/blinkies-public/display/*.gif
+    do
+        convert $file[0] ${file%.gif}.png
+    done
     sudo docker build . -t piconaut/blinkies.cafe
 fi
 

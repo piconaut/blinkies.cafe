@@ -224,10 +224,7 @@ function filterTag(tag) {
                 }
             }
     }
-
-    const styleOrder = sortStyles(styleList,'bday', 'desc');
-    global.currentPage = 1;
-    return styleOrder
+    return styleList
 }
 
 getStyleList().then(function(styleList){
@@ -257,11 +254,14 @@ getStyleList().then(function(styleList){
     let reqTag = urlParams.get('t');
     if (tags.includes(reqTag)) selectTags.selectedIndex = tags.indexOf(reqTag);
 
-    let styleOrder = filterTag(selectTags.value);
+    styleList = filterTag(selectTags.value);
+    let styleOrder = sortStyles(styleList,'bday', 'desc');
     loadStyles(styleList, styleOrder, global.currentPage, false);
 
     selectTags.onchange = function() {
-        styleOrder = filterTag(selectTags.value);
+        styleList = filterTag(selectTags.value);
+        styleOrder = sortStyles(styleList,'bday', 'desc');
+        global.currentPage = 1;
         loadStyles(styleList, styleOrder, global.currentPage, false);
     }
     sortNew.onclick = function() {

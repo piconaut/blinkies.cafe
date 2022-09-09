@@ -1,4 +1,38 @@
 const styleProps = {
+/*    '0179-kittencry': {
+        name:"want  kibbles...",
+        bday:20220910,
+        tags:["nature","amy"],
+        frames:8,
+        delay:10,
+        colour:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"],
+        font: "moonaco",
+        fontsize:16,
+        x:21, y:0
+    },*/
+    '0180-happybirthday': {
+        name:"happy birthday!!!",
+        bday:20220908,
+        tags:["food","anakin"],
+        frames:6,
+        delay:15,
+        colour:["#ff1a00","#ff7300","#fdf429","#00ff00","#00ceff","#ae00ff"],
+        font: "moonaco",
+        fontsize:16,
+        x:0, y:0
+    },
+    '0181-confetti': {
+        name:"Congratulations!!",
+        bday:20220908,
+        tags:["food","anakin"],
+        bgID:'0180-happybirthday',
+        frames:6,
+        delay:15,
+        colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "moonaco",
+        fontsize:16,
+        x:0, y:0
+    },
     '0178-mikuwink2': {
         name:"Miku fan!!",
         bday:20220903,

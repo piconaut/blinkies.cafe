@@ -1,5 +1,5 @@
 const styleProps = {
-/*    '0179-kittencry': {
+    '0179-kittencry': {
         name:"want  kibbles...",
         bday:20220910,
         tags:["nature","amy"],
@@ -9,17 +9,70 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:21, y:0
-    },*/
+    },
+    '0182-halloweencathouse': {
+        name:"Happy Halloween",
+        bday:20220910,
+        tags:["paranormal","anakin"],
+        frames:4,
+        colour:["#fdbe02","#fdbe02","#fdbe02","#fdbe02"],
+        font: "infernalda",
+        fontsize:16,
+        x:-2, y:-1,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0184-pastelpinkrainbow': {
+        name:"Strawberry Sundae",
+        bday:20220910,
+        tags:["pink","plain","anakin"],
+        frames:6,
+        delay:10,
+        colour:["#ed7eb2","#ed7eb2","#ed7eb2","#ed7eb2","#ed7eb2","#ed7eb2"],
+        font: "moonaco",
+        fontsize:16,
+        x:0, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0183-pastelpinkwings': {
+        name:"Pastel Angel",
+        bday:20220910,
+        tags:["pink","anakin"],
+        frames:5,
+        delay:10,
+        colour:["#ed7eb2","#ed7eb2","#ed7eb2","#ed7eb2","#ed7eb2"],
+        font: "moonaco",
+        fontsize:16,
+        x:0, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0185-pinkglow': {
+        name:"blushing so hard rn",
+        bday:20220910,
+        tags:["plain","pink","amy"],
+        frames:4,
+        delay:15,
+        colour:["#000000","#000000","#000000","#000000"],
+        outline:["#ab1eab","#ff43ff","#ffa1ff","#ff43ff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0
+    },
     '0180-happybirthday': {
         name:"happy birthday!!!",
         bday:20220908,
-        tags:["food","anakin"],
+        tags:["rainbow","food","anakin"],
         frames:6,
         delay:15,
         colour:["#ff1a00","#ff7300","#fdf429","#00ff00","#00ceff","#ae00ff"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0
+        x:0, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/post/694800057080397824/confetti-blinkies-customizable-at-blinkiescafe"
     },
     '0181-confetti': {
         name:"Congratulations!!",
@@ -31,7 +84,9 @@ const styleProps = {
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0
+        x:0, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/post/694800057080397824/confetti-blinkies-customizable-at-blinkiescafe"
     },
     '0178-mikuwink2': {
         name:"Miku fan!!",

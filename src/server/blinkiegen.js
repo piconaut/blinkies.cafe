@@ -172,6 +172,7 @@ async function renderFrames(blinkieID, bParms) {
         let argsArray = [];
         for (let i=0; i<bParms.frames; i++) {
             argsArray[i] = [
+                global.appRoot + '/assets/blinkies-bg/png/' + bParms.bgID + '-' + i + '.png',
                 bParms.antialias,
                 '-gravity','Center',
                 '-family',bParms.font,
@@ -196,12 +197,11 @@ async function renderFrames(blinkieID, bParms) {
             }
             if (bParms.shadow) argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,bParms.shadowx[i],bParms.shadowy,bParms.shadow[i]));
             if (bParms.split) argsArray[i].push(...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,0,0,bParms.colour[i]));
-            argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,0,bParms.colour[i]));
             argsArray[i].push(
-                global.appRoot + '/assets/blinkies-bg/png/' + bParms.bgID + '-' + i + '.png',
+                ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,0,bParms.colour[i]),
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
             );
-            stdout[i] = execFile('convert', argsArray[i]);
+            stdout[i] = execFile('magick', argsArray[i]);
         }
     }
     catch (err) {
@@ -218,20 +218,19 @@ async function renderBlinkie(blinkieID, bParms) {
     let frameDelay = bParms.delay + 1;
     for (let i=0;i<bParms.frames;i++) {
         args_gif.push(
+            global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png',
             '-delay',frameDelay,
             '-page','+0+0',
             '-dispose','background',
-            global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
         );
         frameDelay = bParms.delay;
     }
-
     args_gif.push(
         '-loop','0',
         '-scale',bParms.scale,
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif');
 
-    const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
+    const { stdout_gif, stderr_gif } = await execFile('magick', args_gif);
     if (stderr_gif) {
         bParms.errmsg = stderr_gif;
         bParms.errloc = 'renderBlinkie()';

@@ -2506,66 +2506,10 @@ for (const [key, value] of Object.entries(styleProps)) {
     }
 }
 
-const fontList = {
-    1: {name:"Offical Emotes.", sourceName:"transbro", sourceURL:"https://fontstruct.com/fontstructions/show/2151214/emotes-3-1"},
-    2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://www.dafont.com/pixellari.font"},
-    3: {name:"Perfect DOS VGA 437", sourceName:"Zeh Fernando", sourceURL:"https://www.dafont.com/perfect-dos-vga-437.font"},
-    4: {name:"04b03", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-03.font"},
-    5: {name:"Infernalda", sourceName:"MrtheNoronha", sourceURL:"https://www.dafont.com/infernalda.font"},
-    6: {name:"Rainy Hearts", sourceName:"Camellina", sourceURL:"https://www.dafont.com/rainyhearts.font"},
-    7: {name:"Monogram", sourceName:"datagoblin", sourceURL:"https://datagoblin.itch.io/monogram"},
-    8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
-    9: {name:"Dogica", sourceName:"Roberto Mocci", sourceURL:"https://www.dafont.com/dogica.font"},
-    10: {name:"Alagard", sourceName:"Hewett Tsoi", sourceURL:"https://www.dafont.com/alagard.font"},
-    11: {name:"Liberation Mono", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
-    12: {name:"Pixelpoiiz", sourceName:"poiiz", sourceURL:"https://www.dafont.com/pixelpoiiz.font"},
-    13: {name:"Fipps", sourceName:"pheist", sourceURL:"https://www.dafont.com/fipps.font"},
-    14: {name:"doubleh*m*c***", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
-    15: {name:"Pixel Icons Compilation", sourceName:"Woodcutter", sourceURL:"https://www.dafont.com/pixel-icons-compilation.font"},
-    16: {name:"{pixelflag}", sourceName:"Chequered Ink", sourceURL:"https://www.dafont.com/pixelflag.font"},
-    17: {name:"Grape Soda", sourceName:"jeti", sourceURL:"https://www.dafont.com/grapesoda-2.font"},
-    18: {name:"Pixeloid", sourceName:"ggbot", sourceURL:"https://ggbot.itch.io/pixeloid-font"},
-    19: {name:"Green Screen", sourceName:"James Shields", sourceURL:"https://www.dafont.com/green-screen.font"},
-    20: {name:"LanaPixel", sourceName:"eishiya", sourceURL:"https://opengameart.org/content/lanapixel-localization-friendly-pixel-font"},
-    21: {name:"Digital Disco", sourceName:"jeti", sourceURL:"https://fontenddev.com/"},
-    22: {name:"04b_19", sourceName:"押本祐二", sourceURL:"https://www.dafont.com/04b-19.font"},
-    23: {name:"Pixeloid Sans", sourceName:"GGBotNet", sourceURL:"https://www.dafont.com/pixeloid-sans.font"},
-    24: {name:"Hydrating Lip", sourceName:"Hazel Abbiati", sourceURL:"https://diamondidiocy.tumblr.com/"},
-};
-
-const fallbackFonts = {
-    2: {
-        family:    'offical emotes.',
-        antialias: '+antialias',
-        fontsize:  16,
-        y:         0
-    },
-    0: {
-        family:    'monogramextended',
-        antialias: '+antialias',
-        fontsize:  16,
-        y:         1
-    },
-    1: {
-        family:    'lanapixel',
-        antialias: '+antialias',
-        fontsize:  11,
-        y:         -1,
-    },
-    3: {
-        family:    'Liberation Mono',
-        antialias: '-antialias',
-        fontsize:  10,
-        y:         0
-    }
-}
-
 module.exports = {
     styleProps,
     styleList,
     stylePage,
     sourceList,
-    sourcePage,
-    fontList,
-    fallbackFonts
+    sourcePage
 }

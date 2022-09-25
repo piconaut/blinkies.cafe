@@ -87,15 +87,15 @@ blinkies.cafe prefers bitmap fonts where possible, but falls back to truetype fo
 <table id='fontTable'>
     <tr>
         <th>font</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;creator</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;source</th>
     </tr>
     <tr>
         <td>----</td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;-------</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;------</td>
     </tr>
-    <%for (const [key, value] of Object.entries(fontList)) {%>
+    <%for (const [key, value] of Object.entries(fonts)) {%>
         <tr>
-            <td><%-value.name%></td>
+            <td><%-key%></td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%=value.sourceName%></a></td>
         </tr>
     <%}%>

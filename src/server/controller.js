@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./blinkieData.js');
+const fontData    = require('./fontData.js');
 const blacklist   = require('./blacklist.js');
 const logger      = require('./logger.js').logger;
 
@@ -78,7 +79,7 @@ function profane(intext) {
 const queue = require('promise-queue')
 var brueue = new queue(1, Infinity);
 var recentBlinkies = [];
-var orderBlinkie = function(res, style, intext, scale, split, toFeed)
+var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
 {
     var promise = new Promise((resolve) => {
         // generate unique blinkie ID & URL.
@@ -95,7 +96,7 @@ var orderBlinkie = function(res, style, intext, scale, split, toFeed)
                 blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
             }
         }
-        blinkiegen.pour(blinkieID, style, intext, scale, split).then(function(blinkieLink) {
+        blinkiegen.pour(blinkieID, style, font, intext, scale, split).then(function(blinkieLink) {
             res.end(blinkieLink);
             resolve(blinkieLink);
             if (toFeed) {
@@ -118,6 +119,7 @@ const pourBlinkie = async function (req, res) {
         const split = Boolean(req.body.splitText);
         const toFeed = Boolean(req.body.toFeed);
         const starttime = Date.now();
+        const font = req.body.blinkieFont.toString();
 
         if (origintext.substring(0,7) == '/nolog ') {
             intext = origintext.replace('/nolog ', '');
@@ -126,7 +128,7 @@ const pourBlinkie = async function (req, res) {
         res.set('Content-Type', 'application/json');
         res.set('Access-Control-Allow-Origin','*')
 
-        await brueue.add(orderBlinkie.bind(null, res, style, intext, scale, split, toFeed));
+        await brueue.add(orderBlinkie.bind(null, res, style, font, intext, scale, split, toFeed));
 
         if (origintext.substring(0,7) != '/nolog ') {
             logger.info({
@@ -138,6 +140,7 @@ const pourBlinkie = async function (req, res) {
                 parms: {
                     scale:  scale,
                     style:  style,
+                    font:   font,
                     text:   intext,
                     split:  split,
                     toFeed: toFeed
@@ -150,7 +153,7 @@ const pourBlinkie = async function (req, res) {
 const serveArchive = function (req, res) {
     res.render('pages/archive.ejs', {
         sourceList: blinkieData.sourcePage,
-        fontList: blinkieData.fontList
+        fonts: fontData.fonts
     });
 }
 
@@ -176,7 +179,7 @@ const serveCafe = function (req, res) {
         'Content-Security-Policy',
         "script-src 'self'"
     )
-    res.render('pages/cafe.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage, freeze:freeze });
+    res.render('pages/cafe.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage, fonts:fontData.fonts, freeze:freeze });
 }
 
 const servePour = function (req, res) {

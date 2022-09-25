@@ -46,7 +46,7 @@ blinkies.cafe
                     </table>
                 </span>
             </div>
-            <div style='margin-top: 1px'>
+            <div style='margin-top: 1px;display:none;'>
                 style: <select name="blinkieStyle" id="blinkieStyle" cols=20>
                     <%
                     if (pourStyle != '') {
@@ -61,10 +61,22 @@ blinkies.cafe
                     %>
                 </select>
             </div>
+            <div style='margin-top: 1px;'>
+                font:&nbsp; <select name="blinkieFont" id="blinkieFont" cols=20>
+                    <option value="auto">auto ♡字</option><%
+
+                    for (const [key, value] of Object.entries(fonts)) {
+                        %><option value="<%=key%>"><%=key%> <%if (value.symbols) {%>♡<%} if (value.charsets) {%>字<%}%></option><%
+                    }
+                    %>
+                </select>(<div class="tooltip">?
+                    <span class="tooltiptext" style="width:150px;">♡: supports symbols<br>字: expanded charsets</span>
+                </div>)
+            </div>
             <div>scale:
                 <select name="blinkieScale" id="blinkieScale">
                     <option value=1>1x (150x20 px) small &amp; classic. good in rows &amp; columns. great on desktop.</option>
-                    <option value=2>2x (300x40 px) happy medium</option>
+                    <option value=2>2x (300x40 px) happy medium. good for tumblr.</option>
                     <option value=3>3x (450x60 px) happy medium</option>
                     <option value=4>4x (600x80 px) large &amp; crisp. good for individual blinkies. mobile-friendly.</option>
                 </select>
@@ -180,6 +192,8 @@ enjoy~
 <div class='content'>
 <h2>what's new</h2><br>
 <ul>
+    <li>font selection!!</li>
+    <li>progressive web app!</li>
     <li>insert symbols directly into input text, no need for /codes!</li>
     <li>added toggleable symbols list</li>
     <li>vary framerate slightly to avoid .mp4 conversion on tumblr</li>
@@ -189,8 +203,6 @@ enjoy~
     <li>submit from keyboard on mobile</li>
     <li>played with homepage!</li>
     <li>wrote a <a href='/blog/2022-05-14-how-to-make-blinkies'>blinkie making tutorial</a>!</li>
-    <li>added tag/filter system!</li>
-    <li>improved heart rendering ❤️</li>
 </ul>
 </div>
 <div class='content'>

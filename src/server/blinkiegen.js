@@ -5,6 +5,7 @@ const execFile = util.promisify(require('child_process').execFile);
 const exec     = util.promisify(require('child_process').exec);
 
 const blinkieData = require('./blinkieData.js')
+const fontData    = require('./fontData.js')
 const logger      = require('./logger.js').logger
 
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
@@ -64,45 +65,58 @@ function replaceChars(str) {
 
 async function processText(bParms) {
     try {
-        // get all unicode char codes from string.
-        bParms.unicodeCharCodes = '';
-        for (var i = 0; i < bParms.cleantext.length; i++) {
-            bParms.unicodeCharCodes
-            += bParms.cleantext.charCodeAt(i).toString(16) + ' ';
+
+        // if user selected font, set parms for that font.
+        if (fontData.fonts[bParms.fontOverride]) {
+            bParms.font = bParms.fontOverride;
+            bParms.fontsize = fontData.fonts[bParms.fontOverride].fontsize;
+            bParms.y = fontData.fonts[bParms.fontOverride].y;
+            bParms.antialias = fontData.fonts[bParms.fontOverride].antialias;
         }
 
-        // if text has chars not in style font, try fallback fonts in order.
-        let fontSearch   = "fc-list '" + bParms.font + ":charset="
-                         + bParms.unicodeCharCodes + "'";
-        let foundFont = await exec(fontSearch);
-        if (foundFont.stdout.length == 0) {
-            let i = 0;
-            let fontFound = false;
-            const numFonts = Object.keys(blinkieData.fallbackFonts);
-            while (!fontFound && i<numFonts.length) {
-                fontSearch = "fc-list '" + blinkieData.fallbackFonts[i].family
-                           + ":charset=" + bParms.unicodeCharCodes + "'";
-                foundFont  = await exec(fontSearch);
-                if (foundFont.stdout.length > 0) {
-                    bParms.font      = blinkieData.fallbackFonts[i].family;
-                    bParms.antialias = blinkieData.fallbackFonts[i].antialias;
-                    bParms.fontsize  = blinkieData.fallbackFonts[i].fontsize;
-                    bParms.y         = blinkieData.fallbackFonts[i].y;
-                    fontFound = true;
-                }
-                i ++;
+        // else (auto font)
+        else {
+            // get all unicode char codes from string.
+            bParms.unicodeCharCodes = '';
+            for (var i = 0; i < bParms.cleantext.length; i++) {
+                bParms.unicodeCharCodes
+                += bParms.cleantext.charCodeAt(i).toString(16) + ' ';
             }
-        }
+
+            // if text has chars not in style font, try fallback fonts in order.
+            let fontSearch   = "fc-list '" + bParms.font + ":charset="
+                             + bParms.unicodeCharCodes + "'";
+            let foundFont = await exec(fontSearch);
+            if (foundFont.stdout.length == 0) {
+                let i = 0;
+                let fontFound = false;
+                const fallbackFonts = fontData.fallbackFonts;
+                while (!fontFound && i<fallbackFonts.length) {
+                    fontSearch = "fc-list '" + fallbackFonts[i]
+                               + ":charset=" + bParms.unicodeCharCodes + "'";
+                    foundFont  = await exec(fontSearch);
+                    if (foundFont.stdout.length > 0 || i==fallbackFonts.length-1) {
+                        const selectedFont     = fallbackFonts[i];
+                        bParms.font      = fallbackFonts[i];
+                        bParms.antialias = fontData.fonts[selectedFont].antialias;
+                        bParms.fontsize  = fontData.fonts[selectedFont].fontsize;
+                        bParms.y         = fontData.fonts[selectedFont].y;
+                        fontFound = true;
+                    }
+                    i ++;
+                }
+            } // end fallback fonts.
+
+            // if input text is long & supported by small font, set split flag.
+            if (!bParms.split && bParms.cleantext.length > 35) {
+                fontSearch = "fc-list '04b03:charset=" + bParms.unicodeCharCodes + "'";
+                foundFont  = await exec(fontSearch);
+                if (foundFont.stdout.length > 0) bParms.split = true;
+            }
+        } // end auto fonts.
 
         bParms.cleantext1 = bParms.cleantext;
         bParms.cleantext2 = '';
-
-        // if input text is long & supported by small font, set split flag.
-        if (!bParms.split && bParms.cleantext.length > 35) {
-            fontSearch = "fc-list '04b03:charset=" + bParms.unicodeCharCodes + "'";
-            foundFont  = await exec(fontSearch);
-            if (foundFont.stdout.length > 0) bParms.split = true;
-        }
 
         // if split flag is set, split text into two lines.
         if (bParms.split) {
@@ -136,8 +150,10 @@ async function processText(bParms) {
                 bParms.cleantext1 = chars.splice(0, half).join('');
                 bParms.cleantext2 = chars.splice(-half).join('');
             }
-        }
-    }
+        } // end split.
+
+    } // end try.
+
     catch (err) {
         bParms.errmsg = err.msg;
         bParms.errloc = 'processText()';
@@ -237,7 +253,7 @@ async function renderBlinkie(blinkieID, bParms) {
     return bParms;
 }
 
-async function pour(blinkieID, instyle, intext, inscale, split) {
+async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
     let blinkieLink = ''
 
     try {
@@ -270,6 +286,7 @@ async function pour(blinkieID, instyle, intext, inscale, split) {
             'outline':    blinkieData.styleProps[styleID].outline,
             'font':       blinkieData.styleProps[styleID].font,
             'fontsize':   blinkieData.styleProps[styleID].fontsize,
+            'fontOverride': fontOverride,
             'x':          blinkieData.styleProps[styleID].x,
             'y':          blinkieData.styleProps[styleID].y,
             'x2':         blinkieData.styleProps[styleID].x,

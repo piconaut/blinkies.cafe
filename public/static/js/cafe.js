@@ -22,9 +22,9 @@ function getStyleList() {
     return fetch('/styleList.json').then((response)=>response.json())
                                    .then((responseJson)=>{return responseJson});
 }
-function postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText, toFeed) {
+function postBlinkie(blinkieText, blinkieStyle, blinkieFont, blinkieScale, splitText, toFeed) {
     return fetch(urlRoot + "/api/pour", {
-        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle, blinkieScale: blinkieScale, splitText: splitText, toFeed: toFeed}),
+        body: JSON.stringify({blinkieText: blinkieText, blinkieStyle: blinkieStyle, blinkieFont: blinkieFont, blinkieScale: blinkieScale, splitText: splitText, toFeed: toFeed}),
         headers: {"Content-Type": "application/json"},
         method: "POST"
     })
@@ -162,6 +162,7 @@ function submit (event) {
         let blinkieText = document.getElementById("blinkieText").value;
         let splitText = document.getElementById("toggleSplit").checked;
         let blinkieStyle = document.getElementById("blinkieStyle").value;
+        let blinkieFont = document.getElementById("blinkieFont").value;
         let blinkieScale = document.getElementById("blinkieScale").value;
         let toFeed = !document.getElementById("hideFeed").checked;
         let blinkieLinkHolder = document.getElementById('blinkieLinkHolder');
@@ -170,7 +171,7 @@ function submit (event) {
         submitbtn.innerText = 'brewing...';
         setTimeout(function() { submitbtn.innerText = 'generate!!'; }, global.delay);
 
-        postBlinkie(blinkieText, blinkieStyle, blinkieScale, splitText, toFeed).then( function(blinkieURL) {
+        postBlinkie(blinkieText, blinkieStyle, blinkieFont, blinkieScale, splitText, toFeed).then( function(blinkieURL) {
             freshBlinkie.src = blinkieURL;
             blinkieLinkHolder.innerHTML = '';
             let blinkieLink = document.createElement('a');

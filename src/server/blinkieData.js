@@ -1,4 +1,32 @@
 const styleProps = {
+    '0192-forgetmenotflower': {
+        name:"forget-me-not",
+        bday:20220924,
+        tags:["nature","pink","amy"],
+        frames:2,
+        delay:15,
+        colour:["#0075e6","#0075e6"],
+        font: "moonaco",
+        fontsize:16,
+        x:3, y:0,
+        subName:"omfg.neocities.org",
+        subURL:"https://omfg.neocities.org/graphics.html",
+        sourceName:"omfg.neocities.org",
+        sourceURL:"https://omfg.neocities.org/graphics.html",
+    },
+    '0191-fallleaves': {
+        name:"This user loves fall",
+        bday:20220924,
+        tags:["nature","anakin"],
+        frames:4,
+        delay:15,
+        colour:["#b34700","#b34700","#b34700","#b34700"],
+        font: "moonaco",
+        fontsize:16,
+        x:-2, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
     '0190-hittingfloor': {
         name:"FUCK MY LIFE!",
         bday:20220917,

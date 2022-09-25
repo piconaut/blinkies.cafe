@@ -218,10 +218,10 @@ async function renderBlinkie(blinkieID, bParms) {
     let frameDelay = bParms.delay + 1;
     for (let i=0;i<bParms.frames;i++) {
         args_gif.push(
-            global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png',
             '-delay',frameDelay,
-            '-page','+0+0',
             '-dispose','background',
+            global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png',
+            '-page','+0+0',
         );
         frameDelay = bParms.delay;
     }
@@ -229,7 +229,6 @@ async function renderBlinkie(blinkieID, bParms) {
         '-loop','0',
         '-scale',bParms.scale,
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif');
-
     const { stdout_gif, stderr_gif } = await execFile('magick', args_gif);
     if (stderr_gif) {
         bParms.errmsg = stderr_gif;

@@ -53,20 +53,6 @@ function cooldown(ip) {
     return allowed;
 }
 
-const msg = async function (req, res) {
-    if (cooldown(req.ip)) {
-        logger.info({
-            time:  Date.now(),
-            mtype: 'msg',
-            details: {
-                origin: req.get('origin'),
-                msg: req.body.msg
-            }
-        });
-        res.end('ty');
-    }
-}
-
 function profane(intext) {
     const intextAlpha = intext
         .toLowerCase()
@@ -119,7 +105,7 @@ const pourBlinkie = async function (req, res) {
         const split = Boolean(req.body.splitText);
         const toFeed = Boolean(req.body.toFeed);
         const starttime = Date.now();
-        const font = req.body.blinkieFont.toString();
+        const font = req.body.blinkieFont ? req.body.blinkieFont.toString() : 'auto';
 
         if (origintext.substring(0,7) == '/nolog ') {
             intext = origintext.replace('/nolog ', '');
@@ -231,7 +217,6 @@ const serveStyleList = function (req, res) {
 }
 
 module.exports = {
-    msg,
     serveBlinkie,
     serveCafe,
     serveSitemap,

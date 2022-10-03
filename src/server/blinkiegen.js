@@ -12,7 +12,7 @@ const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
 function replaceChars(str) {
     const trimString = str.substring(0,128) + '';
-    const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '');
+    const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '').replace(/%/g, '\\%');
     const charMap = {
         '/heart':'\u2665',
         '/eheart':'\u2661',

@@ -1,4 +1,96 @@
 const styleProps = {
+    '0204-twitchlogo': {
+        name:"Twitch",
+        bday:20221008,
+        tags:["link","amy"],
+        frames:2,
+        delay:15,
+        colour:["#9146ff","#9146ff"],
+        font: "green screen",
+        fontsize:12,
+        x:-9, y:0,
+    },
+    '0203-youtubelogo': {
+        name:"Youtube",
+        bday:20221008,
+        tags:["link","anakin"],
+        frames:2,
+        delay:15,
+        colour:["#ff0101","#ff0101"],
+        font: "green screen",
+        fontsize:12,
+        x:-14, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0202-pinterestlogo': {
+        name:"Pinterest",
+        bday:20221008,
+        tags:["link","anakin"],
+        frames:2,
+        delay:15,
+        colour:["#ea0016","#ea0016"],
+        font: "green screen",
+        fontsize:12,
+        x:-13, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0201-twitterlogo': {
+        name:"Twitter",
+        bday:20221008,
+        tags:["link","anakin"],
+        frames:2,
+        delay:15,
+        colour:["#f9f7f5","#f9f7f5"],
+        font: "green screen",
+        fontsize:12,
+        x:-12, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0200-tumblrlogo': {
+        name:"Tumblr",
+        bday:20221008,
+        tags:["link","anakin"],
+        frames:2,
+        delay:15,
+        colour:["#fcfcfc","#fcfcfc"],
+        font: "green screen",
+        fontsize:12,
+        x:-8, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0199-instagramlogo': {
+        name:"Instagram",
+        bday:20221008,
+        tags:["link","anakin"],
+        frames:3,
+        delay:20,
+        colour:["#53443d","#53443d","#53443d"],
+        font: "green screen",
+        fontsize:12,
+        x:-12, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0198-didosdd': {
+        name:"DID/OSDD system",
+        bday:20221008,
+        tags:["flag","user"],
+        frames:2,
+        colour:["#000000","#000000"],
+        outline:["#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:-1,
+        sourceName:"kotatsuOS",
+        sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
+        subName:"Proxy&amp;",
+        subURL:"https://kotatsus.neocities.org/"
+    },
     '0196-browndog': {
         name:"I love my doggie!",
         bday:20220931,
@@ -271,7 +363,7 @@ const styleProps = {
     '0160-pupgender': {
         name:"pupgender pride",
         bday:20220903,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:2,
         colour:["#fe5852","#fe5852"],
         font: "pixeloid sans",
@@ -387,7 +479,7 @@ const styleProps = {
     '0142-virusgender': {
         name:"i'm a virus",
         bday:20220827,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:2,
         colour:["#00adac","#00adac"],
         outline:["#000000","#000000"],
@@ -398,7 +490,7 @@ const styleProps = {
     '0170-bigender': {
         name:"bigender pride",
         bday:20220827,
-        tags:["lgbtq","amy"],
+        tags:["lgbtq","flag","amy"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -435,7 +527,7 @@ const styleProps = {
     '0168-catgender': {
         name:"you know, like *nya*",
         bday:20220820,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -468,7 +560,7 @@ const styleProps = {
     '0161-genderqueer': {
         name:"genderqueer pride",
         bday:20220813,
-        tags:["lgbtq","ceoofcrimes","user"],
+        tags:["lgbtq","flag","ceoofcrimes","user"],
         frames:2,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -588,7 +680,7 @@ const styleProps = {
     '0139-robotgender': {
         name:"my gender is robot lol",
         bday:20220806,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -784,7 +876,7 @@ const styleProps = {
     '0141-digigender': {
         name:"i'm digital",
         bday:20220730,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:4,
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
         colour:["#000000","#000000","#000000","#000000"],
@@ -807,7 +899,7 @@ const styleProps = {
     '0137-catgender': {
         name:"you know, like *nya*",
         bday:20220730,
-        tags:["mogai","amy"],
+        tags:["flag","amy"],
         frames:2,
         colour:["#ffffff","#ffffff"],
         outline:["#000000","#000000"],
@@ -1445,7 +1537,7 @@ const styleProps = {
     '0084-agender': {
         name:"agender pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:6,
         colour:["#000000","#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1458,7 +1550,7 @@ const styleProps = {
     '0087-demisexual': {
         name:"demisexual pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -1472,7 +1564,7 @@ const styleProps = {
     '0083-demiromantic': {
         name:"demiromantic pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         outline:["#ffffff","#ffffff"],
@@ -1486,7 +1578,7 @@ const styleProps = {
     '0082-aromantic': {
         name:"aromantic pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1500,7 +1592,7 @@ const styleProps = {
     '0081-asexual': {
         name:"asexual pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1514,7 +1606,7 @@ const styleProps = {
     '0080-genderfluid': {
         name:"genderfluid pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1528,7 +1620,7 @@ const styleProps = {
     '0079-nonbinary': {
         name:"non-binary pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:4,
         colour:["#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1542,7 +1634,7 @@ const styleProps = {
     '0078-intersex': {
         name:"intersex pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:2,
         colour:["#000000","#000000"],
         font: "pixeloid sans",
@@ -1555,7 +1647,7 @@ const styleProps = {
     '0077-demiboy': {
         name:"demiboy pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1568,7 +1660,7 @@ const styleProps = {
     '0076-demigirl': {
         name:"demigirl pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1581,7 +1673,7 @@ const styleProps = {
     '0075-demigender': {
         name:"demigender pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1594,7 +1686,7 @@ const styleProps = {
     '0074-pan': {
         name:"pan pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:3,
         colour:["#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1607,7 +1699,7 @@ const styleProps = {
     '0073-gay': {
         name:"gay pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:4,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000"],
@@ -1621,7 +1713,7 @@ const styleProps = {
     '0072-lesbian': {
         name:"lesbian pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1635,7 +1727,7 @@ const styleProps = {
     '0071-bi': {
         name:"bi pride",
         bday:20220512,
-        tags:["lgbtq","anakin"],
+        tags:["lgbtq","flag","anakin"],
         frames:5,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
         outline:["#000000","#000000","#000000","#000000","#000000"],
@@ -1649,7 +1741,7 @@ const styleProps = {
     '0023-trans-pride': {
         name:"this user is trains",
         bday:20220512,
-        tags:["lgbtq","amy"],
+        tags:["lgbtq","flag","amy"],
         frames:5,
         colour:["#000000","#000000","#000000","#000000","#000000"],
         font: "pixeloid sans",
@@ -1661,7 +1753,7 @@ const styleProps = {
     '0014-pride': {
         name:"kinda gay tbh...",
         bday:20220512,
-        tags:["lgbtq","amy"],
+        tags:["lgbtq","flag","amy"],
         frames:4,
         outline:["#000000","#000000","#000000","#000000"],
         colour:["#ffffff","#ffffff","#ffffff","#ffffff"],

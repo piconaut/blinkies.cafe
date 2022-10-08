@@ -1,5 +1,3 @@
-blinkies.cafe does not collect personally identifiable data.
-
 to maintain & improve the quality of our blinkies, we log blinkie inputs & diagnostics:
   - blinkie text (& split)
   - blinkie style
@@ -12,7 +10,8 @@ we use these data to:
   - detect & fix bugs
   - prioritize character sets to add next
   - decide maximum text length to support
+  - moderate the blinkie feed
 
-we use logged ip addresses to moderate the blinkie feed.
+by using blinkies.cafe and & its services, you consent to the collection of these data.
 
 you can opt out of logging: if you add "/nolog " (without quotes) at the start of your custom text, your blinkie inputs will not be logged.

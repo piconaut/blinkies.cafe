@@ -127,10 +127,8 @@ blinkies.cafe
         <center id='tiles'>
             <%
             const blinkieExt = freeze ? 'png' : 'gif';
-            let i=0;
             for (const [key, value] of Object.entries(stylePage)) {
-                %><img id='blinkie<%=i%>' src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
-    	    i++;
+                %><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
             }
             %>
         </center>

@@ -2642,9 +2642,6 @@ let j = 0;
 
 // prepare data for export.
 for (const [key, value] of Object.entries(styleProps)) {
-
-    if (!global.prod) console.log('<a rel="nofollow" href="https://blinkies.cafe/?s=' + key + '"><img src="https://blinkies.neocities.org/b/display/' + key + '.gif" alt="' + value.name + ' blinkie" class="blinkie-wall"></a>');
-
     if (!value.hide) {
         // add short blinkie data to list for clients.
         styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };

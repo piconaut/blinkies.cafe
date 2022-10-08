@@ -168,6 +168,15 @@ const serveCafe = function (req, res) {
     res.render('pages/cafe.ejs', { pourStyle:pourStyle, styleList:blinkieData.styleList, stylePage:blinkieData.stylePage, fonts:fontData.fonts, freeze:freeze });
 }
 
+const serveWall = function (req, res) {
+    let freeze = Boolean(req.query.freeze);
+    res.setHeader(
+        'Content-Security-Policy',
+        "script-src 'self'"
+    )
+    res.render('pages/wall.ejs', { styleList:blinkieData.styleList, freeze:freeze });
+}
+
 const servePour = function (req, res) {
     let defaultStyleIndex = String(req.query.s) in blinkieData.styleProps ? String(req.query.s) : '0007-chocolate';
     res.render('pages/pour.ejs', {
@@ -225,5 +234,6 @@ module.exports = {
     serveArchive,
     pourBlinkie,
     servePour,
-    serveFeed
+    serveFeed,
+    serveWall
 }

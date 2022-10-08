@@ -8,13 +8,7 @@ router.get("/", controller.serveCafe);
 router.get("/pour", controller.servePour);
 router.get("/archive", controller.serveArchive);
 router.get("/feed", controller.serveFeed);
-router.get("/wall", function(req,res){
-    res.setHeader(
-        'Content-Security-Policy',
-        "img-src 'self' https://blinkies.neocities.org"
-    );
-    res.render("pages/wall.ejs");
-})
+router.get("/wall", controller.serveWall);
 router.get("/blog", function(req,res){
     res.render('pages/blog.ejs');
 })

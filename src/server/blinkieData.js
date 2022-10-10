@@ -107,7 +107,7 @@ const styleProps = {
     '0194-pleadingemoji': {
         name:"prommy?",
         bday:20220931,
-        tags:["reactions","smiley","user"],
+        tags:["reaction","smiley","user"],
         frames:2,
         delay:12,
         colour:["#276984","#276984"],
@@ -133,7 +133,7 @@ const styleProps = {
     '0195-raven': {
         name:"Edgar Allan's Foe",
         bday:20220931,
-        tags:["paranormal","nature","horror","user"],
+        tags:["spooky","nature","user"],
         frames:2,
         delay:12,
         colour:["#ff0000","#ff0000"],
@@ -245,7 +245,7 @@ const styleProps = {
     '0188-knifechainsaw': {
         name:"I <3 VIOLENCE",
         bday:20220917,
-        tags:["horror","anakin"],
+        tags:["spooky","anakin"],
         frames:4,
         delay:15,
         colour:["#d8192b","#d8192b","#d8192b","#d8192b"],
@@ -270,7 +270,7 @@ const styleProps = {
     '0182-halloweencathouse': {
         name:"Happy Halloween",
         bday:20220910,
-        tags:["paranormal","sparkle","anakin"],
+        tags:["spooky","sparkle","anakin"],
         frames:4,
         delay:20,
         colour:["#fdbe02","#fdbe02","#fdbe02","#fdbe02"],
@@ -606,7 +606,7 @@ const styleProps = {
     '0167-saw': {
         name:"GAS GAS GAS",
         bday:20220813,
-        tags:["horror","anakin"],
+        tags:["spooky","anakin"],
         frames:2,
         colour:["#babdc2","#adb1b5"],
         font: "doublehomicide",
@@ -620,7 +620,7 @@ const styleProps = {
     '0165-jennifersbody': {
         name:"I am a god",
         bday:20220813,
-        tags:["fandom","paranormal","horror","amy"],
+        tags:["fandom","spooky","amy"],
         frames:2,
         colour:["#ff0000","#ff0000"],
         font: "doublehomicide",
@@ -630,7 +630,7 @@ const styleProps = {
     '0164-bloodylips': {
         name:"Hell is a teen girl",
         bday:20220813,
-        tags:["fandom","paranormal","horror","amy"],
+        tags:["fandom","spooky","amy"],
         frames:2,
         colour:["#ff0000","#ff0000"],
         font: "hydratinglip",
@@ -1045,7 +1045,7 @@ const styleProps = {
     '0126-slime': {
         name:"slime girl",
         bday:20220713,
-        tags:["paranormal","transparent","fav","amy"],
+        tags:["spooky","transparent","fav","amy"],
         frames:5,
         colour:["#00ff1f","#00ff1f","#00ff1f","#00ff1f","#00ff1f"],
         outline:["#004700","#004700","#004700","#004700","#004700"],
@@ -1058,7 +1058,7 @@ const styleProps = {
     '0125-blood': {
         name:"thirsty?",
         bday:20220712,
-        tags:["paranormal","transparent","horror","amy"],
+        tags:["spooky","transparent","amy"],
         frames:5,
         colour:["#ff1f1f","#ff1f1f","#ff1f1f","#ff1f1f","#ff1f1f"],
         outline:["#470000","#470000","#470000","#470000","#470000"],
@@ -1817,7 +1817,7 @@ const styleProps = {
     '0069-alien': {
         name:"ABDUCTABLE",
         bday:20220508,
-        tags:["paranormal","amy"],
+        tags:["spooky","amy"],
         frames:2,
         delay:20,
         colour:["#00ff00","#00ff00"],
@@ -2397,7 +2397,7 @@ const styleProps = {
     '0021-vampirefangs': {
         name:"Blood-Sucker",
         bday:20220223,
-        tags:["paranormal","amy","horror"],
+        tags:["spooky","amy"],
         frames:8,
         colour:["#d00000","#d00000","#ff0000","#d00000","#d00000","#ff0000","#ff0000","#ff0000"],
         font: "alagard",
@@ -2542,7 +2542,7 @@ const styleProps = {
     '0003-ghost': {
         name:"Spooky vibes only!!",
         bday:20211215,
-        tags:["paranormal","amy","horror"],
+        tags:["spooky","amy"],
         frames:2,
         colour:["#e79400","#e77400"],
         font: "infernalda",
@@ -2579,7 +2579,7 @@ const styleProps = {
     '0001-saucer': {
         name:"crash-landed",
         bday:20211203,
-        tags:["paranormal","amy"],
+        tags:["spooky","amy"],
         frames:2,
         colour:["#ff0000","#ff4e4e"],
         font: "Perfect DOS VGA 437",

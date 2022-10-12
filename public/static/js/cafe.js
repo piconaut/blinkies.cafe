@@ -157,7 +157,7 @@ function submit (event) {
     // then after receiving reply, display the newly generated blinkie.
     if (lastRequestTime < Date.now() - global.delay) {
         lastRequestTime = Date.now();
-        let subLink = document.getElementById("subLink");
+        let creditLink = document.getElementById("creditLink");
         let freshBlinkie = document.getElementById("freshBlinkie");
         let blinkieText = document.getElementById("blinkieText").value;
         let splitText = document.getElementById("toggleSplit").checked;
@@ -182,17 +182,22 @@ function submit (event) {
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += "<br>blinkies kept for 1 hour only!<br>upload to <a href='https://imgur.com/upload' target='_blank'>imgur</a> to use on spacehey.";
             if (global.styleList[blinkieStyle].subName) {
-                subLink.href = global.styleList[blinkieStyle].subURL;
-                if (global.styleList[blinkieStyle].subName == 'Anakin') {
-                    subLink.innerHTML = "<img src='/b/display/anakin.gif' alt='Blinkie Made by Anakin' style='width:150px;height:22px;'>(x)";
-                }
-                else {
-                    subLink.innerHTML = global.styleList[blinkieStyle].subName;
-                }
+                creditLink.href = global.styleList[blinkieStyle].subURL;
+                creditLink.innerHTML = global.styleList[blinkieStyle].subName;
             }
             else {
-                subLink.href = 'https://graphics-cafe.tumblr.com';
-                subLink.innerHTML = 'amy';
+                creditLink.href = 'https://graphics-cafe.tumblr.com';
+                creditLink.innerHTML = 'amy';
+            }
+
+            let subBadge = document.getElementById("subBadge");
+            if (global.styleList[blinkieStyle].tags.includes('anakin')) {
+                subBadge.href = 'https://transbro.tumblr.com';
+                subBadge.innerHTML = "<img src='/b/display/anakin.gif' alt='Blinkie Made by Anakin' style='width:150px;height:22px;'>";
+            }
+            else {
+                subBadge.href = '';
+                subBadge.innerHTML = '';
             }
 
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'

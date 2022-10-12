@@ -1,4 +1,19 @@
 const styleProps = {
+    '0206-nyancat': {
+        name:"Nyan Nyan Nyan",
+        bday:20221008,
+        tags:["rainbow","anakin"],
+        frames:12,
+        delay:6,
+        colour:"#ffffff",
+        outline:"#013368",
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:14, y:1,
+        subName:"nyan.cat",
+        subURL:"https://nyan.cat/"
+    },
     '0205-pluralsystem': {
         name:"plural system",
         bday:20221008,

@@ -1,4 +1,16 @@
 const styleProps = {
+    '0205-pluralsystem': {
+        name:"plural system",
+        bday:20221008,
+        tags:["flags","amy"],
+        frames:4,
+        delay:10,
+        colour:["#000000","#000000","#000000","#000000"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-11, y:0
+    },
     '0198-didosdd': {
         name:"DID/OSDD system",
         bday:20221008,

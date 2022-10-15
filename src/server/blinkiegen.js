@@ -3,7 +3,6 @@ const fs       = require("fs");
 const util     = require('util');
 const execFile = util.promisify(require('child_process').execFile);
 const exec     = util.promisify(require('child_process').exec);
-
 const blinkieData = require('./blinkieData.js')
 const fontData    = require('./fontData.js')
 const logger      = require('./logger.js').logger
@@ -257,8 +256,6 @@ async function renderBlinkie(blinkieID, bParms) {
 }
 
 async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
-    let blinkieLink = ''
-
     try {
         // assign blinkie parms
         const scaleVals = {1: '100%', 2: '200%', 3: '300%', 4:'400%'};
@@ -300,8 +297,6 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
                 ? blinkieData.styleProps[styleID].splitDefault : false
         };
 
-        blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
-
         // sanitize input text, use default text if empty.
         bParms.cleantext = replaceChars(bParms.intext);
         if (bParms.cleantext.replace(/\s/g, '').length == 0) {
@@ -312,7 +307,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
         // prepare text for rendering, then render frames and generate gif.
         bParms = await processText(bParms);
         if (!bParms.errloc) bParms = await renderFrames(blinkieID, bParms);
-        if (!bParms.errloc) bParms = await renderBlinkie(blinkieID, bParms, blinkieLink);
+        if (!bParms.errloc) bParms = await renderBlinkie(blinkieID, bParms);
 
         // delete frames.
         let frameFname = '';
@@ -331,7 +326,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
         }
 
         if (bParms.errloc) {
-            blinkieLink = '/b/display/blinkiesCafe-error.gif';
+            blinkieID = 'error';
             logger.error({
                 time:  Date.now(),
                 mtype: 'pour',
@@ -344,7 +339,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
 
     }  // end try
     catch (err) {
-        blinkieLink = '/b/display/blinkiesCafe-error.gif';
+        blinkieID = 'error';
         logger.error({
             time:  Date.now(),
             mtype: 'pour',
@@ -355,7 +350,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
         });
     }
 
-    return blinkieLink;
+    return blinkieID;
 }
 
 module.exports = {

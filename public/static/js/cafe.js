@@ -177,7 +177,7 @@ function submit (event) {
             let blinkieLink = document.createElement('a');
             blinkieLink.innerHTML = 'download blinkie';
             blinkieLink.href = blinkieURL;
-            blinkieLink.download = blinkieURL.split('/')[4];
+            blinkieLink.download = blinkieURL.split('/').at(-1);
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += "<br>blinkies kept for 1 hour only!<br>upload to <a href='https://imgur.com/upload' target='_blank'>imgur</a> to use on spacehey.";

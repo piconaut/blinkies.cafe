@@ -6,6 +6,7 @@ const blinkieData = require('./blinkieData.js');
 const fontData    = require('./fontData.js');
 const blacklist   = require('./blacklist.js');
 const logger      = require('./logger.js').logger;
+const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
 function makeid(length) {
     var result           = '';
@@ -68,26 +69,20 @@ var recentBlinkies = [];
 var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
 {
     var promise = new Promise((resolve) => {
-        // generate unique blinkie ID & URL.
+        // generate unique blinkie ID
         let blinkieIDassigned = false;
         let blinkieID = makeid(2);
-        let newBlinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
-        let recentLinks = recentBlinkies.map(a => a.blinkieLink);
+        let recentIDs = recentBlinkies.map(a => a.blinkieID);
         while (!blinkieIDassigned) {
-            if (!recentLinks.includes(newBlinkieLink)) {
-                blinkieIDassigned = true;
-            }
-            else {
-                blinkieID = makeid(2);
-                newBlinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
-            }
+            if (!recentIDs.includes(blinkieID)) blinkieIDassigned = true;
+            else blinkieID = makeid(2);
         }
-        blinkiegen.pour(blinkieID, style, font, intext, scale, split).then(function(newBlinkieLink) {
-            res.end(newBlinkieLink);
-            resolve(newBlinkieLink);
+        blinkiegen.pour(blinkieID, style, font, intext, scale, split).then(function(newBlinkieID) {
+            res.end(siteURL + '/b/blinkiesCafe-' + newBlinkieID + '.gif');
+            resolve(newBlinkieID);
             if (toFeed) {
                 if (!profane(intext)) {
-                    recentBlinkies.unshift({blinkieLink:newBlinkieLink,style:style});
+                    recentBlinkies.unshift({blinkieID:newBlinkieID,style:style});
                     if (recentBlinkies.length > 18) recentBlinkies.pop();
                 }
             }

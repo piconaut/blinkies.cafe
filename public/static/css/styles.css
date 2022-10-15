@@ -152,7 +152,7 @@ action {
     width: 120px;
     top: 125%;
     left: 50%;
-    margin-left: -70px;
+    margin-left: -100px;
 }
 .tooltip:hover .tooltiptext {
     visibility: visible;

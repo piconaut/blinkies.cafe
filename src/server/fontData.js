@@ -31,6 +31,7 @@ const fonts = {
     },
     "pixeloid sans" : {
         fontsize:  9,
+        fontweight:'bold',
         y:         0,
         antialias: '+antialias',
         sourceName:"GGBotNet",

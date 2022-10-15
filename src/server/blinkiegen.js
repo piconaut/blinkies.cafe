@@ -68,6 +68,8 @@ async function processText(bParms) {
         if (fontData.fonts[bParms.fontOverride]) {
             bParms.font = bParms.fontOverride;
             bParms.fontsize = fontData.fonts[bParms.fontOverride].fontsize;
+            if (fontData.fonts[bParms.fontOverride].fontweight)
+                bParms.fontweight = fontData.fonts[bParms.fontOverride].fontweight;
             bParms.y = fontData.fonts[bParms.fontOverride].y;
             bParms.antialias = fontData.fonts[bParms.fontOverride].antialias;
         }

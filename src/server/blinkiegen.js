@@ -220,7 +220,7 @@ async function renderFrames(blinkieID, bParms) {
                 ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,0,bParms.colour[i]),
                 global.appRoot + '/assets/blinkies-frames/' + blinkieID + '-' + i + '.png'
             );
-            stdout[i] = execFile('convert', argsArray[i]);
+            stdout[i] = execFile('magick', argsArray[i]);
         }
     }
     catch (err) {
@@ -248,7 +248,7 @@ async function renderBlinkie(blinkieID, bParms) {
         '-loop','0',
         '-scale',bParms.scale,
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif');
-    const { stdout_gif, stderr_gif } = await execFile('convert', args_gif);
+    const { stdout_gif, stderr_gif } = await execFile('magick', args_gif);
     if (stderr_gif) {
         bParms.errmsg = stderr_gif;
         bParms.errloc = 'renderBlinkie()';

@@ -71,23 +71,23 @@ var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
         // generate unique blinkie ID & URL.
         let blinkieIDassigned = false;
         let blinkieID = makeid(2);
-        let blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
+        let newBlinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
         let recentLinks = recentBlinkies.map(a => a.blinkieLink);
         while (!blinkieIDassigned) {
-            if (!recentLinks.includes(blinkieLink)) {
+            if (!recentLinks.includes(newBlinkieLink)) {
                 blinkieIDassigned = true;
             }
             else {
                 blinkieID = makeid(2);
-                blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
+                newBlinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
             }
         }
-        blinkiegen.pour(blinkieID, style, font, intext, scale, split).then(function(blinkieLink) {
-            res.end(blinkieLink);
-            resolve(blinkieLink);
+        blinkiegen.pour(blinkieID, style, font, intext, scale, split).then(function(newBlinkieLink) {
+            res.end(newBlinkieLink);
+            resolve(newBlinkieLink);
             if (toFeed) {
                 if (!profane(intext)) {
-                    recentBlinkies.unshift({blinkieLink:blinkieLink,style:style});
+                    recentBlinkies.unshift({blinkieLink:newBlinkieLink,style:style});
                     if (recentBlinkies.length > 18) recentBlinkies.pop();
                 }
             }

@@ -8,8 +8,6 @@ const blinkieData = require('./blinkieData.js')
 const fontData    = require('./fontData.js')
 const logger      = require('./logger.js').logger
 
-const siteURL = global.prod ? 'https://blinkies.cafe' : '';
-
 function replaceChars(str) {
     const trimString = str.substring(0,128) + '';
     const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '').replace(/%/g, '\\%');
@@ -300,7 +298,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
                 ? blinkieData.styleProps[styleID].splitDefault : false
         };
 
-        blinkieLink = siteURL + '/b/blinkiesCafe-' + blinkieID + '.gif';
+        blinkieLink = '/b/blinkiesCafe-' + blinkieID + '.gif';
 
         // sanitize input text, use default text if empty.
         bParms.cleantext = replaceChars(bParms.intext);
@@ -331,7 +329,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
         }
 
         if (bParms.errloc) {
-            blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
+            blinkieLink = '/b/display/blinkiesCafe-error.gif';
             logger.error({
                 time:  Date.now(),
                 mtype: 'pour',
@@ -344,7 +342,7 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
 
     }  // end try
     catch (err) {
-        blinkieLink = siteURL + '/b/display/blinkiesCafe-error.gif';
+        blinkieLink = '/b/display/blinkiesCafe-error.gif';
         logger.error({
             time:  Date.now(),
             mtype: 'pour',

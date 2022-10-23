@@ -1,9 +1,10 @@
 body {
     font-family: "Consolas", "Hack", "Liberation Mono", monospace;
-    background-image: url("/purple-stars-bg.gif");
+    background-image: url("/event/halloween2022/webbg.jpg");
     background-attachment: fixed;
     background-color:#000000;
     background-repeat: repeat;
+    color:#ffffff;
     line-height: 1.15;
     font-size: 10pt;
     overflow-y: scroll;                          /* show vertical scrollbar */
@@ -82,7 +83,7 @@ action {
     cursor:pointer;
 }
 .archiveContent, .blogContent, .content {
-    background-color:rgba(201,179,230,0.75);
+/*    background-color:rgba(201,179,230,0.1);*/
     margin: 18px auto 0px auto;
     padding: 4px;
     width:95%;

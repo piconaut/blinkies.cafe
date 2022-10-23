@@ -188,6 +188,13 @@ const serveFeed = function (req, res) {
     });
 }
 
+const serveHalloween = function (req, res) {
+    res.set('Access-Control-Allow-Origin','*');
+
+    res.setHeader("Content-Security-Policy", "default-src *; style-src 'self' 'sha256-W61pz1IJTPIVtqtc4WwTnBGjedtBBtImGLcKdgJyfWk='; frame-ancestors *");
+    res.render('pages/halloween.ejs');
+}
+
 const serveSitemap = function (req, res) {
     const displayBaseUrl = 'https://blinkies.cafe/b/display/';
     res.contentType("text/plain");
@@ -230,5 +237,6 @@ module.exports = {
     pourBlinkie,
     servePour,
     serveFeed,
-    serveWall
+    serveWall,
+    serveHalloween
 }

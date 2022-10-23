@@ -12,6 +12,7 @@ router.get("/wall", controller.serveWall);
 router.get("/blog", function(req,res){
     res.render('pages/blog.ejs');
 })
+router.get("/halloween", controller.serveHalloween);
 router.get("/blog/:post", function(req,res){
     res.render('pages/blog/' + req.params['post'] + '.ejs');
 })

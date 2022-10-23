@@ -1,4 +1,42 @@
 const styleProps = {
+    '0216-cinderella': {
+        name:"Cinderella",
+        bday:20221023,
+        tags:["occasion","fandom","anakin"],
+        frames:2,
+        colour:"#56bae4",
+        font: "alagard",
+        fontsize:16,
+        x:-12, y:-1,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0215-pridetransparent': {
+        name:"{   Rainbow  Flag   }",
+        bday:20221023,
+        tags:["rainbow","plain","anakin"],
+        frames:8,
+        delay:10,
+        colour:["#f03e3d","#fe5722","#feeb3b","#4caf50","#03a9f3","#3f51b5","#673ab7","#ea6793"],
+        font: "{pixelflag}",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
+    '0214-rainbowtransparent': {
+        name:"{   Rainbow  Banner   }",
+        bday:20221023,
+        tags:["rainbow","plain","anakin"],
+        frames:6,
+        delay:10,
+        colour:["#f06292","#ff9800","#ffeb3b","#76ff03","#00bcd4","#e040fb"],
+        font: "{pixelflag}",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com/"
+    },
     '0206-nyancat': {
         name:"Nyan Nyan Nyan",
         bday:20221015,
@@ -339,7 +377,7 @@ const styleProps = {
         outline:["#d09639","#d09639"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
+        x:-1, y:0,
         sourceName:"omfg.neocities.org",
         sourceURL:"https://omfg.neocities.org/graphics.html",
     },

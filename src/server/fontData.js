@@ -70,7 +70,7 @@ const fonts = {
         y:         0,
         antialias: '+antialias',
         sourceName:"jeti",
-        sourceURL:"https://fontenddev.com/"
+        sourceURL:"https://www.dafont.com/doublehomicide.font"
     },
     "hydratinglip" : {
         fontsize:  13,
@@ -140,7 +140,7 @@ const fonts = {
         y:         0,
         antialias: '+antialias',
         sourceName:"jeti",
-        sourceURL: "https://fontenddev.com/"
+        sourceURL: "https://fontenddev.com/fonts/digital-disco/"
     },
     "04b_19" : {
         fontsize:  14,

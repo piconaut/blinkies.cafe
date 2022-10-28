@@ -176,7 +176,8 @@ const servePour = function (req, res) {
     let defaultStyleIndex = String(req.query.s) in blinkieData.styleProps ? String(req.query.s) : '0007-chocolate';
     res.render('pages/pour.ejs', {
         defaultStyleKey: defaultStyleIndex,
-        styleList: blinkieData.styleProps
+        styleList: blinkieData.styleProps,
+        fonts:fontData.fonts
     });
 }
 

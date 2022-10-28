@@ -190,9 +190,13 @@ const serveFeed = function (req, res) {
 
 const serveHalloween = function (req, res) {
     res.set('Access-Control-Allow-Origin','*');
-
-    res.setHeader("Content-Security-Policy", "default-src *; style-src 'self' 'sha256-W61pz1IJTPIVtqtc4WwTnBGjedtBBtImGLcKdgJyfWk='; frame-ancestors *");
-    res.render('pages/halloween.ejs');
+    res.setHeader("Content-Security-Policy", "frame-ancestors *");
+    let defaultStyleKey = String(req.query.s) in blinkieData.styleProps ? String(req.query.s) : '';
+    res.render('pages/halloween.ejs', {
+        defaultStyleKey: defaultStyleKey,
+        styleList: blinkieData.styleProps,
+        fonts:fontData.fonts
+    });
 }
 
 const serveSitemap = function (req, res) {

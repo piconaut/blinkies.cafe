@@ -6,6 +6,7 @@ const blinkieData = require('./blinkieData.js');
 const fontData    = require('./fontData.js');
 const blacklist   = require('./blacklist.js');
 const logger      = require('./logger.js').logger;
+const sanitize    = require('./sanitize.js');
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 
 function makeid(length) {
@@ -17,10 +18,6 @@ function makeid(length) {
       result += characters.charAt(Math.floor(Math.random()*charactersLength));
     }
     return result;
-}
-
-function cleanBlinkieID(str) {
-    return str.replace(/[^a-zA-Z0-9-.]/g, '');
 }
 
 let recentRequests = [];
@@ -141,8 +138,8 @@ const serveArchive = function (req, res) {
 const serveBlinkie = function (req, res) {
     let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {
-        const blinkieID = cleanBlinkieID(req.params['blinkieID']);
-        var reqPath = global.appRoot + "/public/blinkies-public/" + blinkieID;
+        const blinkieID = sanitize.noSpecials(req.params['blinkieID']);
+        const reqPath = global.appRoot + "/public/blinkies-public/" + blinkieID;
         fs.access(reqPath, fs.constants.F_OK, (err) => {
             if (!err) { res.sendFile(reqPath); }
             else { res.sendFile(defaultPath);}

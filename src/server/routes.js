@@ -1,7 +1,9 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 const express = require('express');
 const router = express.Router();
-const controller = require('./controller.js')
+const fs = require("fs");
+const controller = require('./controller.js');
+const sanitize = require('./sanitize.js');
 
 // pages
 router.get("/", controller.serveCafe);
@@ -14,8 +16,18 @@ router.get("/blog", function(req,res){
 })
 router.get("/halloween", controller.serveHalloween);
 router.get("/blog/:post", function(req,res){
-    res.render('pages/blog/' + req.params['post'] + '.ejs');
-})
+    try {
+        const blogpost = sanitize.noSpecials(req.params['post'].toString());
+        const reqPath = global.appRoot + "/views/pages/blog/" + blogpost + '.ejs';
+        fs.access(reqPath, fs.constants.F_OK, (err) => {
+            if (!err) { res.render('pages/blog/' + blogpost + '.ejs'); }
+            else { res.status(404).render('pages/e404.ejs'); }
+        });
+    }
+    catch {
+        res.status(404).render('pages/e404.ejs');
+    }
+});
 
 // blinkies
 router.get('/b/:blinkieID', controller.serveBlinkie);

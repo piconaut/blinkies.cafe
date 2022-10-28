@@ -95,8 +95,8 @@ blinkies.cafe prefers bitmap fonts where possible, but falls back to truetype fo
     </tr>
     <%for (const [key, value] of Object.entries(fonts)) {%>
         <tr>
-            <td><%-key%></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%=value.sourceName%></a></td>
+            <td><a href="<%=value.sourceURL%>" target="_blank" rel="noopener"><%-key%></a></td>
+            <td><%=value.sourceName%></td>
         </tr>
     <%}%>
 </table>

@@ -1,4 +1,43 @@
 const styleProps = {
+    '0219-promare3': {
+        name:"MAD BURNISH",
+        bday:20221029,
+        tags:["fandom","user"],
+        frames:6,
+        delay:10,
+        colour:["#fe9aa6","#ffb8a5","#fddea1","#fdec9f","#fddea1","#ffb8a5"],
+        font: "alagard",
+        fontsize:16,
+        x:-1, y:-1,
+        subName:"Proxy&amp;",
+        subURL:"https://kotatsus.neocities.org/"
+    },
+    '0218-promare2': {
+        name:"MAD BURNISH",
+        bday:20221029,
+        tags:["fandom","user"],
+        frames:6,
+        delay:10,
+        colour:["#1e8ada","#2d9bdb","#3babdc","#55c9de","#3babdc","#2d9bdb"],
+        font: "alagard",
+        fontsize:16,
+        x:-1, y:-1,
+        subName:"Proxy&amp;",
+        subURL:"https://kotatsus.neocities.org/"
+    },
+    '0217-promare1': {
+        name:"MAD BURNISH",
+        bday:20221029,
+        tags:["fandom","user"],
+        frames:6,
+        delay:10,
+        colour:["#ff75ee","#e891df","#cbb3cc","#a0e8b0","#cbb3cc","#e891df"],
+        font: "alagard",
+        fontsize:16,
+        x:-1, y:-1,
+        subName:"Proxy&amp;",
+        subURL:"https://kotatsus.neocities.org/"
+    },
     '0216-cinderella': {
         name:"Cinderella",
         bday:20221023,

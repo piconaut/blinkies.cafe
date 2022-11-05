@@ -15,7 +15,7 @@ const styleProps = {
     '0222-construction': {
         name:"UNDER CONSTRUCTION",
         bday:20221105,
-        tags:["nature","amy"],
+        tags:["plain","amy"],
         frames:2,
         delay:20,
         colour:"#000000",

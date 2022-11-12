@@ -1,8 +1,62 @@
 const styleProps = {
+    /*'0223-yandere': {
+        name:"BE MINE <3",
+        bday:20221112,
+        tags:["spooky","pink","love","user"],
+        frames:3,
+        delay:22,
+        colour:"#eb0505",
+        font: "doublehomicide",
+        fontsize:16,
+        x:0, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },*/
+    '0226-snowflake': {
+        name:"Snow Day",
+        bday:20221112,
+        tags:["nature","anakin"],
+        frames:3,
+        delay:10,
+        colour:"#ffffff",
+        outline:"#4b92d1",
+        font: "rainyhearts",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
+    '0224-raincloud': {
+        name:"Cloudy...",
+        bday:20221112,
+        tags:["nature","user"],
+        frames:4,
+        delay:20,
+        colour:"#3375ff",
+        font: "pixelpoiiz",
+        fontsize:10,
+        x:-1, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },
+    '0225-softblue': {
+        name:"First Snow",
+        bday:20221112,
+        tags:["plain","anakin"],
+        frames:3,
+        delay:10,
+        colour:"#ffffff",
+        outline:"#4b92d1",
+        font: "rainyhearts",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"Anakin",
+        subURL:"https://transbro.tumblr.com"
+    },
     '0220-pills': {
         name:"TAKE YOUR MEDS",
         bday:20221105,
-        tags:["rainbow","food","anakin"],
+        tags:["food","anakin"],
         frames:4,
         delay:14,
         colour:"#00005e",

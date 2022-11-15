@@ -27,11 +27,12 @@
     <center>
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
         click a blinkie to customize c:<br>
+        Or type here to search!: <input type="text" id="search" placeholder="Blinkie name!"><br>
         <center id='tiles'>
             <%
             const blinkieExt = freeze ? 'png' : 'gif';
             for (const [key, value] of Object.entries(styleList)) {
-                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
+                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>" id="<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
             }
             %>
         </center>
@@ -39,5 +40,6 @@
     </center>
 </div>
 <%- include('components/footer.html') %>
+<script src='/wall.js' type='module'></script>
 </body>
 </html>

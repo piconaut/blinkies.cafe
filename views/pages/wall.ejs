@@ -32,7 +32,8 @@
             <%
             const blinkieExt = freeze ? 'png' : 'gif';
             for (const [key, value] of Object.entries(styleList)) {
-                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>" id="<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
+                var tags = key + ' ' + value.tags.join(' ');
+                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>" id="<%=tags%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
             }
             %>
         </center>

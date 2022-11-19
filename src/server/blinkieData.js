@@ -11,6 +11,19 @@ const styleProps = {
         x:0, y:0,
         subName:"pawpr1nc3",
         subURL:"https://pawpr1nc3.tumblr.com/"
+    },
+    '0227-birds': {
+        name:"Keeping afloat",
+        bday:20221203,
+        tags:["nature","user"],
+        frames:2,
+        delay:25,
+        colour:"#550088",
+        font: "rainyhearts",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
     },*/
     '0226-snowflake': {
         name:"Snow Day",

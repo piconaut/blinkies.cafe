@@ -1,7 +1,20 @@
 const styleProps = {
-    /*'0223-yandere': {
-        name:"BE MINE <3",
-        bday:20221112,
+    /*'0227-birds': {
+            name:"Keeping afloat",
+            bday:20221203,
+            tags:["nature","user"],
+            frames:2,
+            delay:25,
+            colour:"#550088",
+            font: "rainyhearts",
+            fontsize:16,
+            x:-1, y:0,
+            subName:"pawpr1nc3",
+            subURL:"https://pawpr1nc3.tumblr.com/"
+    },*/
+    '0223-yandere': {
+        name:"D A R L I N G",
+        bday:20221119,
         tags:["spooky","pink","love","user"],
         frames:3,
         delay:22,
@@ -12,19 +25,32 @@ const styleProps = {
         subName:"pawpr1nc3",
         subURL:"https://pawpr1nc3.tumblr.com/"
     },
-    '0227-birds': {
-        name:"Keeping afloat",
-        bday:20221203,
-        tags:["nature","user"],
-        frames:2,
-        delay:25,
-        colour:"#550088",
-        font: "rainyhearts",
+    '0228-pinkdrip': {
+        name:"love me love me love me love me lov",
+        bday:20221119,
+        tags:["spooky","pink","love","transparent","amy"],
+        frames:5,
+        colour:"#f2b2eb",
+        outline:"#e443e4",
+        font: "doublehomicide",
         fontsize:16,
-        x:-1, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
-    },*/
+        x:-1, y:0
+    },
+    '0229-roses': {
+            name:"Thus with a kiss I die.",
+            bday:20221119,
+            tags:["love","nature","amy"],
+            frames:2,
+            delay:20,
+            colour:"#d0466a",
+            font: "moonaco",
+            fontsize:16,
+            x:-1, y:0,
+            subName:"omfg.neocities.org",
+            subURL:"https://omfg.neocities.org/graphics.html",
+            sourceName:"omfg.neocities.org",
+            sourceURL:"https://omfg.neocities.org/graphics.html",
+    },
     '0226-snowflake': {
         name:"Snow Day",
         bday:20221112,

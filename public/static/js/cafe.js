@@ -91,14 +91,9 @@ function selectStyle(styleList, targetKey) {
                   'trans rights!!'];
     blinkieText.placeholder = tips[Math.floor(Math.random()*tips.length)];
 
-    // show selected style first in dropdown.
-    let blinkieStyle = document.getElementById('blinkieStyle');
-    for(let i = 0; i < blinkieStyle.options.length; i++) {
-        if(blinkieStyle.options[i].value == targetKey) {
-            blinkieStyle.selectedIndex = i;
-            break;
-        }
-    }
+    // set selected style.
+    let selectedStyle = document.getElementById('selectedStyle');
+    selectedStyle.value = targetKey;
 
     let gallery = document.getElementById('gallery');
     let pour = document.getElementById('pour');

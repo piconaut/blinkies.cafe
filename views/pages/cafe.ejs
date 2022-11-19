@@ -50,13 +50,10 @@ blinkies.cafe
                 style: <select name="blinkieStyle" id="blinkieStyle" cols=20>
                     <%
                     if (pourStyle != '') {
-                        %><option value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
+                        %><option id="selectedStyle" value="<%=pourStyle%>"><%=styleList[pourStyle].name%></option><%
                     }
-
-                    for (const [key, value] of Object.entries(styleList)) {
-                        if (key != pourStyle) {
-                            %><option value="<%=key%>"><%=value.name%></option><%
-                        }
+                    else {
+                        %><option id="selectedStyle" value=""></option><%
                     }
                     %>
                 </select>

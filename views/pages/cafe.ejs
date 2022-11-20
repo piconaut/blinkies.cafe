@@ -98,6 +98,7 @@ blinkies.cafe
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
         click a blinkie to customize!<br><br>
         <galleryUI>
+            search: <input type="text" id="queryText" style="width:135px;margin-bottom:8px;" placeholder="text, tags, name">&nbsp;<action id='queryAction'>go &gt;</action> <img src='/new.gif' alt='new'><br>
             sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action> <action id='sortOld'>old</action><br>
             tags:&nbsp;<select id='selectTags' style='width:100px;margin-top:8px;'>
                 <option class='tag' value='all'>all</option>
@@ -141,10 +142,10 @@ blinkies.cafe
             </galleryUI>
         </center>
         <br>
-        <a href="/wall">browse/search all<img src='/new.gif' alt='new'></a>&nbsp;|&nbsp;<a href="/feed">recently generated</a>
+        <a href="/wall">browse all</a>&nbsp;|&nbsp;<a href="/feed">recently generated</a>
         <br><br>
-        new blinkies every Saturday!
-        <br><br><br>
+        new blinkies every weekend!
+        <br>
     </div>
     </center>
     <div class='divider'></div>
@@ -192,8 +193,8 @@ enjoy~
 <div class='content'>
 <h2>what's new</h2><br>
 <ul>
-    <li>search blinkie templates on the blinkie wall!! ty <a href="https://github.com/Denperidge" target="_blank">Denperidge</a> :D</li>
-    <li>new blog post:<a href='/blog/2022-10-29-pixel-font-symbols'>Hidden symbols in blinkies.cafe fonts!</a></li>
+    <li>search blinkie templates!! ty <a href="https://github.com/Denperidge" target="_blank">Denperidge</a> :D</li>
+    <li>new blog post: <a href='/blog/2022-10-29-pixel-font-symbols'>Hidden symbols in blinkies.cafe fonts!</a></li>
     <li><a href="/halloween">trick or treat</a> :D</li>
     <li>font selection!!</li>
     <li>progressive web app!</li>

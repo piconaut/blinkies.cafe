@@ -161,12 +161,13 @@ const serveCafe = function (req, res) {
 }
 
 const serveWall = function (req, res) {
-    let freeze = Boolean(req.query.freeze);
+    const freeze = Boolean(req.query.freeze);
+    const query  = req.query.q ? sanitize.noSpecials(String(req.query.q)) : '';
     res.setHeader(
         'Content-Security-Policy',
         "script-src 'self'"
     )
-    res.render('pages/wall.ejs', { styleList:blinkieData.styleList, freeze:freeze });
+    res.render('pages/wall.ejs', { styleList:blinkieData.styleList, query:query, freeze:freeze });
 }
 
 const servePour = function (req, res) {

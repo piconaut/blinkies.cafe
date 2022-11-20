@@ -26,14 +26,15 @@
 <div class='content'>
     <center>
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
+        search templates: <input type="text" id="search" style="width:225px;" placeholder="name, tags, or default text" value="<%=query%>"><br>
         click a blinkie to customize c:<br>
-        Or type here to search!: <input type="text" id="search" placeholder="Blinkie name!"><br>
         <center id='tiles'>
             <%
             const blinkieExt = freeze ? 'png' : 'gif';
+            let searchText = '';
             for (const [key, value] of Object.entries(styleList)) {
-                var tags = key + ' ' + value.name + ' ' + value.tags.join(' ');
-                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>" id="<%=tags%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
+                searchText = key + ' ' + value.name + ' ' + value.tags.join(' ');
+                %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>" id="<%=searchText%>" style="display:none;"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
             }
             %>
         </center>

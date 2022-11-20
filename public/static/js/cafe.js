@@ -366,6 +366,20 @@ function insertAtCaret(areaId,text) {
     txtarea.scrollTop = scrollPos;
 }
 
+function queryWall (queryString) {
+    const url = new URL(document.location.href);
+    const freeze = url.searchParams.get('freeze');
+    let queryURL = "/wall?q=" + queryString;
+    if (freeze) queryURL += "&freeze=1"
+    window.location.href = queryURL;
+}
+const queryText   = document.getElementById("queryText");
+const queryAction = document.getElementById("queryAction");
+queryAction.onclick = function () { queryWall(queryText.value); }
+queryText.addEventListener("keypress", function (event) {
+    if(event.key === 'Enter') queryWall(queryText.value);
+});
+
 document.getElementById("badgetxt").onclick = function() {
     this.focus();
     this.select();

@@ -95,6 +95,7 @@ blinkies.cafe
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
         click a blinkie to customize!<br><br>
         <galleryUI>
+            search: <input type="text" id="queryText" style="width:135px;margin-bottom:8px;" placeholder="text, tags, name">&nbsp;<action id='queryAction'>go &gt;</action> <img src='/new.gif' alt='new'><br>
             sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action> <action id='sortOld'>old</action><br>
             tags:&nbsp;<select id='selectTags' style='width:100px;margin-top:8px;'>
                 <option class='tag' value='all'>all</option>
@@ -140,8 +141,8 @@ blinkies.cafe
         <br>
         <a href="/wall">browse all</a>&nbsp;|&nbsp;<a href="/feed">recently generated</a>
         <br><br>
-        new blinkies every Saturday!
-        <br><br><br>
+        new blinkies every weekend!
+        <br>
     </div>
     </center>
     <div class='divider'></div>
@@ -189,16 +190,13 @@ enjoy~
 <div class='content'>
 <h2>what's new</h2><br>
 <ul>
-    <li>new blog post:<a href='/blog/2022-10-29-pixel-font-symbols'>Hidden symbols in blinkies.cafe fonts!</a></li>
+    <li>search blinkie templates!! ty <a href="https://github.com/Denperidge" target="_blank">Denperidge</a> :D</li>
+    <li>new blog post: <a href='/blog/2022-10-29-pixel-font-symbols'>Hidden symbols in blinkies.cafe fonts!</a></li>
     <li><a href="/halloween">trick or treat</a> :D</li>
     <li>font selection!!</li>
     <li>progressive web app!</li>
     <li>insert symbols directly into input text, no need for /codes!</li>
     <li>added toggleable symbols list</li>
-    <li>vary framerate slightly to avoid .mp4 conversion on tumblr</li>
-    <li>added a <a href='/feed'>feed</a> of recent user-created blinkies!</li>
-    <li>text outline for readability on high-contrast backgrounds!</li>
-    <li>wrote a <a href='/blog/2022-05-14-how-to-make-blinkies'>blinkie making tutorial</a>!</li>
 </ul>
 </div>
 <div class='content'>

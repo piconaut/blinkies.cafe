@@ -2675,14 +2675,14 @@ const styleProps = {
         tags:["fandom","zodiac","amy"]
     },
     '0027-sakura': {
-        name:"サ ク  ラ",
+        name:"サ ク ラ",
         bday:20220304,
         tags:["pink","nature","amy"],
         frames:4,
-        colour:["#cc557f","#cc557f","#cc557f","#cc557f"],
+        colour:"#cc557f",
         font: "lanapixel",
         fontsize:11,
-        x:0, y:-1,
+        x:-1, y:-1,
         sourceName:"me :)"
     },
     '0026-iheart2': {

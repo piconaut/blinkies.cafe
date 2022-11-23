@@ -12,7 +12,7 @@ var minify = require('express-minify');
 var path = require('path');
 const helmet = require("helmet");
 const fs = require("fs");
-const router = require('./src/server/routes.js');
+const router = require('./src/routes.js');
 
 const options = global.prod ? {
   key: fs.readFileSync('certs/privkey1.pem'),

@@ -29,3 +29,7 @@
     - [components/](views/pages/components/): .html files to include in other templates/views.
 - [blt.sh](blt.sh): Multi-use Bash script to control the Docker container.
 - [server.js](server.js): Entrypoint/main script for Express/the website.
+
+
+## License
+The code in this project is licensed under the [GNU General Public License v3.0](license.txt). Any original blinkies are licensed under [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/).

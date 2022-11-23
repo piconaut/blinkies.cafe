@@ -28,6 +28,6 @@ WORKDIR /app
 COPY --from=BUILD_IMAGE /app .
 #COPY --from=BUILD_IMAGE /app/node_modules ./app/node_modules
 
-COPY ./.fonts /usr/share/fonts
+COPY ./assets/.fonts /usr/share/fonts
 
 CMD ["npm","start"]

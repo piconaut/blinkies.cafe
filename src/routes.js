@@ -59,13 +59,13 @@ router.get("/sourceList.json", controller.serveSourceList);
 
 // raw text
 router.use('/sitemap.txt', function (req, res) {
-    res.sendFile(global.appRoot + "/views/pages/sitemap.txt");
+    res.sendFile(global.appRoot + "/public/txt/sitemap.txt");
 });
 router.get("/privacy.txt", function (req, res) {
-    res.sendFile(global.appRoot + "/views/pages/privacy.txt");
+    res.sendFile(global.appRoot + "/public/txt/privacy.txt");
 });
 router.get("/robots.txt", function (req, res) {
-    res.sendFile(global.appRoot + "/robots.txt");
+    res.sendFile(global.appRoot + "/public/txt/robots.txt");
 });
 
 // error codes

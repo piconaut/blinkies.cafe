@@ -1,17 +1,46 @@
 const styleProps = {
-    /*'0227-birds': {
+    '0231-treeforest': {
+            name:"Forest Walker",
+            bday:20221127,
+            tags:["nature","user"],
+            frames:2,
+            delay:18,
+            colour:"#1d592b",
+            outline:"#b7f0bd",
+            font: "alagard",
+            fontsize:16,
+            x:-20, y:-1,
+            sourceName:"kotatsuOS",
+            sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
+            subName:"Proxy&amp;",
+            subURL:"https://kotatsus.neocities.org/"
+    },
+    '0230-plantpot': {
+            name:"growing",
+            bday:20221127,
+            tags:["nature","user"],
+            frames:2,
+            delay:18,
+            colour:"#60a040",
+            font: "rainyhearts",
+            fontsize:16,
+            x:5, y:1,
+            subName:"pawpr1nc3",
+            subURL:"https://pawpr1nc3.tumblr.com/"
+    },
+    '0227-birds': {
             name:"Keeping afloat",
-            bday:20221203,
+            bday:20221127,
             tags:["nature","user"],
             frames:2,
             delay:25,
             colour:"#550088",
             font: "rainyhearts",
             fontsize:16,
-            x:-1, y:0,
+            x:-1, y:1,
             subName:"pawpr1nc3",
             subURL:"https://pawpr1nc3.tumblr.com/"
-    },*/
+    },
     '0223-yandere': {
         name:"D A R L I N G",
         bday:20221119,

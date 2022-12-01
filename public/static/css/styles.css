@@ -129,6 +129,7 @@ action {
     margin-bottom: -6px;
     height:18px;
     overflow: overlay;
+    overflow-x: hidden;
 }
 .smalltext {
     font-size: 8pt;

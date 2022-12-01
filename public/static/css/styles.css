@@ -128,8 +128,14 @@ action {
     resize:none;
     margin-bottom: -6px;
     height:18px;
+    /*
+    overflow: overlay doesn't work on all browsers
+    So by setting it as second, every browser who has implemented it
+    will overwrite the overflow-x value
+    While browsers without overflow:overlay will fall back to overflow-x: hidden
+    */
+    overflow-x: hidden; 
     overflow: overlay;
-    overflow-x: hidden;
 }
 .smalltext {
     font-size: 8pt;

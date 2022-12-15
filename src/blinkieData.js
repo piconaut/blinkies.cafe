@@ -1,4 +1,44 @@
 const styleProps = {
+    '0236-pastelshootingstar': {
+        name:"Shooting star",
+        bday:20221217,
+        tags:["nature","user"],
+        frames:4,
+        delay:20,
+        colour:["#ff8400","#ff74e0","#ff8400","#ff74e0"],
+        font: "rainyhearts",
+        fontsize:16,
+        x:8, y:1,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },    
+    '0235-rainbowstar': {
+        name:"S I L L Y  !!",
+        bday:20221217,
+        tags:["nature","sparkle","rainbow","user"],
+        frames:6,
+        delay:15,
+        colour:"#ffffff",
+        font: "fipps",
+        fontsize:8,
+        x:9, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },
+    '0237-purplestars': {
+        name:"supah star",
+        bday:20221217,
+        tags:["nature","sparkle","user"],
+        frames:3,
+        delay:16,
+        colour:"#ffffff",
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-1, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },   
     '0234-mbavdoublenegativeangeldevil': {
         name:"Double Negative",
         bday:20221206,

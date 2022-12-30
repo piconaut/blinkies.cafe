@@ -90,14 +90,14 @@ var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
 
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip) && !blacklist.ips.includes(req.ip)) {
-        const style  = req.body.blinkieStyle;
-        const origintext = req.body.blinkieText;
-        let intext   = req.body.blinkieText;
-        const scale  = parseInt(req.body.blinkieScale) ? parseInt(req.body.blinkieScale) : 1;
-        const split = Boolean(req.body.splitText);
-        const toFeed = Boolean(req.body.toFeed);
-        const starttime = Date.now();
-        const font = req.body.blinkieFont ? req.body.blinkieFont.toString() : 'auto';
+        const style      = typeof req.body.blinkieStyle == 'string' ? req.body.blinkieStyle : '0121-blinkiescafe';
+        const origintext = typeof req.body.blinkieText == 'string' ? req.body.blinkieText : '';
+        let intext       = typeof req.body.blinkieText == 'string' ? req.body.blinkieText : '';
+        const scale      = (typeof req.body.blinkieScale == 'number' || typeof req.body.blinkieScale == 'string') ? parseInt(req.body.blinkieScale) : 1;
+        const split      = typeof req.body.splitText == 'boolean' ? req.body.splitText : false;
+        const toFeed     = typeof req.body.toFeed == 'boolean' ? req.body.toFeed : false;
+        const font       = typeof req.body.blinkieFont == 'string' ? req.body.blinkieFont : 'auto';
+        const starttime  = Date.now();
 
         if (origintext.substring(0,7) == '/nolog ') {
             intext = origintext.replace('/nolog ', '');

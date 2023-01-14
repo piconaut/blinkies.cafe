@@ -15,8 +15,8 @@ const fs = require("fs");
 const router = require('./src/routes.js');
 
 const options = global.prod ? {
-  key: fs.readFileSync('certs/privkey1.pem'),
-  cert: fs.readFileSync('certs/fullchain1.pem')
+  key: fs.readFileSync('certs/privkey.pem'),
+  cert: fs.readFileSync('certs/fullchain.pem')
 } : {};
 const https = global.prod ? require("https").createServer(options, app)
                    : require("http").createServer(app);

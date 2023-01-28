@@ -1,4 +1,30 @@
 const styleProps = {
+    '0239-heartmessage': {
+        name:"Message for u!",
+        bday:20230207,
+        tags:["love","occasion","reaction","user","pawpr1nc3"],
+        frames:2,
+        delay:20,
+        colour:"#d60016",
+        font: "rainyhearts",
+        fontsize:16,
+        x:7, y:1,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },  
+    '0238-heartsconnected': {
+        name:"Secret Soulmates",
+        bday:20230207,
+        tags:["love","occasion","user","jean"],
+        frames:10,
+        delay:10,
+        colour:"#ff0000",
+        font: "moonaco",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"jean",
+        subURL:"https://dilftwink.tumblr.com/"
+    },
     '0236-pastelshootingstar': {
         name:"Shooting star",
         bday:20221217,

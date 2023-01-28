@@ -1,4 +1,4 @@
-const styleProps = {
+const styleProps = { 
     '0239-heartmessage': {
         name:"Message for u!",
         bday:20230207,
@@ -25,6 +25,18 @@ const styleProps = {
         subName:"jean",
         subURL:"https://dilftwink.tumblr.com/"
     },
+    '0240-nursestethoscope': {
+        name:"Nurse BF <3",
+        bday:20230128,
+        tags:["occasion","fav","amy"],
+        frames:10,
+        delay:10,
+        colour:"#ff0000",
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-16, y:0,
+    },  
     '0236-pastelshootingstar': {
         name:"Shooting star",
         bday:20221217,
@@ -363,7 +375,7 @@ const styleProps = {
     '0209-antigravrainbowconfetti': {
         name:"hbd blinkies.cafe <3",
         bday:20221015,
-        tags:["rainbow","occasion","amy"],
+        tags:["rainbow","occasion","fav","amy"],
         frames:6,
         delay:10,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -1959,7 +1971,7 @@ const styleProps = {
     '0092-computerconnect': {
         name:"establishing connection...",
         bday:20220520,
-        tags:["computer","fav","amy"],
+        tags:["computer","amy"],
         frames:10,
         delay: 15,
         colour:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
@@ -2467,7 +2479,7 @@ const styleProps = {
     '0056-pirate': {
         name:"You came back.",
         bday:20220418,
-        tags:["fav","fandom","amy"],
+        tags:["fandom","amy"],
         frames:5,
         delay:10,
         colour:["#000000","#000000","#000000","#000000","#000000"],

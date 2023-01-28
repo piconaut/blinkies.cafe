@@ -115,6 +115,9 @@ action {
 .blinkieTile {
     cursor:pointer;
 }
+.clickable {
+    cursor:pointer;
+}
 .content {
     max-width: 540px;
 }

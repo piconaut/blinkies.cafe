@@ -1,8 +1,9 @@
 const styleProps = { 
+    /*
     '0239-heartmessage': {
         name:"Message for u!",
         bday:20230207,
-        tags:["love","occasion","reaction","user","pawpr1nc3"],
+        tags:["love","reaction","pink","user","pawpr1nc3"],
         frames:2,
         delay:20,
         colour:"#d60016",
@@ -15,7 +16,7 @@ const styleProps = {
     '0238-heartsconnected': {
         name:"Secret Soulmates",
         bday:20230207,
-        tags:["love","occasion","user","jean"],
+        tags:["love","user","jean"],
         frames:10,
         delay:10,
         colour:"#ff0000",
@@ -24,7 +25,46 @@ const styleProps = {
         x:-1, y:0,
         subName:"jean",
         subURL:"https://dilftwink.tumblr.com/"
+    },*/
+    '0243-heartflowerplant': {
+        name:"Love In Bloom",
+        bday:20230207,
+        tags:["love","nature","user","pawpr1nc3"],
+        frames:2,
+        delay:14,
+        colour:"#036d00",
+        font:"rainyhearts",
+        fontsize:16,
+        x:7, y:0,
+        subName:"pawpr1nc3",
+        subURL:"https://pawpr1nc3.tumblr.com/"
+    },  
+    '0242-loveletter': {
+        name:"Love Letter",
+        bday:20230207,
+        tags:["love","occasion","pink","user","socks"],
+        frames:8,
+        delay:20,
+        outline:"#e591f0",
+        colour:"#57006d",
+        font: "pixelpoiiz",
+        fontsize:10,
+        x:-12, y:0,
+        subName:"Socks",
+        subURL:"https://umicoon.tumblr.com/"
     },
+    '0241-redpulse': {
+        name:"*.*. Red Pulse .*.*",
+        bday:20230129,
+        tags:["plain","amy"],
+        frames:10,
+        delay:10,
+        colour:"#ff0000",
+        font:"pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-1, y:0,
+    },  
     '0240-nursestethoscope': {
         name:"Nurse BF <3",
         bday:20230128,

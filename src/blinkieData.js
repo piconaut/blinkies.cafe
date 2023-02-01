@@ -25,7 +25,7 @@ const styleProps = {
         x:-1, y:0,
         subName:"jean",
         subURL:"https://dilftwink.tumblr.com/"
-    },*/
+    },
     '0243-heartflowerplant': {
         name:"Love In Bloom",
         bday:20230207,
@@ -52,7 +52,7 @@ const styleProps = {
         x:-12, y:0,
         subName:"Socks",
         subURL:"https://umicoon.tumblr.com/"
-    },
+    },*/
     '0241-redpulse': {
         name:"*.*. Red Pulse .*.*",
         bday:20230129,

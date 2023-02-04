@@ -1,5 +1,58 @@
-const styleProps = { 
-    /*
+const styleProps = {
+    '0248-lipsrosesparkle': {
+        name:"mwah!",
+        bday:20230207,
+        tags:["love","pink","red","occasion","sparkle","user","frenz","fren-z"],
+        frames:3,
+        delay:10,
+        colour:"#c72728",
+        font:"pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:-2, y:0,
+        subName:"fren-z",
+        subURL:""
+    },  
+    '0247-pinkheart': {
+        name:"Heartfelt <3",
+        bday:20230207,
+        tags:["love","pink","user","jellobubble"],
+        frames:2,
+        delay:13,
+        colour:"#fb9ca6",
+        font: "lanapixel",
+        fontsize:11,
+        x:-7, y:-1,
+        subName:"JelloBubble",
+        subURL:"https://www.tumblr.com/blog/jellobubblelol"
+    },
+    '0246-heartflowergrass': {
+        name:"Love is in bloom",
+        bday:20230207,
+        tags:["love","nature","user","mikey"],
+        frames:2,
+        delay:20,
+        colour:"#f15e58",
+        font:"rainyhearts",
+        fontsize:16,
+        x:-7, y:0,
+        subName:"Mikey",
+        subURL:"https://shrioganes.neocities.org"
+    },  
+    '0245-pikachuhearts': {
+        name:"I pika-choose you!",
+        bday:20230207,
+        tags:["love","pink","fandom","pokemon","user","crow","crowpunk"],
+        frames:2,
+        delay:17,
+        colour:"#efe774",
+        outline:"#b80085",
+        font: "grapesoda",
+        fontsize:16,
+        x:-2, y:0,
+        subName:"Crow",
+        subURL:"https://crowpunk.neocities.org/"
+    },
     '0239-heartmessage': {
         name:"Message for u!",
         bday:20230207,
@@ -52,7 +105,20 @@ const styleProps = {
         x:-12, y:0,
         subName:"Socks",
         subURL:"https://umicoon.tumblr.com/"
-    },*/
+    },
+    '0244-redlips': {
+        name:"Read My Lips",
+        bday:20230207,
+        tags:["love","user","jay"],
+        frames:2,
+        delay:10,
+        colour:"#ff9d9d",
+        font:"moonaco",
+        fontsize:16,
+        x:-1, y:0,
+        subName:"Jay",
+        subURL:"https://lacefuneral.tumblr.com/"
+    },
     '0241-redpulse': {
         name:"*.*. Red Pulse .*.*",
         bday:20230129,
@@ -1393,7 +1459,7 @@ const styleProps = {
     '0144-pokeball': {
         name:"I choose you!! <3",
         bday:20220730,
-        tags:["fandom","amy"],
+        tags:["fandom","pokemon","amy"],
         frames:2,
         colour:["#000000","#000000"],
         font: "grapesoda",

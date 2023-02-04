@@ -177,8 +177,9 @@ function submit (event) {
             blinkieLinkHolder.appendChild(blinkieLink);
             blinkieLinkHolder.innerHTML += "<br>blinkies kept for 1 hour only!<br>upload to <a href='https://imgur.com/upload' target='_blank'>imgur</a> to use on spacehey.";
             if (global.styleList[blinkieStyle].subName) {
-                creditLink.href = global.styleList[blinkieStyle].subURL;
                 creditLink.innerHTML = global.styleList[blinkieStyle].subName;
+                if (global.styleList[blinkieStyle].subURL) creditLink.href = global.styleList[blinkieStyle].subURL;
+                else creditLink.removeAttribute("href");
             }
             else {
                 creditLink.href = 'https://graphics-cafe.tumblr.com';

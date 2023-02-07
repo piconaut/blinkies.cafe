@@ -2,7 +2,7 @@ const styleProps = {
     '0242-loveletter': {
         name:"Love Letter",
         bday:20230207,
-        tags:["love","occasion","pink","user","socks"],
+        tags:["love","occasion","pink","user","socks","bp1"],
         frames:8,
         delay:20,
         outline:"#e591f0",
@@ -16,7 +16,7 @@ const styleProps = {
     '0238-heartsconnected': {
         name:"Secret Soulmates",
         bday:20230207,
-        tags:["love","user","jean"],
+        tags:["love","user","jean","bp1"],
         frames:10,
         delay:10,
         colour:["#ff0000","#ec0000","#d90102","#c80102","#b40203","#a00305","#b40203","#c80102","#d90102","#ec0000"],
@@ -29,7 +29,7 @@ const styleProps = {
     '0245-pikachuhearts': {
         name:"I pika-choose you!",
         bday:20230207,
-        tags:["love","pink","fandom","pokemon","pikachu","user","crow","crowpunk"],
+        tags:["love","pink","fandom","pokemon","pikachu","user","crow","crowpunk","bp1"],
         frames:2,
         delay:17,
         colour:"#efe774",
@@ -43,7 +43,7 @@ const styleProps = {
     '0256-transparentpastelbubbles': {
         name:"bubbly 4 u!",
         bday:20230207,
-        tags:["transparent","amy"],
+        tags:["transparent","amy","bp1"],
         frames:2,
         delay:20,
         colour:"#ff789a",
@@ -57,7 +57,7 @@ const styleProps = {
     '0253-rainbowheartclownballoons': {
         name:"kiss a clown!!!",
         bday:20230207,
-        tags:["rainbow","occasion","user","crow","crowpunk"],
+        tags:["rainbow","occasion","user","crow","crowpunk","bp1"],
         frames:2,
         delay:21,
         colour:"#ff0800",
@@ -71,7 +71,7 @@ const styleProps = {
     '0251-pastelpinkbutterfly': {
         name:"butterfly kisses",
         bday:20230207,
-        tags:["nature","pink","user","pawpr1nc3"],
+        tags:["nature","pink","user","pawpr1nc3","bp1"],
         frames:2,
         delay:20,
         colour:"#b100cd",
@@ -86,7 +86,7 @@ const styleProps = {
     '0243-heartflowerplant': {
         name:"Love In Bloom",
         bday:20230207,
-        tags:["love","nature","user","pawpr1nc3"],
+        tags:["love","nature","user","pawpr1nc3","bp1"],
         frames:2,
         delay:14,
         colour:"#036d00",
@@ -99,7 +99,7 @@ const styleProps = {
     '0255-glowinghearts': {
         name:"Lovecore Lover",
         bday:20230207,
-        tags:["love","user","jay"],
+        tags:["love","user","jay","bp1"],
         frames:4,
         colour:"#ffffff",
         outline:"#c40000",
@@ -112,7 +112,7 @@ const styleProps = {
     '0250-redbouncyhearts': {
         name:"Lovestruck",
         bday:20230207,
-        tags:["love","user","pawpr1nc3"],
+        tags:["love","user","pawpr1nc3","bp1"],
         frames:2,
         delay:20,
         colour:"#d00000",
@@ -125,7 +125,7 @@ const styleProps = {
     '0249-beatinghearts': {
         name:"ドキドキ !",
         bday:20230207,
-        tags:["love","user","anonymous"],
+        tags:["love","user","anonymous","bp1"],
         frames:6,
         delay:12,
         colour:"#ff4f6a",
@@ -138,7 +138,7 @@ const styleProps = {
     '0248-lipsrosesparkle': {
         name:"mwah!",
         bday:20230207,
-        tags:["love","pink","red","occasion","sparkle","user","frenz","fren-z"],
+        tags:["love","pink","red","occasion","sparkle","user","frenz","fren-z","bp1"],
         frames:3,
         delay:10,
         colour:"#c72728",
@@ -152,7 +152,7 @@ const styleProps = {
     '0254-strawberrygradient': {
         name:"hopeful romantic",
         bday:20230207,
-        tags:["plain","pink","user","proxy"],
+        tags:["plain","pink","user","proxy","bp1"],
         frames:2,
         delay:10,
         colour:"#e40029",
@@ -166,7 +166,7 @@ const styleProps = {
     '0247-pinkheart': {
         name:"Heartfelt <3",
         bday:20230207,
-        tags:["love","pink","user","jellobubble"],
+        tags:["love","pink","user","jellobubble","bp1"],
         frames:2,
         delay:13,
         colour:"#fb9ca6",
@@ -179,7 +179,7 @@ const styleProps = {
     '0246-heartflowergrass': {
         name:"Love is in bloom",
         bday:20230207,
-        tags:["love","nature","user","mikey"],
+        tags:["love","nature","user","mikey","bp1"],
         frames:2,
         delay:20,
         colour:"#f15e58",
@@ -192,7 +192,7 @@ const styleProps = {
     '0239-heartmessage': {
         name:"Message for u!",
         bday:20230207,
-        tags:["love","reaction","pink","user","pawpr1nc3"],
+        tags:["love","reaction","pink","user","pawpr1nc3","bp1"],
         frames:2,
         delay:20,
         colour:"#d60016",
@@ -205,7 +205,7 @@ const styleProps = {
     '0246-heartflowergrass': {
         name:"Love is in bloom",
         bday:20230207,
-        tags:["love","nature","user","mikey"],
+        tags:["love","nature","user","mikey","bp1"],
         frames:2,
         delay:20,
         colour:"#f15e58",
@@ -218,7 +218,7 @@ const styleProps = {
     '0252-heartpair': {
         name:"ily dear",
         bday:20230207,
-        tags:["love","user","vexel"],
+        tags:["love","user","vexel","bp1"],
         frames:2,
         delay:20,
         colour:"#e91e63",
@@ -231,7 +231,7 @@ const styleProps = {
     '0257-dollcoupleheart': {
         name:"I  ♥  My  Boy",
         bday:20230207,
-        tags:["love","amy"],
+        tags:["love","amy","bp1"],
         frames:2,
         delay:20,
         colour:"#ffffff",
@@ -244,7 +244,7 @@ const styleProps = {
     '0244-redlips': {
         name:"Read My Lips",
         bday:20230207,
-        tags:["love","user","jay"],
+        tags:["love","user","jay","bp1"],
         frames:2,
         delay:10,
         colour:"#ff9d9d",

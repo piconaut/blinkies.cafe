@@ -19,7 +19,7 @@ The module is released in the public npm registry and can be installed by
 running:
 
 ```
-npm install --save diagnostics
+npm install --save @dabh/diagnostics
 ```
 
 ## Usage
@@ -47,7 +47,7 @@ npm install --save diagnostics
 
 ### Introduction
 
-To create a new logger simply `require` the `diagnostics` module and call
+To create a new logger simply `require` the `@dabh/diagnostics` module and call
 the returned function. It accepts 2 arguments:
 
 1. `namespace` **Required** This is the namespace of your logger so we know if we need to
@@ -62,8 +62,8 @@ the returned function. It accepts 2 arguments:
      option to `false` to disable it.
 
 ```js
-const debug = require('diagnostics')('foo:bar:baz');
-const debug = require('diagnostics')('foo:bar:baz', { options });
+const debug = require('@dabh/diagnostics')('foo:bar:baz');
+const debug = require('@dabh/diagnostics')('foo:bar:baz', { options });
 
 debug('this is a log message %s', 'that will only show up when enabled');
 debug('that is pretty neat', { log: 'more', data: 1337 });
@@ -102,7 +102,7 @@ of past log messages, and output those when an uncaught exception happens in
 your application so you have additional context
 
 ```js
-const diagnostics = require('diagnostics');
+const diagnostics = require('@dabh/diagnostics');
 
 let index = 0;
 const limit = 200;
@@ -133,7 +133,7 @@ queue of all debug messages that can be referenced when your application crashes
 
 #### Production and development builds
 
-When you `require` the `diagnostics` module you will be given a logger that is
+When you `require` the `@dabh/diagnostics` module you will be given a logger that is
 optimized for `development` so it can provide the best developer experience
 possible.
 
@@ -149,7 +149,7 @@ messages in production. You can `force` the debugger to be enabled, and
 supply a [custom logger](#loggers).
 
 ```js
-const diagnostics = require('diagnostics');
+const diagnostics = require('@dabh/diagnostics');
 const debug = debug('foo:bar', { force: true });
 
 //
@@ -197,7 +197,7 @@ The returned logger will have a `.enabled` property assigned to it. This boolean
 can be used to check if the logger was enabled:
 
 ```js
-const debug = require('diagnostics')('foo:bar');
+const debug = require('@dabh/diagnostics')('foo:bar');
 
 if (debug.enabled) {
   //
@@ -216,7 +216,7 @@ This property is exposed as:
 This is the namespace that you originally provided to the function.
 
 ```js
-const debug = require('diagnostics')('foo:bar');
+const debug = require('@dabh/diagnostics')('foo:bar');
 
 console.log(debug.namespace); // foo:bar
 ```
@@ -235,7 +235,7 @@ The `dev` and `prod` booleans on the returned logger indicate if you have a
 production or development version of the logger.
 
 ```js
-const debug = require('diagnostics')('foo:bar');
+const debug = require('@dabh/diagnostics')('foo:bar');
 
 if (debug.prod) {
   // do stuff
@@ -260,7 +260,7 @@ want. It receives 2 arguments:
 2. `args` An array of the log messages that needs to be written.
 
 ```js
-const debug = require('diagnostics')('foo:more:namespaces');
+const debug = require('@dabh/diagnostics')('foo:more:namespaces');
 
 debug.use(function logger(meta, args) {
   console.log(meta);
@@ -285,7 +285,7 @@ message after modification. The function receives 2 arguments:
    initially created.
 
 ```js
-const debug = require('diagnostics')('example:modifiers');
+const debug = require('@dabh/diagnostics')('example:modifiers');
 
 debug.modify(function (message, options) {
   return messages;
@@ -307,7 +307,7 @@ should be a function returns a boolean that indicates if the passed in
 `namespace` is allowed to write log messages.
 
 ```js
-const diagnostics = require('diagnostics');
+const diagnostics = require('@dabh/diagnostics');
 const debug = diagnostics('foo:bar');
 
 debug.use(function (namespace) {
@@ -335,7 +335,7 @@ For example, you want the messages to be prefixed with the date-time of when
 the log message occured:
 
 ```js
-const diagnostics = require('diagnostics');
+const diagnostics = require('@dabh/diagnostics');
 
 diagnostics.modify(function datetime(args, options) {
   args.unshift(new Date());
@@ -378,9 +378,9 @@ will receive the `namespace` of a logger as argument and it should return a
 boolean that indicates if that logger should be enabled or not.
 
 ```js
-const debug = require('diagnostics')('example:namespace');
+const debug = require('@dabh/diagnostics')('example:namespace');
 
-debug.adapter(require('diagnostics/adapters/localstorage'));
+debug.adapter(require('@dabh/diagnostics/adapters/localstorage'));
 ```
 
 The modifiers are only enabled for `development`. The following adapters are

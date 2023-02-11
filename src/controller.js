@@ -4,10 +4,12 @@ const fs = require("fs");
 const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./blinkieData.js');
 const fontData    = require('./fontData.js');
-const blacklist   = require('./blacklist.js') ?? {ips: [], words: []};
 const logger      = require('./logger.js').logger;
 const sanitize    = require('./sanitize.js');
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
+let blacklist = {ips: [], words: []};
+try { blacklist = require('./blacklist.js'); }
+catch { console.log('blacklist.js not found; using empty lists'); }
 
 function makeid(length) {
     var result           = '';

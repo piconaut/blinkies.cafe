@@ -3,8 +3,8 @@ const fs       = require("fs");
 const util     = require('util');
 const execFile = util.promisify(require('child_process').execFile);
 const exec     = util.promisify(require('child_process').exec);
-const blinkieData = require('./blinkieData.js')
-const fontData    = require('./fontData.js')
+const blinkieData = require('./data/blinkieData.js')
+const fontData    = require('./data/fontData.js')
 const logger      = require('./logger.js').logger
 
 function replaceChars(str) {

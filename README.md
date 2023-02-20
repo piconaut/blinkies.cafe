@@ -12,18 +12,20 @@
 - *logs/*: Usage logs created during runtime.
 - [public/](public/): Files that are provided statically (as-is).
     - [blinkies-public/display/](public/blinkies-public/display/): Examples of generate-able blinkies. File-names must correspond to the equivalent generator in [blinkieData.js](src/server/blinkieData.js).
-      - [archive/](public/blinkies-public/display/archive/): Examples of blinkies the generators are based on, displayed on [blinkies.cafe/archive](https://blinkies.cafe/archive).
+        - [archive/](public/blinkies-public/display/archive/): Examples of blinkies the generators are based on, for [blinkies.cafe/archive](https://blinkies.cafe/archive).
     - [static/](public/static/): Static files for use in the HTML. CSS, client-side Javascript, favicons and non-blinkie images.
     - [txt/](public/txt/): Public text files.
 - [src/](src/): Server-side scripts.
+    - [data/](data/)
+        - [blinkieData.js](src/data/blinkieData.js): Blinkie template data used to generate blinkies.
+        - [fontData.js](src/data/fontData.js): Script that contains font data.
+        - [subData.js](src/data/subData.js): Data for crediting template submitters.
     - [gen/gen-blinkie.sh](src/gen/gen-blinkie.sh): (Legacy) Bash script to generate blinkies
-    - [blinkieData.js](src/server/blinkieData.js): Data about available blinkie generators.
-    - [blinkiegen.js](src/server/blinkiegen.js): Script to generate blinkies!
-    - [controller.js](src/server/controller.js): Script with serve functions, for use in [routes.js](src/server/routes.js).
-    - [fontData.js](src/server/fontData.js): Script that contains font data.
-    - [logger.js](src/server/logger.js): Script for logging.
-    - [routes.js](src/server/routes.js): Script that handles Express routing (serving static files, setting /api/ routes etc)
-    - [sanitize.js](src/server/sanitize.js): Functions for sanitizing strings, for use in other scripts.
+    - [blinkiegen.js](src/blinkiegen.js): Script to generate blinkies!
+    - [controller.js](src/controller.js): Script with serve functions, for use in [routes.js](src/routes.js).
+    - [logger.js](src/logger.js): Script for logging.
+    - [routes.js](src/routes.js): Script that handles Express routing (serving static files, setting /api/ routes etc)
+    - [sanitize.js](src/sanitize.js): Functions for sanitizing strings, for use in other scripts.
 - [views/pages/](views/pages/): .ejs files & .txt files for generating HTML.
     - [blog/](views/pages/blog/): .ejs files for blog posts.
     - [components/](views/pages/components/): .html files to include in other templates/views.

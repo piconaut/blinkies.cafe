@@ -9,6 +9,7 @@ const sanitize = require('./sanitize.js');
 router.get("/", controller.serveCafe);
 router.get("/pour", controller.servePour);
 router.get("/archive", controller.serveArchive);
+router.get("/submitters", controller.serveSubmitters);
 router.get("/feed", controller.serveFeed);
 router.get("/wall", controller.serveWall);
 router.get("/blog", function(req,res){

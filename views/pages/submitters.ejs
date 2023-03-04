@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>blinkie template submitters</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="theme-color" content="#4e3075">
+</head>
+<body>
+    <div id='banner' class='content'>
+    blinkies.cafe
+    </div>
+    <div id='navbar' class='content'>
+        <a href='/'>generator</a> | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
+    </div><hr>
+<div class='content'>
+    <h1>blinkie template submitters</h1>
+</div>
+<div class='content'>
+    <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
+        <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
+        click a blinkie to customize c:<br><br>
+<%
+            const blinkieExt = freeze ? 'png' : 'gif'
+            for (const [subID, subData] of Object.entries(submitters)) {
+%>
+                <h2><a href="<%=subData.subURL%>"><%-subData.subName%></a></h2><br>
+<%              
+                for (const key of subData.templates) {
+%>
+                    <a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=key%> blinkie" loading="lazy" class="blinkie blinkieTile"></a>
+<%
+                }
+%>
+                <br><br><hr><br><br>
+<%        
+            }   
+%>
+    </div>
+</div>
+<%- include('components/footer.html') %>
+<script src='/wall.js' type='module'></script>
+</body>
+</html>

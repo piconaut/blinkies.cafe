@@ -3,6 +3,7 @@ const fs = require("fs");
 
 const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./data/blinkieData.js');
+const subData     = require('./data/subData.js');
 const fontData    = require('./data/fontData.js');
 const logger      = require('./logger.js').logger;
 const sanitize    = require('./sanitize.js');
@@ -10,6 +11,13 @@ const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 let blacklist = {ips: [], words: []};
 try { blacklist = require('./data/blacklist.js'); }
 catch { console.log('blacklist.js not found; using empty lists'); }
+
+function sortObj(obj) {
+    return Object.keys(obj).sort().reduce(function (result, key) {
+      result[key] = obj[key];
+      return result;
+    }, {});
+}
 
 function makeid(length) {
     var result           = '';
@@ -137,6 +145,22 @@ const serveArchive = function (req, res) {
     });
 }
 
+let submitters = sortObj(subData.submitters);
+for (let [styleKey, styleData] of Object.entries(blinkieData.styleProps)) {
+    if (!styleData.sub) submitters['amy'].templates.push(styleKey);
+    else if (styleData.sub in subData.submitters) 
+        submitters[styleData.sub].templates.push(styleKey);
+}
+
+const serveSubmitters = function (req, res) {
+    const freeze = Boolean(req.query.freeze);
+    res.render('pages/submitters.ejs', {
+        freeze: freeze,
+        submitters: submitters,
+        styleList: blinkieData.styleList
+    });
+}
+
 const serveBlinkie = function (req, res) {
     let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {
@@ -239,6 +263,7 @@ module.exports = {
     serveSourceList,
     serveStyleList,
     serveArchive,
+    serveSubmitters,
     pourBlinkie,
     servePour,
     serveFeed,

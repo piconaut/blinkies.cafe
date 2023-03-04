@@ -1,4 +1,4 @@
-const styleProps = {
+let styleProps = {
     '0242-loveletter': {
         name:"Love Letter",
         bday:20230207,
@@ -10,8 +10,7 @@ const styleProps = {
         font: "pixelpoiiz",
         fontsize:10,
         x:-12, y:0,
-        subName:"Socks",
-        subURL:"https://umicoon.tumblr.com/"
+        sub:"socks"
     },
     '0238-heartsconnected': {
         name:"Secret Soulmates",
@@ -23,8 +22,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-1, y:0,
-        subName:"jean",
-        subURL:"https://dilftwink.tumblr.com/"
+        sub:"jean"
     },
     '0245-pikachuhearts': {
         name:"I pika-choose you!",
@@ -37,8 +35,7 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:-2, y:0,
-        subName:"Crow",
-        subURL:"https://crowpunk.neocities.org/"
+        sub:"crow"
     },
     '0256-transparentpastelbubbles': {
         name:"bubbly 4 u!",
@@ -65,8 +62,7 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:-14, y:0,
-        subName:"Crow",
-        subURL:"https://crowpunk.neocities.org/"
+        sub:"crow"
     }, 
     '0251-pastelpinkbutterfly': {
         name:"butterfly kisses",
@@ -78,8 +74,7 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:8, y:1,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/",
+        sub:"pawpr1nc3",
         sourceName:"pawpr1nc3.tumblr.com",
         sourceURL:"https://pawpr1nc3.tumblr.com/post/701914101543239680/butterfly-blinkies"
     },
@@ -93,8 +88,7 @@ const styleProps = {
         font:"rainyhearts",
         fontsize:16,
         x:7, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3",
     },
     '0255-glowinghearts': {
         name:"Lovecore Lover",
@@ -106,8 +100,7 @@ const styleProps = {
         font: "digitaldisco",
         fontsize:16,
         x:-2, y:-1,
-        subName:"Jay",
-        subURL:"https://lacefuneral.tumblr.com/"
+        sub:"jay"
     },
     '0250-redbouncyhearts': {
         name:"Lovestruck",
@@ -119,8 +112,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-1, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3",
     },
     '0249-beatinghearts': {
         name:"ドキドキ !",
@@ -132,8 +124,7 @@ const styleProps = {
         font: "lanapixel",
         fontsize:11,
         x:-1, y:-1,
-        subName:"anonymous",
-        subURL:""
+        sub:"anonymous"
     },
     '0248-lipsrosesparkle': {
         name:"mwah!",
@@ -146,8 +137,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-2, y:0,
-        subName:"fren-z",
-        subURL:""
+        sub:"frenz"
     },
     '0254-strawberrygradient': {
         name:"hopeful romantic",
@@ -160,8 +150,7 @@ const styleProps = {
         font: "pixelpoiiz",
         fontsize:10,
         x:-1, y:0,
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsu.me/"
+        sub:"proxy"
     },
     '0247-pinkheart': {
         name:"Heartfelt <3",
@@ -173,8 +162,7 @@ const styleProps = {
         font: "lanapixel",
         fontsize:11,
         x:-7, y:-1,
-        subName:"JelloBubble",
-        subURL:"https://www.tumblr.com/blog/jellobubblelol"
+        sub:"jellobubble"
     },
     '0246-heartflowergrass': {
         name:"Love is in bloom",
@@ -186,8 +174,7 @@ const styleProps = {
         font:"rainyhearts",
         fontsize:16,
         x:-7, y:0,
-        subName:"Mikey",
-        subURL:"https://shiroganes.neocities.org/"
+        sub:"mikey"
     },  
     '0239-heartmessage': {
         name:"Message for u!",
@@ -199,8 +186,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:7, y:1,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3",
     },  
     '0246-heartflowergrass': {
         name:"Love is in bloom",
@@ -212,8 +198,7 @@ const styleProps = {
         font:"rainyhearts",
         fontsize:16,
         x:-7, y:0,
-        subName:"Mikey",
-        subURL:"https://shiroganes.neocities.org/"
+        sub:"mikey"
     },
     '0252-heartpair': {
         name:"ily dear",
@@ -225,8 +210,7 @@ const styleProps = {
         font:"rainyhearts",
         fontsize:16,
         x:-7, y:0,
-        subName:"Vexel",
-        subURL:"https://www.tumblr.com/theboardmood"
+        sub:"vexel"
     },
     '0257-dollcoupleheart': {
         name:"I  ♥  My  Boy",
@@ -251,8 +235,7 @@ const styleProps = {
         font:"moonaco",
         fontsize:16,
         x:-1, y:0,
-        subName:"Jay",
-        subURL:"https://lacefuneral.tumblr.com/"
+        sub:"jay"
     },
     '0241-redpulse': {
         name:"*.*. Red Pulse .*.*",
@@ -288,8 +271,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:8, y:1,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3",
     },    
     '0235-rainbowstar': {
         name:"S I L L Y  !!",
@@ -301,8 +283,7 @@ const styleProps = {
         font: "fipps",
         fontsize:8,
         x:9, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },
     '0237-purplestars': {
         name:"supah star",
@@ -315,8 +296,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-1, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },   
     '0234-mbavdoublenegativeangeldevil': {
         name:"Double Negative",
@@ -329,8 +309,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0233-mbav3cheersforevil': {
         name:"3 Cheers for Evil",
@@ -342,8 +321,7 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0232-mbavblooddrivenurse': {
         name:"Blood Drive &",
@@ -355,8 +333,7 @@ const styleProps = {
         font: "hydratinglip",
         fontsize:13,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0231-treeforest': {
         name:"Forest Walker",
@@ -371,8 +348,7 @@ const styleProps = {
         x:-20, y:-1,
         sourceName:"kotatsuOS",
         sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0230-plantpot': {
         name:"growing",
@@ -384,8 +360,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:5, y:1,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },
     '0227-birds': {
         name:"Keeping afloat",
@@ -397,8 +372,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:-1, y:1,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },
     '0223-yandere': {
         name:"D A R L I N G",
@@ -410,8 +384,7 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:0, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },
     '0228-pinkdrip': {
         name:"love me love me love me love me lov",
@@ -434,8 +407,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-1, y:0,
-        subName:"omfg.neocities.org",
-        subURL:"https://omfg.neocities.org/graphics.html",
+        sub:"omfg",
         sourceName:"omfg.neocities.org",
         sourceURL:"https://omfg.neocities.org/graphics.html",
     },
@@ -450,8 +422,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0224-raincloud': {
         name:"Cloudy...",
@@ -463,8 +434,7 @@ const styleProps = {
         font: "pixelpoiiz",
         fontsize:10,
         x:-1, y:0,
-        subName:"pawpr1nc3",
-        subURL:"https://pawpr1nc3.tumblr.com/"
+        sub:"pawpr1nc3"
     },
     '0225-softblue': {
         name:"First Snow",
@@ -477,8 +447,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0220-pills': {
         name:"TAKE YOUR MEDS",
@@ -490,8 +459,7 @@ const styleProps = {
         font: "04b_19",
         fontsize:14,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0222-construction': {
         name:"UNDER CONSTRUCTION",
@@ -503,8 +471,7 @@ const styleProps = {
         font: "hud",
         fontsize:5,
         x:-1, y:0,
-        subName:"omfg.neocities.org",
-        subURL:"https://omfg.neocities.org/graphics.html",
+        sub:"omfg",
         sourceName:"omfg.neocities.org",
         sourceURL:"https://omfg.neocities.org/graphics.html",
     },
@@ -524,15 +491,14 @@ const styleProps = {
     '0219-promare3': {
         name:"MAD BURNISH",
         bday:20221029,
-        tags:["fandom","user"],
+        tags:["fandom","user","proxy"],
         frames:6,
         delay:10,
         colour:["#fe9aa6","#ffb8a5","#fddea1","#fdec9f","#fddea1","#ffb8a5"],
         font: "alagard",
         fontsize:16,
         x:-1, y:-1,
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0218-promare2': {
         name:"MAD BURNISH",
@@ -544,8 +510,7 @@ const styleProps = {
         font: "alagard",
         fontsize:16,
         x:-1, y:-1,
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0217-promare1': {
         name:"MAD BURNISH",
@@ -557,8 +522,7 @@ const styleProps = {
         font: "alagard",
         fontsize:16,
         x:-1, y:-1,
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0216-cinderella': {
         name:"Cinderella",
@@ -569,8 +533,7 @@ const styleProps = {
         font: "alagard",
         fontsize:16,
         x:-12, y:-1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0215-pridetransparent': {
         name:"{   Rainbow  Flag   }",
@@ -582,8 +545,7 @@ const styleProps = {
         font: "{pixelflag}",
         fontsize:16,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0214-rainbowtransparent': {
         name:"{   Rainbow  Banner   }",
@@ -595,8 +557,7 @@ const styleProps = {
         font: "{pixelflag}",
         fontsize:16,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0206-nyancat': {
         name:"Nyan Nyan Nyan",
@@ -610,6 +571,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:14, y:1,
+        sub:"anakin",
         subName:"nyan.cat",
         subURL:"https://nyan.cat/"
     },
@@ -636,8 +598,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-1, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0213-gradientorange': {
         name:"Jumpsuit Orange",
@@ -653,8 +614,7 @@ const styleProps = {
         x:-1, y:0,
         sourceName:"kotatsuOS",
         sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0212-gradientblue': {
         name:"Core Blue",
@@ -670,8 +630,7 @@ const styleProps = {
         x:-1, y:0,
         sourceName:"kotatsuOS",
         sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0211-ghostorange': {
         name:"BOO!!! hehe",
@@ -685,8 +644,7 @@ const styleProps = {
         x:-1, y:-1,
         sourceName:"geocities.com/sunshinetb",
         sourceURL:"https://web.archive.org/web/20090729062429/http://geocities.com/sunshinetb/",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0210-werewolfmoonhowl': {
         name:"Awoooooooooooo",
@@ -700,8 +658,7 @@ const styleProps = {
         x:-18, y:-1,
         sourceName:"geocities.com/ville_valo_gaze",
         sourceURL:"https://web.archive.org/web/20091027094634/http://geocities.com/ville_valo_gaze/index2.html",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0207-happybirthdayblinkiescafe': {
         name:"blinkies.cafe turns 1yo!!",
@@ -748,8 +705,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:-14, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0202-pinterestlogo': {
         name:"Pinterest",
@@ -761,8 +717,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:-13, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0201-twitterlogo': {
         name:"Twitter",
@@ -774,8 +729,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0200-tumblrlogo': {
         name:"Tumblr",
@@ -787,8 +741,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:-8, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0199-instagramlogo': {
         name:"Instagram",
@@ -800,8 +753,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0196-browndog': {
         name:"I love my doggie!",
@@ -813,8 +765,7 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:10, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0194-pleadingemoji': {
         name:"prommy?",
@@ -828,8 +779,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"kotatsuOS",
         sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0193-topsurgery': {
         name:"top surgery :D",
@@ -854,8 +804,7 @@ const styleProps = {
         x:-10, y:-1,
         sourceName:"kotatsuOS",
         sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
+        sub:"proxy"
     },
     '0197-gray': {
         name:"Gray Scale",
@@ -868,8 +817,7 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0192-forgetmenotflower': {
         name:"forget-me-not",
@@ -881,8 +829,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:3, y:0,
-        subName:"omfg.neocities.org",
-        subURL:"https://omfg.neocities.org/graphics.html",
+        sub:"omfg",
         sourceName:"omfg.neocities.org",
         sourceURL:"https://omfg.neocities.org/graphics.html",
     },
@@ -896,8 +843,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-2, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0190-hittingfloor': {
         name:"FUCK MY LIFE!",
@@ -909,8 +855,7 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:10, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0187-transparentsparkle': {
         name:"bro ur sparkling",
@@ -938,8 +883,7 @@ const styleProps = {
         x:-11, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/695577961850716160/havin-a-whale-of-a-time-blinkie-x",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0186-angelsmiley': {
         name:"me? naughty? neverr",
@@ -965,8 +909,7 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0179-kittencry': {
         name:"want  kibbles...",
@@ -989,8 +932,7 @@ const styleProps = {
         font: "infernalda",
         fontsize:16,
         x:-1, y:-1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0184-pastelpinkrainbow': {
         name:"Strawberry Sundae",
@@ -1002,8 +944,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0183-pastelpinkwings': {
         name:"Pastel Angel",
@@ -1015,8 +956,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com"
+        sub:"anakin"
     },
     '0185-pinkglow': {
         name:"blushing so hard rn",
@@ -1041,8 +981,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694800057080397824/confetti-blinkies-customizable-at-blinkiescafe"
+        sub:"anakin"
     },
     '0181-confetti': {
         name:"Congratulations!!",
@@ -1055,8 +994,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694800057080397824/confetti-blinkies-customizable-at-blinkiescafe"
+        sub:"anakin"
     },
     '0178-mikuwink2': {
         name:"Miku fan!!",
@@ -1069,8 +1007,7 @@ const styleProps = {
         x:-29, y:0,
         sourceName:"amy",
         sourceURL:"https://graphics-cafe.tumblr.com/post/694303798997450752/hatsune-miku-blinkie-when",
-        subName:"amy",
-        subURL:"https://graphics-cafe.tumblr.com/post/694303798997450752/hatsune-miku-blinkie-when"
+        sub:"amy"
     },
     '0160-pupgender': {
         name:"pupgender pride",
@@ -1095,8 +1032,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still"
+        sub:"anakin"
     },
     '0176-splatoonoctolinggreen': {
         name:"octolicious",
@@ -1110,8 +1046,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still"
+        sub:"anakin"
     },
     '0175-splatoonoctolingorange': {
         name:"octo time :)",
@@ -1125,8 +1060,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694020743961477120/maybe-an-octoling-themed-blinkie-if-youre-still"
+        sub:"anakin"
     },
     '0174-hal9000': {
         name:"I'm sorry Dave, I'm afraid I can't do that.",
@@ -1141,8 +1075,7 @@ const styleProps = {
         x:11, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/694114782231543808/may-i-have-hal-9000-blinkie-maybe",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/694114782231543808/may-i-have-hal-9000-blinkie-maybe"
+        sub:"anakin"
     },
     '0173-dollbrowneyes': {
         name:"bishoujo",
@@ -1156,8 +1089,7 @@ const styleProps = {
         x:-15, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/692050960945643520/any-blinkie-with-eyes-on-it-recolored-to-be-dark",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/692050960945643520/any-blinkie-with-eyes-on-it-recolored-to-be-dark"
+        sub:"anakin"
     },
     '0172-rainbowequalizer': {
         name:"SCENE KID!",
@@ -1169,8 +1101,7 @@ const styleProps = {
         font: "digitaldisco",
         fontsize:16,
         x:0, y:-1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0171-jerma': {
         name:"JERMA985",
@@ -1185,8 +1116,7 @@ const styleProps = {
         shadowx:1,shadowy:1,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/692090999396286464/jerma985-blinkie",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/post/692090999396286464/jerma985-blinkie"
+        sub:"anakin"
     },
     '0142-virusgender': {
         name:"i'm a virus",
@@ -1210,7 +1140,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"amy",
+        sub:"amy",
     },
     '0169-topsurgery': {
         name:"top surgery :D",
@@ -1280,8 +1210,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"ceoofcrimes.tumblr.com",
-        subURL:"https://ceoofcrimes.tumblr.com/"
+        sub:"ceoofcrimes"
     },
     '0152-honeyslime': {
         name:"sweet as honey",
@@ -1295,8 +1224,7 @@ const styleProps = {
         x:-1, y:0,
         sourceName:"Cackle",
         sourceURL:"https://otigan.tumblr.com/post/691942460873752576/honey-slime-blinkie-i-made-i-was-planning-on",
-        subName:"otigan.tumblr.com",
-        subURL:"https://otigan.tumblr.com/post/691942460873752576/honey-slime-blinkie-i-made-i-was-planning-on"
+        sub:"otigan"
     },
     '0166-finfin': {
         name:"fin fin come see him",
@@ -1312,8 +1240,7 @@ const styleProps = {
         x:-14, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/692048902012256256/if-youre-taking-requests-can-i-ask-for-saw",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0167-saw': {
         name:"GAS GAS GAS",
@@ -1326,8 +1253,7 @@ const styleProps = {
         x:2, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/692048902012256256/if-youre-taking-requests-can-i-ask-for-saw",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0165-jennifersbody': {
         name:"I am a god",
@@ -1361,8 +1287,7 @@ const styleProps = {
         x:-16, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/691687344328278016/got-any-gator-blinkies",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0138-greenglow': {
         name:"I Glow in the Dark",
@@ -1411,8 +1336,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0158-toonup': {
         name:"i love toon-up",
@@ -1425,8 +1349,7 @@ const styleProps = {
         x:2, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0157-toonzap': {
         name:"i love zap gags",
@@ -1439,8 +1362,7 @@ const styleProps = {
         x:-4, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0156-toonlure': {
         name:"i love lure",
@@ -1453,8 +1375,7 @@ const styleProps = {
         x:-3, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0155-toondrop': {
         name:"i love drop gags",
@@ -1467,8 +1388,7 @@ const styleProps = {
         x:-3, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0154-toonsound': {
         name:"i love sound",
@@ -1481,8 +1401,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0153-toonsquirt': {
         name:"i love squirt",
@@ -1495,8 +1414,7 @@ const styleProps = {
         x:4, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690811856702537728/toontown-blinkieee",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0151-toonthrow': {
         name:"i love throw",
@@ -1507,8 +1425,7 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:-2, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0148-kirbyswim': {
         name:"just keep swimming",
@@ -1526,8 +1443,7 @@ const styleProps = {
         x:-12, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0147-kirbywalk': {
         name:"im walkin here!!!",
@@ -1542,8 +1458,7 @@ const styleProps = {
         x:-10, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0146-kirbydance': {
         name:"best buds",
@@ -1558,8 +1473,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690676255778013184/hiiii-can-i-request-a-kirby-blinkie-o",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0145-kirbysquish': {
         name:"ow ow ow",
@@ -1572,8 +1486,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0144-pokeball': {
         name:"I choose you!! <3",
@@ -1630,8 +1543,7 @@ const styleProps = {
         x:11, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690627332242817024/ty-logo-is-alright-anything-themed-im-alright",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0135-pinkiepie': {
         name:"Pinkie Pie",
@@ -1642,8 +1554,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-3, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0134-fluttershy': {
         name:"Fluttershy",
@@ -1654,8 +1565,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-3, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0133-applejack': {
         name:"Applejack",
@@ -1666,8 +1576,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-3, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0132-rainbowdash': {
         name:"Rainbow Dash",
@@ -1678,8 +1587,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-3, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0131-rarity': {
         name:"Rarity",
@@ -1692,8 +1600,7 @@ const styleProps = {
         x:-3, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690125890832728064/preview-of-some-mlp-blinkies-for-blinkiescafe",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0130-twilightsparkle': {
         name:"Twilight Sparkle",
@@ -1706,8 +1613,7 @@ const styleProps = {
         x:-3, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/690125890832728064/preview-of-some-mlp-blinkies-for-blinkiescafe",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0129-splatoon3': {
         name:"Splatoon 3",
@@ -1721,8 +1627,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0128-splatoon2': {
         name:"Splatoon 2",
@@ -1736,8 +1641,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0127-splatoon1': {
         name:"Splatoon!",
@@ -1751,8 +1655,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/687807968388022272/custom-splatoon-blinkies",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0126-slime': {
         name:"slime girl",
@@ -1804,9 +1707,7 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0122-hsbreath': {
         name:"heir of breath",
@@ -1817,8 +1718,7 @@ const styleProps = {
         colour:["#10e0ff","#10e0ff"],
         font: "monogramextended",
         fontsize:16,
-        x:-14, y:1,
-        sourceName:"me :)"
+        x:-14, y:1
     },
     '0121-blinkiescafe': {
         name:"blinkies.cafe <3",
@@ -1829,8 +1729,7 @@ const styleProps = {
         colour:["#ff7eff","#ff7eff"],
         font: "monogramextended",
         fontsize:16,
-        x:-8, y:1,
-        sourceName:"me :)"
+        x:-8, y:1
     },
     '0120-starofdavid': {
         name:"Star of David",
@@ -1857,8 +1756,7 @@ const styleProps = {
         x:0, y:0,
         sourceName:"summalovinsweetie",
         sourceURL:"https://web.archive.org/web/20091027141703/http://geocities.com/summalovinsweetie/Blinkies.html",
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0118-rubberducky': {
         name:"YOU QUACK ME UP!",
@@ -1873,8 +1771,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:13, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com"
     },
@@ -1899,8 +1796,7 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:-9, y:0,
-        sourceName:"me :)"
+        x:-9, y:0
     },
     '0115-alpinelinux': {
         name:"runs on alpine",
@@ -1910,8 +1806,7 @@ const styleProps = {
         colour:["#0d597f","#0d597f"],
         font: "digitaldisco",
         fontsize:16,
-        x:-12, y:0,
-        sourceName:"me :)"
+        x:-12, y:0
     },
     '0114-tbh': {
         name:"autism!",
@@ -1921,8 +1816,7 @@ const styleProps = {
         colour:["#000000","#000000","#000000"],
         font: "grapesoda",
         fontsize:16,
-        x:8, y:0,
-        sourceName:"me :)"
+        x:8, y:0
     },
     '0113-autism': {
         name:"Autism!",
@@ -1945,8 +1839,7 @@ const styleProps = {
         font: "fipps",
         fontsize:8,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/686817611732893696/transbro-custom-peeps-blinkie"
     },
@@ -1986,8 +1879,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0108-crewmate': {
         name:"happy pride!!",
@@ -1999,8 +1891,7 @@ const styleProps = {
         font: "04b_19",
         fontsize:14,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/685846435983507456/happy-bday-gay-people"
     },
@@ -2014,8 +1905,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0106-vicioussmiley': {
         name:"AT MY FUCKING LIMIT",
@@ -2027,8 +1917,7 @@ const styleProps = {
         font: "doublehomicide",
         fontsize:16,
         x:-9, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"Anakin's Place",
         sourceURL:"https://transbro.tumblr.com/post/685724384549289984"
     },
@@ -2042,8 +1931,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0104-redsnowflake': {
         name:"Winter",
@@ -2067,8 +1955,7 @@ const styleProps = {
         font: "pixeloid sans",
         fontsize:9,
         x:-10, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"lowpolygirls",
         sourceURL:"https://vaarwelentotmorgen.neocities.org/aboutme.html"
     },
@@ -2139,8 +2026,7 @@ const styleProps = {
         font: "04b03",
         fontsize:8,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"pixel_addict09",
         sourceURL:"https://web.archive.org/web/20091027121122fw_/http://www.geocities.com/pixel_addict09/blinkies.html"
     },
@@ -2153,8 +2039,7 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0095-tinycats': {
         name:"my cat made me do it",
@@ -2256,8 +2141,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0087-demisexual': {
         name:"demisexual pride",
@@ -2270,8 +2154,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0083-demiromantic': {
         name:"demiromantic pride",
@@ -2284,8 +2167,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0082-aromantic': {
         name:"aromantic pride",
@@ -2298,8 +2180,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0081-asexual': {
         name:"asexual pride",
@@ -2312,8 +2193,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0080-genderfluid': {
         name:"genderfluid pride",
@@ -2326,8 +2206,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0079-nonbinary': {
         name:"non-binary pride",
@@ -2340,8 +2219,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0078-intersex': {
         name:"intersex pride",
@@ -2353,8 +2231,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:-12, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0077-demiboy': {
         name:"demiboy pride",
@@ -2366,8 +2243,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0076-demigirl': {
         name:"demigirl pride",
@@ -2379,8 +2255,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0075-demigender': {
         name:"demigender pride",
@@ -2392,8 +2267,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0074-pan': {
         name:"pan pride",
@@ -2405,8 +2279,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0073-gay': {
         name:"gay pride",
@@ -2419,8 +2292,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0072-lesbian': {
         name:"lesbian pride",
@@ -2433,8 +2305,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0071-bi': {
         name:"bi pride",
@@ -2447,8 +2318,7 @@ const styleProps = {
         fontweight:"bold",
         fontsize:9,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/"
+        sub:"anakin"
     },
     '0023-trans-pride': {
         name:"this user is trains",
@@ -2459,8 +2329,7 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0014-pride': {
         name:"kinda gay tbh...",
@@ -2472,8 +2341,7 @@ const styleProps = {
         font: "pixeloid sans",
         fontweight:"bold",
         fontsize:9,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0088-cow': {
         name:"happy MOO 2 U !!!",
@@ -2497,8 +2365,7 @@ const styleProps = {
         colour:["#350b47","#350b47"],
         font: "rainyhearts",
         fontsize:16,
-        x:-15, y:0,
-        sourceName:"me :)"
+        x:-15, y:0
     },
     '0085-dolleyes': {
         name:"i luv boyz!",
@@ -2550,7 +2417,6 @@ const styleProps = {
         font: "green screen",
         fontsize:12,
         x:0, y:0,
-        sourceName:"me :)",
     },
     '0067-moonstars': {
         name:"werewolf",
@@ -2587,8 +2453,7 @@ const styleProps = {
         font: "lanapixel",
         fontsize:11,
         x:-15, y:-1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"sebray03",
         sourceURL:"https://web.archive.org/web/20091022142333/http://geocities.com/sebray03/blinkies4.htm"
     },
@@ -2602,8 +2467,7 @@ const styleProps = {
         font: "grapesoda",
         fontsize:16,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/676575313583570944"
     },
@@ -2617,8 +2481,7 @@ const styleProps = {
         font: "{pixelflag}",
         fontsize:16,
         x:-10, y:-1,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"sebray03",
         sourceURL:"https://web.archive.org/web/20091022105418/http://geocities.com/sebray03/blinkies1.htm"
     },
@@ -2632,8 +2495,7 @@ const styleProps = {
         font: "04b03",
         fontsize:8,
         x:0, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/672490960396173312"
     },
@@ -2647,8 +2509,7 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:11, y:0,
-        subName:"Anakin",
-        subURL:"https://transbro.tumblr.com/",
+        sub:"anakin",
         sourceName:"oldwww",
         sourceURL:"https://oldwww.tumblr.com/post/679395101729062912"
     },
@@ -2675,7 +2536,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
     },
     '0058-snail': {
         name:"dewdrop drinker /heart",
@@ -2698,8 +2558,7 @@ const styleProps = {
         colour:["#929292","#2ed73a"],
         font: "monogramextended",
         fontsize:16,
-        x:1, y:1,
-        sourceName:"me :)"
+        x:1, y:1
     },
     '0056-pirate': {
         name:"You came back.",
@@ -2751,7 +2610,6 @@ const styleProps = {
         font: "rainyhearts",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)",
     },
     '0044-hearts': {
         name:"Your Sweetness~!",
@@ -2773,8 +2631,7 @@ const styleProps = {
         colour:["#000000","#000000"],
         font: "monogramextended",
         fontsize:16,
-        x:0, y:1,
-        sourceName:"me :)"
+        x:0, y:1
     },
     '0039-staticrainbow': {
         name:"MAYDAY   MAYDAY   MAYDAY  ",
@@ -2785,8 +2642,7 @@ const styleProps = {
         colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
         font: "fipps",
         fontsize:8,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0037-aprilfools': {
         name:"APRIL FOOLS!",
@@ -2796,8 +2652,7 @@ const styleProps = {
         colour:["#ff0000","#ff6a00","#ffea00","#19ff00","#01a6ff","#c766ff","#c800ff","#ff00a6"],
         font: "pixel icons compilation",
         fontsize:13,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0038-exitbutton2': {
         name:"don't like, don't read",
@@ -2833,8 +2688,7 @@ const styleProps = {
         colour:["#000000","#000000"],
         font: "infernalda",
         fontsize:16,
-        x:0, y:-1,
-        sourceName:"me :)"
+        x:0, y:-1
     },
     '0034-skull': {
         name:"cyberbully",
@@ -2857,8 +2711,7 @@ const styleProps = {
         colour:["#d0d0d0","#d0d0d0"],
         font: "monogramextended",
         fontsize:16,
-        x:-1, y:1,
-        sourceName:"me :)"
+        x:-1, y:1
     },
     '0052-cancer': {
         name:"YOU ARE DEAD TO ME",
@@ -2868,8 +2721,7 @@ const styleProps = {
         colour:["#000000","#000000"],
         font: "monogramextended",
         fontsize:16,
-        x:0, y:1,
-        sourceName:"me :)"
+        x:0, y:1
     },
     '0047-virgo': {
         name:"If Not Me Then Who",
@@ -2879,7 +2731,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0043-taurus': {
@@ -2890,7 +2741,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0042-aries': {
@@ -2901,7 +2751,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0033-confused': {
@@ -2938,8 +2787,7 @@ const styleProps = {
         shadow:["#888888","#888888"],
         font:"moonaco",
         fontsize:16,
-        x:-8, y:0,
-        sourceName:"me :)"
+        x:-8, y:0
     },
     '0030-catpaw': {
         name:"catboy  rights !!  :3",
@@ -2950,8 +2798,7 @@ const styleProps = {
         shadow:["#888888","#888888"],
         font:"moonaco",
         fontsize:16,
-        x:-8, y:0,
-        sourceName:"me :)"
+        x:-8, y:0
     },
     '0029-pinksparkle': {
         name:"!!! Bad Bitch !!!",
@@ -2988,7 +2835,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:-1, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0049-sagittarius': {
@@ -2999,7 +2845,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0048-libra': {
@@ -3010,7 +2855,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0046-leo': {
@@ -3021,7 +2865,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0045-scorpio': {
@@ -3032,7 +2875,6 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-1, y:0,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0041-aquarius': {
@@ -3043,7 +2885,6 @@ const styleProps = {
         font: "monogramextended",
         fontsize:16,
         x:0, y:1,
-        sourceName:"me :)",
         tags:["fandom","zodiac","amy"]
     },
     '0027-sakura': {
@@ -3054,8 +2895,7 @@ const styleProps = {
         colour:"#cc557f",
         font: "lanapixel",
         fontsize:11,
-        x:-1, y:-1,
-        sourceName:"me :)"
+        x:-1, y:-1
     },
     '0026-iheart2': {
         name:"my bf",
@@ -3066,8 +2906,7 @@ const styleProps = {
         shadow:["#888888","#888888","#888888","#888888"],
         font: "moonaco",
         fontsize:16,
-        x:-30, y:-1,
-        sourceName:"me :)"
+        x:-30, y:-1
     },
     '0025-birthdaycake': {
         name:"hbd ur old lmao",
@@ -3090,8 +2929,7 @@ const styleProps = {
         colour:["#800000","#800000"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0022-iheart': {
         name:"blinkies so much !!!",
@@ -3114,8 +2952,7 @@ const styleProps = {
         colour:["#d00000","#d00000","#ff0000","#d00000","#d00000","#ff0000","#ff0000","#ff0000"],
         font: "alagard",
         fontsize:16,
-        x:10, y:-1,
-        sourceName:"me :)"
+        x:10, y:-1
     },
     '0020-blinkiesCafe': {
         name:"blinkies.cafe",
@@ -3127,8 +2964,7 @@ const styleProps = {
         shadow:["#666666","#666666"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0019-candy': {
         name:"Sweet Tooth",
@@ -3166,8 +3002,7 @@ const styleProps = {
         shadow:["#d61a49","#e33a8e","#ea4aad","#e33a8e","#d61a49","#cf0c1f", "#c80000","#cf0c1f"],
         font: "rainyhearts",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0016-valentine': {
         name:"be my valentine?",
@@ -3225,8 +3060,7 @@ const styleProps = {
         colour:["#000000","#000000"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0007-chocolate': {
         name:"chocolate dreams",
@@ -3248,8 +3082,7 @@ const styleProps = {
         colour:["#8c2000","#8c2000"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0003-ghost': {
         name:"Spooky vibes only!!",
@@ -3296,8 +3129,7 @@ const styleProps = {
         colour:["#ff0000","#ff4e4e"],
         font: "Perfect DOS VGA 437",
         fontsize:16,
-        x:-14, y:-1,
-        sourceName:"me :)"
+        x:-14, y:-1
     },
     '0006-purple': {
         name:"simple purple",
@@ -3307,8 +3139,7 @@ const styleProps = {
         colour:["#000000","#000000"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0008-pink': {
         name:"simple pink",
@@ -3318,8 +3149,7 @@ const styleProps = {
         colour:["#ff40ff","#ff40ff"],
         font: "moonaco",
         fontsize:16,
-        x:0, y:0,
-        sourceName:"me :)"
+        x:0, y:0
     },
     '0009-gradient-pink': {
         name:"gradient pink",
@@ -3330,7 +3160,6 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)",
     },
     '0010-blue': {
         name:"simple blue",
@@ -3341,10 +3170,10 @@ const styleProps = {
         font: "moonaco",
         fontsize:16,
         x:0, y:0,
-        sourceName:"me :)",
     }
 };
 
+let subData = require('./subData.js');
 let styleList = {};
 let stylePage = {};
 let sourceList = {};
@@ -3353,7 +3182,14 @@ let i = 0;
 let j = 0;
 
 // prepare data for export.
-for (const [key, value] of Object.entries(styleProps)) {
+for (let [key, value] of Object.entries(styleProps)) {
+
+    // if template has submitter key, get subName and subURL from subData
+    if (value.sub && !value.subName) {
+        value.subName = subData.submitters[value.sub].subName;
+        value.subURL  = subData.submitters[value.sub].subURL;
+    }
+
     if (!value.hide) {
         // add short blinkie data to list for clients.
         styleList[key] = { name: value.name, bday:value.bday, tags:value.tags, subName:value.subName, subURL:value.subURL };

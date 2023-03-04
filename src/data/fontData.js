@@ -4,7 +4,7 @@ const fonts = {
         y:         0,
         antialias: '+antialias',
         sourceName:"amy",
-        sourceURL: "https://graphics-cafe.tumblr.com",
+        sourceURL: "https://graphics-cafe.tumblr.com"
     },
     "offical emotes." : {
         fontsize:  16,
@@ -12,7 +12,7 @@ const fonts = {
         antialias: '+antialias',
         symbols:   true,
         sourceName:"transbro",
-        sourceURL: "https://fontstruct.com/fontstructions/show/2151214/emotes-3-1",
+        sourceURL: "https://fontstruct.com/fontstructions/show/2151214/emotes-3-1"
     },
     "monogramextended" : {
         fontsize:  16,
@@ -148,20 +148,12 @@ const fonts = {
         antialias: '+antialias',
         sourceName:"押本祐二",
         sourceURL: "https://www.dafont.com/04b-19.font"
-    },
+    }
 }
-
-const fontList = {
-    2: {name:"Pixellari",  sourceName:"Zacchary Dempsey-Plante", sourceURL:"https://www.dafont.com/pixellari.font"},
-    8: {name:"Hack", sourceName:"Source Foundry", sourceURL:"https://sourcefoundry.org/hack/"},
-    11: {name:"Liberation Mono", sourceName:"Red Hat", sourceURL:"https://www.fontsquirrel.com/fonts/liberation-sans"},
-    18: {name:"Pixeloid", sourceName:"ggbot", sourceURL:"https://ggbot.itch.io/pixeloid-font"},
-};
 
 const fallbackFonts = ["moonaco", "offical emotes.", "monogramextended", "lanapixel"];
 
 module.exports = {
-    fontList,
     fallbackFonts,
     fonts
 }

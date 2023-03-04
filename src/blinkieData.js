@@ -727,22 +727,6 @@ const styleProps = {
         fontsize:9,
         x:-11, y:0
     },
-    '0198-didosdd': {
-        name:"DID/OSDD system",
-        bday:20221008,
-        tags:["flag","user"],
-        frames:2,
-        colour:["#000000","#000000"],
-        outline:["#ffffff","#ffffff"],
-        font: "pixeloid sans",
-        fontweight:"bold",
-        fontsize:9,
-        x:0, y:-1,
-        sourceName:"kotatsuOS",
-        sourceURL:"https://kotatsus.neocities.org/creations/blinkies/",
-        subName:"Proxy&amp;",
-        subURL:"https://kotatsus.neocities.org/"
-    },
     '0204-twitchlogo': {
         name:"Twitch",
         bday:20221008,

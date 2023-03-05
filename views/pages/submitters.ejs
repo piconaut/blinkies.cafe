@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <title>blinkie template submitters</title>
+  <meta name='description' content="blinkie template credits -- all the blinkies.cafe customizable blinkies, sorted by submitter.">
+  <link rel="canonical" href="https://blinkies.cafe/submitters">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <meta name="robots" content="noindex">
+  <link rel="manifest" href="/site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <meta name="theme-color" content="#4e3075">
@@ -25,13 +26,16 @@
 </div>
 <div class='content'>
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:'>
-        <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
+        <a href="/">&#60; back to gallery</a><br><br>
+        all the customizable blinkie templates, sorted by submitter!<br><br>
+        huge thank you to all blinkies.cafe community members who've contributed!! :D<br><br>
+
         click a blinkie to customize c:<br><br>
 <%
             const blinkieExt = freeze ? 'png' : 'gif'
             for (const [subID, subData] of Object.entries(submitters)) {
 %>
-                <h2><a href="<%=subData.subURL%>"><%-subData.subName%></a></h2><br>
+                <h2 id="<%-subID%>"><a href="<%=subData.subURL%>"><%-subData.subName%></a></h2><br>
 <%              
                 for (const key of subData.templates) {
 %>
@@ -46,6 +50,5 @@
     </div>
 </div>
 <%- include('components/footer.html') %>
-<script src='/wall.js' type='module'></script>
 </body>
 </html>

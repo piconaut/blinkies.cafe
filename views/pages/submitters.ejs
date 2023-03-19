@@ -31,22 +31,23 @@
         huge thank you to all blinkies.cafe community members who've contributed!! :D<br><br>
 
         click a blinkie to customize c:<br><br>
+        <center id='tiles'>
 <%
             const blinkieExt = freeze ? 'png' : 'gif'
             for (const [subID, subData] of Object.entries(submitters)) {
 %>
                 <h2 id="<%-subID%>"><a href="<%=subData.subURL%>"><%-subData.subName%></a></h2><br>
+                    
 <%              
                 for (const key of subData.templates) {
-%>
-                    <a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=key%> blinkie" loading="lazy" class="blinkie blinkieTile"></a>
-<%
+                    %><a rel="nofollow" href="https://blinkies.cafe/?s=<%=key%>"><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=key%> blinkie" loading="lazy" class="blinkie blinkieTile"></a><%
                 }
 %>
                 <br><br><hr><br><br>
 <%        
             }   
 %>
+        </center>
     </div>
 </div>
 <%- include('components/footer.html') %>

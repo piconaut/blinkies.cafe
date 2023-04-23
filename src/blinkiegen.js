@@ -183,6 +183,7 @@ async function renderFrames(blinkieID, bParms) {
     try {
         bParms.x       = eachFrame(bParms.x, bParms.frames);
         bParms.shadowx = eachFrame(bParms.shadowx, bParms.frames);
+        bParms.shadowy = eachFrame(bParms.shadowy, bParms.frames);
         bParms.colour  = eachFrame(bParms.colour, bParms.frames);
         bParms.outline = eachFrame(bParms.outline, bParms.frames);
         bParms.shadow  = eachFrame(bParms.shadow, bParms.frames);
@@ -213,7 +214,7 @@ async function renderFrames(blinkieID, bParms) {
                     );
                 }
             }
-            if (bParms.shadow) argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,bParms.shadowx[i],bParms.shadowy,bParms.shadow[i]));
+            if (bParms.shadow) argsArray[i].push(...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,bParms.shadowx[i],bParms.shadowy[i],bParms.shadow[i]));
             if (bParms.split) argsArray[i].push(...buildTextArgs(bParms.cleantext2,bParms.x[i],bParms.y2,0,0,bParms.colour[i]));
             argsArray[i].push(
                 ...buildTextArgs(bParms.cleantext1,bParms.x[i],bParms.y,0,0,bParms.colour[i]),

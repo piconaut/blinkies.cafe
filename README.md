@@ -34,4 +34,4 @@
 
 
 ## License
-The code in this project is licensed under the [GNU General Public License v3.0](license.txt). Any original blinkies are licensed under [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/)..
+The code in this project is licensed under the [GNU General Public License v3.0](license.txt). Original blinkies are licensed under [CC BY](https://creativecommons.org/licenses/by/4.0/).

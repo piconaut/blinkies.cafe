@@ -1,4 +1,31 @@
 let styleProps = {
+    '0259-spiralpastel': {
+        name:"Hypnotizedddd",
+        bday:20230423,
+        tags:["rainbow","user","pawpr1nc3"],
+        frames:2,
+        delay:20,
+        colour:"#ff8400",
+        shadow:["#ffcff4","#d5faff"],
+        shadowx:[4,-4],
+        shadowy:[-2,2],
+        font: "digitaldisco",
+        fontsize:16,
+        x:7, y:0,
+        sub:"pawpr1nc3"
+    },
+    '0258-smileyshug': {
+        name:"I love you guys 🙂",
+        bday:20230402,
+        tags:["love","user","anakin","smiley","reactions"],
+        frames:4,
+        delay:15,
+        colour:"#f6d2da",
+        font: "offical emotes.",
+        fontsize:16,
+        x:-19, y:0,
+        sub:"anakin",
+    },
     '0242-loveletter': {
         name:"Love Letter",
         bday:20230207,

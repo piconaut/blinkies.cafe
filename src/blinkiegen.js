@@ -7,6 +7,104 @@ const blinkieData = require('./data/blinkieData.js')
 const fontData    = require('./data/fontData.js')
 const logger      = require('./logger.js').logger
 
+async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
+    try {
+        // assign blinkie parms
+        const scaleVals = {1: '100%', 2: '200%', 3: '300%', 4:'400%'};
+        let styleID = String(instyle) in blinkieData.styleProps
+            ? String(instyle) : '0020-blinkiesCafe';
+        let bParms = {
+            'styleID':    styleID,
+            'bgID':       blinkieData.styleProps[styleID].bgID
+                ? blinkieData.styleProps[styleID].bgID : styleID,
+            'intext':     intext,
+            'cleantext':  '',
+            'cleantext1': '',
+            'cleantext2': '',
+            'scale':      scaleVals[inscale] ? scaleVals[inscale] : '100%',
+            'antialias':  blinkieData.styleProps[styleID].antialias
+                ? blinkieData.styleProps[styleID].antialias : '+antialias',
+            'delay':      blinkieData.styleProps[styleID].delay
+                ? blinkieData.styleProps[styleID].delay : 10,
+            'fontweight': blinkieData.styleProps[styleID].fontweight
+                ? blinkieData.styleProps[styleID].fontweight : 'normal',
+            'frames':     blinkieData.styleProps[styleID].frames,
+            'colour':     blinkieData.styleProps[styleID].colour,
+            'shadow':     blinkieData.styleProps[styleID].shadow,
+            'shadowx':    blinkieData.styleProps[styleID].shadowx
+                ? blinkieData.styleProps[styleID].shadowx : -1,
+            'shadowy':    blinkieData.styleProps[styleID].shadowy
+                ? blinkieData.styleProps[styleID].shadowy : 0,
+            'outline':    blinkieData.styleProps[styleID].outline,
+            'font':       blinkieData.styleProps[styleID].font,
+            'fontsize':   blinkieData.styleProps[styleID].fontsize,
+            'fontOverride': fontOverride,
+            'x':          blinkieData.styleProps[styleID].x,
+            'y':          blinkieData.styleProps[styleID].y,
+            'x2':         blinkieData.styleProps[styleID].x,
+            'y2':         0,
+            'unicodeCharCodes': '',
+            'split':      split,
+            'splitDefault': blinkieData.styleProps[styleID].splitDefault
+                ? blinkieData.styleProps[styleID].splitDefault : false
+        };
+
+        // sanitize input text, use default text if empty.
+        bParms.cleantext = replaceChars(bParms.intext);
+        if (bParms.cleantext.replace(/\s/g, '').length == 0) {
+            bParms.cleantext = replaceChars(blinkieData.styleProps[bParms.styleID].name);
+            bParms.split = bParms.splitDefault;
+        }
+
+        // prepare text for rendering, then render frames and generate gif.
+        bParms = await processText(bParms);
+        if (!bParms.errloc) bParms = await renderFrames(blinkieID, bParms);
+        if (!bParms.errloc) bParms = await renderBlinkie(blinkieID, bParms);
+
+        // delete frames.
+        let frameFname = '';
+        for (let i=0; i<bParms.frames; i++) {
+            frameFname = global.appRoot + '/assets/blinkies-frames/'
+                + blinkieID + '-' + i + '.png';
+            fs.unlink(frameFname, function(err) {
+                if (err) logger.error({
+                    time: Date.now(),
+                    mtype: 'pour',
+                    details: {
+                        errloc: 'framedel',
+                        errmsg: err.message}
+                    });
+            });
+        }
+
+        if (bParms.errloc) {
+            blinkieID = 'error';
+            logger.error({
+                time:  Date.now(),
+                mtype: 'pour',
+                details: {
+                    errloc: bParms.errloc,
+                    errmsg: bParms.errmsg
+                }
+            });
+        }
+
+    }  // end try
+    catch (err) {
+        blinkieID = 'error';
+        logger.error({
+            time:  Date.now(),
+            mtype: 'pour',
+            details: {
+                errmsg: err.message,
+                errloc: "pour()"
+            }
+        });
+    }
+
+    return blinkieID;
+}
+
 function replaceChars(str) {
     const trimString = str.substring(0,128) + '';
     const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '').replace(/%/g, '\\%');
@@ -254,104 +352,6 @@ async function renderBlinkie(blinkieID, bParms) {
         bParms.errloc = 'renderBlinkie()';
     }
     return bParms;
-}
-
-async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
-    try {
-        // assign blinkie parms
-        const scaleVals = {1: '100%', 2: '200%', 3: '300%', 4:'400%'};
-        let styleID = String(instyle) in blinkieData.styleProps
-            ? String(instyle) : '0020-blinkiesCafe';
-        let bParms = {
-            'styleID':    styleID,
-            'bgID':       blinkieData.styleProps[styleID].bgID
-                ? blinkieData.styleProps[styleID].bgID : styleID,
-            'intext':     intext,
-            'cleantext':  '',
-            'cleantext1': '',
-            'cleantext2': '',
-            'scale':      scaleVals[inscale] ? scaleVals[inscale] : '100%',
-            'antialias':  blinkieData.styleProps[styleID].antialias
-                ? blinkieData.styleProps[styleID].antialias : '+antialias',
-            'delay':      blinkieData.styleProps[styleID].delay
-                ? blinkieData.styleProps[styleID].delay : 10,
-            'fontweight': blinkieData.styleProps[styleID].fontweight
-                ? blinkieData.styleProps[styleID].fontweight : 'normal',
-            'frames':     blinkieData.styleProps[styleID].frames,
-            'colour':     blinkieData.styleProps[styleID].colour,
-            'shadow':     blinkieData.styleProps[styleID].shadow,
-            'shadowx':    blinkieData.styleProps[styleID].shadowx
-                ? blinkieData.styleProps[styleID].shadowx : -1,
-            'shadowy':    blinkieData.styleProps[styleID].shadowy
-                ? blinkieData.styleProps[styleID].shadowy : 0,
-            'outline':    blinkieData.styleProps[styleID].outline,
-            'font':       blinkieData.styleProps[styleID].font,
-            'fontsize':   blinkieData.styleProps[styleID].fontsize,
-            'fontOverride': fontOverride,
-            'x':          blinkieData.styleProps[styleID].x,
-            'y':          blinkieData.styleProps[styleID].y,
-            'x2':         blinkieData.styleProps[styleID].x,
-            'y2':         0,
-            'unicodeCharCodes': '',
-            'split':      split,
-            'splitDefault': blinkieData.styleProps[styleID].splitDefault
-                ? blinkieData.styleProps[styleID].splitDefault : false
-        };
-
-        // sanitize input text, use default text if empty.
-        bParms.cleantext = replaceChars(bParms.intext);
-        if (bParms.cleantext.replace(/\s/g, '').length == 0) {
-            bParms.cleantext = replaceChars(blinkieData.styleProps[bParms.styleID].name);
-            bParms.split = bParms.splitDefault;
-        }
-
-        // prepare text for rendering, then render frames and generate gif.
-        bParms = await processText(bParms);
-        if (!bParms.errloc) bParms = await renderFrames(blinkieID, bParms);
-        if (!bParms.errloc) bParms = await renderBlinkie(blinkieID, bParms);
-
-        // delete frames.
-        let frameFname = '';
-        for (let i=0; i<bParms.frames; i++) {
-            frameFname = global.appRoot + '/assets/blinkies-frames/'
-                + blinkieID + '-' + i + '.png';
-            fs.unlink(frameFname, function(err) {
-                if (err) logger.error({
-                    time: Date.now(),
-                    mtype: 'pour',
-                    details: {
-                        errloc: 'framedel',
-                        errmsg: err.message}
-                    });
-            });
-        }
-
-        if (bParms.errloc) {
-            blinkieID = 'error';
-            logger.error({
-                time:  Date.now(),
-                mtype: 'pour',
-                details: {
-                    errloc: bParms.errloc,
-                    errmsg: bParms.errmsg
-                }
-            });
-        }
-
-    }  // end try
-    catch (err) {
-        blinkieID = 'error';
-        logger.error({
-            time:  Date.now(),
-            mtype: 'pour',
-            details: {
-                errmsg: err.message,
-                errloc: "pour()"
-            }
-        });
-    }
-
-    return blinkieID;
 }
 
 module.exports = {

@@ -44,16 +44,13 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
             'x2':         blinkieData.styleProps[styleID].x,
             'y2':         0,
             'unicodeCharCodes': '',
-            'split':      split,
-            'splitDefault': blinkieData.styleProps[styleID].splitDefault
-                ? blinkieData.styleProps[styleID].splitDefault : false
+            'split':      split
         };
 
         // sanitize input text, use default text if empty.
         bParms.cleantext = replaceChars(bParms.intext);
         if (bParms.cleantext.replace(/\s/g, '').length == 0) {
             bParms.cleantext = replaceChars(blinkieData.styleProps[bParms.styleID].name);
-            bParms.split = bParms.splitDefault;
         }
 
         // prepare text for rendering, then render frames and generate gif.

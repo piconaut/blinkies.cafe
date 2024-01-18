@@ -83,6 +83,11 @@ let submitters = {
         subName: 'otigan.tumblr.com',
         subURL:  'https://otigan.tumblr.com',
         templates: []
+    },
+    soleil: {
+        subName: 'SOLEIL',
+        subURL:  'https://radiotrophicfungi.tumblr.com/',
+        templates: []
     }
 }
 

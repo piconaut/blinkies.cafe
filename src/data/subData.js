@@ -85,8 +85,8 @@ let submitters = {
         templates: []
     },
     soleil: {
-        subName: 'SOLEIL',
-        subURL:  'https://radiotrophicfungi.tumblr.com/',
+        subName: 'SOLEIL RADIOTROPHIC',
+        subURL:  'https://deviantart.com/radiotrophic',
         templates: []
     }
 }

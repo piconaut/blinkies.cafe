@@ -24,7 +24,7 @@ let styleProps = {
         font: "pixeloid sans",
         fontweight: "bold",
         fontsize:9,
-        x:-1, y:0,
+        x:-18, y:0,
         sub:"soleil"
     },
     '0270-owmybones': {
@@ -34,7 +34,7 @@ let styleProps = {
         frames:2,
         delay:15,
         colour:"#eee8da",
-        outline:"#ae9a63",
+        outline:"#463d28",
         font: "pixeloid sans",
         fontweight: "bold",
         fontsize:9,
@@ -56,13 +56,13 @@ let styleProps = {
         sub:"soleil"
     },
     '0268-hardofhearing': {
-        name:"hard of hearing",
+        name:"Hard of Hearing",
         bday:20240130,
         tags:["user","soleil"],
         frames:2,
         delay:15,
         colour:"#0db1fc",
-        outline:"#ff569d",
+        outline:"#4b04ff",
         font: "pixeloid sans",
         fontweight: "bold",
         fontsize:9,
@@ -112,7 +112,7 @@ let styleProps = {
         sub:"soleil"
     },   
     '0273-mlmpride': {
-        name:"STRONG & PROUD",
+        name:"Strong & Proud",
         bday:20240122,
         tags:["user","soleil"],
         frames:2,
@@ -206,7 +206,7 @@ let styleProps = {
         font: "pixeloid sans",
         fontweight: "bold",
         fontsize:9,
-        x:-9, y:0,
+        x:-15, y:0,
         sub:"proxy"
     },
     '0259-spiralpastel': {

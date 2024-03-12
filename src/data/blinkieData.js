@@ -1,5 +1,47 @@
 let styleProps = {
-     '0272-disabledpride': {
+    '0275-stressed': {
+        name:"Stressed...",
+        bday:20240312,
+        tags:["user","pawpr1nc3"],
+        frames:2,
+        delay:20,
+        colour:"#000000",
+        outline:"#ff7d7d",
+        font: "Perfect DOS VGA 437",
+        fontweight: "bold",
+        fontsize:20,
+        x:-1, y:0,
+        sub:"pawpr1nc3"
+    },
+    '0274-wlwpride': {
+        name:"He's my Girl",
+        bday:20240122,
+        tags:["user","soleil"],
+        frames:2,
+        delay:15,
+        colour:"#fc04ac",
+        outline:"#5d0484",
+        font: "pixeloid sans",
+        fontweight: "bold",
+        fontsize:9,
+        x:-1, y:0,
+        sub:"soleil"
+    },   
+    '0273-mlmpride': {
+        name:"Strong & Proud",
+        bday:20240122,
+        tags:["user","soleil"],
+        frames:2,
+        delay:15,
+        colour:"#ba3bff",
+        outline:"#540494",
+        font: "pixeloid sans",
+        fontweight: "bold",
+        fontsize:9,
+        x:-1, y:0,
+        sub:"soleil"
+    },  
+    '0272-disabledpride': {
         name:"Disabled Pride",
         bday:20240130,
         tags:["user","soleil"],
@@ -97,34 +139,6 @@ let styleProps = {
         x:-4, y:0,
         sub:"soleil"
     },
-    '0274-wlwpride': {
-        name:"He's my Girl",
-        bday:20240122,
-        tags:["user","soleil"],
-        frames:2,
-        delay:15,
-        colour:"#fc04ac",
-        outline:"#5d0484",
-        font: "pixeloid sans",
-        fontweight: "bold",
-        fontsize:9,
-        x:-1, y:0,
-        sub:"soleil"
-    },   
-    '0273-mlmpride': {
-        name:"Strong & Proud",
-        bday:20240122,
-        tags:["user","soleil"],
-        frames:2,
-        delay:15,
-        colour:"#ba3bff",
-        outline:"#540494",
-        font: "pixeloid sans",
-        fontweight: "bold",
-        fontsize:9,
-        x:-1, y:0,
-        sub:"soleil"
-    },  
     '0266-lovefool': {
         name:"LOVEFOOL",
         bday:20240112,

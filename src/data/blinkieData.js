@@ -1,8 +1,8 @@
 let styleProps = {
      '0272-disabledpride': {
         name:"Disabled Pride",
-        bday:20240130,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#d7f9ff",
@@ -15,8 +15,8 @@ let styleProps = {
     },      
     '0271-chronicmigraines': {
         name:"Chronic Migraines",
-        bday:20240130,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#c6f53d",
@@ -29,8 +29,8 @@ let styleProps = {
     },
     '0270-owmybones': {
         name:"ow my bones",
-        bday:20240130,
-        tags:["user","soleil","spooky"],
+        bday:20240330,
+        tags:["user","soleil","spooky", "2024mar"],
         frames:2,
         delay:15,
         colour:"#eee8da",
@@ -43,8 +43,8 @@ let styleProps = {
     },
     '0269-sickashell': {
         name:"SICK as HELL",
-        bday:20240130,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:4,
         delay:15,
         colour:"#f90098",
@@ -57,8 +57,8 @@ let styleProps = {
     },
     '0268-hardofhearing': {
         name:"Hard of Hearing",
-        bday:20240130,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#0db1fc",
@@ -71,8 +71,8 @@ let styleProps = {
     },
     '0267-spineinjury': {
         name:"Spine Injury",
-        bday:20240130,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#04fc6c",
@@ -85,8 +85,8 @@ let styleProps = {
     },
     '0265-wheelchair': {
         name:"Wheelchair User!",
-        bday:20240130,
-        tags:["user","pink","soleil"],
+        bday:20240330,
+        tags:["user","pink","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#ff02aa",
@@ -99,8 +99,8 @@ let styleProps = {
     },
     '0274-wlwpride': {
         name:"He's my Girl",
-        bday:20240122,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#fc04ac",
@@ -113,8 +113,8 @@ let styleProps = {
     },   
     '0273-mlmpride': {
         name:"Strong & Proud",
-        bday:20240122,
-        tags:["user","soleil"],
+        bday:20240330,
+        tags:["user","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#ba3bff",
@@ -127,8 +127,8 @@ let styleProps = {
     },  
     '0266-lovefool': {
         name:"LOVEFOOL",
-        bday:20240112,
-        tags:["love","user","pink","soleil"],
+        bday:20240330,
+        tags:["love","user","pink","soleil", "2024mar"],
         frames:2,
         delay:15,
         colour:"#ffa6c9",
@@ -142,7 +142,7 @@ let styleProps = {
     '0264-adhd': {
         name:"ADHD!",
         bday:20240112,
-        tags:["flag","user","proxy"],
+        tags:["flag","user","proxy", "2024feb"],
         frames:2,
         delay:10,
         colour:"#FFFFFF",
@@ -156,7 +156,7 @@ let styleProps = {
     '0263-demongender': {
         name:"demongender",
         bday:20240112,
-        tags:["flag","user","proxy"],
+        tags:["flag","user","proxy", "2024feb"],
         frames:2,
         delay:10,
         colour:"#FFFFFF",
@@ -170,7 +170,7 @@ let styleProps = {
     '0262-wolfgender': {
         name:"wolfgender",
         bday:20240112,
-        tags:["flag","user","proxy"],
+        tags:["flag","user","proxy", "2024feb"],
         frames:2,
         delay:12,
         colour:"#000000",
@@ -184,7 +184,7 @@ let styleProps = {
     '0261-werewolfgender': {
         name:"werewolfgender",
         bday:20240112,
-        tags:["flag","user","proxy"],
+        tags:["flag","user","proxy", "2024feb"],
         frames:2,
         delay:10,
         colour:"#000000",
@@ -198,7 +198,7 @@ let styleProps = {
     '0260-doggender': {
         name:"doggender pride",
         bday:20230423,
-        tags:["flag","user","proxy"],
+        tags:["flag","user","proxy", "2024feb"],
         frames:2,
         delay:10,
         colour:"#950079",

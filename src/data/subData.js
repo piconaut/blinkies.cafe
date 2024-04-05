@@ -129,6 +129,11 @@ let submitters = {
         subURL: 'https://www.tumblr.com/avidcollectorofdust',
         templates: []
     },
+    nikki: {
+        subName: 'nikki',
+        subURL:  'https://www.instagram.com/nicolelyee/',
+        templates: []
+    }
 }
 
 module.exports = {

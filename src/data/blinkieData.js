@@ -1,4 +1,16 @@
 let styleProps = {
+    '0279-sandwich': {
+        name:"sandwiches!",
+        bday:20240614,
+        tags:["user","food",],
+        frames:6,
+        delay:9,
+        colour:"#923633",
+        font:"rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sub:"ashhmillr"
+    },
     '0283-purplelace': {
         name:"sweet dreams",
         bday:20240514,
@@ -51,17 +63,19 @@ let styleProps = {
         x:-13, y:0,
         sub:"pinkukingdom"
     },
-    '0279-sandwich': {
-        name:"sandwiches!",
-        bday:20240614,
-        tags:["user","food",],
-        frames:6,
-        delay:9,
-        colour:"#923633",
-        font:"rainyhearts",
-        fontsize:16,
-        x:0, y:0,
-        sub:"ashhmillr"
+    '0275-stressed': {
+        name:"Stressed...",
+        bday:20240514,
+        tags:["user","pawpr1nc3"],
+        frames:2,
+        delay:20,
+        colour:"#000000",
+        outline:"#ff7d7d",
+        font: "Perfect DOS VGA 437",
+        fontweight: "bold",
+        fontsize:20,
+        x:-1, y:0,
+        sub:"pawpr1nc3"
     },
     '0278-galpals': {
         name:"Gal Pals",
@@ -112,20 +126,6 @@ let styleProps = {
         fontsize:11,
         x:-1, y:-1,
         sub:"sparkly"
-    },
-    '0275-stressed': {
-        name:"Stressed...",
-        bday:20240514,
-        tags:["user","pawpr1nc3"],
-        frames:2,
-        delay:20,
-        colour:"#000000",
-        outline:"#ff7d7d",
-        font: "Perfect DOS VGA 437",
-        fontweight: "bold",
-        fontsize:20,
-        x:-1, y:0,
-        sub:"pawpr1nc3"
     },
     '0275-bunnybounce': {
         name:"bunny mode",

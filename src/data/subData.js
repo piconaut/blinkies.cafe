@@ -88,6 +88,11 @@ let submitters = {
         subName: 'SOLEIL RADIOTROPHIC',
         subURL:  'https://deviantart.com/radiotrophic',
         templates: []
+    },
+    nikki: {
+        subName: 'nikki',
+        subURL:  'https://www.instagram.com/nicolelyee/',
+        templates: []
     }
 }
 

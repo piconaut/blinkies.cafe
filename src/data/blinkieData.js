@@ -1,4 +1,17 @@
 let styleProps = {
+    '0275-bunnybounce': {
+        name:"bunny mode",
+        bday:20240404,
+        tags:["nature","pink","user","nikki"],
+        frames:4,
+        delay:8,
+        colour:"#ff6699",
+        //outline:"#9999ff",
+        font: "monogramextended",
+        fontsize:16,
+        x:6, y:1,
+        sub:"nikki"
+    },
      '0272-disabledpride': {
         name:"Disabled Pride",
         bday:20240330,

@@ -89,6 +89,46 @@ let submitters = {
         subURL:  'https://deviantart.com/radiotrophic',
         templates: []
     },
+    synthetic: {
+        subName: 'SyntheticSaturn',
+        subURL: 'https://www.tumblr.com/quinnsaturn',
+        templates: []
+    },
+    sparkly: {
+        subName: 'Vinnie Sparklysatyrcat',
+        subURL: 'https://spacehey.com/_themultifandomloser',
+        templates: []
+    },
+    ashhmillr: {
+        subName: 'ashhmillr',
+        subURL: 'https://ashhmillr.neocities.org',
+        templates: []
+    },
+    sweetsatellite: {
+        subName: 'Sweet Satellite',
+        subURL: 'https://www.planetminecraft.com/member/sweet_satellite',
+        templates: []
+    },
+    pinkukingdom: {
+        subName: 'pinkukingdom',
+        subURL: 'https://pinkukingdom.neocities.org/',
+        templates: []
+    },
+    kay9: {
+        subName: 'kay9',
+        subURL: 'https://www.instagram.com/kay9.mp3/',
+        templates: []
+    },
+    mellowshaymin: {
+        subName: 'mellowshaymin',
+        subURL: 'https://inorganicfaeries.tumblr.com/',
+        templates: []
+    },
+    avid: {
+        subName: 'AVID!',
+        subURL: 'https://www.tumblr.com/avidcollectorofdust',
+        templates: []
+    },
     nikki: {
         subName: 'nikki',
         subURL:  'https://www.instagram.com/nicolelyee/',

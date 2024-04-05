@@ -1,7 +1,7 @@
 let styleProps = {
     '0283-purplelace': {
         name:"sweet dreams",
-        bday:20240403,
+        bday:20240514,
         tags:["user","pink","transparent",],
         frames:4,
         delay:17,
@@ -14,7 +14,7 @@ let styleProps = {
     },
     '0282-miraclemoon': {
         name:"miracle maker",
-        bday:20240203,
+        bday:20240514,
         tags:["user","pink","nature",],
         frames:2,
         delay:17,
@@ -27,7 +27,7 @@ let styleProps = {
     },
     '0281-tumblrgrl': {
         name:"Tumblr Grl",
-        bday:20240203,
+        bday:20240514,
         tags:["user","pink",],
         frames:2,
         delay:20,
@@ -39,7 +39,7 @@ let styleProps = {
     },
     '0280-pinkalien': {
         name:"Take me away",
-        bday:20240312,
+        bday:20240514,
         tags:["user","spooky","pink",],
         frames:2,
         delay:10,
@@ -53,7 +53,7 @@ let styleProps = {
     },
     '0279-sandwich': {
         name:"sandwiches!",
-        bday:20240405,
+        bday:20240614,
         tags:["user","food",],
         frames:6,
         delay:9,
@@ -65,7 +65,7 @@ let styleProps = {
     },
     '0278-galpals': {
         name:"Gal Pals",
-        bday:20240402,
+        bday:20240514,
         tags:["user","pink",],
         frames:2,
         delay:13,
@@ -77,7 +77,7 @@ let styleProps = {
     },
     '0277-zombies': {
         name:"ZOMBIES BITE BACK",
-        bday:20240202,
+        bday:20240414,
         tags:["user","anakin","spooky"],
         frames:2,
         delay:15,
@@ -90,7 +90,7 @@ let styleProps = {
     },
     '0276-washhands': {
         name:"Wash your damn hands",
-        bday:20240202,
+        bday:20240414,
         tags:["user","soleil","spooky"],
         frames:2,
         delay:15,
@@ -103,7 +103,7 @@ let styleProps = {
     },
     '0275-spiderweb': {
         name:"spider web",
-        bday:20240203,
+        bday:20240414,
         tags:["user","soleil","spooky"],
         frames:2,
         delay:15,
@@ -115,7 +115,7 @@ let styleProps = {
     },
     '0275-stressed': {
         name:"Stressed...",
-        bday:20240312,
+        bday:20240514,
         tags:["user","pawpr1nc3"],
         frames:2,
         delay:20,
@@ -134,7 +134,6 @@ let styleProps = {
         frames:4,
         delay:8,
         colour:"#ff6699",
-        //outline:"#9999ff",
         font: "monogramextended",
         fontsize:16,
         x:6, y:1,

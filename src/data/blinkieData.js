@@ -1,5 +1,5 @@
 let styleProps = {
-    '0279-sandwich': {
+/*    '0279-sandwich': {
         name:"sandwiches!",
         bday:20240614,
         tags:["user","food",],
@@ -88,11 +88,11 @@ let styleProps = {
         fontsize:16,
         x:-1, y:0,
         sub:"sweetsatellite"
-    },
+    },*/
     '0277-zombies': {
         name:"ZOMBIES BITE BACK",
         bday:20240414,
-        tags:["user","anakin","spooky"],
+        tags:["user","anakin","spooky","2024apr"],
         frames:2,
         delay:15,
         colour:"#ba4e11",
@@ -105,7 +105,7 @@ let styleProps = {
     '0276-washhands': {
         name:"Wash your damn hands",
         bday:20240414,
-        tags:["user","soleil","spooky"],
+        tags:["user","spooky","2024apr"],
         frames:2,
         delay:15,
         colour:"#e5e5e5",
@@ -113,19 +113,19 @@ let styleProps = {
         font: "moonaco",
         fontsize:16,
         x:-12, y:0,
-        sub:"synthetic"
+        sub:"sparkly"
     },
     '0275-spiderweb': {
         name:"spider web",
         bday:20240414,
-        tags:["user","soleil","spooky"],
+        tags:["user","spooky","2024apr"],
         frames:2,
         delay:15,
         colour:"#997799",
         font: "lanapixel",
         fontsize:11,
         x:-1, y:-1,
-        sub:"sparkly"
+        sub:"synthetic"
     },
     '0275-bunnybounce': {
         name:"bunny mode",

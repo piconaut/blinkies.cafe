@@ -1,4 +1,16 @@
 let styleProps = {
+/*    '0279-sandwich': {
+        name:"sandwiches!",
+        bday:20240614,
+        tags:["user","food",],
+        frames:6,
+        delay:9,
+        colour:"#923633",
+        font:"rainyhearts",
+        fontsize:16,
+        x:0, y:0,
+        sub:"ashhmillr"
+    },
     '0283-purplelace': {
         name:"sweet dreams",
         bday:20240514,
@@ -51,68 +63,6 @@ let styleProps = {
         x:-13, y:0,
         sub:"pinkukingdom"
     },
-    '0279-sandwich': {
-        name:"sandwiches!",
-        bday:20240614,
-        tags:["user","food",],
-        frames:6,
-        delay:9,
-        colour:"#923633",
-        font:"rainyhearts",
-        fontsize:16,
-        x:0, y:0,
-        sub:"ashhmillr"
-    },
-    '0278-galpals': {
-        name:"Gal Pals",
-        bday:20240514,
-        tags:["user","pink",],
-        frames:2,
-        delay:13,
-        colour:"#DA69BB",
-        font:"rainyhearts",
-        fontsize:16,
-        x:-1, y:0,
-        sub:"sweetsatellite"
-    },
-    '0277-zombies': {
-        name:"ZOMBIES BITE BACK",
-        bday:20240414,
-        tags:["user","anakin","spooky"],
-        frames:2,
-        delay:15,
-        colour:"#ba4e11",
-        outline:"#600c0d",
-        font: "green screen",
-        fontsize:12,
-        x:12, y:0,
-        sub:"anakin"
-    },
-    '0276-washhands': {
-        name:"Wash your damn hands",
-        bday:20240414,
-        tags:["user","soleil","spooky"],
-        frames:2,
-        delay:15,
-        colour:"#e5e5e5",
-        outline:"#212121",
-        font: "moonaco",
-        fontsize:16,
-        x:-12, y:0,
-        sub:"synthetic"
-    },
-    '0275-spiderweb': {
-        name:"spider web",
-        bday:20240414,
-        tags:["user","soleil","spooky"],
-        frames:2,
-        delay:15,
-        colour:"#997799",
-        font: "lanapixel",
-        fontsize:11,
-        x:-1, y:-1,
-        sub:"sparkly"
-    },
     '0275-stressed': {
         name:"Stressed...",
         bday:20240514,
@@ -126,6 +76,56 @@ let styleProps = {
         fontsize:20,
         x:-1, y:0,
         sub:"pawpr1nc3"
+    },
+    '0278-galpals': {
+        name:"Gal Pals",
+        bday:20240514,
+        tags:["user","pink",],
+        frames:2,
+        delay:13,
+        colour:"#DA69BB",
+        font:"rainyhearts",
+        fontsize:16,
+        x:-1, y:0,
+        sub:"sweetsatellite"
+    },*/
+    '0277-zombies': {
+        name:"ZOMBIES BITE BACK",
+        bday:20240414,
+        tags:["user","anakin","spooky","2024apr"],
+        frames:2,
+        delay:15,
+        colour:"#ba4e11",
+        outline:"#600c0d",
+        font: "green screen",
+        fontsize:12,
+        x:12, y:0,
+        sub:"anakin"
+    },
+    '0276-washhands': {
+        name:"Wash your damn hands",
+        bday:20240414,
+        tags:["user","spooky","2024apr"],
+        frames:2,
+        delay:15,
+        colour:"#e5e5e5",
+        outline:"#212121",
+        font: "moonaco",
+        fontsize:16,
+        x:-12, y:0,
+        sub:"sparkly"
+    },
+    '0275-spiderweb': {
+        name:"spider web",
+        bday:20240414,
+        tags:["user","spooky","2024apr"],
+        frames:2,
+        delay:15,
+        colour:"#997799",
+        font: "lanapixel",
+        fontsize:11,
+        x:-1, y:-1,
+        sub:"synthetic"
     },
     '0275-bunnybounce': {
         name:"bunny mode",

@@ -143,6 +143,21 @@ let submitters = {
         subName: 'fearthefuzzybear',
         subURL:  'https://soupbug.carrd.co/',
         templates: []
+    },
+        milohtml: {
+        subName: 'milo-html',
+        subURL:  'https://www.deviantart.com/milo-html',
+        templates: []
+    },
+        qiekz: {
+        subName: 'qiekz',
+        subURL:  'https://www.tumblr.com/qiekz',
+        templates: []
+    },
+        damian: {
+        subName: 'damian ^_^',
+        subURL:  'https://rentry.co/arven',
+        templates: []
     }
 }
 

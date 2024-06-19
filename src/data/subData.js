@@ -133,6 +133,16 @@ let submitters = {
         subName: 'nikki',
         subURL:  'https://www.instagram.com/nicolelyee/',
         templates: []
+    },
+        cornstarch: {
+        subName: 'cornstarch confetti',
+        subURL:  'https://soupbug.carrd.co/',
+        templates: []
+    },
+        fearthefuzzybear: {
+        subName: 'fearthefuzzybear',
+        subURL:  'https://soupbug.carrd.co/',
+        templates: []
     }
 }
 

@@ -1,5 +1,41 @@
 let styleProps = {
-/*    '0279-sandwich': {
+  '0286-snailingurway': {
+        name:"Snailing your way!",
+        bday:20240614,
+        tags:["user","nature",],
+        frames:8,
+        delay:10,
+        colour:"#a08e60",
+        font: "monogramextended",
+        fontsize:16,
+        x:-12, y:1,
+        sub:"fearthefuzzybear"
+    },
+     '0285-snailingmyway': {
+        name:"Snailing my way?",
+        bday:20240614,
+        tags:["user","nature",],
+        frames:8,
+        delay:10,
+        colour:"#a08e60",
+        font: "monogramextended",
+        fontsize:16,
+        x:10, y:1,
+        sub:"fearthefuzzybear"
+    },
+  '0284-firsttrueblinkie': {
+        name:"FIRST TRUE BLINKIE",
+        bday:20240513,
+        tags:["user","pink",],
+        frames:6,
+        delay:1,
+        colour:"#bd1a58",
+        font: "lanapixel",
+        fontsize:11,
+        x:6, y:-1,
+        sub:"cornstarch"
+    },
+  '0279-sandwich': {
         name:"sandwiches!",
         bday:20240614,
         tags:["user","food",],
@@ -37,19 +73,7 @@ let styleProps = {
         x:7, y:-1,
         sub:"mellowshaymin"
     },
-    '0281-tumblrgrl': {
-        name:"Tumblr Grl",
-        bday:20240514,
-        tags:["user","pink",],
-        frames:2,
-        delay:20,
-        colour:"#eb7ada",
-        font: "offical emotes.",
-        fontsize:16,
-        x:-26, y:0,
-        sub:"kay9"
-    },
-    '0280-pinkalien': {
+        '0280-pinkalien': {
         name:"Take me away",
         bday:20240514,
         tags:["user","spooky","pink",],
@@ -62,6 +86,30 @@ let styleProps = {
         fontsize:9,
         x:-13, y:0,
         sub:"pinkukingdom"
+    },
+        '0278-galpals': {
+        name:"Gal Pals",
+        bday:20240514,
+        tags:["user","pink",],
+        frames:4,
+        delay:13,
+        colour:"#DA69BB",
+        font:"rainyhearts",
+        fontsize:16,
+        x:-1, y:0,
+        sub:"sweetsatellite"
+    },
+        '0281-tumblrgrl': {
+        name:"Tumblr Grl",
+        bday:20240514,
+        tags:["user","pink",],
+        frames:4,
+        delay:20,
+        colour:"#eb7ada",
+        font: "offical emotes.",
+        fontsize:16,
+        x:-26, y:0,
+        sub:"kay9"
     },
     '0275-stressed': {
         name:"Stressed...",
@@ -77,18 +125,6 @@ let styleProps = {
         x:-1, y:0,
         sub:"pawpr1nc3"
     },
-    '0278-galpals': {
-        name:"Gal Pals",
-        bday:20240514,
-        tags:["user","pink",],
-        frames:2,
-        delay:13,
-        colour:"#DA69BB",
-        font:"rainyhearts",
-        fontsize:16,
-        x:-1, y:0,
-        sub:"sweetsatellite"
-    },*/
     '0277-zombies': {
         name:"ZOMBIES BITE BACK",
         bday:20240414,

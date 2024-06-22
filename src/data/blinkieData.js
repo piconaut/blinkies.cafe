@@ -10,11 +10,11 @@ let styleProps = {
         fontsize:16,
         x:0, y:0,
         sub:"ashhmillr"
-    },
+    },*/
     '0283-purplelace': {
         name:"sweet dreams",
         bday:20240514,
-        tags:["user","pink","transparent",],
+        tags:["user","pink","transparent","2024may"],
         frames:4,
         delay:17,
         colour:"#ffffff",
@@ -27,7 +27,7 @@ let styleProps = {
     '0282-miraclemoon': {
         name:"miracle maker",
         bday:20240514,
-        tags:["user","pink","nature",],
+        tags:["user","pink","nature","2024may"],
         frames:2,
         delay:17,
         colour:"#df529e",
@@ -40,7 +40,7 @@ let styleProps = {
     '0281-tumblrgrl': {
         name:"Tumblr Grl",
         bday:20240514,
-        tags:["user","pink",],
+        tags:["user","pink","2024may"],
         frames:2,
         delay:20,
         colour:"#eb7ada",
@@ -52,7 +52,7 @@ let styleProps = {
     '0280-pinkalien': {
         name:"Take me away",
         bday:20240514,
-        tags:["user","spooky","pink",],
+        tags:["user","spooky","pink","2024may"],
         frames:2,
         delay:10,
         colour:"#ffdef2",
@@ -66,7 +66,7 @@ let styleProps = {
     '0275-stressed': {
         name:"Stressed...",
         bday:20240514,
-        tags:["user","pawpr1nc3"],
+        tags:["user","pawpr1nc3","2024may"],
         frames:2,
         delay:20,
         colour:"#000000",
@@ -80,15 +80,15 @@ let styleProps = {
     '0278-galpals': {
         name:"Gal Pals",
         bday:20240514,
-        tags:["user","pink",],
-        frames:2,
+        tags:["user","pink","2024may","my melody","kuromi","sanrio"],
+        frames:4,
         delay:13,
         colour:"#DA69BB",
         font:"rainyhearts",
         fontsize:16,
         x:-1, y:0,
         sub:"sweetsatellite"
-    },*/
+    },
     '0277-zombies': {
         name:"ZOMBIES BITE BACK",
         bday:20240414,

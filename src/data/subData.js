@@ -158,6 +158,11 @@ let submitters = {
         subName: 'damian ^_^',
         subURL:  'https://rentry.co/arven',
         templates: []
+    },
+        glittergroovy: {
+        subName: 'glittergroovy <3',
+        subURL:  'https://glittergroovy.tumblr.com/',
+        templates: []
     }
 }
 

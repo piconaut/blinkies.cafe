@@ -1,4 +1,47 @@
 let styleProps = {
+
+    '0294-spikedred': {
+        name:"Spiked Collar",
+        bday:20240615,
+        tags:["user","spooky",],
+        frames:2,
+        delay:20,
+        colour:"#AE0000",
+        outline:"#080305",
+        font: "pixeloid sans",
+        fontweight: "bold",
+        fontsize:9,
+        x:-16, y:0,
+        sub:"glittergroovy"
+    },
+    '0293-spikedpink': {
+        name:"Spiked Collar",
+        bday:20240615,
+        tags:["user","spooky","pink"],
+        frames:2,
+        delay:20,
+        colour:"#FDB3E1",
+        outline:"#080305",
+        font: "pixeloid sans",
+        fontweight: "bold",
+        fontsize:9,
+        x:-15, y:0,
+        sub:"glittergroovy"
+    },
+        '0295-spikedlight': {
+        name:"Spiked Collar",
+        bday:20240614,
+        tags:["user","spooky","pink",],
+        frames:2,
+        delay:20,
+        colour:"#E9EBF3",
+        outline:"#D39ABC",
+        font: "pixeloid sans",
+        fontweight: "bold",
+        fontsize:9,
+        x:-16, y:0,
+        sub:"glittergroovy"
+    },
     '0292-moonlight': {
         name:"moonlight!",
         bday:20240614,
@@ -54,7 +97,7 @@ let styleProps = {
     '0288-simplefrog': {
         name:"simply ribbiting!",
         bday:20240614,
-        tags:["user","nature",],
+        tags:["user","nature","transparent",],
         frames:8,
         delay:10,
         colour:"#98eeaa",
@@ -68,7 +111,7 @@ let styleProps = {
     '0287-fencyfrog': {
         name:"fen-cy meeting you!",
         bday:20240614,
-        tags:["user","nature",],
+        tags:["user","nature","transparent",],
         frames:8,
         delay:10,
         colour:"#98eeaa",
@@ -105,7 +148,7 @@ let styleProps = {
     },
   '0284-firsttrueblinkie': {
         name:"FIRST TRUE BLINKIE",
-        bday:20240513,
+        bday:20240613,
         tags:["user","pink",],
         frames:6,
         delay:1,
@@ -130,7 +173,7 @@ let styleProps = {
     '0283-purplelace': {
         name:"sweet dreams",
         bday:20240514,
-        tags:["user","pink","transparent",],
+        tags:["user","pink","transparent","2024may",],
         frames:4,
         delay:17,
         colour:"#ffffff",
@@ -143,7 +186,7 @@ let styleProps = {
     '0282-miraclemoon': {
         name:"miracle maker",
         bday:20240514,
-        tags:["user","pink","nature",],
+        tags:["user","pink","nature","2024may",],
         frames:2,
         delay:17,
         colour:"#df529e",
@@ -156,7 +199,7 @@ let styleProps = {
         '0280-pinkalien': {
         name:"Take me away",
         bday:20240514,
-        tags:["user","spooky","pink",],
+        tags:["user","spooky","pink","2024may"],
         frames:2,
         delay:10,
         colour:"#ffdef2",
@@ -170,7 +213,7 @@ let styleProps = {
         '0278-galpals': {
         name:"Gal Pals",
         bday:20240514,
-        tags:["user","pink",],
+        tags:["user","pink","2024may"],
         frames:4,
         delay:13,
         colour:"#DA69BB",
@@ -182,7 +225,7 @@ let styleProps = {
         '0281-tumblrgrl': {
         name:"Tumblr Grl",
         bday:20240514,
-        tags:["user","pink",],
+        tags:["user","pink","2024may"],
         frames:4,
         delay:20,
         colour:"#eb7ada",
@@ -194,7 +237,7 @@ let styleProps = {
     '0275-stressed': {
         name:"Stressed...",
         bday:20240514,
-        tags:["user","pawpr1nc3"],
+        tags:["user","pawpr1nc3","2024may"],
         frames:2,
         delay:20,
         colour:"#000000",

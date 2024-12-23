@@ -93,7 +93,7 @@ function updateCredit(blinkieStyle) {
 
     let subBadge = document.getElementById("subBadge");
     if (global.styleList[blinkieStyle].tags.includes('anakin')) {
-        subBadge.href = 'https://transbro.tumblr.com';
+        subBadge.href = 'https://transbro.neocities.org';
         subBadge.innerHTML = "<img src='/b/display/anakin.gif' alt='Blinkie Made by Anakin' style='width:150px;height:22px;'>";
     }
     else {

@@ -6,7 +6,7 @@ let submitters = {
     },
     anakin: {
         subName: 'Anakin',
-        subURL:  'https://transbro.tumblr.com',
+        subURL:  'https://transbro.neocities.org',
         templates: []
     },
     proxy: {

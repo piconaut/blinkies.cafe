@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<%= typeof stylesheet === 'undefined' ? 'styles.css' : stylesheet%>">
 </head>
 <body>
-    <% if (typeof noHeader !== 'undefined') { if (!noHeader) {%>
+    <% if (typeof noHeader === 'undefined') {%>
     <div id='banner' class='content'>
         blinkies.cafe
     </div>
@@ -33,4 +33,4 @@
         <br>
     </div>
     <hr>
-    <%}}%>
+    <%}%>

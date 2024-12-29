@@ -244,3 +244,26 @@ a[aria-current="page"] {
     text-decoration: none;
     color: black;
 }
+
+/* Based on https://webaim.org/techniques/css/invisiblecontent/ & https://www.w3schools.com/accessibility/accessibility_skip_links.php */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link {
+    color: black;
+    background-color: rgb(201,179,230);
+    padding: 5px;
+}
+
+.skip-link:focus {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+}

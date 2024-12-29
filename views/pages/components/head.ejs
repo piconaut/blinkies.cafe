@@ -22,15 +22,17 @@
     <link rel="stylesheet" type="text/css" href="<%= typeof stylesheet === 'undefined' ? '/styles.css' : stylesheet%>">
 </head>
 <body>
+    <a href="#main" class="sr-only skip-link">Skip to content!</a>
     <% if (typeof noHeader === 'undefined') {%>
-    <div id='banner' class='content'>
+    <header id='banner' class='content'>
         blinkies.cafe
-    </div>
-    <div id='navbar' class='content'>
+    </header>
+    <nav id='navbar' class='content'>
         <a href='/' <%=path == '' ? 'aria-current=page' : ''%>>generator</a> |
         <a href='/blog' <%=path == 'blog' ? 'aria-current=page' : ''%>>blog</a> |
         <a href="/archive" <%=path == 'archive' ? 'aria-current=page' : ''%>>archive</a>
         <br>
-    </div>
+    </nav>
     <hr>
     <%}%>
+    <main id="main">

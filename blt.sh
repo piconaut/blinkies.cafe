@@ -10,14 +10,7 @@ if [[ $* == *--rmi* ]]; then
     sudo docker rmi $(sudo docker images -q)
 fi
 
-if [[ $* == *-b* ]]; then
-    rm public/blinkies-public/blinkiesCafe-*gif
-    rm assets/blinkies-frames/*png
-    rm -rf logs/
-    for file in public/blinkies-public/display/*.gif
-    do
-        convert $file[0] ${file%.gif}.png
-    done
+if [[ $* == *--build* ]]; then
     sudo docker build . -t piconaut/blinkies.cafe
 fi
 
@@ -46,6 +39,5 @@ fi
 if [[ $* == *--prod* ]]; then
   ssh blinkies.cafe ./blt.sh --pull --run
 fi
-
 
 sudo echo ''

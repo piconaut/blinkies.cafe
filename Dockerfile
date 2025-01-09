@@ -1,4 +1,6 @@
-FROM node:17.4.0-alpine3.15 AS BUILD_IMAGE
+FROM node:17.4.0-alpine3.15 AS build_image
+
+RUN apk add --no-cache ca-certificates git imagemagick
 
 ENV NODE_ENV=production
 
@@ -17,6 +19,16 @@ RUN npm install --production
 # bundle app source
 COPY . .
 
+# convert gif to png
+RUN rm -f public/blinkies-public/blinkiesCafe-*gif && \
+    rm -f assets/blinkies-frames/*png && \
+    rm -rf logs/ && \
+    if ls public/blinkies-public/display/*.gif 1> /dev/null 2>&1; then \
+        for file in public/blinkies-public/display/*.gif; do \
+            convert $file[0] ${file%.gif}.png; \
+        done; \
+    fi
+
 EXPOSE 8080
 
 FROM node:17.4.0-alpine3.15
@@ -25,9 +37,9 @@ RUN apk add --update imagemagick=7.1.0.16-r0
 WORKDIR /app
 
 # copy from build image
-COPY --from=BUILD_IMAGE /app .
-#COPY --from=BUILD_IMAGE /app/node_modules ./app/node_modules
+COPY --from=build_image /app .
+#COPY --from=build_image /app/node_modules ./app/node_modules
 
 COPY ./assets/.fonts /usr/share/fonts
 
-CMD ["npm","start"]
+CMD ["npm","test"]

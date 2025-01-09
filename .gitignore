@@ -5,3 +5,4 @@ public/blinkies-public/display/*png
 assets/blinkies-frames
 logs/
 .directory
+node_modules/

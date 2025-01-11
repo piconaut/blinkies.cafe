@@ -42,4 +42,4 @@ COPY --from=build_image /app .
 
 COPY ./assets/.fonts /usr/share/fonts
 
-CMD ["npm","start"]
+CMD ["node", "server.js"]

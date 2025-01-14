@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>the blinkie feed | recently created blinkies!</title>
-  <meta name='description' content="a feed of the 18 latest user-created blinkies.">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <link rel="stylesheet" type="text/css" href="/styles.css">
-  <meta name="theme-color" content="#4e3075">
-</head>
-<body>
-    <div id='banner' class='content'>
-    blinkies.cafe
-    </div>
-    <div id='navbar' class='content'>
-        <a href='/'>generator</a> | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
-    </div><hr>
+<%- include('components/head.ejs', {
+    path: "feed", 
+    title: "the blinkie feed | recently created blinkies!", 
+    description: "a feed of the 18 latest user-created blinkies."
+})%>
 <div class='content'>
     <h1>recently generated blinkies</h1>
 </div>
@@ -58,5 +40,3 @@
     }
 %>
 <%- include('components/footer.html') %>
-</body>
-</html>

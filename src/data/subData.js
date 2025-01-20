@@ -30,7 +30,7 @@ let submitters = {
         templates: []
     },
     crow: {
-        subName: 'Crow',
+        subName: 'Crow&amp;',
         subURL:  'https://crowpunk.neocities.org/',
         templates: []
     },

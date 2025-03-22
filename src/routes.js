@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require("fs");
 const controller = require('./controller.js');
-const sanitize = require('./sanitize.js');
+const middleware = require('./middleware.js');
 
 // pages
 router.get("/", controller.serveCafe);
@@ -18,7 +18,7 @@ router.get("/blog", function(req,res){
 router.get("/halloween", controller.serveHalloween);
 router.get("/blog/:post", function(req,res){
     try {
-        const blogpost = sanitize.noSpecials(req.params['post'].toString());
+        const blogpost = middleware.noSpecials(req.params['post'].toString());
         const reqPath = global.appRoot + "/views/pages/blog/" + blogpost + '.ejs';
         fs.access(reqPath, fs.constants.F_OK, (err) => {
             if (!err) { res.render('pages/blog/' + blogpost + '.ejs'); }
@@ -31,7 +31,7 @@ router.get("/blog/:post", function(req,res){
 });
 
 // blinkies
-router.get('/b/:blinkieID', controller.serveBlinkie);
+router.get('/b/:blinkieID', middleware.blockHotlinking, controller.serveBlinkie);
 router.use('/b/display/', express.static("public/blinkies-public/display/", { maxAge: '365d' }));
 
 // api

@@ -6,7 +6,7 @@ const blinkieData = require('./data/blinkieData.js');
 const subData     = require('./data/subData.js');
 const fontData    = require('./data/fontData.js');
 const logger      = require('./logger.js').logger;
-const sanitize    = require('./sanitize.js');
+const middleware  = require('./middleware.js');
 const siteURL = global.prod ? 'https://blinkies.cafe' : '';
 let blacklist = {ips: [], words: []};
 try { blacklist = require('./data/blacklist.js'); }
@@ -164,7 +164,7 @@ const serveSubmitters = function (req, res) {
 const serveBlinkie = function (req, res) {
     let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {
-        const blinkieID = sanitize.noSpecials(req.params['blinkieID']);
+        const blinkieID = middleware.noSpecials(req.params['blinkieID']);
         const reqPath = global.appRoot + "/public/blinkies-public/" + blinkieID;
         fs.access(reqPath, fs.constants.F_OK, (err) => {
             if (!err) { res.sendFile(reqPath); }
@@ -188,7 +188,7 @@ const serveCafe = function (req, res) {
 
 const serveWall = function (req, res) {
     const freeze = Boolean(req.query.freeze);
-    const query  = req.query.q ? sanitize.noSpecials(String(req.query.q)) : '';
+    const query  = req.query.q ? middleware.noSpecials(String(req.query.q)) : '';
     res.setHeader(
         'Content-Security-Policy',
         "script-src 'self'"

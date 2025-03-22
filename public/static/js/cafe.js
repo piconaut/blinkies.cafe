@@ -201,7 +201,7 @@ function submit(event) {
             blinkieLink.download = blinkieURL.split('/').at(-1);
             blinkieLink.target = "_blank";
             blinkieLinkHolder.appendChild(blinkieLink);
-            blinkieLinkHolder.innerHTML += "<br><b>do not <a href='https://www.keycdn.com/support/what-is-hotlinking' target='_blank'>hotlink</a> or copy/paste image url!</b><br>generated blinkies are deleted after 1 hour.<br><b>upload your blinkie to an image host</b> to use on your site.";
+            blinkieLinkHolder.innerHTML += "<br><b>do not <a href='https://www.keycdn.com/support/what-is-hotlinking' target='_blank'>hotlink</a> or copy/paste image url!</b><br><b>upload your blinkie to an image host</b> to use on your site.";
             updateCredit(blinkieStyle);
             if (submitbtn.innerText == 'brewing...') submitbtn.innerText = 'cooldown..'
         });

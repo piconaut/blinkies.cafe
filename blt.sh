@@ -1,12 +1,10 @@
 #!/bin/bash
 
 if [[ $* == *--rm* ]]; then
-    echo hi
     sudo docker rm $(sudo docker ps -a -q)
 fi
 
 if [[ $* == *--rmi* ]]; then
-    echo hiii
     sudo docker rmi $(sudo docker images -q)
 fi
 

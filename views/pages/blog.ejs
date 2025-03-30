@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>blinkie thougts: the blinkies.cafe blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='articles on blinkie creation, software development, and digital ephemera in general.'>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://blinkies.cafe/blog">
-  <link rel="stylesheet" type="text/css" href="/styles.css">
-  <meta name="theme-color" content="#4e3075">
-</head>
-<body>
-    <div id='banner' class='content'>
-    blinkies.cafe
-    </div>
-    <div id='navbar' class='content'>
-        <a href='/'>generator</a> | blog | <a href='/archive'>archive</a><br>
-    </div><hr>
+<%- include('components/head.ejs', {path: "blog", title: "blinkie thoughts: the blinkies.cafe blog", description: "articles on blinkie creation, software development, and digital ephemera in general."}) %>
 <div class='content'>
     <h1>blinkie thoughts</h1>
 </div>
@@ -32,5 +10,3 @@
     <b>2022-05-14:</b> <a href='/blog/2022-05-14-how-to-make-blinkies'>How to Make Blinkies in Paint</a><br><br>
 </div>
 <%- include(global.appRoot + '/views/pages/components/footer.html') %>
-</body>
-</html>

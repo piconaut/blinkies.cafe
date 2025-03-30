@@ -14,9 +14,9 @@ function searchBlinkies() {
     }
 }
 
-document.getElementById("backToGalleryBtn").onclick = function() {
+onClickOrEnter(document.getElementById("backToGalleryBtn"), function() {
     history.back();
-}
+});
 
 search.addEventListener("input", searchBlinkies);
 search.addEventListener("keyup", searchBlinkies);

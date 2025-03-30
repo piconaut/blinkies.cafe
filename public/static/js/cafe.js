@@ -60,7 +60,7 @@ function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
         // if page has enough blinkies to populate tile, update the tile.
         if (i < stylePage.length) {
             const styleID            = stylePage[i][0];
-            blinkieTiles[i].onclick  = function() { selectStyle(styleList, styleID); }
+            onClickOrEnter(blinkieTiles[i], function() { selectStyle(styleList, styleID); });
             blinkieTiles[i].style.visibility = '';
             if (!firstLoad) {
                 blinkieTiles[i].src      = '/b/display/' + styleID + '.' + blinkieExt;
@@ -247,13 +247,13 @@ getStyleList().then(function(styleList){
     const selectTags     = document.getElementById("selectTags");
 
     let toggleFreeze = document.getElementById("toggleFreeze");
-    toggleFreeze.onclick = function () {
+    onClickOrEnter(toggleFreeze, function () {
         let url = new URL(document.location.href)
         if (toggleFreeze.checked) url.searchParams.set('freeze',1);
         else url.searchParams.delete('freeze')
         window.history.pushState('',document.title,url);
         loadStyles(styleList, styleOrder, global.currentPage, false);
-    }
+    });
 
     let tags = []
     document.querySelectorAll(".tag").forEach(tag => tags.push(tag.value));
@@ -273,33 +273,33 @@ getStyleList().then(function(styleList){
         global.currentPage = 1;
         loadStyles(styleList, styleOrder, global.currentPage, false);
     }
-    sortNew.onclick = function() {
+    onClickOrEnter(sortNew, function() {
         if (currentSort != 'bdaydesc') {
             styleOrder = sortStyles(styleList,'bday', 'desc');
             global.currentPage = 1;
             loadStyles(styleList, styleOrder, global.currentPage, false);
         }
-    }
-    sortOld.onclick = function() {
+    });
+    onClickOrEnter(sortOld, function() {
         if (currentSort != 'bdayasc') {
             styleOrder = sortStyles(styleList,'bday', 'asc');
             global.currentPage = 1;
             loadStyles(styleList, styleOrder, global.currentPage, false);
         }
-    }
-    sortRandom.onclick = function() {
+    });
+    onClickOrEnter(sortRandom, function() {
         styleOrder = shuffleStyles(styleList);
         global.currentPage = 1;
         loadStyles(styleList, styleOrder, global.currentPage, false);
-    }
-    nextPage.onclick = function() {
+    });
+    onClickOrEnter(nextPage, function() {
         global.currentPage ++;
         loadStyles(styleList, styleOrder, global.currentPage, false);
-    }
-    prevPage.onclick = function() {
+    });
+    onClickOrEnter(prevPage, function() {
         global.currentPage --;
         loadStyles(styleList, styleOrder, global.currentPage, false);
-    }
+    });
 });
 
 document.getElementById("blinkieForm").addEventListener("submit", submit);
@@ -307,7 +307,7 @@ document.getElementById("blinkieText").addEventListener("keypress", enterSubmit)
 document.getElementById("blinkieStyle").addEventListener("keypress", enterSubmit);
 document.getElementById("blinkieScale").addEventListener("keypress", enterSubmit);
 
-document.getElementById("backToGalleryBtn").onclick = function() {
+onClickOrEnter(document.getElementById("backToGalleryBtn"), function() {
     let gallery = document.getElementById("gallery");
     let pour = document.getElementById("pour");
     gallery.style.visibility = '';
@@ -316,11 +316,11 @@ document.getElementById("backToGalleryBtn").onclick = function() {
     let url = new URL(document.location.href)
     url.searchParams.delete('s');
     window.history.pushState('',document.title,url);
-}
+});
 
 const symbolToggle = document.getElementById("symbolToggle");
 const symbolTable = document.getElementById("symbolTable");
-symbolToggle.onclick = function() {
+onClickOrEnter(symbolToggle, function() {
     if (symbolTable.style.visibility == 'hidden') {
         symbolTable.style.visibility = '';
         symbolToggle.innerText = 'hide symbols ▴';
@@ -329,17 +329,17 @@ symbolToggle.onclick = function() {
         symbolTable.style.visibility = 'hidden';
         symbolToggle.innerText = 'show symbols ▾';
     }
-}
+});
 
 let symbolButtons = document.querySelectorAll(".symbolButton");
 symbolButtons.forEach(function(button){
-    button.onclick = function() {
-        insertAtCaret('blinkieText',button.innerText);
-    }
+    onClickOrEnter(button, function(e) {
+        insertAtCaret('blinkieText',button.innerText, e.type != "keyup");
+    });
 });
 
 // https://web.archive.org/web/20110102112946/http://http://www.scottklarr.com/topic/425/how-to-insert-text-into-a-textarea-where-the-cursor-is/
-function insertAtCaret(areaId,text) {
+function insertAtCaret(areaId,text,focus=false) {
     var txtarea = document.getElementById(areaId);
     var scrollPos = txtarea.scrollTop;
     var strPos = 0;
@@ -347,7 +347,7 @@ function insertAtCaret(areaId,text) {
         "ff" : (document.selection ? "ie" : false ) );
     var range;
     if (br == "ie") {
-        txtarea.focus();
+        if (focus) { txtarea.focus(); }
         range = document.selection.createRange();
         range.moveStart ('character', -txtarea.value.length);
         strPos = range.text.length;
@@ -359,7 +359,7 @@ function insertAtCaret(areaId,text) {
     txtarea.value=front+text+back;
     strPos = strPos + text.length;
     if (br == "ie") {
-        txtarea.focus();
+        if (focus) { txtarea.fo-cus(); }
         range = document.selection.createRange();
         range.moveStart ('character', -txtarea.value.length);
         range.moveStart ('character', strPos);
@@ -369,7 +369,7 @@ function insertAtCaret(areaId,text) {
     else if (br == "ff") {
         txtarea.selectionStart = strPos;
         txtarea.selectionEnd = strPos;
-        txtarea.focus();
+        if (focus) { txtarea.focus(); }        
     }
     txtarea.scrollTop = scrollPos;
 }
@@ -383,10 +383,7 @@ function queryWall (queryString) {
 }
 const queryText   = document.getElementById("queryText");
 const queryAction = document.getElementById("queryAction");
-queryAction.onclick = function () { queryWall(queryText.value); }
-queryText.addEventListener("keypress", function (event) {
-    if(event.key === 'Enter') queryWall(queryText.value);
-});
+onClickOrEnter(queryAction, function () { queryWall(queryText.value); });
 
 document.getElementById("badgetxt").onclick = function() {
     this.focus();

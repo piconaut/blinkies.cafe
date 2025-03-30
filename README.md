@@ -1,6 +1,30 @@
 # blinkies.cafe
 
-## Project structure
+## How-to
+### Clone & run locally (Docker)
+This requires *git*, *Docker* & *imagemagick* to be installed.
+```sh
+git clone https://github.com/piconaut/blinkies.cafe.git
+cd blinkies.cafe
+
+./blt.sh -b  # build assets
+./blt.sh --test  # development mode
+```
+See [blt.sh](blt.sh) for more options.
+
+### Clone & run locally (Node.JS)
+This requires *git*, *Node.js*, *imagemagick* and a shell to be installed locally.
+```sh
+git clone https://github.com/piconaut/blinkies.cafe.git
+cd blinkies.cafe
+npm install
+
+npm run test  # development
+npm start  # production
+```
+
+## Reference
+### Project structure
 
 - [assets/](assets/)
     - [blinkies-bg/](assets/blinkies-bg/): frames used when creating blinkies.

@@ -238,3 +238,9 @@ action {
 #tiles {
     margin-top:5px;
 }
+
+/* show current page as not a link */
+a[aria-current="page"] {
+    text-decoration: none;
+    color: black;
+}

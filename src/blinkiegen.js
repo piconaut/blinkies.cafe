@@ -7,6 +7,19 @@ const blinkieData = require('./data/blinkieData.js')
 const fontData    = require('./data/fontData.js')
 const logger      = require('./logger.js').logger
 
+/**
+ * Generates a blinkie GIF based on the provided parameters.
+ *
+ * @async
+ * @function pour
+ * @param {string} blinkieID - Unique identifier for the blinkie.
+ * @param {string} instyle - Style ID for the blinkie.
+ * @param {string} fontOverride - Font to override the default style font.
+ * @param {string} intext - Input text to render on the blinkie.
+ * @param {number} inscale - Scale factor for the blinkie (1 to 4).
+ * @param {boolean} split - Whether to split the text into two lines.
+ * @returns {Promise<string>} The blinkie ID or 'error' if an error occurs.
+ */
 async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
     try {
         // assign blinkie parms
@@ -102,7 +115,16 @@ async function pour(blinkieID, instyle, fontOverride, intext, inscale, split) {
     return blinkieID;
 }
 
+/**
+ * Replaces specific substrings or characters in a given string with their corresponding mapped values.
+ * The function sanitizes the input string by escaping certain characters and removing unwanted ones,
+ * then replaces matches based on a predefined character map.
+ *
+ * @param {string} str - The input string to process and replace characters in.
+ * @returns {string} - The processed string with characters replaced according to the character map.
+ */
 function replaceChars(str) {
+
     const trimString = str.substring(0,128) + '';
     const sanitizedString = trimString.replace(/[\\']/g, '\\$&').replace(/\u0000/g, '\\0').replace(/\ufe0f/g, '').replace(/%/g, '\\%');
     const charMap = {
@@ -155,6 +177,30 @@ function replaceChars(str) {
     return outString;
 }
 
+
+/**
+ * Processes text parameters to determine font settings, handle fallback fonts, 
+ * and optionally split the text into two lines if necessary.
+ *
+ * @async
+ * @function processText
+ * @param {Object} bParms - The parameters for processing text.
+ * @param {string} bParms.cleantext - The cleaned input text to process.
+ * @param {string} [bParms.fontOverride] - Optional font override specified by the user.
+ * @param {string} bParms.font - The current font being used.
+ * @param {number} bParms.fontsize - The font size to be applied.
+ * @param {string} [bParms.fontweight] - The font weight to be applied, if specified.
+ * @param {number} bParms.y - The vertical position for the text.
+ * @param {string} [bParms.antialias] - The antialiasing setting for the font.
+ * @param {boolean} [bParms.split] - Flag indicating whether the text should be split into two lines.
+ * @param {string} [bParms.cleantext1] - The first line of split text, if applicable.
+ * @param {string} [bParms.cleantext2] - The second line of split text, if applicable.
+ * @param {string} [bParms.errmsg] - Error message, if an error occurs during processing.
+ * @param {string} [bParms.errloc] - Location of the error, if an error occurs during processing.
+ * @param {Object} fontData - Global font data containing font properties and fallback fonts.
+ * @returns {Promise<Object>} The updated `bParms` object with processed text and font settings.
+ * @throws {Error} If an error occurs during text processing.
+ */
 async function processText(bParms) {
     try {
 
@@ -256,7 +302,37 @@ async function processText(bParms) {
     return bParms;
 }
 
+/**
+ * Renders frames for a blinkie animation based on the provided parameters.
+ *
+ * @async
+ * @function renderFrames
+ * @param {string} blinkieID - The unique identifier for the blinkie animation.
+ * @param {Object} bParms - The parameters for rendering the frames.
+ * @param {number} bParms.frames - The number of frames to render.
+ * @param {Array<number>|number} [bParms.x] - The x-coordinate(s) for text placement.
+ * @param {Array<number>|number} [bParms.shadowx] - The x-offset(s) for shadow placement.
+ * @param {Array<number>|number} [bParms.shadowy] - The y-offset(s) for shadow placement.
+ * @param {Array<string>|string} [bParms.colour] - The color(s) for the text.
+ * @param {Array<string>|string} [bParms.outline] - The color(s) for the text outline.
+ * @param {Array<string>|string} [bParms.shadow] - The color(s) for the text shadow.
+ * @param {string} bParms.cleantext1 - The primary text to render.
+ * @param {string} [bParms.cleantext2] - The secondary text to render (if split is enabled).
+ * @param {boolean} [bParms.split] - Whether to split the text into two lines.
+ * @param {number} [bParms.y] - The y-coordinate for the primary text placement.
+ * @param {number} [bParms.y2] - The y-coordinate for the secondary text placement (if split is enabled).
+ * @param {string} bParms.bgID - The background ID for the frames.
+ * @param {boolean} bParms.antialias - Whether to apply antialiasing to the text.
+ * @param {string} bParms.font - The font family to use for the text.
+ * @param {number} bParms.fontsize - The font size to use for the text.
+ * @param {number} bParms.fontweight - The font weight to use for the text.
+ * @param {string} [bParms.errmsg] - Error message in case of failure.
+ * @param {string} [bParms.errloc] - Error location in case of failure.
+ * @returns {Promise<Object>} A promise that resolves to the updated `bParms` object.
+ * @throws {Error} If an error occurs during frame rendering.
+ */
 async function renderFrames(blinkieID, bParms) {
+
     let stdout = [];
     let stderr = [];
 
@@ -327,6 +403,21 @@ async function renderFrames(blinkieID, bParms) {
     return bParms;
 }
 
+/**
+ * Asynchronously renders a blinkie GIF using the specified parameters.
+ *
+ * @async
+ * @function
+ * @param {string} blinkieID - The unique identifier for the blinkie.
+ * @param {Object} bParms - The parameters for rendering the blinkie.
+ * @param {number} bParms.delay - The delay between frames in the GIF (in centiseconds).
+ * @param {number} bParms.frames - The total number of frames in the blinkie animation.
+ * @param {number} bParms.scale - The scaling factor for the output GIF.
+ * @param {string} [bParms.errmsg] - An optional field to store error messages, if any.
+ * @param {string} [bParms.errloc] - An optional field to store the location of the error, if any.
+ * @returns {Promise<Object>} A promise that resolves to the updated `bParms` object, potentially containing error information.
+ * @throws {Error} If the `execFile` command fails to execute.
+ */
 async function renderBlinkie(blinkieID, bParms) {
     let args_gif = [];
     let frameDelay = bParms.delay + 1;

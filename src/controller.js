@@ -1,4 +1,5 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
+
 const fs = require("fs");
 
 const blinkiegen  = require('./blinkiegen.js');
@@ -73,8 +74,21 @@ function profane(intext) {
 const queue = require('promise-queue')
 var brueue = new queue(1, Infinity);
 var recentBlinkies = [];
+/**
+ * Handles the creation of a blinkie and returns a promise that resolves with the generated blinkie ID.
+ *
+ * @param {Object} res - The HTTP response object used to send the generated blinkie URL.
+ * @param {string} style - The style of the blinkie to be generated.
+ * @param {string} font - The font to be used in the blinkie.
+ * @param {string} intext - The text to be displayed on the blinkie.
+ * @param {number} scale - The scale factor for the blinkie size.
+ * @param {boolean} split - Whether the text should be split across multiple lines.
+ * @param {boolean} toFeed - Whether the generated blinkie should be added to the recent blinkies feed.
+ * @returns {Promise<string>} A promise that resolves with the unique ID of the generated blinkie.
+ */
 var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
 {
+
     var promise = new Promise((resolve) => {
         // generate unique blinkie ID
         let blinkieIDassigned = false;

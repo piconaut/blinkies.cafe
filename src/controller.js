@@ -1,7 +1,6 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "varsIgnorePattern": "stdout*" }] */
 
 const fs = require("fs");
-
 const blinkiegen  = require('./blinkiegen.js');
 const blinkieData = require('./data/blinkieData.js');
 const subData     = require('./data/subData.js');
@@ -32,6 +31,16 @@ function makeid(length) {
 }
 
 let recentRequests = [];
+/**
+ * Determines whether a request from a given IP address is allowed based on a cooldown mechanism.
+ * 
+ * The function maintains a list of recent requests and enforces a cooldown period of 2 seconds
+ * for each IP address. If the IP address is not on cooldown, the request is allowed and the IP
+ * is added to the list of recent requests. In non-production environments, all requests are allowed.
+ * 
+ * @param {string} ip - The IP address of the requester.
+ * @returns {boolean} - Returns `true` if the request is allowed, otherwise `false`.
+ */
 function cooldown(ip) {
     const currentTime = Date.now();
     let allowed       = false;
@@ -112,6 +121,26 @@ var orderBlinkie = function(res, style, font, intext, scale, split, toFeed)
     return promise;
 }
 
+
+/**
+ * Handles the pouring of a blinkie based on the request parameters.
+ * Validates input, applies defaults, and queues the blinkie creation process.
+ * Logs the request details unless the `/nolog` prefix is used in the blinkie text.
+ *
+ * @async
+ * @function pourBlinkie
+ * @param {Object} req - The HTTP request object.
+ * @param {string} req.ip - The IP address of the client making the request.
+ * @param {Object} req.body - The body of the HTTP request.
+ * @param {string} [req.body.blinkieStyle] - The style of the blinkie (default: '0121-blinkiescafe').
+ * @param {string} [req.body.blinkieText] - The text to be displayed on the blinkie (default: '').
+ * @param {number|string} [req.body.blinkieScale] - The scale of the blinkie (default: 1).
+ * @param {boolean} [req.body.splitText] - Whether to split the text (default: false).
+ * @param {boolean} [req.body.toFeed] - Whether to add the blinkie to the feed (default: false).
+ * @param {string} [req.body.blinkieFont] - The font of the blinkie (default: 'auto').
+ * @param {Object} res - The HTTP response object.
+ * @returns {Promise<void>} - A promise that resolves when the blinkie is queued for creation.
+ */
 const pourBlinkie = async function (req, res) {
     if (cooldown(req.ip) && !blacklist.ips.includes(req.ip)) {
         const style      = typeof req.body.blinkieStyle == 'string' ? req.body.blinkieStyle : '0121-blinkiescafe';
@@ -175,6 +204,17 @@ const serveSubmitters = function (req, res) {
     });
 }
 
+/**
+ * Serves a blinkie image file based on the provided blinkie ID in the request parameters.
+ * If the requested blinkie file does not exist or an error occurs, a default blinkie image is served.
+ *
+ * @function
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} req.params - The parameters from the request URL.
+ * @param {string} req.params.blinkieID - The ID of the requested blinkie.
+ * @param {Object} res - The HTTP response object.
+ * @returns {void} Sends the requested blinkie file or the default blinkie file as a response.
+ */
 const serveBlinkie = function (req, res) {
     let defaultPath = global.appRoot + "/public/blinkies-public/display/blinkiesCafe.gif";
     try {

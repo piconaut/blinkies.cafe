@@ -1,4 +1,40 @@
 /* eslint no-control-regex: "off", no-unused-vars: ["error", { "args":"none", "varsIgnorePattern": "std*" }] */
+/**
+ * @file blinkiegen.js
+ * @description This module provides functionality for generating animated "blinkie" GIFs based on user-defined parameters such as style, font, text, and scale. 
+ * It includes methods for processing input text, rendering animation frames, and assembling the final GIF. The module relies on external resources 
+ * like font and style data, as well as ImageMagick for image manipulation.
+ *
+ * Key Features:
+ * - Supports custom styles, fonts, and text input for blinkie generation.
+ * - Automatically handles font fallback for unsupported characters.
+ * - Provides text sanitization and character replacement for special symbols.
+ * - Allows splitting long text into two lines for better visual presentation.
+ * - Generates animation frames and assembles them into a GIF with configurable delays and scaling.
+ *
+ * Dependencies:
+ * - Node.js modules: `fs`, `util`, `child_process`.
+ * - External tools: ImageMagick (`convert` command).
+ * - Local modules: `blinkieData`, `fontData`, and `logger`.
+ *
+ * Exports:
+ * - `pour`: Main function to generate a blinkie GIF.
+ *
+ * Usage:
+ * Import the module and call the `pour` function with the required parameters to generate a blinkie GIF.
+ *
+ * Example:
+ * ```javascript
+ * const { pour } = require('./blinkiegen');
+ * const blinkieID = await pour('uniqueID', 'styleID', 'fontName', 'Hello World!', 2, false);
+ * console.log(`Generated blinkie ID: ${blinkieID}`);
+ * ```
+ *
+ * Note:
+ * - Ensure that the required font and style data files are available in the specified paths.
+ * - ImageMagick must be installed and accessible via the command line.
+ */
+
 const fs       = require("fs");
 const util     = require('util');
 const execFile = util.promisify(require('child_process').execFile);

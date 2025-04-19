@@ -1,3 +1,19 @@
+/**
+ * A collection of font metadata and fallback font configurations.
+ * 
+ * @typedef {Object} Font
+ * @property {number} fontsize - The font size in pixels.
+ * @property {number} y - The vertical offset adjustment for the font.
+ * @property {string} antialias - The antialiasing setting for the font.
+ * @property {boolean} [symbols] - Indicates if the font includes symbols (optional).
+ * @property {boolean} [charsets] - Indicates if the font supports multiple character sets (optional).
+ * @property {string} sourceName - The name of the font's creator or source.
+ * @property {string} sourceURL - The URL to the font's source or creator's page.
+ * @property {string} [fontweight] - The weight of the font (e.g., 'bold') (optional).
+ * 
+ * @type {Object.<string, Font>}
+ */
+
 const fonts = {
     "moonaco" : {
         fontsize:  16,

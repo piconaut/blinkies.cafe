@@ -1,3 +1,31 @@
+/**
+ * An object containing style properties for various blinkie animations.
+ * Each key represents a unique identifier for a blinkie, and its value is an object
+ * containing metadata and styling details for the blinkie.
+ *
+ * Properties:
+ * - `name` {string} - The display name of the blinkie.
+ * - `bday` {number} - The creation date of the blinkie in YYYYMMDD format.
+ * - `tags` {string[]} - An array of tags categorizing the blinkie.
+ * - `frames` {number} - The number of animation frames for the blinkie.
+ * - `delay` {number} - The delay between animation frames in milliseconds.
+ * - `colour` {string|string[]} - The primary color(s) of the blinkie.
+ * - `outline` {string|string[]} - The outline color(s) of the blinkie (optional).
+ * - `shadow` {string|string[]} - The shadow color(s) of the blinkie (optional).
+ * - `shadowx` {number|number[]} - The horizontal offset(s) for the shadow (optional).
+ * - `shadowy` {number|number[]} - The vertical offset(s) for the shadow (optional).
+ * - `font` {string} - The font used for the blinkie text.
+ * - `fontweight` {string} - The font weight (e.g., "bold") (optional).
+ * - `fontsize` {number} - The font size in pixels.
+ * - `x` {number|number[]} - The horizontal position offset(s) for the text.
+ * - `y` {number|number[]} - The vertical position offset(s) for the text.
+ * - `sub` {string} - The creator or submitter of the blinkie (optional).
+ * - `sourceName` {string} - The name of the source for the blinkie (optional).
+ * - `sourceURL` {string} - The URL of the source for the blinkie (optional).
+ * - `bgID` {string} - The ID of a background associated with the blinkie (optional).
+ * - `bgType` {string} - The type of background (e.g., "png") (optional).
+ */
+
 let styleProps = {
 /*    '0279-sandwich': {
         name:"sandwiches!",

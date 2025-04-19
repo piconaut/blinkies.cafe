@@ -36,7 +36,15 @@ function postBlinkie(blinkieText, blinkieStyle, blinkieFont, blinkieScale, split
 /* gallery browsing */
 /*------------------*/
 
-// populate gallery page.
+/**
+ * Populate gallery page with blinkie tiles.
+ * Updates the styles displayed on the current page, manages pagination, and handles visibility of blinkie tiles.
+ *
+ * @param {Object} styleList - An object containing style details, where keys are style IDs and values are style metadata.
+ * @param {Array} styleOrder - An array defining the order of style IDs to be displayed.
+ * @param {number} currentPage - The current page number being displayed.
+ * @param {boolean} firstLoad - A flag indicating whether this is the first time the page is being loaded.
+ */
 function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
     // calculate index of first & last blinkies on page.
     const indexStart = pageSize*(currentPage-1);
@@ -79,6 +87,29 @@ function loadStyles (styleList, styleOrder, currentPage, firstLoad) {
     nextPage.style.visibility = indexEnd >= styleOrder.length ? 'hidden' : '';
 }
 
+/**
+ * Updates the credit link and sub badge based on the provided blinkie style.
+ *
+ * @param {string} blinkieStyle - The key representing the style of the blinkie in the global style list.
+ *
+ * Global Dependencies:
+ * - `global.styleList`: An object containing style information for blinkies. Each style should have:
+ *   - `subName` (optional): The name to display in the credit link.
+ *   - `subURL` (optional): The URL to link to in the credit link.
+ *   - `tags` (array): A list of tags associated with the style.
+ *
+ * DOM Dependencies:
+ * - An element with the ID `creditLink`:
+ *   - Displays the credit name and links to the appropriate URL.
+ * - An element with the ID `subBadge`:
+ *   - Displays a badge if the style has specific tags (e.g., 'anakin').
+ *
+ * Behavior:
+ * - If the style has a `subName`, it updates the `creditLink` element's text and optionally its `href`.
+ * - If the style does not have a `subName`, it defaults the `creditLink` to a predefined URL and name.
+ * - If the style's tags include 'anakin', it updates the `subBadge` element with a specific badge.
+ * - If the style's tags do not include 'anakin', it clears the `subBadge` element.
+ */
 function updateCredit(blinkieStyle) {
     let creditLink = document.getElementById("creditLink");
     if (global.styleList[blinkieStyle].subName) {
@@ -102,7 +133,20 @@ function updateCredit(blinkieStyle) {
     }
 }
 
-// select a blinkie to customize.
+/**
+ * Selects a blinkie style for customization.
+ * Updates the UI and URL based on the selected style for a "blinkie" customization.
+ *
+ * @param {Array<string>} styleList - An array of available style keys (not used in the function).
+ * @param {string} targetKey - The key of the selected style to apply.
+ *
+ * This function performs the following:
+ * - If it's the first pour in the session, updates the preview image and credits.
+ * - Sets a random placeholder text in the blinkie text input field.
+ * - Updates the hidden input field with the selected style key.
+ * - Hides the gallery and makes the pour section visible.
+ * - Updates the browser's URL to include the selected style key as a query parameter.
+ */
 function selectStyle(styleList, targetKey) {
     // preview style if first pour in session.
     let freshBlinkie = document.getElementById('freshBlinkie');
@@ -169,8 +213,15 @@ function enterSubmit(event) {
     }
 }
 
+/**
+ * Handles the submission of the blinkie generation form.
+ * Prevents default form submission behavior, checks cooldown timing, 
+ * and sends a request to generate a new blinkie with the provided parameters.
+ * Updates the UI with the generated blinkie and relevant download link.
+ *
+ * @param {Event} event - The event object associated with the form submission.
+ */
 let lastRequestTime = 0;
-
 function submit(event) {
     event.preventDefault();
     firstPour = false;

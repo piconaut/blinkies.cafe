@@ -1,3 +1,16 @@
+/**
+ * An object containing information about various submitters.
+ * Each submitter is represented as a key-value pair where the key is the submitter's identifier
+ * and the value is an object containing details about the submitter.
+ * 
+ * @typedef {Object} Submitter
+ * @property {string} subName - The name or alias of the submitter.
+ * @property {string} subURL - The URL associated with the submitter (e.g., personal website or profile).
+ * @property {Array} templates - An array of templates associated with the submitter (currently empty).
+ * 
+ * @type {Object.<string, Submitter>}
+ */
+
 let submitters = {
     amy: {
         subName: 'amy',

@@ -238,3 +238,6 @@ action {
 #tiles {
     margin-top:5px;
 }
+#tiles > a {
+    display: inline-block;
+}

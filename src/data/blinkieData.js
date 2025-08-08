@@ -2968,7 +2968,7 @@ let styleProps = {
     '0056-pirate': {
         name:"You came back.",
         bday:20220418,
-        tags:["fandom","amy"],
+        tags:["fandom","amy","pirate"],
         frames:5,
         delay:10,
         colour:["#000000","#000000","#000000","#000000","#000000"],

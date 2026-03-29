@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>blinkie maker | generate blinkie gifs with custom text!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content="make your own blinkies! browse blinkie styles and add any text you want. blinkies are tiny gifs; they're great badges for your site, stream, blog, or messages. blinkies were popular decorations in early-2000s Geocities-era personal websites.">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://blinkies.cafe/">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta name="theme-color" content="#4e3075">
-</head>
-<body>
-<div id='banner' class='content'>
-blinkies.cafe
-</div>
-<div id='navbar' class='content'>
-        generator | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
-</div><hr>
+<%- include('components/head.ejs', {
+    path: "", 
+    title: "blinkie maker | generate blinkie gifs with custom text!", 
+    description: "make your own blinkies! browse blinkie styles and add any text you want. blinkies are tiny gifs; they're great badges for your site, stream, blog, or messages. blinkies were popular decorations in early-2000s Geocities-era personal websites."
+}) %>
 <div class='content'>
     <h1>blinkie maker: build a blinkie!</h1>
 </div>
 <div class='content'>
     <div class='divider'></div>
     <div id='pour' style='position:absolute; visibility:<%if (pourStyle == '') {%>hidden<%} else {%>visible<%}%>'>
-        <action id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
+        <action tabindex="0" id='backToGalleryBtn'>&#60; back to gallery</action><br><br>
         <form id='blinkieForm'>
             <div>
                 text:  &nbsp;<input placeholder='your text here!' name='blinkieText' id='blinkieText' rows=1 wrap='off' type='text' autocomplete="off">&nbsp;<input type="checkbox" id="toggleSplit" name="toggleSplit"><label for="toggleSplit">split</label>(<div class="tooltip">?
@@ -35,14 +17,14 @@ blinkies.cafe
                 </div>)
             </div>
             <div id='symbolBox' style='margin-left:60px;'>
-                <action id='symbolToggle'>show symbols ▾</action><br>
+                <action tabindex="0" id='symbolToggle'>show symbols ▾</action><br>
                 <span id='symbolTable' style='visibility:hidden;z-index:1;'>
                     <table>
-                        <tr><td class='symbolButton'>♥</td><td class='symbolButton'>♡</td><td class='symbolButton'>♠</td><td class='symbolButton'>♣</td></tr>
-                        <tr><td class='symbolButton'>♦</td><td class='symbolButton'>🦀</td><td class='symbolButton'>🐈</td><td class='symbolButton'>👽</td></tr>
-                        <tr><td class='symbolButton'>🙂</td><td class='symbolButton'>👀</td><td class='symbolButton'>😐</td><td class='symbolButton'>💀</td></tr>
-                        <tr><td class='symbolButton'>🌼</td><td class='symbolButton'>☎</td><td class='symbolButton'>👑</td><td class='symbolButton'>☮</td></tr>
-                        <tr><td class='symbolButton'>✖</td><td class='symbolButton'>♩</td><td class='symbolButton'>♪</td><td class='symbolButton'>♫</td></tr>
+                        <tr><td class='symbolButton' role='button' tabindex='0'>♥</td><td class='symbolButton' role='button' tabindex='0'>♡</td><td class='symbolButton' role='button' tabindex='0'>♠</td><td class='symbolButton' role='button' tabindex='0'>♣</td></tr>
+                        <tr><td class='symbolButton' role='button' tabindex='0'>♦</td><td class='symbolButton' role='button' tabindex='0'>🦀</td><td class='symbolButton' role='button' tabindex='0'>🐈</td><td class='symbolButton' role='button' tabindex='0'>👽</td></tr>
+                        <tr><td class='symbolButton' role='button' tabindex='0'>🙂</td><td class='symbolButton' role='button' tabindex='0'>👀</td><td class='symbolButton' role='button' tabindex='0'>😐</td><td class='symbolButton' role='button' tabindex='0'>💀</td></tr>
+                        <tr><td class='symbolButton' role='button' tabindex='0'>🌼</td><td class='symbolButton' role='button' tabindex='0'>☎</td><td class='symbolButton' role='button' tabindex='0'>👑</td><td class='symbolButton' role='button' tabindex='0'>☮</td></tr>
+                        <tr><td class='symbolButton' role='button' tabindex='0'>✖</td><td class='symbolButton' role='button' tabindex='0'>♩</td><td class='symbolButton' role='button' tabindex='0'>♪</td><td class='symbolButton' role='button' tabindex='0'>♫</td></tr>
                     </table>
                 </span>
             </div>
@@ -94,8 +76,8 @@ blinkies.cafe
     <div id='gallery' type='text' style='position:relative; z-index:0; visibility:<%if (pourStyle == '') {%><%} else {%>hidden<%}%>'>
         click a blinkie to customize!<br><br>
         <galleryUI>
-            search: <input type="text" id="queryText" style="width:135px;margin-bottom:8px;" placeholder="text, tags, name">&nbsp;<action id='queryAction'>go &gt;</action><br>
-            sort:&nbsp;<action id='sortNew'>new</action> <action id='sortRandom'>random</action> <action id='sortOld'>old</action><br>
+            search: <input type="text" id="queryText" style="width:135px;margin-bottom:8px;" placeholder="text, tags, name">&nbsp;<action tabindex="0" id='queryAction'>go &gt;</action><br>
+            sort:&nbsp;<action tabindex="0" id='sortNew'>new</action> <action tabindex="0" id='sortRandom'>random</action> <action tabindex="0" id='sortOld'>old</action><br>
             tags:&nbsp;<select id='selectTags' style='width:100px;margin-top:8px;'>
                 <option class='tag' value='all'>all</option>
                 <option class='tag' value='2024may'>May 2024: cute stuff</option>
@@ -131,15 +113,15 @@ blinkies.cafe
             <%
             const blinkieExt = freeze ? 'png' : 'gif';
             for (const [key, value] of Object.entries(stylePage)) {
-                %><img src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
+                %><img tabindex="0" role="button" src="/b/display/<%=key%>.<%=blinkieExt%>" alt="<%=value.name%> blinkie" class="blinkie blinkieTile"><%
             }
             %>
         </center>
         <center>
             <galleryUI id='pagenav'>
-                <img id='prevPage' src='/arrow-left.gif' class='clickable' style='width:24px;height:13px;visibility:hidden;' alt="previous page">
+                <img tabindex="0" role="button" id='prevPage' src='/arrow-left.gif' class='clickable' style='width:24px;height:13px;visibility:hidden;' alt="previous page">
                 <b><actionLabel id='currPage'> 1 </actionLabel></b>
-                <img id='nextPage' src='/arrow-right.gif' class='clickable' style='width:24px;height:13px;' alt="next page">
+                <img tabindex="0" role="button" id='nextPage' src='/arrow-right.gif' class='clickable' style='width:24px;height:13px;' alt="next page">
             </galleryUI>
         </center>
         <br>
@@ -219,8 +201,6 @@ enjoy~
         <img src="/b/display/y2k-compliant.gif" alt="Y2K-compliant blinkie" class="blinkie">
     </p>
 </div>
-<%- include('components/footer.html') %>
-</body>
-</html>
 <script src='/cafe.js' type='module'></script>
 <script src='/sw.js' type='module'></script>
+<%- include('components/footer.html') %>

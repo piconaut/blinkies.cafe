@@ -80,13 +80,13 @@ getSourceList().then(function(sourceList){
 
     const nextPage       = document.getElementById("nextPage");
     const prevPage       = document.getElementById("prevPage");
-    nextPage.onclick = function() {
+    onClickOrEnter(nextPage, function() {
         currentPage ++;
         loadStyles(sourceArray, currentPage);
-    }
-    prevPage.onclick = function() {
+    });
+    onClickOrEnter(prevPage, function() {
         currentPage --;
         loadStyles(sourceArray, currentPage);
-    }
+    });
 
 });

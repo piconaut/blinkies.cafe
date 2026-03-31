@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>blinkie maker | generate <%=styleList[defaultStyleKey].name%> blinkies!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name='description' content='blinkies maker - generate <%=styleList[defaultStyleKey].name%> blinkies with any text you want!'>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://blinkies.cafe/pour">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta name="theme-color" content="#4e3075">
-</head>
-<body>
-<div id='banner' class='content'>
-blinkies.cafe
-</div>
-<div id='navbar' class='content'>
-        <a href='/'>generator</a> | <a href='/blog'>blog</a> | <a href='/archive'>archive</a><br>
-</div><hr>
+<%- include('components/head.ejs', {
+    path: "pour", 
+    title: `blinkie maker | generate ${styleList[defaultStyleKey].name} blinkies!`, 
+    description: `blinkies maker - generate ${styleList[defaultStyleKey].name} blinkies with any text you want!`
+})%>
 <div class='content'>
 <h1><%=styleList[defaultStyleKey].name%> blinkies generator</h1>
 </div>
@@ -56,7 +38,5 @@ text:  &nbsp;<input placeholder='your text here!' name='blinkieText' id='blinkie
 <img id='freshBlinkie' src='/b/display/<%=defaultStyleKey%>.gif' alt='generated blinkie'><br>
 <small id='blinkieLinkHolder'><br><br><br></small>
 </div>
-<%- include('components/footer.html') %>
-</body>
-</html>
 <script src='/pour.js' type='module'></script>
+<%- include('components/footer.html') %>

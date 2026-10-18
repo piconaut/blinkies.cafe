@@ -39,6 +39,18 @@ let styleProps = {
         x:0, y:0,
         sub:"ashhmillr"
     },*/
+    '0284-mlm': {
+        name:"mlm pride",
+        bday:20261018,
+        tags:["lgbtq","flag","amy"],
+        frames:5,
+        colour:["#000000","#000000","#000000","#000000","#000000"],
+        outline:["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+        font: "pixeloid sans",
+        fontweight:"bold",
+        fontsize:9,
+        x:0, y:0
+    },
     '0283-purplelace': {
         name:"sweet dreams",
         bday:20240514,

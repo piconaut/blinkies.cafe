@@ -16,14 +16,14 @@
   "bugs": {
     "url": "https://github.com/piconaut/blinkies.cafe/issues"
   },
-  "engines:": {
-    "node": "17.4.0"
+  "engines": {
+    "node": ">=24"
   },
   "homepage": "https://github.com/piconaut/blinkies.cafe#readme",
   "dependencies": {
     "compression": "^1.7.4",
     "ejs": "^3.1.10",
-    "express": "^4.22.1",
+    "express": "^4.22.3",
     "express-minify": "^1.0.0",
     "helmet": "^4.6.0",
     "promise-queue": "^2.2.5",

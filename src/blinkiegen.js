@@ -43,6 +43,10 @@ const blinkieData = require('./data/blinkieData.js')
 const fontData    = require('./data/fontData.js')
 const logger      = require('./logger.js').logger
 
+// disable HarfBuzz default features
+const SHAPING_OFF = ['abvm','blwm','calt','ccmp','clig','curs','dist','kern',
+    'liga','locl','mark','mkmk','rclt','rlig'].map(f => '-' + f).join(',');
+
 /**
  * Generates a blinkie GIF based on the provided parameters.
  *
@@ -403,7 +407,11 @@ async function renderFrames(blinkieID, bParms) {
                 '-gravity','Center',
                 '-family',bParms.font,
                 '-pointsize',bParms.fontsize,
-                '-weight',bParms.fontweight
+                '-weight',bParms.fontweight,
+                // disable hinting to avoid nudging pixels
+                '-set','type:hinting','off',
+                // disable opentype shaping
+                '-set','type:features',SHAPING_OFF
             ]
             if (bParms.outline) {
                 argsArray[i].push(
@@ -467,6 +475,7 @@ async function renderBlinkie(blinkieID, bParms) {
         frameDelay = bParms.delay;
     }
     args_gif.push(
+        '-alpha','background',
         '-loop','0',
         '-scale',bParms.scale,
         global.appRoot + '/public/blinkies-public/blinkiesCafe-' + blinkieID + '.gif');

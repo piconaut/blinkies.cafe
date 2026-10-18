@@ -113,8 +113,8 @@ let styleProps = {
         outline:"#ff7d7d",
         font: "Perfect DOS VGA 437",
         fontweight: "bold",
-        fontsize:20,
-        x:-1, y:0,
+        fontsize:16,
+        x:11, y:0,
         sub:"pawpr1nc3"
     },
     '0278-galpals': {
@@ -3289,9 +3289,9 @@ let styleProps = {
         bday:20220304,
         frames:2,
         colour:["#d0d0d0","#d0d0d0"],
-        font: "moonaco",
+        font: "monogramextended",
         fontsize:16,
-        x:-1, y:0,
+        x:0, y:1,
         tags:["fandom","zodiac","amy"]
     },
     '0041-aquarius': {

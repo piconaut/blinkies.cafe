@@ -1,4 +1,4 @@
-FROM node:17.4.0-alpine3.15 AS build_image
+FROM node:24.22.0-alpine3.24 AS build_image
 
 RUN apk add --no-cache ca-certificates git imagemagick
 
@@ -11,7 +11,7 @@ WORKDIR /app
 # wildcard to include package.json and package-lock.json
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm install --omit=dev
 
 # if prod
 # RUN npm ci --only=production
@@ -31,8 +31,8 @@ RUN rm -f public/blinkies-public/blinkiesCafe-*gif && \
 
 EXPOSE 8080
 
-FROM node:17.4.0-alpine3.15
-RUN apk add --update imagemagick=7.1.0.16-r0
+FROM node:24.22.0-alpine3.24
+RUN apk add --update imagemagick=7.1.2.30-r0
 
 WORKDIR /app
 
